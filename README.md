@@ -1,41 +1,84 @@
-# Equipo 0X - Nombre del curso
-### Carrera de Ingeniería Ambiental / Informática / Industrial  
+# Equipo 03 - Proyecto Integrador 2026-2
+### Carrera de Ingeniería Ambiental / Informática  
 **Universidad Peruana Cayetano Heredia**
 
 ---
 
-## 🌍 Descripción del Equipo 
-Somos el **Equipo 0X** del curso **Nombre del curso 202X-1**, conformado por estudiantes de la carrera de Ingeniería Ambiental / Informática / Industrial.  
-Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.  
+## 🌍 Descripción del Equipo
 
-Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS):**  
-- ODS 3: Salud y Bienestar  
-- ODS 6: Agua Limpia y Saneamiento  
-- ODS 9: Industria, Innovación e Infraestructura  
-- ODS 11: Ciudades y Comunidades Sostenibles  
-- ODS 13: Acción por el Clima  
+Somos el **Equipo 03** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de la carrera de Ingeniería Industrial / Informática.
+
+Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.
+
+Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo Sostenible (ODS):**
+
+- **ODS 12: Producción y Consumo Responsables**
 
 ---
 
-## 📸 Fotografía del Equipo  
+## 📸 Fotografía del Equipo
+
 <p align="center">
-<img width="1408" height="768" alt="imagen_alumnos_IA" src="https://github.com/user-attachments/assets/3829718f-51c7-4d00-b262-ef37f178f059" />
-  <em>Figura 1. Fotografía del equipo 0X</em>
+<img width="1408" height="768" alt="imagen_equipo_08" src="https://github.com/user-attachments/assets/3829718f-51c7-4d00-b262-ef37f178f059" />
+<br>
+<em>Figura 1. Fotografía del Equipo 08</em>
 </p>
 
 ---
 
-## 👥 Integrantes del Equipo  
+## 👥 Integrantes del Equipo
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="/Recursos/Imágenes/integrante1.png" width="90"/> | **Nombre 1** | Líder del equipo | Innovación social, sostenibilidad |
-| <img src="/Recursos/Imágenes/integrante2.png" width="90"/> | **Nombre 2** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
-| <img src="/Recursos/Imágenes/integrante1.png" width="90"/> | **Nombre 3** | Diseñador/a | Diseño de prototipos, creatividad aplicada |
-| <img src="/Recursos/Imágenes/integrante2.png" width="90"/> | **Nombre 4** | Encargado/a de documentación | Comunicación científica, redacción técnica |
-| <img src="/Recursos/Imágenes/integrante1.png" width="90"/> | **Nombre 5** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
+| <img src="/Recursos/Imágenes/paola.png" width="90"/> | **Cesar Alejandro Aaron Apcho Meneses** | Líder del equipo | Innovación social, sostenibilidad |
+| <img src="/Recursos/Imágenes/monica.png" width="90"/> | **Paola Andrea Centeno Bazan** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
+| <img src="/Recursos/Imágenes/carlos.png" width="90"/> | **** | Diseñador | Diseño de prototipos, creatividad aplicada |
+| <img src="/Recursos/Imágenes/juan.png" width="90"/> | **Juan Vidal Berrocal Ccapcha** | Programador - Modelador | Programación, análisis de datos, simulación |
 
 ---
 
-## 📌 Resumen Final  
-Este README resume quiénes somos, qué nos motiva y en qué ODS queremos enfocar nuestro trabajo durante el curso.  
+## 🌱🚀 Proyecto de Equipo
+
+### Invernadero transportable de lechuga en sistema cerrado con iluminación LED
+
+Nuestro proyecto busca desarrollar un **invernadero transportable para el cultivo de lechuga mediante un sistema hidropónico cerrado**, incorporando tecnologías de iluminación LED y sensores inteligentes.
+
+La propuesta busca optimizar el uso de recursos como el **agua y la energía**, permitiendo una producción agrícola más sostenible y adaptable a diferentes entornos.
+
+---
+
+## 🎯 Relación con el ODS 12
+
+### 🌍 ODS 12: Producción y Consumo Responsables
+
+Nuestro proyecto se relaciona con el **ODS 12**, especialmente con la meta **12.2**, orientada a lograr la gestión sostenible y el uso eficiente de los recursos naturales.
+
+La propuesta busca:
+
+- 🌿 Reducir el consumo de agua mediante hidroponía.
+- 💡 Optimizar el consumo energético mediante iluminación LED.
+- ☀️ Incorporar fuentes de energía renovable.
+- 📊 Implementar sensores para monitorear las condiciones del cultivo.
+- ♻️ Promover sistemas de producción agrícola más sostenibles.
+- 🚚 Facilitar la producción mediante un sistema transportable y modular.
+
+---
+
+## 🛠️ Características del Proyecto
+
+- 🌿 Sistema hidropónico **DWC**.
+- 💡 Iluminación mediante **LEDs pulsados**.
+- 📏 Dimensiones aproximadas: **50 × 50 × 30 cm**.
+- ⚖️ Peso estimado: **3–5 kg**.
+- ⏱️ Ciclo de cultivo estimado: **25–30 días**.
+- 📲 Sistema digital para **monitoreo y alertas**.
+
+---
+
+## 📌 Resumen Final
+
+El **Equipo 03** busca desarrollar una solución tecnológica que contribuya a una producción agrícola más eficiente y sostenible.
+
+Nuestro **invernadero transportable de lechuga** integra hidroponía, iluminación LED, sensores y energía renovable con el objetivo de optimizar el uso de recursos y promover alternativas de producción responsables.
+
+Este README resume quiénes somos, nuestro proyecto y el **ODS 12** que orienta nuestro trabajo durante el curso.
