@@ -1,5 +1,5 @@
 # Equipo 03 - Proyecto Integrador 2026-2
-### Carrera de Ingeniería Ambiental / Informática  
+### Carrera de Ingeniería Industrial / Informática  
 **Universidad Peruana Cayetano Heredia**
 
 ---
