@@ -33,7 +33,7 @@ Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo So
 | <img src="/Recursos/Imágenes/integrantes/ggggg.jpg" width="90"/> | **César Alejandro Aarón Apcho Meneses** | Líder del equipo | electrónico, mecánica, conexiones inalámbricas |
 | <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/6c9250a794e1e4138b5a72a7b3ff90d41845ecb6/Recursos/Im%C3%A1genes/integrante3.jpeg"/> | **Paola Andrea Centeno Bazan** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
 | <img src="" width="90"/> | **Rodrigo Sebastián Asmat Mendoza** | Diseñador | Diseño de prototipos, creatividad aplicada |
-| <img src="/Recursos/Imágenes/juan.png" width="90"/> | **Juan Vidal Berrocal Ccapcha** | Programador - Modelador | Programación, análisis de datos, simulación |
+| <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Recursos/Im%C3%A1genes/integrante2.jpg" width="90"/> | **Juan Vidal Berrocal Ccapcha** | Programador - Modelador | Programación, análisis de datos, simulación |
 
 ---
 
