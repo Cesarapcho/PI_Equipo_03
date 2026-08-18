@@ -30,7 +30,7 @@ Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo So
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="/Recursos/Imágenes/paola.png" width="90"/> | **César Alejandro Aarón Apcho Meneses** | Líder del equipo | electrónico, mecánica, conexiones inalámbricas |
+| <img src="/Recursos/Imágenes/integrantes/ggggg.jpg" width="90"/> | **César Alejandro Aarón Apcho Meneses** | Líder del equipo | electrónico, mecánica, conexiones inalámbricas |
 | <img src="/Recursos/Imágenes/monica.png" width="90"/> | **Paola Andrea Centeno Bazan** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
 | <img src="/Recursos/Imágenes/carlos.png" width="90"/> | **Rodrigo Sebastián Asmat Mendoza** | Diseñador | Diseño de prototipos, creatividad aplicada |
 | <img src="/Recursos/Imágenes/juan.png" width="90"/> | **Juan Vidal Berrocal Ccapcha** | Programador - Modelador | Programación, análisis de datos, simulación |
