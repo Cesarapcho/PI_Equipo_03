@@ -20,6 +20,7 @@ Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo So
 
 <p align="center">
   <img src="/Recursos/Imágenes/foto grupal.jpg" width="400" alt="Foto grupal del equipo"/>
+<br>
 <em>Figura 1. Fotografía del Equipo 08</em>
 </p>
 
