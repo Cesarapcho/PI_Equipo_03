@@ -19,7 +19,7 @@ Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo So
 ## 📸 Fotografía del Equipo
 
 <p align="center">
-<img width="1408" height="768" alt="imagen_equipo_08" src="https://github.com/user-attachments/assets/3829718f-51c7-4d00-b262-ef37f178f059" />
+<img width="1408" height="768" alt="imagen_equipo_08" src="/Recursos/Imágenes/foto grupal.jpg" />
 <br>
 <em>Figura 1. Fotografía del Equipo 08</em>
 </p>
@@ -30,7 +30,7 @@ Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo So
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="/Recursos/Imágenes/integrantes/ggggg.jpg" width="90"/> | **César Alejandro Aarón Apcho Meneses** | Líder del equipo | electrónico, mecánica, conexiones inalámbricas |
+| <img src="/Recursos/Imágenes/integrante1.jpg" width="90"/> | **César Alejandro Aarón Apcho Meneses** | Líder del equipo | electrónico, mecánica, conexiones inalámbricas |
 | <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/6c9250a794e1e4138b5a72a7b3ff90d41845ecb6/Recursos/Im%C3%A1genes/integrante3.jpeg" width="90" /> | **Paola Andrea Centeno Bazan** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
 | <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Recursos/Im%C3%A1genes/integrante4.jpg" width="90"/> | **Rodrigo Sebastián Asmat Mendoza** | Diseñador | Diseño de prototipos, creatividad aplicada |
 | <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Recursos/Im%C3%A1genes/integrante2.jpg" width="90"/> | **Juan Vidal Berrocal Ccapcha** | Programador - Modelador | Programación, análisis de datos, simulación |
