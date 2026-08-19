@@ -19,7 +19,7 @@ Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo So
 ## 📸 Fotografía del Equipo
 
 <p align="center">
-<img width="1408" height="768" alt="imagen_equipo_08" src="/Recursos/Imágenes/foto grupal.jpg" />
+<img width="1408" height="1024" alt="imagen_equipo_08" src="/Recursos/Imágenes/foto grupal.jpg" />
 <br>
 <em>Figura 1. Fotografía del Equipo 08</em>
 </p>
