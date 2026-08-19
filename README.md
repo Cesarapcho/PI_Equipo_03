@@ -1,84 +1,170 @@
-# Equipo 03 - Proyecto Integrador 2026-2
-### Carrera de Ingeniería Industrial / Informática  
-**Universidad Peruana Cayetano Heredia**
-
----
-
-## 🌍 Descripción del Equipo
-
-Somos el **Equipo 03** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de la carrera de Ingeniería Industrial / Informática.
-
-Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.
-
-Nos interesa trabajar principalmente en el siguiente **Objetivo de Desarrollo Sostenible (ODS):**
-
-- **ODS 12: Producción y Consumo Responsables**
-
----
-
-## 📸 Fotografía del Equipo
+<p align="center">
+  <img
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:0B3D2E,50:146B4A,100:39A96B&height=230&section=header&text=EQUIPO%2003&fontSize=58&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Proyecto%20Integrador%202026-2&descAlignY=58&descSize=22"
+    width="100%"
+    alt="Equipo 03 - Proyecto Integrador 2026-2"
+  />
+</p>
 
 <p align="center">
-  <img src="/Recursos/Imágenes/foto grupal.jpg" width="400" alt="Foto grupal del equipo"/>
+  <a href="https://readme-typing-svg.demolab.com">
+    <img
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=23&pause=1200&color=2E8B57&center=true&vCenter=true&width=760&lines=Ingenier%C3%ADa+Industrial+%2F+Inform%C3%A1tica;Tecnolog%C3%ADa+para+una+agricultura+sostenible;Hidropon%C3%ADa+%2B+LED+%2B+Sensores+%2B+Energ%C3%ADa+Renovable;Innovaci%C3%B3n+orientada+al+ODS+12"
+      alt="Typing SVG"
+    />
+  </a>
+</p>
+
+<h3 align="center">
+  Universidad Peruana Cayetano Heredia
+</h3>
+
+<p align="center">
+  <strong>Proyecto Integrador · Semestre 2026-2</strong>
+</p>
+
 <br>
-<em>Figura 1. Fotografía del Equipo 08</em>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ODS-12%20Producci%C3%B3n%20y%20Consumo%20Responsables-3F7E44?style=for-the-badge&logo=leaflet&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Sistema-Hidrop%C3%B3nico%20DWC-0288D1?style=for-the-badge"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Iluminaci%C3%B3n-LED-FFC107?style=flat-square&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Monitoreo-Sensores-7B1FA2?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Energ%C3%ADa-Renovable-43A047?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Cultivo-Lechuga-66BB6A?style=flat-square"/>
+</p>
+
+<br>
+
+<div align="center">
+
+### 🌱 Ingeniería · Tecnología · Sostenibilidad
+
+**Diseñando soluciones para producir más utilizando los recursos de manera responsable.**
+
+</div>
+
+---
+
+## 📑 Contenido
+
+- [🌍 Sobre el Equipo](#-sobre-el-equipo)
+- [📸 Fotografía del Equipo](#-fotografía-del-equipo)
+- [👥 Integrantes](#-integrantes-del-equipo)
+- [🌱 Proyecto](#-proyecto-de-equipo)
+- [🎯 Relación con el ODS 12](#-relación-con-el-ods-12)
+- [🛠️ Características Técnicas](#️-características-del-proyecto)
+- [⚙️ Funcionamiento General](#️-funcionamiento-general)
+- [🌎 Impacto Esperado](#-impacto-esperado)
+- [📌 Resumen](#-resumen-final)
+
+---
+
+# 🌍 Sobre el Equipo
+
+Somos el **Equipo 03** del curso **Proyecto Integrador 2026-2** de la **Universidad Peruana Cayetano Heredia**, conformado por estudiantes de las carreras de **Ingeniería Industrial e Informática**.
+
+Nuestro propósito es integrar conocimientos de ingeniería, diseño, programación y sostenibilidad para desarrollar una solución tecnológica orientada a una problemática real.
+
+El proyecto se desarrolla aplicando una metodología de diseño centrada en:
+
+> 💡 **Investigar, diseñar, prototipar, evaluar e iterar soluciones con impacto social, tecnológico y ambiental.**
+
+Nuestro trabajo se encuentra principalmente relacionado con el:
+
+### ♻️ ODS 12 — Producción y Consumo Responsables
+
+Buscamos contribuir al uso eficiente de recursos mediante tecnologías capaces de reducir el consumo de agua y energía en sistemas de producción agrícola.
+
+---
+
+# 📸 Fotografía del Equipo
+
+<p align="center">
+  <img
+    src="./Recursos/Im%C3%A1genes/foto%20grupal.jpg"
+    width="400"
+    alt="Fotografía grupal del Equipo 03"
+  />
+</p>
+
+<p align="center">
+  <em>Figura 1. Integrantes del Equipo 03 — Proyecto Integrador 2026-2.</em>
 </p>
 
 ---
 
-## 👥 Integrantes del Equipo
+# 👥 Integrantes del Equipo
 
-| Foto | Nombre | Rol | Intereses |
-|------|--------|-----|-----------|
-| <img src="/Recursos/Imágenes/integrante1.jpg" width="90"/> | **César Alejandro Aarón Apcho Meneses** | Líder del equipo | electrónico, mecánica, conexiones inalámbricas |
-| <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/6c9250a794e1e4138b5a72a7b3ff90d41845ecb6/Recursos/Im%C3%A1genes/integrante3.jpeg" width="90" /> | **Paola Andrea Centeno Bazan** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
-| <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Recursos/Im%C3%A1genes/integrante4.jpg" width="90"/> | **Rodrigo Sebastián Asmat Mendoza** | Diseñador | Diseño de prototipos, creatividad aplicada |
-| <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Recursos/Im%C3%A1genes/integrante2.jpg" width="90"/> | **Juan Vidal Berrocal Ccapcha** | Programador - Modelador | Programación, análisis de datos, simulación |
+<div align="center">
 
----
+| Foto | Integrante | Rol | Áreas de interés |
+|:---:|---|---|---|
+| <img src="./Recursos/Im%C3%A1genes/integrante1.jpg" width="85"/> | **César Alejandro Aarón Apcho Meneses** | 👑 Líder del equipo | Electrónica, mecánica y conexiones inalámbricas |
+| <img src="./Recursos/Im%C3%A1genes/integrante3.jpeg" width="85"/> | **Paola Andrea Centeno Bazan** | 🔎 Responsable de investigación | Gestión ambiental y desarrollo comunitario |
+| <img src="./Recursos/Im%C3%A1genes/integrante4.jpg" width="85"/> | **Rodrigo Sebastián Asmat Mendoza** | 🎨 Diseñador | Diseño de prototipos y creatividad aplicada |
+| <img src="./Recursos/Im%C3%A1genes/integrante2.jpg" width="85"/> | **Juan Vidal Berrocal Ccapcha** | 💻 Programador / Modelador | Programación, análisis de datos y simulación |
 
-## 🌱🚀 Proyecto de Equipo
-
-### Invernadero transportable de lechuga en sistema cerrado con iluminación LED
-
-Nuestro proyecto busca desarrollar un **invernadero transportable para el cultivo de lechuga mediante un sistema hidropónico cerrado**, incorporando tecnologías de iluminación LED y sensores inteligentes.
-
-La propuesta busca optimizar el uso de recursos como el **agua y la energía**, permitiendo una producción agrícola más sostenible y adaptable a diferentes entornos.
+</div>
 
 ---
 
-## 🎯 Relación con el ODS 12
+# 🌱🚀 Proyecto de Equipo
 
-### 🌍 ODS 12: Producción y Consumo Responsables
+<div align="center">
 
-Nuestro proyecto se relaciona con el **ODS 12**, especialmente con la meta **12.2**, orientada a lograr la gestión sostenible y el uso eficiente de los recursos naturales.
+## Invernadero transportable de lechuga
+### Sistema cerrado con hidroponía e iluminación LED
 
-La propuesta busca:
+🌿 **Hidroponía** &nbsp;•&nbsp;
+💡 **LEDs** &nbsp;•&nbsp;
+📡 **Sensores** &nbsp;•&nbsp;
+☀️ **Energía renovable** &nbsp;•&nbsp;
+📊 **Monitoreo digital**
 
-- 🌿 Reducir el consumo de agua mediante hidroponía.
-- 💡 Optimizar el consumo energético mediante iluminación LED.
-- ☀️ Incorporar fuentes de energía renovable.
-- 📊 Implementar sensores para monitorear las condiciones del cultivo.
-- ♻️ Promover sistemas de producción agrícola más sostenibles.
-- 🚚 Facilitar la producción mediante un sistema transportable y modular.
+</div>
+
+<br>
+
+Nuestro proyecto propone el desarrollo de un **invernadero transportable para el cultivo de lechuga mediante un sistema hidropónico cerrado**, incorporando iluminación LED, sensores y herramientas digitales de monitoreo.
+
+El sistema busca mantener condiciones adecuadas para el crecimiento de la planta mientras optimiza recursos fundamentales como:
+
+- 💧 **Agua**
+- ⚡ **Energía**
+- 🌱 **Nutrientes**
+- 📦 **Espacio**
+- ⏱️ **Tiempo de supervisión**
+
+A diferencia de un sistema agrícola convencional, el prototipo busca reutilizar la solución nutritiva y controlar variables relevantes del cultivo dentro de una estructura **compacta, modular y transportable**.
 
 ---
 
-## 🛠️ Características del Proyecto
+# 💡 Concepto del Proyecto
 
-- 🌿 Sistema hidropónico **DWC**.
-- 💡 Iluminación mediante **LEDs pulsados**.
-- 📏 Dimensiones aproximadas: **50 × 50 × 30 cm**.
-- ⚖️ Peso estimado: **3–5 kg**.
-- ⏱️ Ciclo de cultivo estimado: **25–30 días**.
-- 📲 Sistema digital para **monitoreo y alertas**.
-
----
-
-## 📌 Resumen Final
-
-El **Equipo 03** busca desarrollar una solución tecnológica que contribuya a una producción agrícola más eficiente y sostenible.
-
-Nuestro **invernadero transportable de lechuga** integra hidroponía, iluminación LED, sensores y energía renovable con el objetivo de optimizar el uso de recursos y promover alternativas de producción responsables.
-
-Este README resume quiénes somos, nuestro proyecto y el **ODS 12** que orienta nuestro trabajo durante el curso.
+```text
+               ☀️ ENERGÍA
+                    │
+                    ▼
+        ┌──────────────────────┐
+        │   ILUMINACIÓN LED    │
+        └──────────┬───────────┘
+                   │
+                   ▼
+           🌱 CULTIVO DE LECHUGA
+                   │
+          ┌────────┴────────┐
+          │                 │
+          ▼                 ▼
+     💧 HIDROPONÍA      📡 SENSORES
+        DWC                  │
+          │                  ▼
+          │          📊 MONITOREO DIGITAL
+          │
+          └──────────┐
+                     ▼
+             ♻️ RECIRCULACIÓN
+                DE RECURSOS
