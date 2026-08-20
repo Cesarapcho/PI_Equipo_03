@@ -201,7 +201,3 @@ El sistema deberá identificar condiciones como:
 - Desplazamiento fuera de rango.
 - Fallo del sistema de actuación.
 
-
-
-             ▼
-       ESTADO ESTABLE
