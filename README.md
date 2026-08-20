@@ -200,7 +200,3 @@ El sistema deberá identificar condiciones como:
 - Pérdida de alimentación.
 - Desplazamiento fuera de rango.
 - Fallo del sistema de actuación.
-
-             │
-             ▼
-       ESTADO ESTABLE
