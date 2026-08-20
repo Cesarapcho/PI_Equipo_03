@@ -78,7 +78,6 @@ en un sistema capaz de medir, analizar y responder.**
 - [⚙️ Concepto del Sistema](#️-concepto-del-sistema)
 - [🎯 ODS 11](#-ods-11)
 - [🧪 Prototipo](#-prototipo)
-- [🚀 Visión del Proyecto](#-visión-del-proyecto)
 
 ---
 
@@ -434,30 +433,6 @@ flowchart TB
 <p align="center">
   <img src="https://img.shields.io/badge/Estado-PROTOTIPO%20ACAD%C3%89MICO-FD9D24?style=for-the-badge"/>
 </p>
-
----
-
-# 🚀 Visión del Proyecto
-
-<div align="center">
-
-### Hoy
-
-**Tres puntales instrumentados en un prototipo académico.**
-
-### ↓
-
-### Mañana
-
-**Sistemas de soporte temporal capaces de proporcionar información sobre su propio estado de carga.**
-
-</div>
-
-<br>
-
-El objetivo del proyecto no es reemplazar la evaluación realizada por profesionales especializados.
-
-La propuesta busca explorar cómo la **instrumentación, automatización y control** pueden complementar sistemas utilizados en procesos de estabilización estructural.
 
 ---
 
