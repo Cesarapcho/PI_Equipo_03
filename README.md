@@ -436,24 +436,6 @@ flowchart TB
 
 ---
 
-<div align="center">
-
-# SISTEMA MODULAR DE APUNTALAMIENTO INTELIGENTE
-
-### P1 + P2 + P3
-
-<br>
-
-<img src="https://img.shields.io/badge/MEDIR-FD9D24?style=for-the-badge"/>
-&nbsp;
-<img src="https://img.shields.io/badge/ANALIZAR-D47B00?style=for-the-badge"/>
-&nbsp;
-<img src="https://img.shields.io/badge/ACTUAR-B85F00?style=for-the-badge"/>
-&nbsp;
-<img src="https://img.shields.io/badge/VERIFICAR-8C4600?style=for-the-badge"/>
-
-<br>
-<br>
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
