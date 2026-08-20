@@ -201,10 +201,7 @@ El sistema deberá identificar condiciones como:
 - Desplazamiento fuera de rango.
 - Fallo del sistema de actuación.
 
----
 
-# 💡 Concepto del Proyecto
 
-```text
              ▼
        ESTADO ESTABLE
