@@ -436,7 +436,7 @@ flowchart TB
 
 ---
 
-
+<div align="center">
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
     <img
