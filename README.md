@@ -206,31 +206,5 @@ El sistema deberá identificar condiciones como:
 # 💡 Concepto del Proyecto
 
 ```text
-              🏗️ ESTRUCTURA DAÑADA
-                       │
-                       ▼
-          ┌────────────────────────┐
-          │ SISTEMA DE APUNTALAMIENTO │
-          └────────────┬───────────┘
-                       │
-             ┌─────────┴─────────┐
-             │                   │
-             ▼                   ▼
-       📊 MEDICIÓN          📐 MONITOREO
-        DE CARGA           DESPLAZAMIENTO
-             │                   │
-             └─────────┬─────────┘
-                       │
-                       ▼
-               🧠 CONTROLADOR
-                       │
-             ┌─────────┴─────────┐
-             │                   │
-             ▼                   ▼
-        ⚙️ AJUSTE             🚨 ALARMA
-             │
-             ▼
-      🔒 BLOQUEO MECÁNICO
-             │
              ▼
        ESTADO ESTABLE
