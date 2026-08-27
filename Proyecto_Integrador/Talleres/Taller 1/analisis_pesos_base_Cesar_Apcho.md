@@ -7,8 +7,8 @@ El material asignado a la pieza durante la simulación fue **PLA**.
 
 ### Enlaces del proyecto
 
-- **SimScale:** [Ver simulación](https://tinyurl.com/2vawbesr)
-- **Onshape:** [Ver modelado 3D](https://tinyurl.com/2uep4wz8)
+- **SimScale:** <a href="https://tinyurl.com/2vawbesr" target="_blank" rel="noopener noreferrer">Ver simulación</a>
+- **Onshape:** <a href="https://tinyurl.com/2uep4wz8" target="_blank" rel="noopener noreferrer">Ver modelado 3D</a>
 ---
 # Interpretación de resultados de la simulación
 
