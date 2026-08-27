@@ -6,19 +6,19 @@ Para el desarrollo del cuerpo del prototipo se utilizaron herramientas de modela
 
 El modelado de la pieza se realizó en **Onshape**, donde se construyó la geometría del cuerpo considerando sus dimensiones, abertura central y puntos de fijación.
 
-🔗 **Modelo 3D en Onshape:**  
-https://cad.onshape.com/documents/8faf323b3ad277acf5680e67/w/7f5d397c40762628c5e2da28/e/1d246344b054494bdf4784c7?renderMode=0&uiState=6a90ae6b04acdaf3b43cb3cc
+**Modelo 3D en Onshape:**  
+[Modelo del cuerpo en Onshape](https://cad.onshape.com/documents/8faf323b3ad277acf5680e67/w/7f5d397c40762628c5e2da28/e/1d246344b054494bdf4784c7?renderMode=0&uiState=6a90ae6b04acdaf3b43cb3cc)
 
 Posteriormente, el modelo fue analizado mediante una simulación estructural estática en **SimScale**, con el objetivo de evaluar la distribución de esfuerzos y el desplazamiento producido por la carga aplicada.
 
-🔗 **Simulación en SimScale:**  
-https://www.simscale.com/workbench/?pid=9096215687583154772
+**Simulación en SimScale:**  
+[Simulación estructural en SimScale](https://www.simscale.com/workbench/?pid=9096215687583154772)
 
 ---
 
 # Modelo del cuerpo
 
-![Modelo 3D del cuerpo](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%201/imagenes/juan_modelado.png?raw=true)
+![Modelo 3D del cuerpo](imagenes/juan_modelado.png)
 
 El cuerpo constituye una de las piezas principales de la estructura del prototipo. Su geometría fue diseñada para proporcionar soporte a los componentes internos y mantener una estructura compacta.
 
@@ -39,47 +39,34 @@ La simulación se configuró con las siguientes condiciones:
 - **Carga aplicada:** 20 N.
 - **Dirección de la carga:** eje Z.
 - **Sentido de la carga:** negativo.
-- **Componente de fuerza:** \(F_z = -20\,\text{N}\).
+- **Componente de fuerza:** **Fz = -20 N**.
 - **Condiciones de fijación:** cuatro puntos de montaje.
 - **Resultados analizados:** esfuerzo de Von Mises y desplazamiento.
 
-### Cálculo de la carga equivalente
+## Cálculo de la carga equivalente
 
-La fuerza aplicada de 20 N puede expresarse como una masa equivalente utilizando la segunda ley de Newton:
+La relación entre la fuerza, la masa y la aceleración gravitacional se expresa mediante:
 
-\[
-F = m \cdot g
-\]
+**F = m × g**
 
 Despejando la masa:
 
-\[
-m = \frac{F}{g}
-\]
+**m = F / g**
 
 Considerando:
 
-\[
-F = 20\,\text{N}
-\]
-
-\[
-g = 9.81\,\text{m/s}^2
-\]
+- **F = 20 N**
+- **g = 9.81 m/s²**
 
 se obtiene:
 
-\[
-m = \frac{20\,\text{N}}{9.81\,\text{m/s}^2}
-\]
+**m = 20 N / 9.81 m/s²**
 
-\[
-\boxed{m \approx 2.04\,\text{kg}}
-\]
+**m ≈ 2.04 kg**
 
-Por lo tanto, una carga de **20 N** equivale aproximadamente a la fuerza gravitacional ejercida por una masa de **2.04 kg**.
+Por lo tanto, una fuerza de **20 N** equivale aproximadamente al peso de una masa de **2.04 kg** bajo una aceleración gravitacional de **9.81 m/s²**.
 
-> **Nota:** esta equivalencia se utiliza únicamente para interpretar la magnitud de la fuerza aplicada en la simulación. No significa que el cuerpo del prototipo tenga que soportar físicamente una masa de 2.04 kg durante su funcionamiento normal.
+> **Nota:** Esta equivalencia se utiliza únicamente para interpretar la magnitud de la fuerza aplicada en la simulación. No significa que el cuerpo deba soportar físicamente una masa de 2.04 kg durante su funcionamiento normal.
 
 ---
 
@@ -87,7 +74,7 @@ Por lo tanto, una carga de **20 N** equivale aproximadamente a la fuerza gravita
 
 ## Vista frontal
 
-![Esfuerzo de Von Mises - Vista frontal](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%201/imagenes/Juan_VMS_P1_Cuerpo_Frontal.png?raw=true)
+![Esfuerzo de Von Mises - Vista frontal](imagenes/Juan_VMS_P1_Cuerpo_Frontal.png)
 
 El **esfuerzo de Von Mises** permite identificar las regiones de la pieza que presentan una mayor exigencia mecánica ante la carga aplicada.
 
@@ -95,41 +82,35 @@ En la vista frontal se observa que los mayores valores de esfuerzo se concentran
 
 El valor máximo mostrado en la escala de la simulación es aproximadamente:
 
-\[
-\sigma_{\mathrm{VM,max}} = 99.49\,\text{kPa}
-\]
+**σVM,max ≈ 99.49 kPa**
 
-Realizando la conversión a megapascales:
+Para expresar este resultado en megapascales se utiliza la equivalencia:
 
-\[
-99.49\,\text{kPa}
-\times
-\frac{1\,\text{MPa}}{1000\,\text{kPa}}
-=
-0.09949\,\text{MPa}
-\]
+**1 MPa = 1000 kPa**
 
 Por lo tanto:
 
-\[
-\boxed{\sigma_{\mathrm{VM,max}} \approx 0.09949\,\text{MPa}}
-\]
+**99.49 kPa / 1000 = 0.09949 MPa**
 
-Las regiones representadas con colores amarillos, naranjas y rojos corresponden a las zonas donde se concentran los mayores esfuerzos, mientras que las regiones azules presentan niveles de esfuerzo menores.
+Así, el esfuerzo máximo de Von Mises obtenido es aproximadamente:
+
+**σVM,max ≈ 0.09949 MPa**
+
+Las regiones representadas mediante colores **amarillos, naranjas y rojos** corresponden a las zonas donde se concentran los mayores esfuerzos, mientras que las regiones **azules** presentan niveles de esfuerzo menores.
 
 ---
 
 ## Vista superior
 
-![Esfuerzo de Von Mises - Vista superior](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%201/imagenes/Juan_VMS_P1_Cuerpo_Superior.png?raw=true)
+![Esfuerzo de Von Mises - Vista superior](imagenes/Juan_VMS_P1_Cuerpo_Superior.png)
 
 La vista superior permite observar la distribución tridimensional del esfuerzo sobre el cuerpo.
 
-Se aprecia que los mayores niveles de esfuerzo permanecen concentrados principalmente en la región superior de la pieza. Por otro lado, las zonas alejadas de la aplicación de la carga presentan valores inferiores.
+Se aprecia que los mayores niveles de esfuerzo continúan concentrándose principalmente en la región superior de la pieza. Por otro lado, las zonas alejadas de la aplicación de la carga presentan valores inferiores.
 
 Esta distribución se relaciona con la forma en que la carga vertical se transmite a través de la estructura hacia los puntos de fijación.
 
-La representación mediante colores permite localizar visualmente las zonas que requieren mayor atención durante una posible optimización de la geometría.
+La representación mediante colores permite localizar visualmente las zonas que presentan una mayor exigencia mecánica y que podrían ser consideradas en futuras modificaciones de la geometría.
 
 ---
 
@@ -139,17 +120,19 @@ El **desplazamiento** representa cuánto se deforma la pieza respecto a su posic
 
 Para este análisis se considera una fuerza de:
 
-\[
-\boxed{F_z=-20\,\text{N}}
-\]
+**Fz = -20 N**
 
 aplicada en la dirección negativa del eje Z.
 
+El desplazamiento máximo obtenido en la simulación es aproximadamente:
+
+**Dz,max ≈ 0.00767 mm**
+
+Este valor representa una deformación muy pequeña en comparación con las dimensiones generales de la pieza.
+
 El análisis del desplazamiento permite determinar si la deformación producida por la carga puede afectar la estabilidad dimensional de la pieza o interferir con el ensamblaje de los demás componentes.
 
-La interpretación debe realizarse tomando como referencia el valor máximo indicado por la escala de desplazamiento obtenida en la simulación.
-
-Un desplazamiento pequeño respecto a las dimensiones generales de la pieza indica que la deformación producida bajo las condiciones analizadas es reducida.
+En este caso, el valor reducido del desplazamiento indica que, bajo las condiciones de carga simuladas, la deformación del cuerpo es pequeña.
 
 ---
 
@@ -157,27 +140,27 @@ Un desplazamiento pequeño respecto a las dimensiones generales de la pieza indi
 
 La simulación permitió evaluar el comportamiento estructural del cuerpo frente a una carga vertical de:
 
-\[
-\boxed{F_z=-20\,\text{N}}
-\]
+**Fz = -20 N**
 
-Los resultados de **Von Mises** muestran que las mayores concentraciones de esfuerzo se encuentran principalmente en la zona superior del cuerpo. Esto permite identificar dicha región como una de las zonas de mayor exigencia mecánica de la geometría.
+El signo negativo indica que la fuerza se aplica en la dirección negativa del eje Z.
 
-El esfuerzo máximo observado en la simulación es:
+Los resultados de **Von Mises** muestran que las mayores concentraciones de esfuerzo se encuentran principalmente en la **zona superior del cuerpo**. Esto permite identificar dicha región como una de las zonas de mayor exigencia mecánica de la geometría.
 
-\[
-\boxed{\sigma_{\mathrm{VM,max}}\approx99.49\,\text{kPa}}
-\]
+El esfuerzo máximo observado en la simulación es aproximadamente:
 
-o, expresado en megapascales:
+**σVM,max ≈ 99.49 kPa**
 
-\[
-\boxed{\sigma_{\mathrm{VM,max}}\approx0.09949\,\text{MPa}}
-\]
+equivalente a:
 
-Por otra parte, el análisis de desplazamiento permite evaluar la deformación de la pieza bajo la misma condición de carga. Este resultado es importante debido a que una pieza puede presentar esfuerzos aceptables, pero una deformación excesiva podría afectar el ensamblaje o el funcionamiento del dispositivo.
+**σVM,max ≈ 0.09949 MPa**
 
-En conjunto, ambos resultados permiten identificar las zonas críticas del cuerpo y sirven como referencia para futuras modificaciones de la geometría.
+Por otra parte, el desplazamiento máximo obtenido es aproximadamente:
+
+**Dz,max ≈ 0.00767 mm**
+
+Este desplazamiento es reducido, por lo que la deformación producida por la carga aplicada es pequeña respecto a las dimensiones generales del cuerpo.
+
+En conjunto, los resultados de esfuerzo y desplazamiento permiten identificar las zonas de mayor exigencia y evaluar el comportamiento estructural de la pieza bajo las condiciones establecidas.
 
 ---
 
@@ -187,15 +170,17 @@ La simulación estructural realizada sobre el cuerpo permitió evaluar su compor
 
 El análisis de Von Mises mostró un esfuerzo máximo aproximado de:
 
-\[
-\boxed{99.49\,\text{kPa}=0.09949\,\text{MPa}}
-\]
+**99.49 kPa = 0.09949 MPa**
 
-La mayor concentración de esfuerzos se localizó principalmente en la zona superior del cuerpo, mientras que el resto de la estructura presentó valores menores.
+La mayor concentración de esfuerzos se localizó principalmente en la **zona superior del cuerpo**, mientras que gran parte de la estructura presentó valores menores.
 
-El análisis de desplazamiento complementa estos resultados al permitir determinar la deformación producida por la carga aplicada. De esta manera, la simulación proporciona una primera evaluación del comportamiento estructural de la pieza antes de su fabricación.
+El desplazamiento máximo obtenido fue aproximadamente:
 
-Los resultados obtenidos también permiten identificar las regiones que podrían ser consideradas en futuras iteraciones del diseño, especialmente en caso de modificar el espesor, la geometría o las condiciones de carga.
+**0.00767 mm**
+
+Este valor indica una deformación pequeña bajo las condiciones de carga analizadas.
+
+En conjunto, los resultados proporcionan una primera evaluación del comportamiento estructural de la pieza antes de su fabricación. Además, permiten identificar las regiones que podrían ser consideradas en futuras iteraciones del diseño, especialmente si se modifican el espesor, la geometría o las condiciones de carga.
 
 ---
 
@@ -203,8 +188,8 @@ Los resultados obtenidos también permiten identificar las regiones que podrían
 
 ## Modelo CAD
 
-🔗 **[Abrir modelo del cuerpo en Onshape](https://cad.onshape.com/documents/8faf323b3ad277acf5680e67/w/7f5d397c40762628c5e2da28/e/1d246344b054494bdf4784c7?renderMode=0&uiState=6a90ae6b04acdaf3b43cb3cc)**
+[**Abrir modelo del cuerpo en Onshape**](https://cad.onshape.com/documents/8faf323b3ad277acf5680e67/w/7f5d397c40762628c5e2da28/e/1d246344b054494bdf4784c7?renderMode=0&uiState=6a90ae6b04acdaf3b43cb3cc)
 
 ## Simulación estructural
 
-🔗 **[Abrir simulación en SimScale](https://www.simscale.com/workbench/?pid=9096215687583154772)**
+[**Abrir simulación en SimScale**](https://www.simscale.com/workbench/?pid=9096215687583154772)
