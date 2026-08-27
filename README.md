@@ -355,11 +355,6 @@ Una evaluación adicional de la condición interna podría contribuir a:
 * 🗑️ Reducir pérdidas asociadas a una clasificación inadecuada.
 * 💰 Aprovechar mejor comercialmente la fruta disponible.
 
-Como relación secundaria, el proyecto también puede vincularse con el:
-
-### ODS 9 — Industria, Innovación e Infraestructura
-
-debido a la incorporación de tecnologías de sensado, electrónica y procesamiento de información dentro de una cadena agroindustrial.
 
 <div align="center">
 
