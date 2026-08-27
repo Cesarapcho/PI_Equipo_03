@@ -1,10 +1,14 @@
 # Estructura trabajada
-En este taller se realizó la simulación estructural de la base de nuestro modelado 3D. Para el análisis se aplicó una fuerza vertical de 20 N hacia abajo, correspondiente aproximadamente al peso de una masa de 2 kg, considerando una aceleración de la gravedad de 10 m/s². Este valor se tomó de manera ligeramente conservadora respecto a la gravedad real, con el fin de evaluar el comportamiento del diseño bajo condiciones exigentes y contar con un margen de seguridad. El material asignado en la simulación fue PLA.
+En este taller se realizó la **simulación estructural de la base de nuestro modelado 3D**. Para el análisis se aplicó una fuerza vertical de **20 N hacia abajo**, correspondiente aproximadamente al peso de una masa de **2 kg**, considerando una aceleración de la gravedad de **10 m/s²**.
 
-link de la SimScale: https://tinyurl.com/2vawbesr
-link de OneShape: https://tinyurl.com/2uep4wz8
+Este valor se tomó de manera ligeramente conservadora respecto al valor real de la gravedad, con el objetivo de evaluar el comportamiento del diseño bajo condiciones más exigentes y contar con un mayor margen de seguridad.
 
+El material asignado a la pieza durante la simulación fue **PLA (ácido poliláctico)**.
 
+### Enlaces del proyecto
+
+- **SimScale:** [Ver simulación](https://tinyurl.com/2vawbesr)
+- **Onshape:** [Ver modelado 3D](https://tinyurl.com/2uep4wz8)
 ---
 # Interpretación de resultados de la simulación
 
