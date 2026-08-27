@@ -52,15 +52,15 @@ Este valor todavía no representa exactamente la fuerza real que se aplicará so
 
 Posteriormente se podrá obtener un valor más preciso utilizando el torque del servomotor mediante:
 
-\[
+$$
 F = \frac{\tau}{r}
-\]
+$$
 
 donde:
 
-- \(F\) es la fuerza aplicada.
-- \(\tau\) es el torque del servomotor.
-- \(r\) es la distancia desde el eje de giro hasta la zona de impacto.
+- $F$ es la fuerza aplicada.
+- $\tau$ es el torque del servomotor.
+- $r$ es la distancia desde el eje de giro hasta la zona de impacto.
 
 También se podrá comprobar mediante pruebas experimentales cuando se construya el prototipo.
 
@@ -93,15 +93,15 @@ Después de ejecutar la simulación se analizó el esfuerzo equivalente de **Von
 
 El valor máximo obtenido fue aproximadamente:
 
-\[
-\sigma_{VM,max} = 1.129 \times 10^7 \ Pa
-\]
+$$
+\sigma_{VM,max} = 1.129 \times 10^7 \text{ Pa}
+$$
 
-equivalente a:
+Al convertirlo a MPa:
 
-\[
-\sigma_{VM,max} \approx 11.29 \ MPa
-\]
+$$
+\sigma_{VM,max} \approx 11.29 \text{ MPa}
+$$
 
 Por lo tanto, para una carga de **5 N**, el esfuerzo máximo obtenido en la pieza fue de aproximadamente **11.29 MPa**.
 
@@ -123,15 +123,15 @@ Esto tiene sentido debido a que esta zona se encuentra cerca del punto de sujeci
 
 Este comportamiento puede relacionarse con el momento generado por la fuerza:
 
-\[
+$$
 M = F \cdot L
-\]
+$$
 
 donde:
 
-- \(M\) representa el momento generado.
-- \(F\) representa la fuerza aplicada.
-- \(L\) representa la distancia entre el punto de fijación y la zona donde se aplica la fuerza.
+- $M$ representa el momento generado.
+- $F$ representa la fuerza aplicada.
+- $L$ representa la distancia entre el punto de fijación y la zona donde se aplica la fuerza.
 
 Debido a esto, la unión entre el bloque y la barra se puede considerar una de las zonas más importantes a revisar en el diseño.
 
@@ -141,27 +141,27 @@ Debido a esto, la unión entre el bloque y la barra se puede considerar una de l
 
 Como referencia inicial, si se considera una resistencia del PLA cercana a:
 
-\[
-52 \ MPa
-\]
+$$
+\sigma_{material} = 52 \text{ MPa}
+$$
 
 el factor de seguridad se puede estimar mediante:
 
-\[
+$$
 FS = \frac{\sigma_{material}}{\sigma_{VM,max}}
-\]
+$$
 
 Reemplazando los valores:
 
-\[
+$$
 FS = \frac{52}{11.29}
-\]
+$$
 
 se obtiene:
 
-\[
+$$
 FS \approx 4.6
-\]
+$$
 
 Este resultado indica que, para la condición evaluada de **5 N**, existe un margen entre el esfuerzo obtenido y la resistencia tomada como referencia para el PLA.
 
