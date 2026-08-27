@@ -1,4 +1,13 @@
+# Estructura trabajada
+En este taller se realizó la simulación estructural de la base de nuestro modelado 3D. Para el análisis se aplicó una fuerza vertical de 20 N hacia abajo, correspondiente aproximadamente al peso de una masa de 2 kg, considerando una aceleración de la gravedad de 10 m/s². Este valor se tomó de manera ligeramente conservadora respecto a la gravedad real, con el fin de evaluar el comportamiento del diseño bajo condiciones exigentes y contar con un margen de seguridad. El material asignado en la simulación fue PLA.
+
+link de la SimScale: https://tinyurl.com/2vawbesr
+
+link de OneShape: https://tinyurl.com/2uep4wz8
+---
 # Interpretación de resultados de la simulación
+
+> **Nota:** La interpretación inicial de los resultados fue elaborada con apoyo de un modelo de lenguaje de inteligencia artificial (LLM) y posteriormente revisada y validada por una persona responsable del análisis.
 
 ## Desplazamiento en Z
 
