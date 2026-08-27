@@ -1,5 +1,7 @@
 # Análisis del brazo golpeador en SimScale
 
+**Estudiante:** Paola Andrea Centeno Bazán
+
 ## 1. Pieza analizada
 
 La pieza analizada corresponde al **brazo golpeador** del sistema. Su función es transmitir el movimiento generado por el servomotor y realizar un golpe controlado sobre la superficie de la granadilla.
