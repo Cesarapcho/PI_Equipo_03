@@ -2,6 +2,15 @@
 
 **Estudiante:** Paola Andrea Centeno Bazán
 
+## Enlaces del modelado y simulación
+
+- **Modelo 3D en Onshape:** [Ver brazo golpeador en Onshape](https://cad.onshape.com/documents/3369495319eb779e601ee4c6/w/08a29f2951df6f30b23e738c/e/a1f3908570a1cb8963ccfe29)
+
+- **Simulación en SimScale:** [Ver análisis estructural en SimScale](https://www.simscale.com/workbench/?pid=8563147670753004763&rru=dd1e407f-ba2c-4573-96f8-c372d3dda5f2&ci=9c359386-21bf-4dab-970a-3f763f4f3019&mt=SIMULATION_RESULT&ct=SOLUTION_FIELD)
+
+---
+
+
 ## 1. Pieza analizada
 
 La pieza analizada corresponde al **brazo golpeador** del sistema. Su función es transmitir el movimiento generado por el servomotor y realizar un golpe controlado sobre la superficie de la granadilla.
