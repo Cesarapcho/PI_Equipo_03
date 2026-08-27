@@ -3,7 +3,7 @@ En este taller se realizó la **simulación estructural de la base de nuestro mo
 
 Este valor se tomó de manera ligeramente conservadora respecto al valor real de la gravedad, con el objetivo de evaluar el comportamiento del diseño bajo condiciones más exigentes y contar con un mayor margen de seguridad.
 
-El material asignado a la pieza durante la simulación fue **PLA (ácido poliláctico)**.
+El material asignado a la pieza durante la simulación fue **PLA**.
 
 ### Enlaces del proyecto
 
