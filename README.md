@@ -15,20 +15,6 @@
   </a>
 </p>
 
-<div align="center">
-
-⚙️ ¿Cómo funciona el sistema?
-
-<img
-src="./Recursos/Imágenes/animacion.svg"
-width="100%"
-alt="Animación SVG del funcionamiento del sistema de clasificación no destructiva de granadilla"
-/>
-
-Colocar → Impactar desde abajo → Escuchar → Analizar → Clasificar
-
-</div>
-
 <h3 align="center">
   Universidad Peruana Cayetano Heredia
 </h3>
@@ -180,6 +166,20 @@ El proyecto busca investigar hasta qué punto las características acústicas de
 
 > Variables como °Brix, pH u otras características internas podrán utilizarse como referencia durante las pruebas, pero no se asumirá inicialmente que el sistema puede medirlas directamente.
 
+---
+<div align="center">
+
+⚙️ ¿Cómo funciona el sistema?
+
+<img
+src="./Recursos/Imágenes/animacion.svg"
+width="100%"
+alt="Animación SVG del funcionamiento del sistema de clasificación no destructiva de granadilla"
+/>
+
+Colocar → Impactar desde abajo → Escuchar → Analizar → Clasificar
+
+</div>
 ---
 
 # ⚠️ El Problema
