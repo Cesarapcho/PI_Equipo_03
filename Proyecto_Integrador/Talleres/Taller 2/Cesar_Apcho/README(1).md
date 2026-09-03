@@ -1,22 +1,3 @@
-# 🛠️ Taller EasyEDA — Diseño de PCB
-
-<p align="center">
-  <strong>Proyecto Integrador — Equipo 03</strong><br>
-  Universidad Peruana Cayetano Heredia
-</p>
-
----
-
-## 📌 Descripción
-
-Esta carpeta contiene los archivos correspondientes a la entrega individual del **Taller EasyEDA**, desarrollada como parte del **Proyecto Integrador — Equipo 03**.
-
-El trabajo comprende la elaboración del **esquemático electrónico**, el **diseño de la placa de circuito impreso (PCB)** y la visualización del diseño mediante **vistas 3D**.
-
-**Software utilizado:** EasyEDA
-
----
-
 ## 🔌 1. Esquemático electrónico
 
 El siguiente esquemático representa la organización y conexión de los componentes electrónicos utilizados en el diseño.
@@ -89,32 +70,3 @@ EasyEDA permite visualizar el diseño final de la placa en tres dimensiones, fac
 | `3D_2.png` | Segunda vista tridimensional del diseño de la PCB. |
 | [`PCB_archivo.zip`](./PCB_archivo.zip) | Archivo comprimido que contiene los archivos correspondientes al proyecto de PCB. |
 | `README.md` | Documento descriptivo de la entrega y guía de visualización de los archivos. |
-
----
-
-## 🌳 Estructura de la carpeta
-
-```text
-Cesar_Apcho/
-├── 3D_1.png
-├── 3D_2.png
-├── Esquematico.png
-├── PCB.png
-├── PCB_archivo.zip
-└── README.md
-```
-
----
-
-## 👨‍💻 Autor
-
-**César Alejandro Aarón Apcho Meneses**
-
-**Proyecto Integrador — Equipo 03**  
-**Universidad Peruana Cayetano Heredia**
-
----
-
-<p align="center">
-  <em>Entrega correspondiente al Taller EasyEDA del Proyecto Integrador.</em>
-</p>
