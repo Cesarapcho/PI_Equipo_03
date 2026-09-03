@@ -17,7 +17,11 @@ El siguiente esquemático representa la organización y conexión de los compone
 A partir del esquemático se realizó el diseño de la **placa de circuito impreso (PCB)**, distribuyendo los componentes y las pistas de conexión dentro del área de trabajo definida.
 
 <p align="center">
-  <img src="./PCB.png" alt="Diseño PCB desarrollado en EasyEDA" width="850">
+  <img src="./PCB_1.png" alt="Diseño PCB desarrollado en EasyEDA" width="850">
+</p>
+
+<p align="center">
+  <img src="./PCB_2.png" alt="Diseño PCB desarrollado en EasyEDA" width="850">
 </p>
 
 <p align="center">
