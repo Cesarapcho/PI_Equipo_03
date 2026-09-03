@@ -3,7 +3,7 @@
 Esta carpeta contiene la documentación gráfica y los archivos de manufactura del diseño de una placa de circuito impreso para la integración de un microcontrolador ESP32 con un módulo de micrófono INMP441. El diseño asegura un ruteo optimizado con plano de masa para el bus de datos I2S.
 
 ## Archivos de Fabricación (Gerber)
-Puedes descargar los archivos listos para enviar a la fábrica aquí:
+Puedes descargar los archivos aquí:
 * [Paquete Gerber (ZIP)](./Gerber_PCB1_1.zip)
 
 ## 1. Esquema Electrónico (Lógico)
