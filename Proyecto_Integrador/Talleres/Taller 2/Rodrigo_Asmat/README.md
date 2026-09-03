@@ -1,6 +1,7 @@
 # Diseño de PCB: Microcontrolador ESP32 y Sensor INMP441
 
 Esta carpeta contiene la documentación gráfica y los archivos de manufactura del diseño de una placa de circuito impreso para la integración de un microcontrolador ESP32 con un módulo de micrófono INMP441. El diseño asegura un ruteo optimizado con plano de masa para el bus de datos I2S.
+
 **Nombre:** Rodrigo Asmat Mendoza 
 
 ## Archivos de Fabricación (Gerber)
