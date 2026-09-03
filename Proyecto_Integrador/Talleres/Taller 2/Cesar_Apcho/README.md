@@ -21,11 +21,15 @@ A partir del esquemático se realizó el diseño de la **placa de circuito impre
 </p>
 
 <p align="center">
+  <em>Figura 2. Diseño de la placa PCB en EasyEDA.</em>
+</p>
+
+<p align="center">
   <img src="./PCB_2.png" alt="Diseño PCB desarrollado en EasyEDA" width="850">
 </p>
 
 <p align="center">
-  <em>Figura 2. Diseño de la placa PCB en EasyEDA.</em>
+  <em>Figura 3. Diseño de la placa PCB en EasyEDA.</em>
 </p>
 
 ### 📦 Archivo del proyecto
@@ -49,7 +53,7 @@ EasyEDA permite visualizar el diseño final de la placa en tres dimensiones, fac
 </p>
 
 <p align="center">
-  <em>Figura 3. Primera vista 3D de la PCB.</em>
+  <em>Figura 4. Primera vista 3D de la PCB.</em>
 </p>
 
 ### Vista 3D — Perspectiva 2
@@ -59,7 +63,7 @@ EasyEDA permite visualizar el diseño final de la placa en tres dimensiones, fac
 </p>
 
 <p align="center">
-  <em>Figura 4. Segunda vista 3D de la PCB.</em>
+  <em>Figura 5. Segunda vista 3D de la PCB.</em>
 </p>
 
 ---
