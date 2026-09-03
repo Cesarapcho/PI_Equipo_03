@@ -102,7 +102,7 @@ Durante el diseño se tuvo en cuenta:
 ### Vista 2D
 
 <p align="center">
-  <img src="./2D_PCB1_2026-09-03.png" alt="Diseño 2D de la PCB" width="850">
+  <img src="./2D_PCB.png" alt="Diseño 2D de la PCB" width="850">
 </p>
 
 <p align="center">
@@ -123,7 +123,7 @@ Se verificó la ubicación del:
 - Header J1 para la celda de carga.
 
 <p align="center">
-  <img src="./3D_PCB1_2026-09-03.png" alt="Vista 3D de la PCB" width="850">
+  <img src="./3D_PCB.png" alt="Vista 3D de la PCB" width="850">
 </p>
 
 <p align="center">
