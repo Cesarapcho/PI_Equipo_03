@@ -1,4 +1,4 @@
-# ⚖️ Sistema de Sensado de Masa
+#  Sistema de Sensado de Masa
 
 ### Taller de EasyEDA
 
