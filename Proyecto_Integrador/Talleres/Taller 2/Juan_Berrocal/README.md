@@ -8,7 +8,7 @@ En este taller se realizó el diseño y desarrollo de una **placa de circuito im
 
 ### Esquemático
 
-[![Esquemático](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%202/Juan_Berrocal/2D_PCB1.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%202/Juan_Berrocal/SCH_Schematic1_2026-09-03%20(1).pdf)
+[![Esquemático](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%202/Juan_Berrocal/SCH_Schematic1_1-P1_2026-09-03.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%202/Juan_Berrocal/SCH_Schematic1_2026-09-03%20(1).pdf)
 
 ### Diseño PCB 2D
 
