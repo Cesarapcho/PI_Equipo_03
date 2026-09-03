@@ -7,6 +7,7 @@ Esta carpeta contiene la documentación gráfica y los archivos de manufactura d
 ## Archivos de Fabricación (Gerber)
 Puedes descargar los archivos aquí:
 * [Paquete Gerber (ZIP)](./Gerber_PCB1_1.zip)
+* [Paquete PDF](./Esquema_electronico1.pdf)
 
 ## 1. Esquema Electrónico (Lógico)
 Diagrama que detalla las conexiones de alimentación, la configuración de pines I2S (SCK, WS, SD) y la asignación del canal izquierdo mediante la conexión L/R a tierra.
