@@ -7,6 +7,9 @@ Esta carpeta contiene la documentación gráfica y los archivos de manufactura d
 ## Archivos de Fabricación (Gerber)
 Puedes descargar los archivos aquí:
 * [Paquete Gerber (ZIP)](./Gerber_PCB1_1.zip)
+
+### Esquemático en PDF
+El esquemático también se encuentra disponible en formato PDF para su revisión.
 * [Paquete PDF](./Esquema_electronico1.pdf)
 
 ## 1. Esquema Electrónico (Lógico)
