@@ -176,10 +176,10 @@ Solo si las pruebas muestran diferencias reproducibles y útiles se avanzará ha
 <img
 src="./Recursos/Imágenes/animacion.svg"
 width="100%"
-alt="Animación SVG del funcionamiento del sistema de clasificación no destructiva de granadilla"
+alt="Animación SVG del funcionamiento del sistema de evaluación no destructiva de granadilla mediante excitación vibratoria/acústica"
 />
 
-Colocar → Impactar desde abajo → Escuchar → Analizar → Clasificar
+Colocar → Emitir vibración/onda acústica → Registrar respuesta → Analizar → Clasificar
 
 </div>
 ---
@@ -194,7 +194,7 @@ La clasificación comercial de la granadilla suele considerar características o
 * Apariencia.
 * Daños superficiales.
 
-Sin embargo, dos frutos que presentan características externas similares pueden tener diferencias en su **condición interna**.
+Sin embargo, dos frutos que presentan características externas similares pueden tener diferencias en su **estructura y condición interna**, las cuales no siempre pueden identificarse mediante una inspección visual.
 
 Esto puede provocar problemas durante la comercialización:
 
@@ -203,7 +203,7 @@ flowchart TB
     G["🍈 GRANADILLAS<br/>Externamente similares"]:::fruit
 
     C1["📦 Clasificación comercial"]:::process
-    C2["⚠️ Variabilidad interna"]:::alert
+    C2["⚠️ Diferencias internas<br/>no detectadas"]:::alert
     C3["↩️ Reclamos o rechazo"]:::alert
     C4["🗑️ Pérdidas poscosecha"]:::alert
 
@@ -220,12 +220,10 @@ flowchart TB
 ```
 
 <div align="center">
-
-### ⚠️ El aspecto exterior no siempre permite conocer la condición interna del fruto.
-
+⚠️ La apariencia externa no siempre refleja las características internas del fruto.
 </div>
 
-Por ello, se plantea investigar una técnica de **evaluación no destructiva** que pueda complementar los métodos tradicionales de clasificación.
+Por ello, se plantea investigar una técnica de evaluación no destructiva basada en la propagación y respuesta de ondas vibratorias/acústicas, que permita obtener información adicional sobre el interior de la granadilla sin abrirla ni dañarla.
 
 ---
 
