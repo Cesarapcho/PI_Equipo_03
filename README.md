@@ -140,31 +140,33 @@ Nuestro proyecto nace de una pregunta:
 
 ## Sistema Mecatrónico No Destructivo para la Evaluación de Calidad Interna de Granadilla
 
-### Mediante respuesta acústica, medición de masa y aprendizaje automático
+### Mediante excitación vibratoria/acústica, análisis de respuesta y aprendizaje automático
 
 <br>
 
 <img src="https://img.shields.io/badge/Entrada-Granadilla-E6A84A?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Medici%C3%B3n-Sonido%20%2B%20Masa-9B5FA8?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Medici%C3%B3n-Emisi%C3%B3n%20%2B%20Respuesta-9B5FA8?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Salida-Clasificaci%C3%B3n-7A3E87?style=for-the-badge"/>
 
 </div>
 
 <br>
 
-Nuestra propuesta consiste en desarrollar un sistema capaz de aplicar un **impacto mecánico suave, controlado y repetible** sobre una granadilla.
+Nuestra propuesta consiste en desarrollar un sistema capaz de aplicar una **excitación vibratoria/acústica controlada y repetible** mediante un emisor acoplado a la cáscara de la granadilla.
 
-La respuesta acústica generada por el fruto será registrada mediante un micrófono y analizada junto con su masa, buscando identificar patrones relacionados con diferencias en su **condición interna**.
+La respuesta producida por el fruto será registrada mediante un micrófono y analizada para determinar cómo se transmiten, atenúan y modifican las ondas al atravesar su estructura, buscando identificar patrones relacionados con diferencias en su **condición interna**.
 
 <div align="center">
 
-### 🔨 Impactar  →  🎙️ Registrar  →  📈 Analizar  →  🧠 Clasificar
+### 📳 Emitir  →  🎙️ Registrar  →  📈 Analizar  →  🧠 Clasificar
 
 </div>
 
-El proyecto busca investigar hasta qué punto las características acústicas de la granadilla pueden aportar información sobre su estado interno sin necesidad de cortarla, perforarla o destruirla.
+El proyecto busca investigar primero si una señal vibratoria/acústica aplicada de forma controlada puede propagarse por la granadilla y conservar información medible sobre su estructura interna.
 
-> Variables como °Brix, pH u otras características internas podrán utilizarse como referencia durante las pruebas, pero no se asumirá inicialmente que el sistema puede medirlas directamente.
+Solo si las pruebas muestran diferencias reproducibles y útiles se avanzará hacia una etapa de clasificación mediante **Machine Learning**.
+
+> Variables como °Brix, pH, inspección interna u otras características podrán utilizarse como referencia durante las pruebas, pero no se asumirá inicialmente que el sistema puede medirlas directamente.
 
 ---
 <div align="center">
