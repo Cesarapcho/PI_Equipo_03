@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
     <img
-      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=23&pause=1100&color=E6A84A&center=true&vCenter=true&width=1000&lines=Clasificaci%C3%B3n+No+Destructiva+de+Granadilla;Ondas+Vibratorias+%2B+Sensado+Ac%C3%BAstico+%2B+Procesamiento+Digital;Hardware+%2B+Software+%2B+Machine+Learning;Condici%C3%B3n+interna+sin+da%C3%B1ar+el+fruto"
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=23&pause=1100&color=E6A84A&center=true&vCenter=true&width=1000&lines=Clasificaci%C3%B3n+No+Destructiva+de+Granadilla;Impacto+Ac%C3%BAstico+%2B+Masa+%2B+Procesamiento+Digital;Hardware+%2B+Software+%2B+Machine+Learning;Calidad+interna+sin+da%C3%B1ar+el+fruto"
       alt="Presentación animada del proyecto"
     />
   </a>
@@ -35,9 +35,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sensado-Respuesta%20Ac%C3%BAstica-9B5FA8?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Excitaci%C3%B3n-Ondas%20Vibratorias-7A3E87?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Control-Microcontrolador-5A2C68?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Sensado-Ac%C3%BAstico-9B5FA8?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Masa-Celda%20de%20Carga-7A3E87?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Control-ESP32--S3-5A2C68?style=flat-square"/>
   <img src="https://img.shields.io/badge/Software-DSP%20%2B%20ML-3A1C4D?style=flat-square"/>
 </p>
 
@@ -45,51 +45,49 @@
 
 <div align="center">
 
-🍈 MECATRÓNICA · ACÚSTICA · PROCESAMIENTO DE SEÑALES · MACHINE LEARNING
+### 🍈 MECATRÓNICA · ACÚSTICA · PROCESAMIENTO DE SEÑALES · MACHINE LEARNING
 
-Una propuesta para evaluar la condición interna de la granadilla
-sin cortarla, perforarla ni dañarla.
+**Una propuesta para evaluar la condición interna de la granadilla
+sin cortarla, perforarla ni dañarla.**
 
 </div>
+
+---
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
     <img
-      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=900&color=7A3E87&center=true&vCenter=true&width=900&lines=EMITIR+%E2%86%92+REGISTRAR+%E2%86%92+PROCESAR+%E2%86%92+CLASIFICAR;Una+se%C3%B1al.+Varias+caracter%C3%ADsticas.+Una+decisi%C3%B3n.;De+la+inspecci%C3%B3n+externa+a+la+evaluaci%C3%B3n+interna."
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=900&color=7A3E87&center=true&vCenter=true&width=900&lines=IMPACTAR+%E2%86%92+ESCUCHAR+%E2%86%92+PROCESAR+%E2%86%92+CLASIFICAR;Una+se%C3%B1al.+Varias+caracter%C3%ADsticas.+Una+decisi%C3%B3n.;De+la+inspecci%C3%B3n+externa+a+la+evaluaci%C3%B3n+interna."
       alt="Funcionamiento conceptual"
     />
   </a>
 </p>
 
-📑 Contenido
+---
 
-🌐 Sobre Nosotros
+# 📑 Contenido
 
-📸 Fotografía del Equipo
+* [🌐 Sobre Nosotros](#-sobre-nosotros)
+* [📸 Fotografía del Equipo](#-fotografía-del-equipo)
+* [👥 Nuestro Equipo](#-nuestro-equipo)
+* [🍈 El Proyecto](#-el-proyecto)
+* [⚠️ El Problema](#️-el-problema)
+* [💡 Nuestra Propuesta](#-nuestra-propuesta)
+* [✨ ¿Dónde está la innovación?](#-dónde-está-la-innovación)
+* [🎯 ODS 12](#-ods-12)
+* [🎯 Objetivo General](#-objetivo-general)
 
-👥 Nuestro Equipo
+---
 
-🍈 El Proyecto
+# 🌐 Sobre Nosotros
 
-⚠️ El Problema
+Somos el **Equipo 03** del curso **Proyecto Integrador 2026-2** de la **Universidad Peruana Cayetano Heredia**.
 
-💡 Nuestra Propuesta
-
-✨ ¿Dónde está la innovación?
-
-🎯 ODS 12
-
-🎯 Objetivo General
-
-🌐 Sobre Nosotros
-
-Somos el Equipo 03 del curso Proyecto Integrador 2026-2 de la Universidad Peruana Cayetano Heredia.
-
-Nuestro equipo reúne estudiantes de Ingeniería Industrial e Ingeniería Informática, integrando diseño mecánico, electrónica, programación, análisis de datos y validación para desarrollar una solución tecnológica aplicada a la cadena poscosecha de la granadilla.
+Nuestro equipo reúne estudiantes de **Ingeniería Industrial e Ingeniería Informática**, integrando diseño mecánico, electrónica, programación, análisis de datos y validación para desarrollar una solución tecnológica aplicada a la cadena poscosecha de la granadilla.
 
 <div align="center">
 
-⚙️ Mecánica   •   🔌 Electrónica   •   🎙️ Acústica   •   💻 Software   •   🧠 Machine Learning
+### ⚙️ Mecánica   •   🔌 Electrónica   •   🎙️ Acústica   •   💻 Software   •   🧠 Machine Learning
 
 </div>
 
@@ -99,11 +97,13 @@ Nuestro proyecto nace de una pregunta:
 
 <div align="center">
 
-¿Podemos estimar la condición interna de una granadilla sin abrirla ni dañarla?
+## ¿Podemos estimar la condición interna de una granadilla sin abrirla ni dañarla?
 
 </div>
 
-📸 Fotografía del Equipo
+---
+
+# 📸 Fotografía del Equipo
 
 <p align="center">
   <img
@@ -117,74 +117,56 @@ Nuestro proyecto nace de una pregunta:
   <em>Equipo 03 · Proyecto Integrador 2026-2</em>
 </p>
 
-👥 Nuestro Equipo
+---
+
+# 👥 Nuestro Equipo
 
 <div align="center">
 
-Foto
-
-Integrante
-
-Rol
-
-<img src="./Recursos/Im%C3%A1genes/integrante1.jpg" width="85"/>
-
-César Alejandro Aarón Apcho Meneses
-
-👑 Líder del equipo
-
-<img src="./Recursos/Im%C3%A1genes/integrante3.jpeg" width="85"/>
-
-Paola Andrea Centeno Bazan
-
-🔎 Investigación y validación
-
-<img src="./Recursos/Im%C3%A1genes/integrante4.jpg" width="85"/>
-
-Rodrigo Sebastián Asmat Mendoza
-
-🎨 Diseño mecánico
-
-<img src="./Recursos/Im%C3%A1genes/integrante2.jpg" width="85"/>
-
-Juan Vidal Berrocal Ccapcha
-
-💻 Programación / modelado
+|                                Foto                               | Integrante                              | Rol                           |
+| :---------------------------------------------------------------: | --------------------------------------- | ----------------------------- |
+|  <img src="./Recursos/Im%C3%A1genes/integrante1.jpg" width="85"/> | **César Alejandro Aarón Apcho Meneses** | 👑 Líder del equipo           |
+| <img src="./Recursos/Im%C3%A1genes/integrante3.jpeg" width="85"/> | **Paola Andrea Centeno Bazan**          | 🔎 Investigación y validación |
+|  <img src="./Recursos/Im%C3%A1genes/integrante4.jpg" width="85"/> | **Rodrigo Sebastián Asmat Mendoza**     | 🎨 Diseño mecánico            |
+|  <img src="./Recursos/Im%C3%A1genes/integrante2.jpg" width="85"/> | **Juan Vidal Berrocal Ccapcha**         | 💻 Programación / modelado    |
 
 </div>
 
-🍈 El Proyecto
+---
+
+# 🍈 El Proyecto
 
 <div align="center">
 
-Sistema Mecatrónico No Destructivo para la Evaluación de Calidad Interna de Granadilla
+## Sistema Mecatrónico No Destructivo para la Evaluación de Calidad Interna de Granadilla
 
-Mediante excitación vibratoria/acústica, análisis de respuesta y aprendizaje automático
+### Mediante respuesta acústica, medición de masa y aprendizaje automático
 
 <br>
 
 <img src="https://img.shields.io/badge/Entrada-Granadilla-E6A84A?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Medici%C3%B3n-Emisi%C3%B3n%20%2B%20Respuesta-9B5FA8?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Medici%C3%B3n-Sonido%20%2B%20Masa-9B5FA8?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Salida-Clasificaci%C3%B3n-7A3E87?style=for-the-badge"/>
 
 </div>
 
 <br>
 
-Nuestra propuesta consiste en desarrollar un sistema capaz de aplicar una excitación vibratoria/acústica controlada y repetible mediante un emisor acoplado a la cáscara de la granadilla.
+Nuestra propuesta consiste en desarrollar un sistema capaz de aplicar un **impacto mecánico suave, controlado y repetible** sobre una granadilla.
 
-La respuesta producida por el fruto será registrada mediante un micrófono y analizada para determinar cómo se transmiten, atenúan y modifican las ondas al atravesar su estructura, buscando identificar patrones relacionados con diferencias en su condición interna.
+La respuesta acústica generada por el fruto será registrada mediante un micrófono y analizada junto con su masa, buscando identificar patrones relacionados con diferencias en su **condición interna**.
 
 <div align="center">
 
-📳 Emitir  →  🎙️ Registrar  →  📈 Analizar  →  🧠 Clasificar
+### 🔨 Impactar  →  🎙️ Registrar  →  📈 Analizar  →  🧠 Clasificar
 
 </div>
 
-El proyecto busca investigar primero si una señal vibratoria/acústica aplicada de forma controlada puede propagarse por la granadilla y conservar información medible sobre su estructura interna. Solo si las pruebas muestran diferencias reproducibles y útiles se avanzará hacia la clasificación mediante Machine Learning.
+El proyecto busca investigar hasta qué punto las características acústicas de la granadilla pueden aportar información sobre su estado interno sin necesidad de cortarla, perforarla o destruirla.
 
-Variables como °Brix, pH, inspección interna u otras características podrán utilizarse como referencia durante las pruebas, pero no se asumirá inicialmente que el sistema puede medirlas directamente.
+> Variables como °Brix, pH u otras características internas podrán utilizarse como referencia durante las pruebas, pero no se asumirá inicialmente que el sistema puede medirlas directamente.
 
+---
 <div align="center">
 
 ⚙️ ¿Cómo funciona el sistema?
@@ -195,29 +177,26 @@ width="100%"
 alt="Animación SVG del funcionamiento del sistema de clasificación no destructiva de granadilla"
 />
 
-Colocar → Emitir ondas → Registrar respuesta → Analizar → Clasificar
+Colocar → Impactar desde abajo → Escuchar → Analizar → Clasificar
 
 </div>
 ---
 
-⚠️ El Problema
+# ⚠️ El Problema
 
 La clasificación comercial de la granadilla suele considerar características observables externamente como:
 
-Color.
+* Color.
+* Tamaño.
+* Peso.
+* Apariencia.
+* Daños superficiales.
 
-Tamaño.
-
-Peso.
-
-Apariencia.
-
-Daños superficiales.
-
-Sin embargo, dos frutos que presentan características externas similares pueden tener diferencias en su condición interna.
+Sin embargo, dos frutos que presentan características externas similares pueden tener diferencias en su **condición interna**.
 
 Esto puede provocar problemas durante la comercialización:
 
+```mermaid
 flowchart TB
     G["🍈 GRANADILLAS<br/>Externamente similares"]:::fruit
 
@@ -236,33 +215,37 @@ flowchart TB
     classDef alert fill:#7A3E87,color:#FFFFFF,stroke:#E6A84A,stroke-width:3px;
 
     linkStyle default stroke:#7A3E87,stroke-width:2px;
+```
 
 <div align="center">
 
-⚠️ El aspecto exterior no siempre permite conocer la condición interna del fruto.
+### ⚠️ El aspecto exterior no siempre permite conocer la condición interna del fruto.
 
 </div>
 
-Por ello, se plantea investigar una técnica de evaluación no destructiva que pueda complementar los métodos tradicionales de clasificación.
+Por ello, se plantea investigar una técnica de **evaluación no destructiva** que pueda complementar los métodos tradicionales de clasificación.
 
-💡 Nuestra Propuesta
+---
+
+# 💡 Nuestra Propuesta
 
 El sistema combinará cuatro elementos principales:
 
 <p align="center">
-  <img src="https://img.shields.io/badge/01-EXCITACI%C3%93N%20CONTROLADA-E6A84A?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/01-IMPACTO%20CONTROLADO-E6A84A?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/02-REGISTRO%20AC%C3%9ASTICO-9B5FA8?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/03-PROCESAMIENTO%20DE%20SE%C3%91AL-7A3E87?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/03-MEDICI%C3%93N%20DE%20MASA-7A3E87?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/04-CLASIFICACI%C3%93N-3A1C4D?style=for-the-badge"/>
 </p>
 
 El funcionamiento general será:
 
+```mermaid
 flowchart LR
     G["🍈 Granadilla"]:::fruit
-    I["📳 Excitación<br/>controlada"]:::module
+    I["🔨 Impacto<br/>controlado"]:::module
     M["🎙️ Registro<br/>acústico"]:::module
-    P["📡 Propagación<br/>de la señal"]:::module
+    P["⚖️ Medición<br/>de masa"]:::module
     A["📈 Análisis<br/>de datos"]:::software
     ML["🧠 Clasificación"]:::software
     R["✅ Condición<br/>estimada"]:::result
@@ -281,37 +264,41 @@ flowchart LR
     classDef result fill:#E6A84A,color:#2A1535,stroke:#7A3E87,stroke-width:3px;
 
     linkStyle default stroke:#7A3E87,stroke-width:2px;
+```
 
-La propagación, atenuación y modificación de la señal serán analizadas para determinar si la granadilla produce una respuesta suficientemente diferenciable y reproducible entre distintas condiciones internas.
+La masa será considerada como una variable auxiliar debido a que frutos de diferentes tamaños y pesos pueden presentar respuestas acústicas distintas.
 
-El propósito será identificar características de la señal que, después de validar experimentalmente su utilidad, permitan realizar una clasificación consistente de la condición interna de la granadilla.
+El propósito será encontrar una combinación de características que permita realizar una clasificación más consistente de la condición interna de la granadilla.
 
-✨ ¿Dónde está la innovación?
+---
+
+# ✨ ¿Dónde está la innovación?
 
 El uso de señales acústicas para evaluar frutas cuenta con antecedentes tecnológicos.
 
 Por ello, nuestra propuesta no pretende presentar como innovación únicamente:
 
-Emitir una vibración sobre una fruta, registrar la respuesta y clasificarla.
+> **Golpear una fruta, registrar el sonido y clasificarla.**
 
-La investigación se enfocará en desarrollar una solución específica para la granadilla (Passiflora ligularis), considerando las características particulares de este fruto.
+La investigación se enfocará en desarrollar una solución **específica para la granadilla (*Passiflora ligularis*)**, considerando las características particulares de este fruto.
 
 La granadilla presenta una estructura formada por:
 
 <div align="center">
 
-Cáscara → Mesocarpio → Cavidad interna → Pulpa + Semillas
+### Cáscara → Mesocarpio → Cavidad interna → Pulpa + Semillas
 
 </div>
 
-Esta estructura puede modificar de manera particular la propagación de una excitación vibratoria o acústica aplicada sobre la cáscara.
+Esta estructura puede generar una respuesta vibratoria particular ante un impacto.
 
 Nuestra línea de diferenciación considera:
 
+```mermaid
 flowchart LR
-    I["📳 Emisión<br/>controlada"] --> S["🎙️ Respuesta<br/>acústica"]
+    I["🔨 Impacto<br/>controlado"] --> S["🎙️ Respuesta<br/>acústica"]
 
-    M["📡 Propagación<br/>y atenuación"] --> A["📊 Análisis"]
+    M["⚖️ Masa<br/>del fruto"] --> A["📊 Análisis"]
 
     S --> A
 
@@ -323,106 +310,102 @@ flowchart LR
     class I,S,M,A,P,C smart;
 
     linkStyle default stroke:#7A3E87,stroke-width:2px;
+```
 
 Entre los elementos que podrían diferenciar técnicamente el sistema se encuentran:
 
-📳 Excitación vibratoria/acústica controlada.
-
-📍 Posición y acoplamiento definidos entre el emisor y la cáscara.
-
-🎙️ Respuesta acústica particular de la granadilla.
-
-📡 Propagación y atenuación de la señal a través del fruto.
-
-📉 Cambios de amplitud y respuesta en frecuencia.
-
-📊 Relaciones entre la señal emitida y la señal registrada.
-
-🔎 Identificación de patrones asociados a cambios internos.
-
-🍈 Adaptación específica a la estructura de la granadilla.
+* 🔨 Impacto mecánico controlado.
+* 📍 Posición de impacto definida.
+* 🎙️ Respuesta acústica particular de la granadilla.
+* ⚖️ Consideración de la masa del fruto.
+* 📉 Comportamiento del decaimiento acústico.
+* 📊 Relaciones entre diferentes componentes de la señal.
+* 🔎 Identificación de patrones asociados a cambios internos.
+* 🍈 Adaptación específica a la estructura de la granadilla.
 
 <div align="center">
 
-La innovación potencial deberá surgir de las características particulares que descubramos experimentalmente en la granadilla.
+> **La innovación potencial deberá surgir de las características particulares que descubramos experimentalmente en la granadilla.**
 
 </div>
 
-🎯 ODS 12
+---
+
+# 🎯 ODS 12
 
 <div align="center">
 
-♻️ Objetivo de Desarrollo Sostenible 12
+## ♻️ Objetivo de Desarrollo Sostenible 12
 
-Producción y Consumo Responsables
+### Producción y Consumo Responsables
 
 <br>
 
 <img src="https://img.shields.io/badge/ODS%2012-E6A84A?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/META%2012.3-7A3E87?style=for-the-badge"/>
 
-Reducción de pérdidas de alimentos en las cadenas de producción y suministro
+### Reducción de pérdidas de alimentos en las cadenas de producción y suministro
 
 </div>
 
 <br>
 
-El proyecto se relaciona principalmente con la meta 12.3 del ODS 12, orientada a reducir las pérdidas de alimentos a lo largo de las cadenas de producción y suministro, incluidas las pérdidas posteriores a la cosecha.
+El proyecto se relaciona principalmente con la **meta 12.3 del ODS 12**, orientada a reducir las pérdidas de alimentos a lo largo de las cadenas de producción y suministro, incluidas las pérdidas posteriores a la cosecha.
 
 Nuestro sistema busca contribuir a mejorar una decisión importante durante la etapa poscosecha:
 
 <div align="center">
 
-🍈 identificar y clasificar mejor la fruta antes de su comercialización.
+### 🍈 identificar y clasificar mejor la fruta antes de su comercialización.
 
 </div>
 
 Una evaluación adicional de la condición interna podría contribuir a:
 
-🍈 Obtener lotes de calidad más homogénea.
+* 🍈 Obtener lotes de calidad más homogénea.
+* 📦 Mejorar la clasificación del producto.
+* 🔎 Evaluar frutos sin destruirlos.
+* ↩️ Disminuir potencialmente rechazos por calidad inconsistente.
+* 🗑️ Reducir pérdidas asociadas a una clasificación inadecuada.
+* 💰 Aprovechar mejor comercialmente la fruta disponible.
 
-📦 Mejorar la clasificación del producto.
-
-🔎 Evaluar frutos sin destruirlos.
-
-↩️ Disminuir potencialmente rechazos por calidad inconsistente.
-
-🗑️ Reducir pérdidas asociadas a una clasificación inadecuada.
-
-💰 Aprovechar mejor comercialmente la fruta disponible.
 
 <div align="center">
 
-Tecnología para mejorar la clasificación y aprovechamiento de la granadilla.
+> **Tecnología para mejorar la clasificación y aprovechamiento de la granadilla.**
 
 </div>
 
-🎯 Objetivo General
+---
 
-Diseñar y validar un sistema mecatrónico no destructivo capaz de evaluar la condición interna de granadillas mediante el análisis de su respuesta ante excitaciones vibratorias/acústicas controladas y técnicas de aprendizaje automático.
+# 🎯 Objetivo General
 
-Objetivos específicos
+**Diseñar y validar un sistema mecatrónico no destructivo capaz de clasificar la calidad interna de granadillas mediante el análisis de su respuesta acústica ante impactos controlados y técnicas de aprendizaje automático.**
 
-Caracterizar la respuesta acústica/vibratoria de granadillas ante señales de excitación controladas.
+## Objetivos específicos
 
-Diseñar un sistema de emisión de ondas que permita acoplar una excitación reproducible a la cáscara sin dañar el fruto.
+1. **Caracterizar** la respuesta acústica de granadillas con diferentes condiciones internas.
 
-Desarrollar un sistema electrónico para generar la señal de excitación y registrar la respuesta acústica de la granadilla.
+2. **Diseñar** un mecanismo de impacto controlado que produzca excitaciones reproducibles sin dañar el fruto.
 
-Evaluar la propagación, atenuación y respuesta en frecuencia para determinar si existen diferencias medibles asociadas a la condición interna del fruto.
+3. **Desarrollar** un sistema electrónico para registrar la respuesta acústica y la masa de la granadilla.
 
-Desarrollar y validar un algoritmo de clasificación únicamente a partir de características que demuestren utilidad y repetibilidad experimental.
+4. **Identificar** características de la señal acústica que puedan estar relacionadas con diferencias internas del fruto.
 
-Integrar hardware y software en un sistema funcional de evaluación no destructiva.
+5. **Desarrollar y validar** un algoritmo de clasificación utilizando las mediciones obtenidas.
 
-Evaluar el comportamiento del sistema utilizando granadillas provenientes de lotes comerciales.
+6. **Integrar hardware y software** en un sistema funcional de evaluación no destructiva.
+
+7. **Evaluar** el comportamiento del sistema utilizando granadillas provenientes de lotes comerciales.
+
+---
 
 <div align="center">
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
     <img
-      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=1200&color=E6A84A&center=true&vCenter=true&width=1000&lines=Excitar+sin+da%C3%B1ar.;Escuchar+c%C3%B3mo+responde+el+interior.;Convertir+se%C3%B1ales+en+decisiones."
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=1200&color=E6A84A&center=true&vCenter=true&width=1000&lines=Impactar+sin+da%C3%B1ar.;Escuchar+lo+que+no+se+puede+ver.;Convertir+se%C3%B1ales+en+decisiones."
       alt="Mensaje final"
     />
   </a>
@@ -430,9 +413,9 @@ Evaluar el comportamiento del sistema utilizando granadillas provenientes de lot
 
 <br>
 
-Equipo 03 · Proyecto Integrador 2026-2
+**Equipo 03 · Proyecto Integrador 2026-2**
 
-Universidad Peruana Cayetano Heredia
+**Universidad Peruana Cayetano Heredia**
 
 </div>
 
