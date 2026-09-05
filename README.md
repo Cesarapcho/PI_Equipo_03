@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
     <img
-      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=23&pause=1100&color=E6A84A&center=true&vCenter=true&width=1000&lines=Clasificaci%C3%B3n+No+Destructiva+de+Granadilla;Excitaci%C3%B3n+Vibratoria+%2B+Respuesta+Ac%C3%BAstica;Hardware+%2B+Software+%2B+Machine+Learning;Condici%C3%B3n+interna+sin+da%C3%B1ar+el+fruto"
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=23&pause=1100&color=E6A84A&center=true&vCenter=true&width=1000&lines=Clasificaci%C3%B3n+No+Destructiva+de+Granadilla;Ondas+Vibratorias+%2B+Sensado+Ac%C3%BAstico+%2B+Procesamiento+Digital;Hardware+%2B+Software+%2B+Machine+Learning;Condici%C3%B3n+interna+sin+da%C3%B1ar+el+fruto"
       alt="Presentación animada del proyecto"
     />
   </a>
@@ -31,12 +31,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/PROYECTO-Condici%C3%B3n%20Interna%20de%20Granadilla-3A1C4D?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/PROYECTO-Calidad%20Interna%20de%20Granadilla-3A1C4D?style=for-the-badge"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sensado-Ac%C3%BAstico-9B5FA8?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Excitaci%C3%B3n-Transductor%20Vibratorio-7A3E87?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Sensado-Respuesta%20Ac%C3%BAstica-9B5FA8?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Excitaci%C3%B3n-Ondas%20Vibratorias-7A3E87?style=flat-square"/>
   <img src="https://img.shields.io/badge/Control-Microcontrolador-5A2C68?style=flat-square"/>
   <img src="https://img.shields.io/badge/Software-DSP%20%2B%20ML-3A1C4D?style=flat-square"/>
 </p>
@@ -55,7 +55,7 @@ sin cortarla, perforarla ni dañarla.
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
     <img
-      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=900&color=7A3E87&center=true&vCenter=true&width=900&lines=EXCITAR+%E2%86%92+ESCUCHAR+%E2%86%92+PROCESAR+%E2%86%92+CLASIFICAR;Una+se%C3%B1al.+Varias+caracter%C3%ADsticas.+Una+decisi%C3%B3n.;De+la+inspecci%C3%B3n+externa+a+la+evaluaci%C3%B3n+interna."
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=900&color=7A3E87&center=true&vCenter=true&width=900&lines=EMITIR+%E2%86%92+REGISTRAR+%E2%86%92+PROCESAR+%E2%86%92+CLASIFICAR;Una+se%C3%B1al.+Varias+caracter%C3%ADsticas.+Una+decisi%C3%B3n.;De+la+inspecci%C3%B3n+externa+a+la+evaluaci%C3%B3n+interna."
       alt="Funcionamiento conceptual"
     />
   </a>
@@ -157,33 +157,33 @@ Juan Vidal Berrocal Ccapcha
 
 <div align="center">
 
-Sistema Mecatrónico No Destructivo para la Evaluación de la Condición Interna de Granadilla
+Sistema Mecatrónico No Destructivo para la Evaluación de Calidad Interna de Granadilla
 
-Mediante excitación vibratoria/acústica, procesamiento de señales y aprendizaje automático
+Mediante excitación vibratoria/acústica, análisis de respuesta y aprendizaje automático
 
 <br>
 
 <img src="https://img.shields.io/badge/Entrada-Granadilla-E6A84A?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Medici%C3%B3n-Respuesta%20Ac%C3%BAstica-9B5FA8?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Medici%C3%B3n-Emisi%C3%B3n%20%2B%20Respuesta-9B5FA8?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Salida-Clasificaci%C3%B3n-7A3E87?style=for-the-badge"/>
 
 </div>
 
 <br>
 
-Nuestra propuesta consiste en desarrollar un sistema capaz de aplicar una excitación vibratoria/acústica controlada y repetible sobre la cáscara de una granadilla mediante un emisor acoplado al fruto.
+Nuestra propuesta consiste en desarrollar un sistema capaz de aplicar una excitación vibratoria/acústica controlada y repetible mediante un emisor acoplado a la cáscara de la granadilla.
 
-La señal que se propaga a través de la granadilla será registrada mediante un micrófono o sensor acústico y procesada para determinar si su amplitud, contenido frecuencial, resonancias o atenuación presentan patrones relacionados con diferencias en su condición interna.
+La respuesta producida por el fruto será registrada mediante un micrófono y analizada para determinar cómo se transmiten, atenúan y modifican las ondas al atravesar su estructura, buscando identificar patrones relacionados con diferencias en su condición interna.
 
 <div align="center">
 
-📳 Excitar  →  🎙️ Registrar  →  📈 Analizar  →  🧠 Clasificar
+📳 Emitir  →  🎙️ Registrar  →  📈 Analizar  →  🧠 Clasificar
 
 </div>
 
-La etapa experimental actual busca comprobar primero si las ondas vibratorias/acústicas se transmiten de forma útil a través de la granadilla y si la respuesta medida cambia de manera consistente entre frutos o estados internos. Solo después de validar esta separabilidad se justificará entrenar el modelo de clasificación.
+El proyecto busca investigar primero si una señal vibratoria/acústica aplicada de forma controlada puede propagarse por la granadilla y conservar información medible sobre su estructura interna. Solo si las pruebas muestran diferencias reproducibles y útiles se avanzará hacia la clasificación mediante Machine Learning.
 
-Variables como °Brix, pH u otras características internas podrán utilizarse como referencia durante las pruebas, pero no se asumirá inicialmente que el sistema puede medirlas directamente.
+Variables como °Brix, pH, inspección interna u otras características podrán utilizarse como referencia durante las pruebas, pero no se asumirá inicialmente que el sistema puede medirlas directamente.
 
 <div align="center">
 
@@ -195,7 +195,7 @@ width="100%"
 alt="Animación SVG del funcionamiento del sistema de clasificación no destructiva de granadilla"
 />
 
-Colocar → Excitar la cáscara → Escuchar → Analizar → Clasificar
+Colocar → Emitir ondas → Registrar respuesta → Analizar → Clasificar
 
 </div>
 ---
@@ -262,14 +262,15 @@ flowchart LR
     G["🍈 Granadilla"]:::fruit
     I["📳 Excitación<br/>controlada"]:::module
     M["🎙️ Registro<br/>acústico"]:::module
-    P["📈 Procesamiento<br/>de señal"]:::module
+    P["📡 Propagación<br/>de la señal"]:::module
     A["📈 Análisis<br/>de datos"]:::software
     ML["🧠 Clasificación"]:::software
     R["✅ Condición<br/>estimada"]:::result
 
     G --> I
     I --> M
-    M --> P
+    G --> P
+    M --> A
     P --> A
     A --> ML
     ML --> R
@@ -281,9 +282,9 @@ flowchart LR
 
     linkStyle default stroke:#7A3E87,stroke-width:2px;
 
-El sistema se diseñará para mantener constantes, en la medida de lo posible, la posición del fruto, el punto de acoplamiento, la intensidad de excitación y la ubicación del sensor. Esto permitirá distinguir cambios propios de la granadilla de variaciones producidas por el montaje experimental.
+La propagación, atenuación y modificación de la señal serán analizadas para determinar si la granadilla produce una respuesta suficientemente diferenciable y reproducible entre distintas condiciones internas.
 
-El propósito inicial será identificar una respuesta reproducible y características útiles de la señal antes de seleccionar y entrenar un algoritmo de clasificación de la condición interna.
+El propósito será identificar características de la señal que, después de validar experimentalmente su utilidad, permitan realizar una clasificación consistente de la condición interna de la granadilla.
 
 ✨ ¿Dónde está la innovación?
 
@@ -291,7 +292,7 @@ El uso de señales acústicas para evaluar frutas cuenta con antecedentes tecnol
 
 Por ello, nuestra propuesta no pretende presentar como innovación únicamente:
 
-Excitar una fruta, registrar una señal y clasificarla.
+Emitir una vibración sobre una fruta, registrar la respuesta y clasificarla.
 
 La investigación se enfocará en desarrollar una solución específica para la granadilla (Passiflora ligularis), considerando las características particulares de este fruto.
 
@@ -303,12 +304,14 @@ Cáscara → Mesocarpio → Cavidad interna → Pulpa + Semillas
 
 </div>
 
-Esta estructura puede modificar de forma particular la propagación, resonancia y atenuación de una excitación vibratoria/acústica aplicada sobre la cáscara.
+Esta estructura puede modificar de manera particular la propagación de una excitación vibratoria o acústica aplicada sobre la cáscara.
 
 Nuestra línea de diferenciación considera:
 
 flowchart LR
-    I["📳 Excitación<br/>controlada"] --> S["🎙️ Respuesta<br/>acústica"]
+    I["📳 Emisión<br/>controlada"] --> S["🎙️ Respuesta<br/>acústica"]
+
+    M["📡 Propagación<br/>y atenuación"] --> A["📊 Análisis"]
 
     S --> A
 
@@ -323,21 +326,21 @@ flowchart LR
 
 Entre los elementos que podrían diferenciar técnicamente el sistema se encuentran:
 
-📳 Excitación vibratoria/acústica controlada y repetible.
+📳 Excitación vibratoria/acústica controlada.
 
-📍 Punto de acoplamiento definido entre el emisor y la cáscara.
+📍 Posición y acoplamiento definidos entre el emisor y la cáscara.
 
-🎙️ Registro de la respuesta acústica particular de la granadilla.
+🎙️ Respuesta acústica particular de la granadilla.
 
-📉 Análisis de atenuación, resonancias y comportamiento temporal de la señal.
+📡 Propagación y atenuación de la señal a través del fruto.
 
-📊 Relaciones entre diferentes componentes de frecuencia.
+📉 Cambios de amplitud y respuesta en frecuencia.
+
+📊 Relaciones entre la señal emitida y la señal registrada.
 
 🔎 Identificación de patrones asociados a cambios internos.
 
 🍈 Adaptación específica a la estructura de la granadilla.
-
-🧪 Validación experimental de la propagación de ondas antes de aplicar Machine Learning.
 
 <div align="center">
 
@@ -396,30 +399,30 @@ Tecnología para mejorar la clasificación y aprovechamiento de la granadilla.
 
 🎯 Objetivo General
 
-Diseñar y validar un sistema mecatrónico no destructivo capaz de evaluar la condición interna de granadillas mediante excitación vibratoria/acústica controlada, análisis de la respuesta obtenida y técnicas de aprendizaje automático.
+Diseñar y validar un sistema mecatrónico no destructivo capaz de evaluar la condición interna de granadillas mediante el análisis de su respuesta ante excitaciones vibratorias/acústicas controladas y técnicas de aprendizaje automático.
 
 Objetivos específicos
 
-Comprobar experimentalmente si una excitación vibratoria/acústica aplicada a la cáscara se transmite de forma medible y reproducible a través de la granadilla.
+Caracterizar la respuesta acústica/vibratoria de granadillas ante señales de excitación controladas.
 
-Diseñar un sistema de excitación controlada que mantenga un acoplamiento consistente con el fruto sin dañarlo.
+Diseñar un sistema de emisión de ondas que permita acoplar una excitación reproducible a la cáscara sin dañar el fruto.
 
-Desarrollar un sistema electrónico para generar la excitación y registrar la respuesta acústica de la granadilla.
+Desarrollar un sistema electrónico para generar la señal de excitación y registrar la respuesta acústica de la granadilla.
 
-Caracterizar la señal obtenida mediante análisis temporal y frecuencial, evaluando amplitud, resonancias, atenuación y otras características relevantes.
+Evaluar la propagación, atenuación y respuesta en frecuencia para determinar si existen diferencias medibles asociadas a la condición interna del fruto.
 
-Identificar características de la señal que presenten diferencias consistentes entre condiciones internas del fruto.
+Desarrollar y validar un algoritmo de clasificación únicamente a partir de características que demuestren utilidad y repetibilidad experimental.
 
-Desarrollar y validar un algoritmo de clasificación únicamente después de comprobar que la señal contiene información discriminante suficiente.
+Integrar hardware y software en un sistema funcional de evaluación no destructiva.
 
-Integrar hardware y software en un prototipo funcional y evaluarlo con granadillas provenientes de lotes comerciales.
+Evaluar el comportamiento del sistema utilizando granadillas provenientes de lotes comerciales.
 
 <div align="center">
 
 <p align="center">
   <a href="https://readme-typing-svg.demolab.com">
     <img
-      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=1200&color=E6A84A&center=true&vCenter=true&width=1000&lines=Excitar+sin+da%C3%B1ar.;Escuchar+lo+que+no+se+puede+ver.;Convertir+se%C3%B1ales+en+decisiones."
+      src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&pause=1200&color=E6A84A&center=true&vCenter=true&width=1000&lines=Excitar+sin+da%C3%B1ar.;Escuchar+c%C3%B3mo+responde+el+interior.;Convertir+se%C3%B1ales+en+decisiones."
       alt="Mensaje final"
     />
   </a>
