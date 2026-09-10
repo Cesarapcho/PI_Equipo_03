@@ -130,7 +130,7 @@ Nuestro proyecto nace de una pregunta:
 
 |                                Foto                               | Integrante                              | Rol                           |
 | :---------------------------------------------------------------: | --------------------------------------- | ----------------------------- |
-| <img src="./Recursos/Im%C3%A1genes/integrante1.jpg" width="85"/> | **César Alejandro Aarón Apcho Meneses** | 👑 Líder del equipo           |
+| <img src="./Recursos/Im%C3%A1genes/integrante1.jpg" width="85"/> | **César Alejandro Aarón Apcho Meneses** | 👑 Líder del equipo / Electronica |
 | <img src="./Recursos/Im%C3%A1genes/integrante3.jpeg" width="85"/> | **Paola Andrea Centeno Bazan**          | 🔎 Investigación y validación |
 | <img src="./Recursos/Im%C3%A1genes/integrante4.jpg" width="85"/> | **Rodrigo Sebastián Asmat Mendoza**     | 🎨 Diseño mecánico            |
 | <img src="./Recursos/Im%C3%A1genes/integrante2.jpg" width="85"/> | **Juan Vidal Berrocal Ccapcha**         | 💻 Programación / modelado    |
