@@ -129,7 +129,7 @@ Nuestro proyecto nace de una pregunta:
 <div align="center">
 
 |                                Foto                               | Integrante                              | Rol                           | Intereses |
-| :---------------------------------------------------------------: | --------------------------------------- | ----------------------------- |
+| :---------------------------------------------------------------: | --------------------------------------- | ----------------------------- | --------------------------------------- |
 | <img src="./Recursos/Im%C3%A1genes/integrante1.jpg" width="85"/> | **César Alejandro Aarón Apcho Meneses** | 👑 Líder del equipo / Electronica | Hardware y Logica |
 | <img src="./Recursos/Im%C3%A1genes/integrante3.jpeg" width="85"/> | **Paola Andrea Centeno Bazan**          | 🔎 Modelado y mecanica | BTS, Diseño gráfico |
 | <img src="./Recursos/Im%C3%A1genes/integrante4.jpg" width="85"/> | **Rodrigo Sebastián Asmat Mendoza**     | 🎨 Documentacion y revision            | Documentacion e informes |
