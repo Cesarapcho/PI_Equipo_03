@@ -9,7 +9,7 @@ El desarrollo del trabajo comprende diferentes etapas del proceso de análisis y
 
 ---
 
-## img_1 — Implementación del modelo de Regresión Lineal
+## Implementación del modelo de Regresión Lineal
 
 **Creación del modelo `LinearRegression`**
 
@@ -25,7 +25,7 @@ Esta etapa es importante porque representa el inicio de la construcción del mod
 
 ---
 
-## img_2 — Relación entre las Variables
+## Relación entre las Variables
 
 **Matriz de Correlación y Mapa de Calor**
 
@@ -43,7 +43,7 @@ Por otro lado, `Temperatura` y `Humedad` presentan correlaciones bajas con el co
 
 ---
 
-## img_3 — Distribución del Consumo de Energía
+## Distribución del Consumo de Energía
 
 **Histograma del Consumo de Energía**
 
@@ -59,7 +59,7 @@ Esta visualización también ayuda a identificar posibles valores extremos y a c
 
 ---
 
-## img_4 — Comparación de los Valores Reales y Predichos
+## Comparación de los Valores Reales y Predichos
 
 **Consumo de Energía Real vs. Predicho**
 
