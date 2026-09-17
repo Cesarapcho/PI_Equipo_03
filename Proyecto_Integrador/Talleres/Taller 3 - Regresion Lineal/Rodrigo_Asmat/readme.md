@@ -1,133 +1,284 @@
-# Taller de Inteligencia Artificial
+# Informe Técnico: Predicción del Índice de Calidad del Aire mediante Regresión Lineal y Árbol de Decisión
 
-## Análisis de Datos y Modelos de Regresión
-
-En este taller se trabajó con herramientas de análisis de datos y aprendizaje automático para estudiar la relación entre diferentes variables y una variable objetivo.
-
-El trabajo incluye el análisis de un conjunto de datos relacionado con el **consumo de energía**, considerando variables como `Temperatura`, `Horas_Operacion`, `Carga` y `Humedad`. A partir de estos datos se realizaron diferentes visualizaciones y análisis estadísticos para identificar relaciones y tendencias.
-
-También se trabajaron modelos de regresión y técnicas de análisis estadístico, incluyendo **Regresión Lineal, Árbol de Decisión y OLS**, con el objetivo de comprender cómo las variables pueden utilizarse para explicar y predecir una variable de interés.
+**Asignatura:** Taller de Inteligencia Artificial  
+**Dataset:** Monitoreo de Ozono (O₃) — Estación Connecticut Hill, Tompkins County, Nueva York, EE.UU. (2023)  
+**Fecha:** 17 de septiembre de 2026
 
 ---
 
-## Matriz de correlación
+## 1. Introducción
 
-### Relación entre las variables
+La calidad del aire es un indicador importante para evaluar las condiciones ambientales. En este trabajo se analiza el **Índice de Calidad del Aire (AQI)** a partir de datos de concentración de ozono (O₃).
 
-La matriz de correlación permite analizar la relación lineal existente entre las variables del conjunto de datos.
+El dataset corresponde a registros diarios de la estación **Connecticut Hill**, ubicada en Tompkins County, Nueva York, durante el año 2023, con un total de **355 observaciones**.
 
-Uno de los resultados más importantes se encuentra entre **`Horas_Operacion` y `Consumo_Energia`**, donde se obtiene una correlación aproximada de **0.84**. Esto representa una relación positiva fuerte dentro de los datos analizados, ya que al aumentar las horas de operación también se observa una tendencia a incrementar el consumo de energía.
-
-También se observa una relación positiva entre **`Carga` y `Consumo_Energia`**, con un valor aproximado de **0.34**, aunque esta relación es menor.
-
-Por otro lado, `Temperatura` y `Humedad` presentan correlaciones bajas con el consumo, aproximadamente **0.098** y **0.063**, respectivamente.
-
-Este análisis permite identificar qué variables presentan una relación más importante con la variable objetivo antes de continuar con la construcción de los modelos.
-
-![Matriz de correlación](imagenes/01_matriz_correlacion.jpg)
+El objetivo es analizar el comportamiento del AQI y construir modelos predictivos utilizando **Regresión Lineal Múltiple** y **Árbol de Decisión Regresor**.
 
 ---
 
-## Relación entre variables
+## 2. Metodología
 
-### Análisis mediante gráficos de dispersión
+### 2.1 Dataset
 
-Los gráficos de dispersión permiten observar visualmente la relación entre las variables de entrada y `Consumo_Energia`.
+Se seleccionaron las variables con mayor utilidad para el análisis:
 
-En el gráfico de **`Horas_Operacion` frente a `Consumo_Energia`** se observa una tendencia creciente bastante clara. Los valores de consumo aumentan conforme aumentan las horas de operación, lo cual coincide con la correlación de aproximadamente **0.84** obtenida anteriormente.
+| Variable | Descripción |
+|---|---|
+| `Daily Max 8-hour Ozone Concentration` | Concentración máxima de O₃ en 8 horas |
+| `Daily Obs Count` | Número de observaciones válidas del día |
+| `Percent Complete` | Porcentaje de completitud del monitoreo |
+| `Mes` | Mes del año |
+| `Dia_del_Anio` | Día del año |
+| `Dia_Semana` | Día de la semana |
+| `Trimestre` | Trimestre del año |
+| `Daily AQI Value` | AQI diario, variable objetivo |
 
-En el caso de **`Carga`**, también se observa una tendencia positiva, aunque existe una mayor dispersión de los puntos.
+### 2.2 Ingeniería de características
 
-En cambio, las gráficas correspondientes a **`Temperatura`** y **`Humedad`** presentan una distribución más dispersa y no muestran una tendencia lineal tan marcada.
+La fecha fue convertida a formato `datetime` y se extrajeron variables temporales para representar posibles patrones estacionales:
 
-Esta visualización permite complementar los resultados numéricos de la matriz de correlación y comprender mejor el comportamiento de las variables.
+```python
+df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%Y')
 
-![Relación entre variables](imagenes/02_relacion_variables.png)
+df['Mes'] = df['Date'].dt.month
+df['Dia_del_Anio'] = df['Date'].dt.day_of_year
+df['Dia_Semana'] = df['Date'].dt.dayofweek
+df['Trimestre'] = df['Date'].dt.quarter
+```
 
----
+### 2.3 Análisis exploratorio
 
-## Importancia de las características
+Se utilizaron histogramas, densidad de probabilidad, promedios mensuales y una matriz de correlación para conocer la distribución del AQI y la relación entre las variables.
 
-### Análisis mediante Árbol de Decisión
+### 2.4 División de datos
 
-En esta parte se trabajó con un **Árbol de Decisión para regresión**, utilizando las características `x1`, `x2`, `x3`, `x4`, `x5` y `x6`.
+Los datos fueron divididos en:
 
-El gráfico muestra la importancia relativa de cada característica dentro del modelo.
+- **70 % para entrenamiento:** 248 observaciones.
+- **30 % para prueba:** 107 observaciones.
+- `random_state = 123` para garantizar reproducibilidad.
 
-Se observa que **`x2` presenta la mayor importancia**, con un valor aproximado de **0.54**, seguido de `x1`, con aproximadamente **0.27**.
+### 2.5 Modelos
 
-Las características `x3`, `x4`, `x5` y `x6` presentan una importancia menor en comparación con las dos primeras.
+Se implementaron dos modelos:
 
-Este análisis permite conocer qué características tienen mayor participación en las decisiones realizadas por el árbol. La importancia de variables resulta útil para interpretar el modelo y determinar qué entradas están teniendo mayor influencia en las predicciones.
+**Regresión Lineal Múltiple**
 
-![Importancia de las características](imagenes/03_importancia_caracteristicas.png)
+```python
+lm = LinearRegression()
+lm.fit(X_train, y_train)
+predictions = lm.predict(X_test)
+```
 
----
+**Árbol de Decisión Regresor**
 
-## Resultados estadísticos mediante OLS
+```python
+tree_model = tree.DecisionTreeRegressor(
+    max_depth=5,
+    random_state=10
+)
 
-### Análisis del modelo de regresión
+tree_model.fit(X_train, y_train)
+tree_pred = tree_model.predict(X_test)
+```
 
-La última imagen presenta los resultados obtenidos mediante **OLS (Ordinary Least Squares)**, una técnica utilizada para estimar los coeficientes de un modelo de regresión.
+### 2.6 Métricas
 
-Uno de los resultados principales es el **R-squared de 0.976**, acompañado de un **Adjusted R-squared de 0.974**. Estos valores muestran que el modelo explica una proporción elevada de la variabilidad de la variable objetivo `y` dentro del conjunto de datos analizado.
+Para evaluar los modelos se utilizaron:
 
-La tabla también presenta diferentes indicadores estadísticos, entre ellos:
+- **MAE:** error absoluto medio.
+- **MSE:** error cuadrático medio.
+- **RMSE:** raíz del error cuadrático medio.
+- **R²:** proporción de variabilidad explicada por el modelo.
 
-- Coeficientes (`coef`)
-- Error estándar (`std err`)
-- Estadística `t`
-- Valor `p`
-- Intervalos de confianza
-
-Entre los coeficientes obtenidos destaca `x2`, con un valor aproximado de **96.02**, seguido de `x1` con **76.41** y `x3` con **57.33**.
-
-Los valores `p` permiten complementar la interpretación de los coeficientes y analizar su significancia estadística dentro del modelo.
-
-De esta manera, OLS permite analizar el modelo no solamente desde sus predicciones, sino también desde una perspectiva estadística.
-
-![Resultados OLS](imagenes/04_resultados_ols.png)
-
----
-
-# ¿Qué aprendí?
-
-Durante el desarrollo del taller aprendí que antes de construir un modelo de aprendizaje automático es necesario realizar un análisis previo de los datos.
-
-Entre los principales aprendizajes se encuentran:
-
-- Analizar la estructura y características de un conjunto de datos.
-- Identificar variables de entrada y variables objetivo.
-- Utilizar matrices de correlación para encontrar relaciones entre variables.
-- Interpretar gráficos de dispersión.
-- Identificar tendencias positivas y negativas entre variables.
-- Comprender cómo funciona una **Regresión Lineal**.
-- Interpretar los coeficientes de un modelo.
-- Utilizar un **Árbol de Decisión para regresión**.
-- Analizar la importancia relativa de las características.
-- Comprender el significado del **R-squared** y **Adjusted R-squared**.
-- Interpretar coeficientes, errores estándar, estadística `t` y valores `p`.
-- Utilizar diferentes herramientas para evaluar e interpretar un modelo.
-
-Uno de los puntos más importantes fue comprender que **obtener una predicción no es suficiente**. También es necesario analizar los datos y entender por qué el modelo produce determinados resultados.
+También se realizaron pruebas estadísticas de **Pearson, Shapiro-Wilk y Durbin-Watson**, además del reporte OLS mediante `statsmodels`.
 
 ---
 
-# ¿Cómo podría aplicarlo?
+# 3. Resultados
 
-Los conocimientos desarrollados en este taller pueden utilizarse en diferentes situaciones donde sea necesario realizar predicciones a partir de datos históricos.
+## 3.1 Estadísticos descriptivos
 
-Por ejemplo, para el caso del **consumo de energía**, se podrían utilizar variables como:
+El dataset contiene **355 observaciones** de AQI.
 
-```text
-Temperatura
-      +
-Horas de operación
-      +
-Carga
-      +
-Humedad
-      ↓
-Modelo de regresión
-      ↓
-Consumo de energía estimado
+| Estadístico | Valor |
+|---|---:|
+| Media | 36.35 |
+| Desviación estándar | 11.72 |
+| Mínimo | 17 |
+| Mediana | 35 |
+| Percentil 75 | 41 |
+| Máximo | 100 |
+
+---
+
+## 3.2 Distribución del AQI
+
+![Distribución del AQI](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%203%20-%20Regresion%20Lineal/2.%20Clasificacion/Rodrigo_Asmat/Imagenes/01_distribucion_aqi.jpg)
+
+El histograma muestra que la mayoría de los valores de AQI se concentra aproximadamente entre **25 y 45 unidades**.
+
+La distribución presenta **asimetría positiva**, debido a la existencia de algunos valores elevados, especialmente superiores a 60. Esto indica que, aunque la mayoría de los días presenta valores moderados, existen episodios puntuales con AQI considerablemente mayor.
+
+---
+
+## 3.3 AQI promedio por mes
+
+![AQI promedio por mes](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%203%20-%20Regresion%20Lineal/2.%20Clasificacion/Rodrigo_Asmat/Imagenes/02_aqi_promedio_mensual.jpg)
+
+El comportamiento mensual muestra una variación estacional:
+
+| Mes | AQI Promedio |
+|---|---:|
+| Enero | 28.19 |
+| Febrero | 34.79 |
+| Marzo | 39.90 |
+| **Abril** | **49.03** |
+| Mayo | 45.42 |
+| Junio | 43.33 |
+| Julio | 40.39 |
+| Agosto | 31.70 |
+| Septiembre | 32.60 |
+| Octubre | 30.81 |
+| Noviembre | 30.60 |
+| Diciembre | 27.65 |
+
+El mayor promedio se presenta en **abril con 49.03**, mientras que diciembre presenta el menor valor con **27.65**. Se observa una tendencia de incremento durante los primeros meses y una disminución posterior.
+
+---
+
+## 3.4 Matriz de correlación
+
+![Matriz de correlación](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%203%20-%20Regresion%20Lineal/2.%20Clasificacion/Rodrigo_Asmat/Imagenes/03_matriz_correlacion.jpg)
+
+La matriz permite identificar las relaciones lineales entre las variables.
+
+Los principales resultados son:
+
+| Variables | Correlación |
+|---|---:|
+| Ozono ↔ AQI | **0.95** |
+| Mes ↔ AQI | -0.22 |
+| Día del Año ↔ AQI | -0.23 |
+| Día de la Semana ↔ AQI | -0.01 |
+| Daily Obs Count ↔ Percent Complete | **1.00** |
+
+La concentración de ozono presenta una correlación de **0.95 con el AQI**, mostrando una relación lineal positiva muy fuerte.
+
+También se observa una correlación perfecta entre `Daily Obs Count` y `Percent Complete`, lo que representa un posible problema de **multicolinealidad** para el modelo de regresión.
+
+---
+
+## 3.5 AQI Real vs. Predicho
+
+![AQI Real vs Predicho](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%203%20-%20Regresion%20Lineal/2.%20Clasificacion/Rodrigo_Asmat/Imagenes/04_aqi_real_vs_predicho.jpg)
+
+El gráfico compara los valores reales del AQI con las predicciones de la regresión lineal.
+
+La mayoría de los puntos se encuentra cerca de la línea diagonal, especialmente para valores entre **17 y 65 de AQI**, indicando que el modelo representa adecuadamente gran parte de las observaciones.
+
+Sin embargo, los valores extremos presentan mayores diferencias. En particular, los casos con AQI superior a 80 son subestimados por el modelo.
+
+---
+
+## 3.6 Análisis de residuos
+
+![Análisis de residuos](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%203%20-%20Regresion%20Lineal/2.%20Clasificacion/Rodrigo_Asmat/Imagenes/05_analisis_residuos.jpg)
+
+Los residuos se concentran principalmente alrededor de **0**, y la mayoría se encuentra aproximadamente entre **-5 y +5 unidades de AQI**.
+
+No obstante, aparecen algunos residuos positivos elevados, llegando aproximadamente hasta **+28 unidades**. Estos corresponden principalmente a observaciones donde el modelo subestima valores altos de AQI.
+
+La presencia de estos valores extremos explica el resultado obtenido en la prueba de normalidad de los residuos.
+
+---
+
+## 3.7 Resultados del modelo OLS
+
+![Resultados OLS](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%203%20-%20Regresion%20Lineal/2.%20Clasificacion/Rodrigo_Asmat/Imagenes/06_resultados_ols.jpg)
+
+El modelo OLS obtuvo:
+
+| Indicador | Resultado |
+|---|---:|
+| R² | **0.912** |
+| R² ajustado | **0.911** |
+| F-statistic | **603.2** |
+| Prob. F-statistic | **1.59 × 10⁻¹⁸⁰** |
+| Observaciones | **355** |
+
+La concentración de ozono es la variable con mayor relación con el AQI, presentando un **p-valor < 0.001**.
+
+El reporte también muestra una advertencia de **multicolinealidad**, relacionada principalmente con la correlación entre `Daily Obs Count` y `Percent Complete`, además de las variables temporales.
+
+---
+
+## 3.8 Pruebas estadísticas
+
+| Prueba | Resultado | Interpretación |
+|---|---|---|
+| Pearson | r = 0.9542 | Relación lineal muy fuerte entre O₃ y AQI |
+| Shapiro-Wilk | p = 1.12 × 10⁻¹⁶ | Los residuos no presentan normalidad |
+| Durbin-Watson | DW = 2.104 | No se evidencia autocorrelación significativa |
+| F-statistic | p = 1.59 × 10⁻¹⁸⁰ | El modelo es significativo globalmente |
+
+---
+
+## 3.9 Comparación de modelos
+
+| Modelo | MAE | RMSE | R² |
+|---|---:|---:|---:|
+| Regresión Lineal | 1.809 | 3.550 | 0.913 |
+| Árbol de Decisión | 0.685 | 1.289 | 0.989 |
+
+Los resultados muestran diferencias en el desempeño de ambos modelos. El Árbol de Decisión obtiene menores errores y un mayor R² en este conjunto de prueba, mientras que la Regresión Lineal proporciona una interpretación más directa de la relación entre las variables.
+
+---
+
+# 4. Discusión
+
+Los resultados muestran que la **concentración de ozono es la variable más relacionada con el AQI**, con una correlación de 0.95. Esto es consistente con la relación existente entre la concentración de O₃ y el cálculo del índice.
+
+El análisis mensual evidencia un comportamiento estacional, alcanzando el mayor AQI promedio en abril.
+
+La regresión lineal presenta un buen ajuste general, pero tiene dificultades para representar algunos valores extremos. Esto se refleja en el gráfico de valores reales frente a predichos y en el análisis de residuos.
+
+Además, se identificó **multicolinealidad** entre algunas variables, especialmente `Daily Obs Count` y `Percent Complete`. Para mejorar el modelo podría considerarse eliminar variables redundantes o reducir las variables temporales altamente relacionadas.
+
+Finalmente, en este conjunto de datos, el Árbol de Decisión presenta menores valores de MAE y RMSE y un mayor R² que la Regresión Lineal, lo que muestra su capacidad para representar relaciones más complejas.
+
+---
+
+# 5. Conclusiones
+
+- El AQI presenta una distribución principalmente concentrada entre **25 y 45 unidades**, con algunos valores extremos.
+- El mayor AQI promedio se registró en **abril (49.03)**.
+- La concentración de ozono presenta una correlación muy fuerte con el AQI (**r = 0.95**).
+- La Regresión Lineal obtuvo un **R² de 0.913** en el conjunto de prueba.
+- El Árbol de Decisión obtuvo un **R² de 0.989**, con menores errores de predicción.
+- Los residuos presentan valores extremos y no cumplen completamente el supuesto de normalidad.
+- Se detectó multicolinealidad entre algunas variables predictoras.
+
+---
+
+# 6. Referencias
+
+[1] U.S. Environmental Protection Agency, *Air Quality System (AQS) Data Mart*, 2023.
+
+[2] F. Pedregosa et al., “Scikit-learn: Machine Learning in Python,” *Journal of Machine Learning Research*, vol. 12, pp. 2825–2830, 2011.
+
+[3] W. McKinney, “Data Structures for Statistical Computing in Python,” *Proceedings of the 9th Python in Science Conference*, 2010.
+
+[4] J. D. Hunter, “Matplotlib: A 2D Graphics Environment,” *Computing in Science & Engineering*, vol. 9, no. 3, pp. 90–95, 2007.
+
+[5] M. Waskom, “seaborn: Statistical Data Visualization,” *Journal of Open Source Software*, vol. 6, no. 60, p. 3021, 2021.
+
+[6] U.S. Environmental Protection Agency, *Technical Assistance Document for the Reporting of Daily Air Quality — the Air Quality Index (AQI)*, EPA-454/B-18-007, 2018.
+
+[7] T. Hastie, R. Tibshirani and J. Friedman, *The Elements of Statistical Learning*, 2nd ed., Springer, 2009.
+
+[8] S. S. Shapiro and M. B. Wilk, “An analysis of variance test for normality,” *Biometrika*, vol. 52, no. 3–4, pp. 591–611, 1965.
+
+[9] J. Durbin and G. S. Watson, “Testing for serial correlation in least squares regression,” *Biometrika*, vol. 37, no. 3–4, pp. 409–428, 1950.
+
+[10] S. Seabold and J. Perktold, “Statsmodels: Econometric and Statistical Modeling with Python,” *Proceedings of the 9th Python in Science Conference*, 2010.
