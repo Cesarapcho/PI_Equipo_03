@@ -337,23 +337,3 @@ En conjunto, el modelo presenta una alta capacidad de ajuste para los datos anal
 
 [5] U.S. Environmental Protection Agency, *Technical Assistance Document for the Reporting of Daily Air Quality — the Air Quality Index (AQI)*, EPA-454/B-24-002, May 2024. [Online]. Available: https://www.airnow.gov/sites/default/files/2024-05/aqi-technical-assistance-document.pdf. [Accessed: Sep. 17, 2026].
 
----
-
-## 6. Estructura del repositorio
-
-```text
-Regresion_NO2_Phoenix_2022/
-│
-├── README.md
-├── Regresion_NO2_Phoenix_2022.ipynb
-└── imagenes/
-    ├── 01_relacion_variables.png
-    ├── 02_distribucion_aqi.png
-    ├── 03_densidad_aqi.png
-    ├── 04_mapa_calor_correlaciones.png
-    ├── 05_variables_vs_aqi.png
-    ├── 06_real_vs_predicho.png
-    ├── 07_distribucion_residuos.png
-    ├── 08_residuos_vs_predichos.png
-    └── 09_resumen_ols.png
-```
