@@ -1,6 +1,6 @@
 # Informe de Regresión de la concentración de CO
 
-#1. Introducción
+# 1. Introducción
 
 La calidad del aire es un aspecto importante para evaluar las condiciones ambientales. En este trabajo se analiza la concentración diaria de monóxido de carbono (`CO_ppm`) registrada en la estación PARR durante el año 2023.
 
