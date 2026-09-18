@@ -168,7 +168,6 @@ También se observan residuos positivos que se alejan de 0, lo que indica que en
 
 En general, la distribución de los residuos muestra que el modelo presenta errores de predicción y que existen variaciones en la concentración de CO que no son explicadas completamente por las variables utilizadas.
 
-
 ---
 
 ## 3.6. Comparación de los modelos
@@ -201,7 +200,7 @@ La comparación de los modelos muestra que la **Regresión Lineal** presentó un
 
 En particular, Random Forest obtuvo un **$R^2$ de 0.8406**, mientras que el Árbol de Decisión obtuvo **0.6836** y la Regresión Lineal **0.2956**.
 
-El análisis de residuos muestra que una parte importante de los errores se concentra alrededor de cero, aunque también existen algunos valores alejados. Esto indica que el modelo presenta un comportamiento razonable en una parte de las observaciones, pero no explica completamente todas las variaciones presentes en los datos.
+El análisis de residuos muestra que una parte importante de los errores se concentra alrededor de cero, aunque también existen algunos valores alejados. Esto indica que el modelo presenta errores de predicción y que no explica completamente todas las variaciones presentes en los datos.
 
 En conjunto, los resultados muestran que los modelos de aprendizaje automático utilizados pueden emplearse para **aproximar la concentración de CO a partir de las variables seleccionadas**. Sin embargo, el desempeño obtenido corresponde específicamente al conjunto de datos y a las variables utilizadas en este trabajo, por lo que sería necesario incorporar otras variables ambientales para evaluar si se puede mejorar la capacidad predictiva.
 
