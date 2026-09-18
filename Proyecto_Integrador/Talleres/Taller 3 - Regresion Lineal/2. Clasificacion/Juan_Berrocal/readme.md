@@ -160,13 +160,14 @@ A pesar de ello, todavía existe una parte de la variabilidad que no es explicad
 
 ### Interpretación
 
-Los residuos representan la diferencia entre los valores reales y los valores predichos por el modelo.
+Los residuos representan la diferencia entre los valores reales y los valores predichos por el modelo de **Regresión Lineal**.
 
-En la gráfica se observa que una parte importante de los residuos se concentra alrededor de **0**, lo cual indica que muchas de las predicciones presentan errores relativamente pequeños.
+En la gráfica se observa que una parte importante de los residuos se concentra alrededor de **0**, lo que indica que varias de las predicciones presentan errores relativamente pequeños.
 
-Sin embargo, también aparecen residuos alejados del centro y cierta distribución hacia valores positivos. Esto indica que existen observaciones en las que el modelo presenta errores de mayor magnitud.
+También se observan residuos positivos que se alejan de 0, lo que indica que en algunas observaciones el modelo presenta errores de mayor magnitud.
 
-Por lo tanto, aunque el modelo consigue representar una parte importante del comportamiento de la concentración de CO, todavía existen patrones o variaciones que no son completamente explicados por las variables utilizadas.
+En general, la distribución de los residuos muestra que el modelo presenta errores de predicción y que existen variaciones en la concentración de CO que no son explicadas completamente por las variables utilizadas.
+
 
 ---
 
