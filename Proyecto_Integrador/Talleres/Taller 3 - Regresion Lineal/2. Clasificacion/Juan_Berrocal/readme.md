@@ -1,35 +1,34 @@
 # Informe Técnico: Regresión de la concentración de CO
 
-**Asignatura:** Taller de Inteligencia Artificial 
-
-**Dataset:** Monitoreo de Monóxido de Carbono (CO) — Estación PARR (2023) 
-
-**Fecha:** 17 de septiembre de 2026 
+**Asignatura:** Taller de Inteligencia Artificial  
+**Dataset:** Monitoreo de Monóxido de Carbono (CO) — Estación PARR (2023)  
+**Fecha:** 17 de septiembre de 2026  
 
 ---
 
-## 1. Introducción
+# 1. Introducción
 
-La calidad del aire es un aspecto importante para evaluar las condiciones ambientales. En este trabajo se analiza la concentración diaria de monóxido de carbono (`CO_ppm`).
+La calidad del aire es un aspecto importante para conocer las condiciones ambientales de un determinado lugar. Entre los contaminantes que pueden ser monitoreados se encuentra el monóxido de carbono (CO), cuya concentración puede variar de acuerdo con diferentes factores temporales y ambientales.
 
-El dataset corresponde a registros diarios de mediciones de calidad del aire en la estación **PARR**, durante el año 2023, con un total de **364 observaciones**.
+En este trabajo se analiza la concentración diaria de monóxido de carbono, representada por la variable `CO_ppm`, utilizando un conjunto de datos correspondiente a registros de calidad del aire de la estación **PARR durante el año 2023**. El conjunto de datos utilizado contiene **364 observaciones y 21 variables**.
 
-El objetivo es analizar el comportamiento de la concentración de CO y estimar sus valores construyendo modelos predictivos utilizando **Regresión Lineal**, **Árbol de Decisión** y **Random Forest**. El desempeño se evaluó mediante MAE, MSE, RMSE y $R^2$.
+El objetivo del trabajo es analizar el comportamiento de la concentración de CO y construir modelos capaces de estimar sus valores a partir de variables predictoras relacionadas principalmente con el tiempo. Para ello, se utilizaron tres modelos de regresión: **Regresión Lineal, Árbol de Decisión y Random Forest**.
+
+Finalmente, el desempeño de los modelos fue evaluado mediante las métricas **MAE, MSE, RMSE y $R^2$**, con el propósito de comparar sus resultados y analizar qué tan bien representan los datos disponibles.
 
 ---
-
 
 # 2. Metodología
 
 ## 2.1. Datos utilizados
 
-El conjunto de datos contiene **364 registros y 21 columnas** correspondientes a mediciones de calidad del aire.
+El conjunto de datos utilizado contiene **364 registros y 21 columnas**, correspondientes a mediciones de calidad del aire realizadas en la estación PARR durante el año 2023.
 
-La variable objetivo del estudio es:
+La variable objetivo seleccionada para el estudio es:
 
-- `CO_ppm`: concentración de monóxido de carbono en partes por millón.
+- `CO_ppm`: concentración de monóxido de carbono expresada en partes por millón.
 
-Para el modelado se utilizaron las siguientes variables predictoras:
+Para construir los modelos se utilizaron las siguientes variables predictoras:
 
 - `Mes`
 - `Dia_Semana`
@@ -38,30 +37,46 @@ Para el modelado se utilizaron las siguientes variables predictoras:
 - `Cos_Anual`
 - `Num_Observaciones`
 
-La variable `AQI` no se utilizó como predictor debido a su relación directa con la información de calidad del aire y para evitar introducir información relacionada directamente con la variable objetivo.
+Las variables `Sen_Anual` y `Cos_Anual` permiten representar la variación cíclica asociada al transcurso del año.
+
+Por otro lado, `Num_Observaciones` corresponde al número correlativo de cada registro dentro del periodo analizado, por lo que permite conservar información relacionada con el orden temporal de las observaciones.
+
+La variable `AQI` no se utilizó como predictor debido a que es un indicador construido a partir de información relacionada con la calidad del aire. Incluirla podría introducir información directamente relacionada con la variable objetivo y generar una estimación menos independiente de la concentración de CO.
+
+---
 
 ## 2.2. Modelos utilizados
 
 ### Regresión Lineal
 
-Se utilizó como modelo base para analizar la relación lineal entre las variables predictoras y la concentración de CO.
+La **Regresión Lineal** se utilizó como modelo base para analizar si existe una relación aproximadamente lineal entre las variables predictoras seleccionadas y la concentración de CO.
+
+Este modelo permite establecer una referencia para posteriormente comparar su desempeño con modelos capaces de representar relaciones más complejas.
 
 ### Árbol de Decisión
 
-Se utilizó para representar relaciones no lineales mediante divisiones sucesivas de los datos y realizar predicciones de la concentración de CO.
+El **Árbol de Decisión** permite realizar predicciones mediante divisiones sucesivas de los datos según las características de entrada.
+
+A diferencia de la regresión lineal, este modelo puede representar relaciones no lineales entre las variables predictoras y la concentración de CO.
 
 ### Random Forest
 
-Se utilizó un conjunto de árboles de decisión para realizar las predicciones y capturar relaciones más complejas presentes en los datos.
+El **Random Forest** utiliza múltiples árboles de decisión para realizar las predicciones.
+
+La combinación de varios árboles permite representar relaciones más complejas y reducir la dependencia de un único árbol, proporcionando un modelo más flexible para los datos analizados.
+
+---
 
 ## 2.3. Métricas de evaluación
 
-Para evaluar los modelos se utilizaron las siguientes métricas:
+Para evaluar el desempeño de los modelos se utilizaron cuatro métricas:
 
-- **MAE:** representa el error absoluto promedio entre los valores reales y predichos.
-- **MSE:** calcula el promedio de los errores al cuadrado.
-- **RMSE:** representa la raíz cuadrada del MSE.
-- **$R^2$:** indica la proporción de variabilidad de la variable objetivo explicada por el modelo.
+- **MAE (Mean Absolute Error):** representa el error absoluto promedio entre los valores reales y los valores predichos.
+- **MSE (Mean Squared Error):** calcula el promedio de los errores elevados al cuadrado, dando mayor peso a errores grandes.
+- **RMSE (Root Mean Squared Error):** corresponde a la raíz cuadrada del MSE y permite expresar el error en las mismas unidades de la variable objetivo.
+- **$R^2$ (coeficiente de determinación):** indica la proporción de la variabilidad de la variable objetivo que es explicada por el modelo.
+
+Para **MAE, MSE y RMSE**, valores menores representan menor error de predicción. En el caso de **$R^2$**, un valor más cercano a 1 indica una mayor proporción de variabilidad explicada por el modelo.
 
 ---
 
@@ -73,9 +88,11 @@ Para evaluar los modelos se utilizaron las siguientes métricas:
 
 ### Interpretación
 
-El histograma muestra cómo se distribuyen las concentraciones diarias de CO. La mayor cantidad de observaciones se encuentra aproximadamente entre **0.3 y 0.8 ppm**. También se observan algunos valores superiores a 1.0 ppm, aunque aparecen con menor frecuencia.
+El histograma muestra la distribución de las concentraciones diarias de CO registradas en el conjunto de datos.
 
-Esto indica que la mayoría de los registros de concentración de CO se encuentran dentro de un rango intermedio, mientras que los valores más altos son menos frecuentes.
+Se observa que una parte importante de las observaciones se encuentra aproximadamente entre **0.3 y 0.8 ppm**. También aparecen algunos valores superiores a **1.0 ppm**, aunque con menor frecuencia.
+
+Esto permite observar que los registros no se distribuyen de manera uniforme, ya que algunas concentraciones aparecen con mayor frecuencia que otras.
 
 ---
 
@@ -85,11 +102,11 @@ Esto indica que la mayoría de los registros de concentración de CO se encuentr
 
 ### Interpretación
 
-La gráfica de densidad permite observar las zonas donde existe una mayor concentración de valores de CO.
+La gráfica de densidad permite observar de manera suavizada las zonas donde se concentra una mayor cantidad de valores de `CO_ppm`.
 
-Se observa una mayor concentración alrededor de **0.5 y 0.7 ppm**, mientras que los valores superiores a 1.0 ppm presentan una densidad mucho menor. También se observa una segunda concentración alrededor de 0 ppm.
+Se observa una mayor concentración de valores aproximadamente entre **0.5 y 0.7 ppm**, mientras que los valores superiores a **1.0 ppm** presentan una menor densidad.
 
-La distribución no presenta una forma completamente simétrica, lo que indica que los valores de CO no se distribuyen de manera uniforme.
+También se aprecia concentración de valores cercanos a **0 ppm**. En general, la distribución presenta cierta asimetría, lo que indica que los valores de CO no siguen una distribución perfectamente simétrica.
 
 ---
 
@@ -99,9 +116,9 @@ La distribución no presenta una forma completamente simétrica, lo que indica q
 
 ### Interpretación
 
-La matriz de correlación permite analizar la relación lineal entre las variables utilizadas en el estudio.
+La matriz de correlación permite analizar las relaciones lineales entre las variables utilizadas en el estudio.
 
-Con respecto a la variable objetivo `CO_ppm`, las relaciones más destacadas son:
+Con respecto a la variable objetivo `CO_ppm`, se observan las siguientes correlaciones:
 
 - `Mes` y `CO_ppm`: **-0.35**
 - `Cos_Anual` y `CO_ppm`: **-0.30**
@@ -109,13 +126,15 @@ Con respecto a la variable objetivo `CO_ppm`, las relaciones más destacadas son
 - `Dia_Semana` y `CO_ppm`: **-0.025**
 - `Num_Observaciones` y `CO_ppm`: **-0.017**
 
-Los valores de `Mes` y `Cos_Anual` muestran una relación negativa con `CO_ppm`, mientras que las demás variables presentan relaciones lineales muy bajas con la concentración de CO.
+Las correlaciones de `Mes` y `Cos_Anual` son las más destacadas en comparación con las demás variables. Sin embargo, sus valores no indican por sí solos una relación fuerte con la concentración de CO.
 
-También se observa una correlación de **0.79 entre `Dia_Semana` y `Fin_Semana`**, debido a que ambas variables están relacionadas con la información temporal de los días.
+Por otro lado, `Dia_Semana` y `Num_Observaciones` presentan relaciones lineales muy bajas con `CO_ppm`.
 
-De manera similar, `Mes` y `Sen_Anual` presentan una correlación de **-0.78**, relacionada con la forma en que fueron construidas las variables temporales.
+También se observa una correlación de aproximadamente **0.79 entre `Dia_Semana` y `Fin_Semana`**, debido a que ambas variables representan información relacionada con los días de la semana.
 
-> **Nota:** una correlación muestra una relación entre variables, pero no significa necesariamente que una variable sea la causa de otra.
+Asimismo, `Mes` y `Sen_Anual` presentan una correlación aproximada de **-0.78**, relacionada con la forma en que fueron construidas las variables temporales.
+
+> **Nota:** una correlación describe una relación estadística entre variables, pero **no implica necesariamente una relación causal**.
 
 ---
 
@@ -127,9 +146,11 @@ De manera similar, `Mes` y `Sen_Anual` presentan una correlación de **-0.78**, 
 
 La gráfica compara los valores reales de `CO_ppm` con los valores predichos por el **Árbol de Decisión**.
 
-Se observa que varias predicciones se encuentran relativamente cerca de los valores reales, aunque también existen diferencias en determinados puntos. Esto indica que el modelo consigue representar parte del comportamiento de la concentración de CO, pero todavía presenta errores en algunas predicciones.
+Se observa que varias predicciones se encuentran relativamente próximas a los valores reales, aunque también existen diferencias en determinados puntos.
 
-El resultado obtenido por el modelo fue un **$R^2$ de aproximadamente 0.68**, lo que indica que el modelo explica una parte importante de la variabilidad de los datos.
+El modelo obtuvo un **$R^2$ de aproximadamente 0.68**, lo que indica que, sobre el conjunto de evaluación utilizado, el modelo explica aproximadamente el **68 % de la variabilidad observada en `CO_ppm`**.
+
+A pesar de ello, todavía existe una parte de la variabilidad que no es explicada por el modelo, por lo que las predicciones no coinciden completamente con los valores reales.
 
 ---
 
@@ -141,15 +162,15 @@ El resultado obtenido por el modelo fue un **$R^2$ de aproximadamente 0.68**, lo
 
 Los residuos representan la diferencia entre los valores reales y los valores predichos por el modelo.
 
-En la gráfica se observa que una parte importante de los residuos se concentra alrededor de **0**, lo cual indica que muchos errores de predicción son relativamente pequeños.
+En la gráfica se observa que una parte importante de los residuos se concentra alrededor de **0**, lo cual indica que muchas de las predicciones presentan errores relativamente pequeños.
 
-Sin embargo, también se observa una distribución hacia valores positivos y algunos residuos alejados del centro. Por ello, los residuos no presentan una distribución perfectamente simétrica o normal.
+Sin embargo, también aparecen residuos alejados del centro y cierta distribución hacia valores positivos. Esto indica que existen observaciones en las que el modelo presenta errores de mayor magnitud.
 
-Esta gráfica permite identificar que todavía existen errores de predicción y que el modelo no consigue explicar completamente todos los patrones presentes en los datos.
+Por lo tanto, aunque el modelo consigue representar una parte importante del comportamiento de la concentración de CO, todavía existen patrones o variaciones que no son completamente explicados por las variables utilizadas.
 
 ---
 
-# 3.6. Comparación de los modelos
+## 3.6. Comparación de los modelos
 
 | Modelo | MAE | MSE | RMSE | $R^2$ |
 |---|---:|---:|---:|---:|
@@ -157,25 +178,31 @@ Esta gráfica permite identificar que todavía existen errores de predicción y 
 | Árbol de Decisión | 0.1075 | 0.0252 | 0.1588 | 0.6836 |
 | Random Forest | 0.0727 | 0.0127 | 0.1127 | 0.8406 |
 
-Los resultados muestran diferencias en el desempeño de los tres modelos. La Regresión Lineal obtuvo un $R^2$ de **0.2956**, mientras que el Árbol de Decisión alcanzó **0.6836**.
+Los resultados muestran diferencias en el desempeño de los tres modelos evaluados.
 
-El Random Forest obtuvo un $R^2$ de **0.8406**, junto con un RMSE de **0.1127**.
+La Regresión Lineal obtuvo un **$R^2$ de 0.2956**, mientras que el Árbol de Decisión alcanzó un **$R^2$ de 0.6836**.
 
-En los datos analizados, los modelos basados en árboles presentaron menores errores y mayores valores de $R^2$ que la Regresión Lineal.
+Por su parte, Random Forest obtuvo un **$R^2$ de 0.8406** y un **RMSE de 0.1127**.
+
+En términos de error, los valores de MAE, MSE y RMSE disminuyeron al pasar de la Regresión Lineal al Árbol de Decisión y posteriormente a Random Forest.
+
+Estos resultados muestran que, **para el conjunto de datos y la configuración utilizada**, los modelos basados en árboles lograron representar mejor los datos evaluados que la Regresión Lineal.
 
 ---
 
 # 4. Discusión
 
-A partir de los resultados obtenidos, se observa que la concentración de CO presenta principalmente valores entre **0.3 y 0.8 ppm**, aunque también existen algunos registros con valores superiores.
+A partir del análisis exploratorio se observa que la concentración de CO presenta principalmente valores comprendidos entre **0.3 y 0.8 ppm**, aunque también existen registros con concentraciones superiores.
 
-La matriz de correlación permitió identificar que `Mes` y `Cos_Anual` presentan las relaciones lineales más destacadas con `CO_ppm`. Sin embargo, las correlaciones no explican por sí solas todo el comportamiento de la variable objetivo.
+La matriz de correlación permitió identificar que `Mes` y `Cos_Anual` presentan las relaciones lineales más destacadas con `CO_ppm`. Sin embargo, las correlaciones individuales no permiten explicar por sí solas todo el comportamiento de la variable objetivo, especialmente cuando pueden existir relaciones no lineales entre las variables.
 
-Al comparar los modelos, la Regresión Lineal presentó un menor $R^2$ que los modelos basados en árboles. El Árbol de Decisión y Random Forest obtuvieron mejores resultados en las métricas utilizadas.
+La comparación de los modelos muestra que la **Regresión Lineal** presentó un menor coeficiente de determinación que el **Árbol de Decisión** y **Random Forest**. Además, los modelos basados en árboles obtuvieron menores valores de error.
 
-El análisis de residuos muestra que una parte importante de los errores se concentra alrededor de cero, aunque también existen algunos valores alejados y cierta asimetría.
+En particular, Random Forest obtuvo un **$R^2$ de 0.8406**, mientras que el Árbol de Decisión obtuvo **0.6836** y la Regresión Lineal **0.2956**.
 
-En conjunto, los resultados muestran que los modelos utilizados permiten realizar una aproximación de la concentración de CO a partir de las variables seleccionadas.
+El análisis de residuos muestra que una parte importante de los errores se concentra alrededor de cero, aunque también existen algunos valores alejados. Esto indica que el modelo presenta un comportamiento razonable en una parte de las observaciones, pero no explica completamente todas las variaciones presentes en los datos.
+
+En conjunto, los resultados muestran que los modelos de aprendizaje automático utilizados pueden emplearse para **aproximar la concentración de CO a partir de las variables seleccionadas**. Sin embargo, el desempeño obtenido corresponde específicamente al conjunto de datos y a las variables utilizadas en este trabajo, por lo que sería necesario incorporar otras variables ambientales para evaluar si se puede mejorar la capacidad predictiva.
 
 ---
 
@@ -183,8 +210,8 @@ En conjunto, los resultados muestran que los modelos utilizados permiten realiza
 
 [1] F. Pedregosa *et al.*, “Scikit-learn: Machine Learning in Python,” *Journal of Machine Learning Research*, vol. 12, pp. 2825–2830, 2011.
 
-[2] Scikit-learn, “DecisionTreeRegressor,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html
+[2] Scikit-learn, “DecisionTreeRegressor,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html. [Accedido: 17-sep-2026].
 
-[3] Scikit-learn, “RandomForestRegressor,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/1.8/modules/generated/sklearn.ensemble.RandomForestRegressor.html
+[3] Scikit-learn, “RandomForestRegressor,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/1.8/modules/generated/sklearn.ensemble.RandomForestRegressor.html. [Accedido: 17-sep-2026].
 
-[4] Scikit-learn, “Metrics and scoring: quantifying the quality of predictions,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/model_evaluation.html
+[4] Scikit-learn, “Metrics and scoring: quantifying the quality of predictions,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/model_evaluation.html. [Accedido: 17-sep-2026].
