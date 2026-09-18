@@ -1,8 +1,10 @@
-# Informe de Regresión de la concentración de CO
+# Informe Técnico: Regresión de la concentración de CO
 
-**Asignatura:** Taller de Inteligencia Artificial
-**Dataset:** Monitoreo de Monóxido de Carbono (CO) — Estación PARR (2023)
-**Fecha:** 17 de septiembre de 2026
+**Asignatura:** Taller de Inteligencia Artificial 
+
+**Dataset:** Monitoreo de Monóxido de Carbono (CO) — Estación PARR (2023) 
+
+**Fecha:** 17 de septiembre de 2026 
 
 ---
 
