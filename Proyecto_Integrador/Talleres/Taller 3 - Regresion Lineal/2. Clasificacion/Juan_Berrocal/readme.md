@@ -1,14 +1,21 @@
 # Informe de Regresión de la concentración de CO
 
-# 1. Introducción
-
-La calidad del aire es un aspecto importante para evaluar las condiciones ambientales. En este trabajo se analiza la concentración diaria de monóxido de carbono (`CO_ppm`) registrada en la estación PARR durante el año 2023.
-
-El objetivo es analizar el comportamiento de la concentración de CO y aplicar diferentes modelos de regresión para estimar sus valores a partir de variables relacionadas con el tiempo y las observaciones disponibles.
-
-Para ello se utilizaron tres modelos: **Regresión Lineal, Árbol de Decisión y Random Forest**. El desempeño de los modelos se evaluó mediante las métricas MAE, MSE, RMSE y el coeficiente de determinación $R^2$.
+**Asignatura:** Taller de Inteligencia Artificial
+**Dataset:** Monitoreo de Monóxido de Carbono (CO) — Estación PARR (2023)
+**Fecha:** 17 de septiembre de 2026
 
 ---
+
+## 1. Introducción
+
+La calidad del aire es un aspecto importante para evaluar las condiciones ambientales. En este trabajo se analiza la concentración diaria de monóxido de carbono (`CO_ppm`).
+
+El dataset corresponde a registros diarios de mediciones de calidad del aire en la estación **PARR**, durante el año 2023, con un total de **364 observaciones**.
+
+El objetivo es analizar el comportamiento de la concentración de CO y estimar sus valores construyendo modelos predictivos utilizando **Regresión Lineal**, **Árbol de Decisión** y **Random Forest**. El desempeño se evaluó mediante MAE, MSE, RMSE y $R^2$.
+
+---
+
 
 # 2. Metodología
 
