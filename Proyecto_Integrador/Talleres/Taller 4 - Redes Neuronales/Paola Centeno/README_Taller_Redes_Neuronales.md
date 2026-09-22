@@ -420,23 +420,15 @@ También me pareció interesante utilizar **Grad-CAM**, porque permitió observa
 
 # ¿Qué aprendí?
 
-Durante este taller aprendí que entrenar una red neuronal no consiste solamente en obtener una predicción.
+Durante este taller aprendí que entrenar una red neuronal no consiste solamente en obtener una predicción, sino también en entender cómo funciona el modelo y cómo interpretar sus resultados.
 
-Con el **perceptrón** entendí la idea básica de una neurona artificial: entradas, pesos, bias y función de activación.
+Con el **perceptrón** comprendí mejor la idea básica de una neurona artificial, especialmente el uso de entradas, pesos, bias y funciones de activación. Con las **CNN** entendí cómo una red puede aprender características de una imagen y utilizarlas para clasificarla.
 
-Con las **CNN** aprendí cómo una red puede extraer automáticamente características de una imagen y utilizarlas para realizar una clasificación.
+También vimos cómo **Keras** facilita la construcción y entrenamiento de redes neuronales, y cómo pueden aparecer problemas como el sobreajuste cuando el modelo aprende demasiado los datos de entrenamiento.
 
-Con **Keras** vimos que es posible construir redes neuronales de una manera más sencilla y también aprendimos a detectar problemas como el sobreajuste.
+Otro punto importante fue conocer técnicas como Data Augmentation, Transfer Learning, Regularización, Dropout y Grad-CAM, ya que cada una ayuda de una manera distinta a mejorar, evaluar o interpretar el comportamiento del modelo.
 
-Además, comprendí la importancia de técnicas como:
-
-- Data Augmentation;
-- Transfer Learning;
-- Regularización;
-- Dropout;
-- Grad-CAM.
-
-En general, el taller permitió entender que también debemos analizar **cómo aprende el modelo, dónde se equivoca, si generaliza y qué información utiliza para tomar una decisión**.
+En general, el taller me ayudó a entender que no basta con mirar si el modelo acierta o no. También es importante revisar cómo aprende, en qué casos se equivoca, si puede trabajar bien con datos nuevos y qué información está utilizando para tomar sus decisiones.
 
 
 ---
