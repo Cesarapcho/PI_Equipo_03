@@ -26,7 +26,7 @@ En el taller se trabajó con dos clases:
 - **1 = plastic**
 
 <p align="center">
-  <img src="./imagenes/1.ejemplos_dataset.png" width="720">
+  <img src="./imagenes/ejemplos_dataset.png" width="720">
 </p>
 
 Las imágenes muestran ejemplos de los datos utilizados para entrenar la CNN. Se puede observar que los objetos presentan diferentes formas, posiciones y tamaños, por lo que el modelo debe aprender características que permitan distinguir vidrio de plástico.
@@ -74,7 +74,7 @@ torch.optim.Adam()
 para actualizar los pesos durante el entrenamiento.
 
 <p align="center">
-  <img src="./imagenes/2.loss_cnn.png" width="650">
+  <img src="./imagenes/loss_cnn.png" width="650">
 </p>
 
 La pérdida disminuye progresivamente durante las épocas. Esto indica que la CNN va reduciendo sus errores y aprendiendo patrones presentes en las imágenes de entrenamiento.
@@ -86,7 +86,7 @@ La pérdida disminuye progresivamente durante las épocas. Esto indica que la CN
 Para analizar mejor los resultados utilizamos una **matriz de confusión**.
 
 <p align="center">
-  <img src="./imagenes/3.matriz_confusion.png" width="500">
+  <img src="./imagenes/matriz_confusion.png" width="500">
 </p>
 
 La matriz obtenida fue:
@@ -111,7 +111,7 @@ Una de las partes más interesantes del taller fue el uso de **Grad-CAM**.
 Grad-CAM genera un mapa de calor que permite observar qué regiones de una imagen tuvieron mayor influencia en la decisión de la CNN.
 
 <p align="center">
-  <img src="./imagenes/4.gradcam.png" width="760">
+  <img src="./imagenes/gradcam.png" width="760">
 </p>
 
 En la visualización aparecen:
@@ -248,7 +248,7 @@ Permite realizar nuevas predicciones.
 Uno de los conceptos más importantes observados fue el **sobreajuste u overfitting**.
 
 <p align="center">
-  <img src="./imagenes/5.sobreajuste_keras.png" width="650">
+  <img src="./imagenes/sobreajuste_keras.png" width="650">
 </p>
 
 La pérdida de entrenamiento continúa disminuyendo durante las épocas, mientras que la pérdida de validación disminuye al inicio y posteriormente comienza a aumentar.
@@ -274,7 +274,7 @@ layers.Dense(
 ```
 
 <p align="center">
-  <img src="./imagenes/6.regularizacion.png" width="650">
+  <img src="./imagenes/regularizacion.png" width="650">
 </p>
 
 La regularización penaliza pesos demasiado grandes y busca que el modelo encuentre una solución más general.
@@ -296,7 +296,7 @@ Durante el entrenamiento, Dropout desactiva temporalmente algunas neuronas de fo
 Esto obliga a la red a no depender siempre de las mismas conexiones.
 
 <p align="center">
-  <img src="./imagenes/7.dropout.png" width="650">
+  <img src="./imagenes/dropout.png" width="650">
 </p>
 
 La comparación entre el modelo original y el modelo con Dropout muestra cómo esta técnica puede ayudar a controlar el sobreajuste.
@@ -358,7 +358,7 @@ La función de activación transforma la suma ponderada en una salida que puede 
 El perceptrón también se utilizó para comprender problemas linealmente separables.
 
 <p align="center">
-  <img src="./imagenes/8.and_or.png" width="520">
+  <img src="./imagenes/and_or.png" width="520">
 </p>
 
 Las compuertas AND y OR pueden separarse utilizando una frontera lineal.
@@ -394,7 +394,7 @@ Esto muestra que un perceptrón simple puede resolver este tipo de problemas.
 El problema cambia cuando trabajamos con **XOR**.
 
 <p align="center">
-  <img src="./imagenes/9.xor.png" width="520">
+  <img src="./imagenes/xor.png" width="520">
 </p>
 
 XOR se comporta de la siguiente forma:
