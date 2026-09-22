@@ -16,7 +16,7 @@ En otras palabras: primero se vio "la neurona sola" (perceptrón), luego "muchas
 
 ## 2. CNN (Convolutional Neural Networks)
 
-### 2.1. ¿Qué son, en términos humanos?
+### 2.1. ¿Qué son?
 
 Una CNN funciona parecido a como una persona reconoce un objeto: no mira el objeto entero de golpe, sino que va identificando **pequeños patrones locales** (bordes, texturas, curvas) y los combina progresivamente hasta reconocer la figura completa. Los **kernels** (filtros) son justamente esos "detectores de patrones" que recorren la imagen pixel por pixel.
 
@@ -88,7 +88,7 @@ Cuando se reemplazó la CNN "hecha a mano" por **ResNet18 preentrenada** (ya sab
 
 ## 3. Perceptrón
 
-### 3.1. ¿Qué es, en términos humanos?
+### 3.1. ¿Qué es?
 
 El perceptrón es la **neurona artificial más simple**: toma varias entradas, las pondera (multiplica por "pesos" que indican qué tan importante es cada una), suma todo, le agrega un sesgo (*bias*) y aplica una función de activación para decidir una salida. Es, literalmente, la versión mínima de "tomar una decisión basada en varios factores con distinta importancia".
 
@@ -140,7 +140,7 @@ output_tanh = perceptron(inputs, weights, bias, tanh_activation)
 
 ## 4. Keras
 
-### 4.1. ¿Qué es, en términos humanos?
+### 4.1. ¿Qué es?
 
 Si el perceptrón es "programar una neurona a mano" y la CNN en PyTorch es "armar capa por capa con más control", **Keras** es la herramienta que permite construir y entrenar redes neuronales **sin tener que programar cada operación matemática**. Es como pasar de construir un mueble con herramientas manuales a usar una fábrica con piezas prearmadas: se pierde algo de control fino, pero se gana muchísima velocidad y menos errores.
 
