@@ -63,20 +63,20 @@ Cada bloque `Conv2D + ReLU + MaxPool` va "resumiendo" la imagen: empieza viendo 
 
 **b) Curvas de entrenamiento (CNN desde cero)**
 
-![Curva de pérdida](imgs/cnn_loss_curve.png)
-![Curva de métricas](imgs/cnn_metrics_curve.png)
+![Curva de pérdida](Imagenes/cnn_loss_curve.png)
+![Curva de métricas](Imagenes/cnn_metrics_curve.png)
 
 *Interpretación:* la pérdida (*loss*) baja progresivamente, lo cual significa que el modelo se equivoca cada vez menos en el set de entrenamiento. El *accuracy* llega a ~63% y el ROC-AUC se mantiene entre 0.67–0.69: hay aprendizaje, pero es **moderado**, no espectacular —una CNN entrenada desde cero con pocos datos tiene un techo bajo.
 
 **c) Matriz de confusión**
 
-![Matriz de confusión](imgs/confusion_matrix_cnn.png)
+![Matriz de confusión](Imagenes/confusion_matrix_cnn.png)
 
 *Interpretación:* muestra cuántas veces el modelo acertó y en cuáles casos confundió vidrio con plástico. Es la forma más honesta de ver el desempeño real, porque el *accuracy* solo puede esconder un modelo que "le atina" mucho a una clase y falla en la otra.
 
 **d) Grad-CAM (interpretabilidad)**
 
-![Grad-CAM](imgs/gradcam.png)
+![Grad-CAM](Imagenes/gradcam.png)
 
 *Interpretación:* esta es, quizás, la imagen más importante del notebook porque responde la pregunta *"¿en qué se está fijando la red para decidir?"*. Las zonas amarillas/claras son las que más influyeron en la predicción; las moradas/oscuras casi no importaron. Aquí el modelo se concentró en el **cuerpo central de la botella**, lo cual tiene sentido humano: es donde está la mayor cantidad de textura/transparencia distintiva del vidrio.
 
@@ -128,11 +128,11 @@ output_tanh = perceptron(inputs, weights, bias, tanh_activation)
 
 ### 3.4. Compuertas lógicas: por qué un perceptrón no basta
 
-![Frontera de decisión OR/AND](imgs/perceptron_plano.png)
+![Frontera de decisión OR/AND](Imagenes/perceptron_plano.png)
 
 *Interpretación:* aquí se ven los 4 posibles puntos (0,0), (0,1), (1,0), (1,1). Con distintos pesos y sesgos, un solo perceptrón logra separar estos puntos con **una línea recta** para simular una compuerta AND o una OR.
 
-![XOR no es separable linealmente](imgs/perceptron_xor.png)
+![XOR no es separable linealmente](Imagenes/perceptron_xor.png)
 
 *Interpretación:* esta imagen es la más importante de la sección de perceptrón. Los círculos blancos son los casos XOR = 0 y los puntos azules XOR = 1. **Ninguna línea recta puede separar estos puntos** correctamente —por eso 1 solo perceptrón no puede resolver XOR. Se necesitan **2 perceptrones + una capa de salida**, es decir, una red con más de una capa. Esta es la razón histórica y conceptual por la que existen las redes neuronales *multicapa*: hay problemas que simplemente no son resolubles con una sola neurona, sin importar qué pesos se usen.
 
@@ -169,25 +169,25 @@ model.fit(partial_x_train, partial_y_train,
 
 **a) Sobreajuste (overfitting) — modelo original**
 
-![Pérdida modelo original](imgs/keras_loss_original.png)
+![Pérdida modelo original](Imagenes/keras_loss_original.png)
 
 *Interpretación:* la curva azul (entrenamiento) sigue bajando, pero la naranja (validación) deja de mejorar e incluso empeora. Esto es **sobreajuste**: el modelo está memorizando las reseñas de entrenamiento en vez de aprender patrones generales del lenguaje, por lo que pierde capacidad de generalizar a datos nuevos.
 
 **b) Reducir el tamaño del modelo**
 
-![Modelo más pequeño vs original](imgs/keras_loss_smaller.png)
+![Modelo más pequeño vs original](Imagenes/keras_loss_smaller.png)
 
 *Interpretación:* con menos neuronas (4 en vez de 16), el sobreajuste sigue existiendo, pero tarda más en aparecer y es menos pronunciado. Un modelo más simple tiene menos "capacidad de memorizar", así que se ve obligado a aprender patrones más generales.
 
 **c) Regularización L2**
 
-![Regularización L2](imgs/keras_loss_regularization.png)
+![Regularización L2](Imagenes/keras_loss_regularization.png)
 
 *Interpretación:* la regularización penaliza los pesos muy grandes, obligando al modelo a mantener explicaciones "más simples". Por eso el error de validación se mantiene más estable, aunque a veces se ve un pico porque el modelo tiene que balancear ajustarse a los datos vs. mantenerse simple.
 
 **d) Dropout**
 
-![Dropout](imgs/keras_loss_dropout.png)
+![Dropout](Imagenes/keras_loss_dropout.png)
 
 *Interpretación:* al apagar aleatoriamente el 50% de las neuronas durante el entrenamiento, la red no puede depender de una combinación específica de neuronas y se ve forzada a aprender representaciones redundantes y más generales. Es, en términos humanos, como entrenar a un equipo donde cualquier persona puede faltar un día y el trabajo igual debe salir bien.
 
