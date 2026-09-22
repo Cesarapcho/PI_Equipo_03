@@ -1,5 +1,4 @@
 # Redes Neuronales: CNN, Perceptrón y Keras
-### Interpretación humana de lo trabajado en el notebook y aplicación al proyecto de granadillas
 
 ---
 
