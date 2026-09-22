@@ -89,12 +89,6 @@ Para analizar mejor los resultados utilizamos una **matriz de confusión**.
   <img src="./imagenes/matriz_confusion.png" width="500">
 </p>
 
-La matriz obtenida fue:
-
-```text
-[[32, 44],
- [12, 61]]
-```
 
 Esto permite observar que el modelo no se comporta igual para ambas clases.
 
