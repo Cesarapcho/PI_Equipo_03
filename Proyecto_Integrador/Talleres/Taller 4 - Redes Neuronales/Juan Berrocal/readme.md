@@ -232,3 +232,34 @@ Pensando en aplicar lo aprendido en este taller a nuestro proyecto de **evaluaci
 5. **Analizar e interpretar los resultados**, verificando si las características de la señal realmente permiten diferenciar las distintas condiciones internas de la granadilla.
 
 6. **Integrar el modelo al sistema**, de manera que las mediciones obtenidas por el hardware puedan ser procesadas por el software y generar una clasificación de la condición interna sin necesidad de abrir o dañar el fruto.
+
+### Flujo de implementación en nuestro proyecto
+
+**Granadilla**  
+↓  
+**Excitación vibratoria/acústica**  
+*Genera una respuesta controlada del fruto.*  
+↓  
+**Registro acústico + Masa**  
+*Obtiene los datos para el análisis.*  
+↓  
+**Procesamiento de señales**  
+*Limpia y prepara los datos obtenidos.*  
+↓  
+**Extracción de características**  
+*Identifica patrones importantes de las señales.*  
+↓  
+**Perceptrón**  
+*Realiza una primera clasificación de los datos.*  
+↓  
+**CNN**  
+*Aprende patrones más complejos de los datos.*  
+↓  
+**Keras**  
+*Facilita la construcción, entrenamiento y evaluación del modelo.*  
+↓  
+**Evaluación**  
+*Permite analizar el rendimiento del modelo.*  
+↓  
+**Condición interna estimada**  
+*Obtiene una clasificación sin abrir ni dañar la granadilla.*
