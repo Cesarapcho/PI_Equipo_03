@@ -279,13 +279,6 @@ La señal de vibración captada por el piezoeléctrico se puede transformar en u
 - Al ser pocos datos propios de granadillas, **transfer learning** (como se hizo con ResNet18) sería especialmente útil: partir de un modelo ya entrenado en audio o imágenes generales y solo ajustar las últimas capas con los datos propios del proyecto.
 - **Grad-CAM** permitiría verificar en qué parte del espectrograma se está fijando el modelo para decidir la calidad —por ejemplo, confirmar que se fija en las frecuencias asociadas a golpes internos o cavidades, y no en ruido de fondo del sensor.
 
-### 8.3. Resumen de la propuesta
-
-| Etapa del proyecto | Herramienta sugerida | Por qué |
-|---|---|---|
-| Prototipo inicial rápido (peso + 1-2 métricas de vibración) | **Perceptrón** | Simple, explicable, pocos datos necesarios |
-| Modelo con varias variables/categorías de calidad | **Keras (red densa)** | Rápido de construir, permite controlar sobreajuste |
-| Análisis de la señal acústica como espectrograma | **CNN (+ transfer learning)** | Aprovecha patrones espaciales/frecuenciales complejos |
-| Validar que el modelo decide por razones correctas | **Grad-CAM / matriz de confusión** | Da confianza para usarlo en producción con fruta real |
+### 8.3. Resumen
 
 En conjunto, el notebook trabajado no solo enseña "cómo se programa" cada técnica, sino que deja una **ruta de decisión clara**: empezar simple (perceptrón), escalar en complejidad cuando el problema lo exige (Keras), y usar CNN cuando los datos tienen una estructura espacial o de patrón (como un espectrograma de vibraciones), siempre verificando el desempeño real con métricas honestas y, cuando sea posible, interpretando visualmente las decisiones del modelo.
