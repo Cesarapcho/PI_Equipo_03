@@ -185,9 +185,7 @@ Con este modelo se llegó a una exactitud de 86.1% en test, aunque con un proble
 Se probaron tres estrategias distintas, y comparar sus resultados es de lo más valioso del notebook:
 
 1. **Reducir el tamaño del modelo** (menos neuronas): el sobreajuste sigue existiendo pero es menos pronunciado.
-   `images/loss_comparacion_tamano.png`
 2. **Regularización L2**: penaliza a la red por tener pesos muy grandes, obligándola a generalizar mejor en vez de memorizar.
-   `images/loss_regularizacion.png`
 3. **Dropout**: apaga aleatoriamente el 50% de las neuronas durante el entrenamiento, forzando a la red a no depender de combinaciones específicas de neuronas.
 
 ![Efecto del Dropout](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/loss_dropout.png)
