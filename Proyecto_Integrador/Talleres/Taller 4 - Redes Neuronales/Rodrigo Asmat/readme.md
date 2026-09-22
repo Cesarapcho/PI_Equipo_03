@@ -59,7 +59,7 @@ Cada bloque `Conv2D + ReLU + MaxPool` va "resumiendo" la imagen: empieza viendo 
 
 ![Ejemplos del dataset](Imagenes/dataset_glass_plastic.png)
 
-*Interpretación:* son las imágenes reales con las que la CNN aprendió. Nótese que están en escala de grises y con distintos ángulos/formas —esto obliga al modelo a aprender características **robustas** (brillo, transparencia, forma de botella aplastada) y no solo memorizar una foto puntual.
+*Interpretación:* son las imágenes reales con las que la CNN aprendió. Las imágenes están en escala de grises y con distintos ángulos/formas —esto obliga al modelo a aprender características **robustas** (brillo, transparencia, forma de botella aplastada) y no solo memorizar una foto puntual.
 
 **b) Curvas de entrenamiento (CNN desde cero)**
 
