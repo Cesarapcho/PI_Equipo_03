@@ -85,7 +85,18 @@ Muestra tres paneles: la imagen original, el mapa de calor y la superposición d
 
 ![Matriz de confusión](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/matriz_confusion.png)
 
-Resume en una sola tabla visual cuántas predicciones fueron correctas y cuántas se confundieron entre vidrio y plástico.
+### Interpretación
+
+La matriz muestra cómo se comportó la CNN al clasificar las imágenes de **vidrio y plástico**:
+
+- **54:** clasificó correctamente 54 imágenes de la clase 0.
+- **22:** 22 imágenes de la clase 0 fueron clasificadas incorrectamente como clase 1.
+- **36:** 36 imágenes de la clase 1 fueron clasificadas incorrectamente como clase 0.
+- **37:** clasificó correctamente 37 imágenes de la clase 1.
+
+En total, el modelo acertó **91 de 149 imágenes**, aproximadamente un **61 % de exactitud**.
+
+**Interpretación:** el modelo logra reconocer algunos patrones para diferenciar vidrio y plástico, pero todavía presenta bastantes confusiones entre ambas clases. Esto indica que la CNN está aprendiendo, aunque todavía puede mejorar su capacidad de clasificación.
 
 ---
 
