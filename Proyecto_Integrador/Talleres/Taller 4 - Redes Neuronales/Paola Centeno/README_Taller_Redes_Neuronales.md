@@ -438,24 +438,6 @@ Además, comprendí la importancia de técnicas como:
 
 En general, el taller permitió entender que también debemos analizar **cómo aprende el modelo, dónde se equivoca, si generaliza y qué información utiliza para tomar una decisión**.
 
----
-
-# ¿Por qué es importante?
-
-Las redes neuronales permiten encontrar patrones complejos que serían difíciles de definir manualmente.
-
-En imágenes, por ejemplo, una CNN puede aprender automáticamente características como bordes, formas y texturas sin necesidad de especificarlas una por una.
-
-Sin embargo, también es importante evaluar correctamente los modelos. Un valor alto de accuracy no siempre significa que el modelo esté aprendiendo de la manera esperada.
-
-Por eso es necesario revisar:
-
-- errores;
-- matrices de confusión;
-- pérdida de entrenamiento y validación;
-- sobreajuste;
-- capacidad de generalización;
-- interpretabilidad.
 
 ---
 
