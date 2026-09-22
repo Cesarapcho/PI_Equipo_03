@@ -461,12 +461,14 @@ Por eso es necesario revisar:
 
 # ¿Cuál utilizaríamos en nuestro proyecto?
 
-Si nuestro proyecto necesita trabajar con **imágenes**, utilizaríamos principalmente una **CNN**.
+Si en nuestro Proyecto Integrador incorporáramos una red neuronal, utilizaríamos una **CNN**.
 
-La CNN es adecuada porque puede aprender automáticamente características visuales y utilizarlas para realizar una clasificación.
+Nuestro proyecto busca evaluar de manera no destructiva la condición interna de una granadilla mediante una **excitación vibroacústica controlada** y el análisis de la respuesta generada por el fruto.
 
-Además, si contamos con un conjunto de datos limitado, utilizaríamos **Transfer Learning**, ya que en el taller ResNet18 obtuvo un rendimiento considerablemente mejor que la CNN entrenada desde cero.
+Una posible forma de aplicar una CNN sería transformar las señales obtenidas por los sensores en **espectrogramas**, que representan visualmente cómo se distribuyen las frecuencias de una señal. La CNN podría aprender patrones presentes en estos espectrogramas y utilizarlos para diferenciar distintas condiciones de la granadilla.
 
-En un proyecto basado en imágenes, la CNN o ResNet18 recibiría las imágenes, extraería características relevantes y finalmente realizaría la clasificación. En este contexto, **CNN o ResNet18** representan el modelo utilizado; **Keras o PyTorch** son herramientas para implementarlo; y el **perceptrón** sirve como base para comprender el funcionamiento de las redes neuronales.
+Elegiríamos una CNN porque puede identificar automáticamente patrones complejos en este tipo de representaciones, mientras que un perceptrón simple sería demasiado limitado para analizar relaciones de mayor complejidad.
 
-Por ello, para un proyecto relacionado con clasificación de imágenes, escogeríamos una **CNN**, preferiblemente utilizando **Transfer Learning** cuando el conjunto de datos disponible sea limitado.
+Para implementar y entrenar esta CNN podríamos utilizar **Keras**, ya que facilita la construcción y evaluación de redes neuronales.
+
+Por lo tanto, suponiendo que incorporáramos redes neuronales al proyecto, utilizaríamos una **CNN aplicada a espectrogramas de las señales vibroacústicas**, implementada mediante Keras.
