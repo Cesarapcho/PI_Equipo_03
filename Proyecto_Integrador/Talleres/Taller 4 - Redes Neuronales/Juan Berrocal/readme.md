@@ -1,20 +1,21 @@
 # Redes Neuronales: CNN, Perceptrón y Keras
+
 ---
 
 ## CNN (Redes Neuronales Convolucionales)
 
 ### Qué son y por qué importan
 
-Una CNN es básicamente una red pensada para "mirar" imágenes de una forma similar a como lo haría un ojo humano: no analiza cada píxel de forma aislada, sino que revisa grupos de píxeles vecinos buscando patrones como bordes, texturas y formas. Esto se logra mediante los **kernels**, pequeños filtros que recorren la imagen.
+Una CNN es una red pensada para analizar imágenes. No analiza cada píxel de forma aislada, sino que revisa grupos de píxeles vecinos buscando patrones como bordes, texturas y formas. Esto se logra mediante los **kernels**, pequeños filtros que recorren la imagen.
 
-Lo importante es que una red normal, utilizando únicamente capas densas, trataría cada píxel como un dato independiente y podría perder parte de la información espacial. Una CNN, en cambio, conserva la relación entre los píxeles vecinos, lo que permite identificar patrones dentro de una imagen.
+Una red normal, utilizando únicamente capas densas, trataría cada píxel como un dato independiente y podría perder parte de la información espacial. Una CNN, en cambio, conserva la relación entre los píxeles vecinos, lo que permite identificar patrones dentro de una imagen.
 
 ### Piezas clave
 
-- **Convolución (Conv2D):** aplica los filtros y genera "mapas de características". Las primeras capas pueden detectar patrones simples, como bordes, mientras que las capas más profundas pueden identificar combinaciones más complejas, como texturas y formas.
-- **Activación (ReLU):** permite que la red trabaje con relaciones no lineales. Los valores negativos se convierten en 0 y los positivos se mantienen.
-- **Pooling (MaxPool):** reduce el tamaño de la información procesada, conservando las características más importantes y haciendo más liviano el cálculo.
-- **Capas densas finales:** utilizan la información extraída por la CNN para realizar la clasificación final.
+- **Convolución (Conv2D):** aplica filtros y genera mapas de características.
+- **Activación (ReLU):** permite trabajar con relaciones no lineales.
+- **Pooling (MaxPool):** reduce el tamaño de la información procesada conservando características importantes.
+- **Capas densas finales:** utilizan las características extraídas para realizar la clasificación.
 
 ### Código relevante
 
@@ -33,78 +34,120 @@ class SimpleCNN(nn.Module):
             nn.ReLU(),
             nn.AdaptiveAvgPool2d((1, 1))
         )
+
         self.classifier = nn.Sequential(
             nn.Flatten(),
             nn.Linear(64, num_classes)
         )
 ```
-**Imagen del dataset**
+
+### Dataset utilizado
 
 ![Ejemplos vidrio y plástico](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/ejemplos_vidrio_plastico.png)
 
-### Transfer Learning: la mejora real
+El conjunto de datos utilizado contiene imágenes correspondientes a las clases **vidrio** y **plástico**. El objetivo de la CNN es aprender características visuales que permitan diferenciar ambas categorías.
 
-Aquí está uno de los aprendizajes más importantes del notebook: en vez de entrenar una CNN desde cero, se puede aprovechar un modelo ya entrenado en millones de imágenes (ResNet18) y solo ajustar la última capa a nuestro problema.
+---
+
+## Transfer Learning
+
+En vez de entrenar una CNN desde cero, se puede aprovechar un modelo previamente entrenado con millones de imágenes. En este caso se utilizó **ResNet18**, reemplazando su última capa para adaptarla al problema de clasificación.
 
 ```python
 resnet = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
-resnet.fc = nn.Linear(resnet.fc.in_features, num_classes)
+
+resnet.fc = nn.Linear(
+    resnet.fc.in_features,
+    num_classes
+)
 
 for name, param in resnet.named_parameters():
     param.requires_grad = False
+
 for param in resnet.fc.parameters():
     param.requires_grad = True
 ```
 
-Después se hizo **fine-tuning**, descongelando las últimas capas (`layer4`) para que el modelo se ajustara un poco más a nuestras imágenes específicas. El resultado fue notoriamente mejor que la CNN entrenada desde cero, lo cual tiene sentido: ResNet ya "sabe" reconocer bordes, texturas y formas generales, y solo tuvo que aprender a aplicar ese conocimiento a distinguir vidrio de plástico.
+Después se realizó **fine-tuning**, descongelando las últimas capas (`layer4`) para permitir que el modelo se adapte mejor a las imágenes utilizadas.
 
-### Interpretabilidad: Grad-CAM
+La ventaja del transfer learning es que ResNet18 ya posee características aprendidas previamente, como detección de bordes, texturas y formas. Por ello, no es necesario aprender todo desde cero.
 
-Uno de los puntos más interesantes es que un modelo no debería ser una "caja negra". Con Grad-CAM se puede generar un mapa de calor que muestra **qué zonas de la imagen influyeron más en la predicción**.
+---
+
+# Interpretabilidad: Grad-CAM
+
+Grad-CAM permite visualizar las regiones de una imagen que tuvieron mayor influencia en la predicción.
 
 ```python
 def grad_cam(model, image_tensor, target_class=None):
     ...
-    weights = torch.mean(grad, dim=(1, 2))
-    cam = torch.sum(weights[:, None, None] * act, dim=0)
-    cam = torch.relu(cam)
-    cam = cam - cam.min()
-    cam = cam / (cam.max() + 1e-8)
-    return cam.detach().cpu().numpy(), target_class
 ```
 
-En las imágenes resultantes, las zonas más claras/amarillas indican mayor peso en la decisión del modelo, mientras que las zonas oscuras aportaron poco. Esto es clave porque permite confirmar (o desmentir) si el modelo realmente está "mirando" el objeto correcto, y no aprendiendo atajos raros del fondo de la imagen.
+Las zonas más claras o amarillas representan regiones con mayor influencia en la decisión del modelo, mientras que las zonas oscuras representan una menor contribución.
 
-**Imagen: Grad-CAM**
+### Resultado obtenido
 
 ![Grad-CAM](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/grad_cam.png)
 
-Muestra tres paneles: la imagen original, el mapa de calor y la superposición de ambos. Es la imagen más importante de esta sección porque es la que explica *por qué* el modelo decidió lo que decidió.
+### Interpretación
 
-**Imagen: Matriz de confusión**
+La figura contiene tres paneles:
+
+1. **Imagen original:** muestra el objeto clasificado.
+2. **Mapa Grad-CAM:** muestra las regiones que tuvieron mayor influencia.
+3. **Superposición:** combina la imagen con el mapa de calor.
+
+En este resultado, las zonas de mayor intensidad se concentran principalmente en la región central del objeto. Esto indica que el modelo está utilizando características visuales presentes en esa zona para realizar la clasificación.
+
+Grad-CAM no demuestra por sí solo que la decisión sea correcta, pero permite comprobar visualmente qué regiones están influyendo en el modelo y detectar posibles problemas, como que la red esté utilizando el fondo en lugar del objeto.
+
+---
+
+# Matriz de confusión
 
 ![Matriz de confusión](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/matriz_confusion.png)
 
 ### Interpretación
 
-La matriz muestra cómo se comportó la CNN al clasificar las imágenes de **vidrio y plástico**:
+La matriz muestra el comportamiento de la CNN para las dos clases:
 
-- **54:** clasificó correctamente 54 imágenes de la clase 0.
-- **22:** 22 imágenes de la clase 0 fueron clasificadas incorrectamente como clase 1.
-- **36:** 36 imágenes de la clase 1 fueron clasificadas incorrectamente como clase 0.
-- **37:** clasificó correctamente 37 imágenes de la clase 1.
+| Real | Predicción 0 | Predicción 1 |
+|---|---:|---:|
+| Clase 0 | 54 | 22 |
+| Clase 1 | 36 | 37 |
 
-En total, el modelo acertó **91 de 149 imágenes**, aproximadamente un **61 % de exactitud**.
+Por lo tanto:
 
-**Interpretación:** el modelo logra reconocer algunos patrones para diferenciar vidrio y plástico, pero todavía presenta bastantes confusiones entre ambas clases. Esto indica que la CNN está aprendiendo, aunque todavía puede mejorar su capacidad de clasificación.
+- **54** imágenes de la clase 0 fueron clasificadas correctamente como clase 0.
+- **22** imágenes de la clase 0 fueron clasificadas incorrectamente como clase 1.
+- **36** imágenes de la clase 1 fueron clasificadas incorrectamente como clase 0.
+- **37** imágenes de la clase 1 fueron clasificadas correctamente como clase 1.
+
+El número total de aciertos es 54 + 37 = 91.
+
+El número total de imágenes es 54 + 22 + 36 + 37 = 149.
+
+Por tanto:
+
+Accuracy = 91 / 149 ≈ 0.611
+
+La exactitud es aproximadamente 61.1 %.
+
+### Análisis
+
+El modelo consigue aprender ciertos patrones para diferenciar vidrio y plástico, pero todavía presenta una cantidad considerable de errores.
+
+El mayor grupo de errores corresponde a las **36 imágenes de la clase 1 clasificadas como clase 0**. También existen 22 casos de la clase 0 clasificados como clase 1.
+
+Esto indica que el modelo todavía tiene dificultades para separar completamente ambas categorías y que sería necesario continuar trabajando en aspectos como los datos, el preprocesamiento, la arquitectura y la regularización.
 
 ---
 
-##  Perceptrón
+# Perceptrón
 
-### Qué es y por qué importa
+## Qué es y por qué importa
 
-El perceptrón es la unidad más básica de una red neuronal: toma varias entradas, las multiplica por unos pesos, suma un sesgo (bias) y pasa ese resultado por una función de activación. Es literalmente el "ladrillo" con el que se construyen redes mucho más complejas, así que entenderlo bien ayuda a entender todo lo demás.
+El perceptrón es una unidad fundamental de una red neuronal. Recibe entradas, las multiplica por pesos, agrega un sesgo y aplica una función de activación.
 
 ```python
 def perceptron(inputs, weights, bias, activation_func):
@@ -113,153 +156,310 @@ def perceptron(inputs, weights, bias, activation_func):
     return output
 ```
 
-### Ejemplo aplicado: alerta de sobrecalentamiento
+Matemáticamente:
 
-Se probó el perceptrón con un caso concreto: decidir si un equipo industrial está en riesgo de sobrecalentamiento según su temperatura y vibración.
+* **z** = w₁x₁ + w₂x₂ + b
+* **y** = f(z)
 
-```python
-temperatura = 100
-vibracion = 50
-weights = np.array([0.5, -0.5])
-bias = -30
-inputs = np.array([temperatura, vibracion])
-```
-
-Aquí se ve algo importante: la función de activación cambia por completo cómo se interpreta la salida. Con la función escalón el resultado es binario (alerta sí/no), mientras que con tanh el resultado queda entre -1 y 1, dando una especie de "intensidad" de la alerta en vez de solo un sí o no.
-
-### Compuertas lógicas: AND, OR y el límite del perceptrón (XOR)
-
-Probando distintos pesos, un solo perceptrón puede comportarse como una compuerta **AND** (solo activa si ambas entradas son 1) o **OR** (activa si al menos una entrada es 1). Esto se puede visualizar como una línea recta que separa los casos positivos de los negativos.
-
-**Imagen: fronteras de decisión OR/AND**
-
-![Fronteras OR/AND](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/xor_or_and.png)
-
-Pero con **XOR** (activa solo cuando las entradas son diferentes) un solo perceptrón no alcanza, porque no existe ninguna línea recta capaz de separar correctamente esos cuatro puntos. Este es probablemente el aprendizaje más importante de toda la sección: **un perceptrón solo resuelve problemas linealmente separables**. Para XOR se necesitan al menos dos perceptrones combinados en una capa de salida.
-
-**Imagen: dos fronteras necesarias para XOR**
-
-![Dos fronteras para XOR](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/xor_perceptrones.png)
-
-Y aquí se entiende, de forma muy intuitiva, por qué existen las redes neuronales con múltiples capas: no es solo "para hacerlo más complejo", sino porque hay problemas que un solo perceptrón simplemente no puede resolver.
+donde:
+- **xᵢ** son las entradas
+-  **wᵢ** los pesos
+-  **b** el bias
+-  **f** la función de activación.
 
 ---
 
-## Keras
+# Compuertas lógicas: AND, OR y XOR
 
-### Qué es y por qué importa
+![Fronteras OR/AND](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/xor_or_and.png)
 
-Keras es una librería que permite construir y entrenar redes neuronales sin tener que programar manualmente cada operación matemática (como sí se hace con PyTorch a bajo nivel). Esto vuelve el proceso mucho más rápido de prototipar, algo muy útil cuando se está probando distintas arquitecturas.
+### Interpretación
 
-### Caso de uso: clasificación de reseñas de IMDB
+La gráfica muestra las fronteras de decisión para las funciones **AND** y **OR**.
 
-Se trabajó con reseñas de películas para clasificarlas como positivas o negativas.
+En ambos casos es posible utilizar una línea recta para separar los casos positivos de los negativos.
+
+Para **AND**, únicamente:
+
+(1,1) → 1
+
+produce una salida positiva.
+
+Para **OR**, las combinaciones:
+
+(0,1), (1,0), (1,1) → 1
+
+producen una salida positiva.
+
+Por esta razón, un solo perceptrón puede resolver estos problemas, ya que son linealmente separables.
+
+---
+
+# El problema XOR
+
+![Dos fronteras para XOR](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/xor_perceptrones.png)
+
+La función XOR produce:
+
+| X1 | X2 | XOR |
+|---:|---:|---:|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+No existe una única línea recta capaz de separar correctamente los valores 1 de los valores 0.
+
+Por ello:
+
+> **Un único perceptrón no puede resolver XOR.**
+
+Se necesitan varios perceptrones organizados en capas para construir fronteras de decisión más complejas.
+
+Esto explica por qué las redes neuronales utilizan múltiples capas: permiten representar relaciones que un único perceptrón no puede representar.
+
+---
+
+# Keras
+
+## Qué es y por qué importa
+
+Keras es una librería que facilita la construcción y entrenamiento de redes neuronales. Permite definir arquitecturas, funciones de pérdida, optimizadores y métricas sin implementar manualmente todas las operaciones matemáticas.
+
+---
+
+# Caso de uso: clasificación de reseñas de IMDB
+
+Se utilizó el dataset IMDB para clasificar reseñas de películas como positivas o negativas.
 
 ```python
 from keras.datasets import imdb
-(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000, index_from=3)
+
+(train_data, train_labels), (test_data, test_labels) = imdb.load_data(
+    num_words=10000,
+    index_from=3
+)
 ```
 
-Las reseñas vienen como secuencias de números (cada número representa una palabra), así que primero hay que transformarlas en vectores que el modelo pueda entender:
+Las reseñas se transforman en vectores numéricos para que puedan ser procesadas por la red.
 
-```python
-def vectorizar(sequences, dim=10000):
-    restults = np.zeros((len(sequences), dim))
-    for i, sequences in enumerate(sequences):
-        restults[i, sequences] = 1
-    return restults
-```
+---
 
-Cada reseña se convierte en un vector de 10,000 posiciones donde un 1 indica que esa palabra apareció y un 0 que no. Es una simplificación, pero suficiente para este problema.
-
-### El modelo base
+# Modelo base
 
 ```python
 model = models.Sequential()
-model.add(layers.Dense(16, activation='relu', input_shape=(10000,)))
-model.add(layers.Dense(16, activation='relu'))
-model.add(layers.Dense(1, activation='sigmoid'))
 
-model.compile(optimizer='rmsprop',
-              loss='binary_crossentropy',
-              metrics=['accuracy'])
+model.add(
+    layers.Dense(
+        16,
+        activation='relu',
+        input_shape=(10000,)
+    )
+)
+
+model.add(
+    layers.Dense(
+        16,
+        activation='relu'
+    )
+)
+
+model.add(
+    layers.Dense(
+        1,
+        activation='sigmoid'
+    )
+)
+
+model.compile(
+    optimizer='rmsprop',
+    loss='binary_crossentropy',
+    metrics=['accuracy']
+)
 ```
 
-Con este modelo se llegó a una exactitud de 86.1% en test, aunque con un problema claro: **sobreajuste**. Se ve en la gráfica de pérdida cuando la curva de entrenamiento sigue bajando pero la de validación deja de mejorar (o incluso empeora).
+El modelo utiliza:
 
-**Imagen: pérdida en entrenamiento vs. validación**
+- **ReLU** en las capas ocultas.
+- **Sigmoid** en la salida para clasificación binaria.
+- **Binary Crossentropy** como función de pérdida.
+- **Accuracy** como métrica de evaluación.
+
+---
+
+# Pérdida de entrenamiento y validación
 
 ![Pérdida entrenamiento vs. validación](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/loss_original.png)
 
-### Probando soluciones al sobreajuste
+### Interpretación
 
-Se probaron tres estrategias distintas, y comparar sus resultados es de lo más valioso del notebook:
+La curva de **training** disminuye progresivamente desde aproximadamente 0.55 hasta valores cercanos a 0.01. Esto indica que el error sobre los datos de entrenamiento disminuye de manera continua.
 
-1. **Reducir el tamaño del modelo** (menos neuronas): el sobreajuste sigue existiendo pero es menos pronunciado.
-2. **Regularización L2**: penaliza a la red por tener pesos muy grandes, obligándola a generalizar mejor en vez de memorizar.
-3. **Dropout**: apaga aleatoriamente el 50% de las neuronas durante el entrenamiento, forzando a la red a no depender de combinaciones específicas de neuronas.
+En cambio, la curva de **validación** disminuye inicialmente, pero posteriormente comienza a aumentar y termina cerca de 0.55.
+
+Este comportamiento es característico del **sobreajuste (overfitting)**.
+
+El modelo continúa mejorando sobre los datos de entrenamiento, pero su rendimiento sobre datos de validación comienza a empeorar.
+
+Esto significa que el modelo está aprendiendo cada vez mejor los ejemplos utilizados durante el entrenamiento, pero pierde capacidad de generalización.
+
+Por ello, aumentar indefinidamente el número de épocas no necesariamente mejora el modelo.
+
+---
+
+# Estrategias para reducir el sobreajuste
+
+Se probaron diferentes estrategias:
+
+1. **Reducir el tamaño del modelo:** disminuye el número de parámetros y limita la capacidad de memorizar.
+2. **Regularización L2:** penaliza pesos demasiado grandes.
+3. **Dropout:** desactiva aleatoriamente una proporción de neuronas durante el entrenamiento.
+
+---
+
+# Dropout
 
 ![Efecto del Dropout](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/loss_dropout.png)
 
-Ninguna de estas tres técnicas elimina el sobreajuste por completo, pero cada una lo controla de una manera distinta. Esto deja una idea clara: no existe una solución única, sino un conjunto de herramientas que se combinan según el problema.
+### Interpretación
+
+La gráfica compara la pérdida de validación del modelo con **Dropout** frente al modelo original.
+
+La curva con Dropout presenta inicialmente una pérdida menor y posteriormente comienza a aumentar. Esto indica que Dropout ayuda a reducir el sobreajuste durante parte del entrenamiento, aunque no lo elimina completamente.
+
+Dropout obliga a la red a no depender demasiado de determinadas neuronas y favorece que el aprendizaje se distribuya entre diferentes partes de la red.
+
+Por lo tanto, esta técnica puede mejorar la generalización, pero debe combinarse con otras decisiones de diseño y entrenamiento.
+
+---
+
+# Qué aprendimos
+
+- Una CNN analiza grupos de píxeles y conserva relaciones espaciales importantes.
+- Las primeras capas pueden aprender bordes y patrones simples, mientras que capas posteriores pueden aprender características más complejas.
+- El **transfer learning** permite aprovechar conocimiento aprendido previamente.
+- **Grad-CAM** permite visualizar las regiones que influyen en una predicción.
+- La matriz de confusión permite analizar aciertos y errores por clase.
+- Un perceptrón individual puede resolver problemas linealmente separables como AND y OR, pero no XOR.
+- Las redes multicapa permiten representar relaciones más complejas.
+- El sobreajuste aparece cuando el modelo mejora sobre entrenamiento pero empeora sobre validación.
+- **Dropout** y la regularización pueden ayudar a controlar el sobreajuste.
+- Keras facilita la construcción y comparación de modelos de redes neuronales.
+
+---
+
+# Aplicación al proyecto: evaluación no destructiva de la condición interna de la granadilla
+
+### ¿Cómo utilizaríamos Machine Learning en nuestro proyecto?
+
+En nuestro proyecto de evaluación no destructiva de la condición interna de la granadilla mediante excitación vibratoria controlada, utilizaremos Machine Learning mediante aprendizaje supervisado.
+
+La idea es que el sistema pueda aprender a partir de datos obtenidos experimentalmente. Primero se aplicará una excitación vibratoria controlada sobre la granadilla y se registrará su respuesta vibroacústica. A partir de esta señal se obtendrán diferentes características, como frecuencia, amplitud, energía y otras características relacionadas con su comportamiento vibratorio. También podemos incorporar la masa del fruto como una variable adicional.
+
+Estas mediciones serán utilizadas como entradas del modelo:
+
+X = (X_vib, m)
+
+donde:
+* X_vib representa las características de la respuesta vibroacústica.
+* m representa la masa de la granadilla.
+
+El modelo será entrenado utilizando granadillas cuya condición interna ya haya sido determinada experimentalmente. De esta manera, el algoritmo podrá aprender qué patrones de las señales están asociados a cada condición.
+
+---
+
+### Funciones de Machine Learning en nuestro proyecto
+
+1. **Aprendizaje de patrones:** El modelo analizará las características de las señales obtenidas y aprenderá relaciones entre el comportamiento vibroacústico y la condición interna de la granadilla.
+2. **Clasificación:** Una vez entrenado, el modelo podrá clasificar una granadilla dentro de las categorías que definamos experimentalmente:
+   * **0** → Condición A
+   * **1** → Condición B
+3. **Predicción:** Cuando se analice una nueva granadilla, el modelo recibirá sus características vibroacústicas y su masa para estimar su condición interna:
+
+    ŷ = f(X_vib, m)
+
+donde ŷ (y con sombrero) representa la condición interna estimada.
+
+4. **Evaluación:** El modelo será evaluado utilizando métricas como accuracy, precision, recall, F1-score y matriz de confusión, para determinar qué tan correctamente clasifica las diferentes condiciones.
+5. **Generalización:** Una parte importante será comprobar que el modelo no solamente memorice las granadillas utilizadas durante el entrenamiento, sino que pueda reconocer correctamente nuevas granadillas que no haya visto anteriormente.
+
+---
+
+### Modelos que utilizaríamos
+
+Como primera etapa, utilizaríamos modelos de Machine Learning supervisado, como:
+* **Random Forest**
+* **SVM**
+* **Regresión Logística**
+
+Estos modelos nos permitirán establecer una línea base y determinar si las características vibroacústicas realmente permiten diferenciar las condiciones internas.
+
+Posteriormente, si contamos con suficientes datos, podríamos comparar estos resultados con Deep Learning mediante una **CNN 1D**, que aprendería automáticamente patrones directamente de las señales vibroacústicas.
+
+---
+
+### Flujo del proyecto
+```text
+Granadilla
+   │
+   ▼
+Excitación vibratoria controlada
+   │
+   ▼
+Respuesta vibroacústica
+   │
+   ▼
+Adquisición de la señal
+   │
+   ▼
+Procesamiento
+   │
+   ▼
+Extracción de características + masa
+   │
+   ▼
+Machine Learning supervisado
+   │
+   ▼
+Aprendizaje de patrones
+   │
+   ▼
+Clasificación / Predicción
+   │
+   ▼
+Condición interna estimada
+```
 
 
-## Qué aprendimos
+---
 
-- Una CNN no analiza píxeles sueltos, analiza vecindarios de píxeles, y eso es justo lo que la hace útil para imágenes.
-- Entrenar desde cero funciona, pero **transfer learning** (aprovechar un modelo ya entrenado) da mejores resultados con muchísimo menos esfuerzo y datos.
-- Un modelo que "acierta" no es suficiente: herramientas como Grad-CAM permiten confirmar si acierta por las razones correctas.
-- Un perceptrón individual tiene un límite matemático real: no puede resolver problemas que no sean separables con una línea recta (como XOR). Por eso existen las redes con varias capas.
-- El sobreajuste es casi inevitable en algún punto del entrenamiento, pero hay varias formas de mitigarlo (reducir el modelo, regularización, dropout), cada una con un efecto distinto.
-- Keras permite iterar y comparar arquitecturas mucho más rápido que programar todo manualmente, lo cual es valioso justamente para hacer este tipo de comparaciones.
+En resumen, Machine Learning será el encargado de aprender la relación entre la respuesta vibroacústica de la granadilla y su condición interna, para posteriormente clasificar y predecir la condición de nuevos frutos sin necesidad de abrirlos o destruirlos.
 
-## Por qué es importante usarlo
+---
 
-Estas herramientas no son solo ejercicios académicos: representan el flujo real de trabajo en un proyecto de machine learning. Se empieza con un modelo simple para tener una base de comparación, se prueba si conviene reutilizar conocimiento ya existente (transfer learning), se revisa que el modelo esté aprendiendo por las razones correctas (interpretabilidad) y se ajustan técnicas para que el modelo generalice bien y no solo memorice (regularización, dropout). Sin este proceso, es fácil terminar con un modelo que parece funcionar bien en las pruebas pero falla apenas se usa con datos nuevos.
+# Conclusión
 
-## Cómo implementarlo en nuestro proyecto
+El taller permitió comprender diferentes conceptos fundamentales de las redes neuronales, desde el funcionamiento del perceptrón hasta arquitecturas más complejas como las CNN. También se analizaron técnicas como **Transfer Learning, Grad-CAM, regularización y Dropout**, que permiten mejorar el entrenamiento, evaluar el comportamiento del modelo e interpretar sus resultados.
 
-Pensando en aplicar lo aprendido en este taller a nuestro proyecto de **evaluación no destructiva de la calidad interna de la granadilla**, podemos utilizar Machine Learning para analizar las señales obtenidas mediante la excitación vibratoria/acústica y la medición de masa.
+En nuestro proyecto de **evaluación no destructiva de la condición interna de la granadilla**, aplicaremos **Machine Learning mediante aprendizaje supervisado**. El objetivo será aprender la relación entre las características obtenidas de la respuesta vibroacústica del fruto, junto con variables como su masa, y la condición interna determinada experimentalmente.
 
-1. **Obtener los datos de las granadillas**, registrando la respuesta acústica generada por la excitación controlada y la masa de cada fruto.
+La función del Machine Learning será **aprender patrones, clasificar, predecir, evaluar y generalizar** la condición de nuevas granadillas a partir de las mediciones obtenidas.
 
-2. **Procesar las señales obtenidas**, extrayendo características que puedan estar relacionadas con las diferencias en la condición interna de la granadilla.
+La función del modelo puede representarse como:
 
-3. **Entrenar un modelo de Machine Learning** utilizando las características obtenidas para identificar patrones y clasificar la condición interna del fruto.
+ŷ = f(X_vib, m)
 
-4. **Evaluar diferentes modelos**, incluyendo redes neuronales, para determinar cuál puede adaptarse mejor a las características de nuestros datos.
+donde:
 
-5. **Analizar e interpretar los resultados**, verificando si las características de la señal realmente permiten diferenciar las distintas condiciones internas de la granadilla.
+* **X_vib** representa las características de la respuesta vibroacústica.
+* **m** representa la masa de la granadilla.
+* **ŷ** representa la condición interna estimada.
 
-6. **Integrar el modelo al sistema**, de manera que las mediciones obtenidas por el hardware puedan ser procesadas por el software y generar una clasificación de la condición interna sin necesidad de abrir o dañar el fruto.
+Como primera etapa se evaluarán modelos de **Machine Learning supervisado**, como Random Forest, SVM y Regresión Logística, con el objetivo de establecer una línea base y determinar si las características vibroacústicas permiten diferenciar las condiciones internas.
 
-### Flujo de implementación en nuestro proyecto
+Posteriormente, si la cantidad de datos obtenidos experimentalmente lo permite, se podrá comparar el rendimiento de estos modelos con una solución de **Deep Learning mediante una CNN 1D**, capaz de aprender automáticamente patrones directamente de las señales vibroacústicas.
 
-**Granadilla**  
-↓  
-**Excitación vibratoria/acústica**  
-*Genera una respuesta controlada del fruto.*  
-↓  
-**Registro acústico + Masa**  
-*Obtiene los datos para el análisis.*  
-↓  
-**Procesamiento de señales**  
-*Limpia y prepara los datos obtenidos.*  
-↓  
-**Extracción de características**  
-*Identifica patrones importantes de las señales.*  
-↓  
-**Perceptrón**  
-*Realiza una primera clasificación de los datos.*  
-↓  
-**CNN**  
-*Aprende patrones más complejos de los datos.*  
-↓  
-**Keras**  
-*Facilita la construcción, entrenamiento y evaluación del modelo.*  
-↓  
-**Evaluación**  
-*Permite analizar el rendimiento del modelo.*  
-↓  
-**Condición interna estimada**  
-*Obtiene una clasificación sin abrir ni dañar la granadilla.*
+De esta manera, los conocimientos adquiridos en el taller se relacionan directamente con el proyecto, permitiendo integrar:
+
+**adquisición de señales → procesamiento → Machine Learning supervisado → clasificación/predicción → evaluación no destructiva**
