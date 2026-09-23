@@ -523,24 +523,4 @@ Este concepto sería especialmente útil en nuestro proyecto porque podríamos e
 
 De esta manera, no solo buscaríamos que el modelo clasifique correctamente, sino también comprender **qué mediciones están influyendo más en sus resultados**.
 
-## Relación con el taller de redes neuronales
 
-De lo trabajado en este taller, una **CNN** sería una alternativa que podríamos probar si transformamos las señales vibroacústicas en una representación como un **espectrograma**.
-
-En ese caso, la CNN podría aprender directamente patrones presentes en la distribución de frecuencias de la señal. Para construirla podríamos utilizar **Keras**, aprovechando funciones como:
-
-```python
-model.fit()
-model.predict()
-model.evaluate()
-```
-
-Sin embargo, esta sería una alternativa adicional. En una primera etapa del proyecto podemos trabajar directamente con las **características numéricas extraídas de las señales** y comparar diferentes modelos de Machine Learning.
-
-## Aplicación en el proyecto
-
-Con lo aprendido en los talleres, el proceso que seguiríamos sería recolectar las mediciones de varias granadillas, organizar y explorar los datos, extraer las características de las señales, identificar cuáles son más útiles, separar los datos para entrenamiento y prueba, entrenar diferentes modelos y finalmente comparar sus resultados.
-
-La elección final del modelo no se realizará únicamente porque haya funcionado bien en un taller. Primero tendremos que realizar las pruebas experimentales con las granadillas y analizar qué tipo de datos obtenemos. A partir de esos resultados podremos determinar qué modelo se adapta mejor al problema.
-
-Por ello, los talleres de regresión y redes neuronales nos sirven principalmente como **base para preparar los datos, entrenar modelos, realizar predicciones, evaluar sus resultados e interpretar qué variables están aportando información a la clasificación**.
