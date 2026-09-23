@@ -1,23 +1,23 @@
-# Redes Neuronales: CNN, Perceptrón y Keras
+# 1. Redes Neuronales: CNN, Perceptrón y Keras
 
 ---
 
-## CNN (Redes Neuronales Convolucionales)
+## 1.1 CNN (Redes Neuronales Convolucionales)
 
-### Qué son y por qué importan
+### 1.1. Qué son y por qué importan
 
 Una CNN es una red pensada para analizar imágenes. No analiza cada píxel de forma aislada, sino que revisa grupos de píxeles vecinos buscando patrones como bordes, texturas y formas. Esto se logra mediante los **kernels**, pequeños filtros que recorren la imagen.
 
 Una red normal, utilizando únicamente capas densas, trataría cada píxel como un dato independiente y podría perder parte de la información espacial. Una CNN, en cambio, conserva la relación entre los píxeles vecinos, lo que permite identificar patrones dentro de una imagen.
 
-### Piezas clave
+### 1.2. Piezas clave
 
 - **Convolución (Conv2D):** aplica filtros y genera mapas de características.
 - **Activación (ReLU):** permite trabajar con relaciones no lineales.
 - **Pooling (MaxPool):** reduce el tamaño de la información procesada conservando características importantes.
 - **Capas densas finales:** utilizan las características extraídas para realizar la clasificación.
 
-### Código relevante
+### 1.3. Código relevante
 
 ```python
 class SimpleCNN(nn.Module):
@@ -41,15 +41,24 @@ class SimpleCNN(nn.Module):
         )
 ```
 
-### Dataset utilizado
+### 1.4. Dataset utilizado
+
+<div align="center">
 
 ![Ejemplos vidrio y plástico](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/ejemplos_vidrio_plastico.png)
+
+</div>
+
+**Clases del conjunto de datos:**
+
+- 0 = glass
+- 1 = plastic
 
 El conjunto de datos utilizado contiene imágenes correspondientes a las clases **vidrio** y **plástico**. El objetivo de la CNN es aprender características visuales que permitan diferenciar ambas categorías.
 
 ---
 
-## Transfer Learning
+## 1.6 Transfer Learning
 
 En vez de entrenar una CNN desde cero, se puede aprovechar un modelo previamente entrenado con millones de imágenes. En este caso se utilizó **ResNet18**, reemplazando su última capa para adaptarla al problema de clasificación.
 
@@ -74,7 +83,7 @@ La ventaja del transfer learning es que ResNet18 ya posee características apren
 
 ---
 
-# Interpretabilidad: Grad-CAM
+# 2. Interpretabilidad: Grad-CAM
 
 Grad-CAM permite visualizar las regiones de una imagen que tuvieron mayor influencia en la predicción.
 
@@ -85,11 +94,15 @@ def grad_cam(model, image_tensor, target_class=None):
 
 Las zonas más claras o amarillas representan regiones con mayor influencia en la decisión del modelo, mientras que las zonas oscuras representan una menor contribución.
 
-### Resultado obtenido
+### 2.0. Resultado obtenido
+
+<div align="center">
 
 ![Grad-CAM](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/grad_cam.png)
 
-### Interpretación
+</div>
+
+### 2.1. Interpretación
 
 La figura contiene tres paneles:
 
@@ -103,11 +116,15 @@ Grad-CAM no demuestra por sí solo que la decisión sea correcta, pero permite c
 
 ---
 
-# Matriz de confusión
+# 3. Matriz de confusión
+
+<div align="center">
 
 ![Matriz de confusión](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/matriz_confusion.png)
 
-### Interpretación
+</div>
+
+### 3.0. Interpretación
 
 La matriz muestra el comportamiento de la CNN para las dos clases:
 
@@ -133,7 +150,7 @@ Accuracy = 91 / 149 ≈ 0.611
 
 La exactitud es aproximadamente 61.1 %.
 
-### Análisis
+### 3.1. Análisis
 
 El modelo consigue aprender ciertos patrones para diferenciar vidrio y plástico, pero todavía presenta una cantidad considerable de errores.
 
@@ -143,9 +160,9 @@ Esto indica que el modelo todavía tiene dificultades para separar completamente
 
 ---
 
-# Perceptrón
+# 4. Perceptrón
 
-## Qué es y por qué importa
+## 4.1 Qué es y por qué importa
 
 El perceptrón es una unidad fundamental de una red neuronal. Recibe entradas, las multiplica por pesos, agrega un sesgo y aplica una función de activación.
 
@@ -169,25 +186,38 @@ donde:
 
 ---
 
-# Compuertas lógicas: AND, OR y XOR
+# 5. Compuertas lógicas: AND, OR y XOR
+
+<div align="center">
 
 ![Fronteras OR/AND](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/xor_or_and.png)
 
-### Interpretación
+</div>
+
+### 5.0. Interpretación
 
 La gráfica muestra las fronteras de decisión para las funciones **AND** y **OR**.
 
 En ambos casos es posible utilizar una línea recta para separar los casos positivos de los negativos.
 
+### Valores de las compuertas
+
+| X₁ | X₂ | **AND** | **OR** |
+|:--:|:--:|:------:|:-----:|
+| 0 | 0 |  0 | 0 |
+| 0 | 1 |  0 | 1 |
+| 1 | 0 |  0 | 1 |
+| 1 | 1 |  1 | 1 |
+
 Para **AND**, únicamente:
 
-(1,1) → 1
+**(1,1) → 1**
 
 produce una salida positiva.
 
 Para **OR**, las combinaciones:
 
-(0,1), (1,0), (1,1) → 1
+**(0,1), (1,0), (1,1) → 1**
 
 producen una salida positiva.
 
@@ -195,9 +225,13 @@ Por esta razón, un solo perceptrón puede resolver estos problemas, ya que son 
 
 ---
 
-# El problema XOR
+# 6. El problema XOR
+
+<div align="center">
 
 ![Dos fronteras para XOR](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/xor_perceptrones.png)
+
+</div>
 
 La función XOR produce:
 
@@ -220,15 +254,15 @@ Esto explica por qué las redes neuronales utilizan múltiples capas: permiten r
 
 ---
 
-# Keras
+# 7. Keras
 
-## Qué es y por qué importa
+## 7.1 Qué es y por qué importa
 
 Keras es una librería que facilita la construcción y entrenamiento de redes neuronales. Permite definir arquitecturas, funciones de pérdida, optimizadores y métricas sin implementar manualmente todas las operaciones matemáticas.
 
 ---
 
-# Caso de uso: clasificación de reseñas de IMDB
+# 8. Caso de uso: clasificación de reseñas de IMDB
 
 Se utilizó el dataset IMDB para clasificar reseñas de películas como positivas o negativas.
 
@@ -245,7 +279,7 @@ Las reseñas se transforman en vectores numéricos para que puedan ser procesada
 
 ---
 
-# Modelo base
+# 9. Modelo base
 
 ```python
 model = models.Sequential()
@@ -288,11 +322,15 @@ El modelo utiliza:
 
 ---
 
-# Pérdida de entrenamiento y validación
+# 10. Pérdida de entrenamiento y validación
+
+<div align="center">
 
 ![Pérdida entrenamiento vs. validación](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/loss_original.png)
 
-### Interpretación
+</div>
+
+### 10.0. Interpretación
 
 La curva de **training** disminuye progresivamente desde aproximadamente 0.55 hasta valores cercanos a 0.01. Esto indica que el error sobre los datos de entrenamiento disminuye de manera continua.
 
@@ -308,7 +346,7 @@ Por ello, aumentar indefinidamente el número de épocas no necesariamente mejor
 
 ---
 
-# Estrategias para reducir el sobreajuste
+# 11. Estrategias para reducir el sobreajuste
 
 Se probaron diferentes estrategias:
 
@@ -318,11 +356,15 @@ Se probaron diferentes estrategias:
 
 ---
 
-# Dropout
+# 12. Dropout
+
+<div align="center">
 
 ![Efecto del Dropout](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/loss_dropout.png)
 
-### Interpretación
+</div>
+
+### 12.0. Interpretación
 
 La gráfica compara la pérdida de validación del modelo con **Dropout** frente al modelo original.
 
@@ -334,7 +376,7 @@ Por lo tanto, esta técnica puede mejorar la generalización, pero debe combinar
 
 ---
 
-# Qué aprendimos
+# 13. Qué aprendimos
 
 - Una CNN analiza grupos de píxeles y conserva relaciones espaciales importantes.
 - Las primeras capas pueden aprender bordes y patrones simples, mientras que capas posteriores pueden aprender características más complejas.
@@ -349,9 +391,9 @@ Por lo tanto, esta técnica puede mejorar la generalización, pero debe combinar
 
 ---
 
-# Aplicación al proyecto: evaluación no destructiva de la condición interna de la granadilla
+# 14. Aplicación al proyecto: evaluación no destructiva de la condición interna de la granadilla
 
-### ¿Cómo utilizaríamos Machine Learning en nuestro proyecto?
+### 14.0. ¿Cómo utilizaríamos Machine Learning en nuestro proyecto?
 
 En nuestro proyecto de evaluación no destructiva de la condición interna de la granadilla mediante excitación vibratoria controlada, utilizaremos Machine Learning mediante aprendizaje supervisado.
 
@@ -359,7 +401,7 @@ La idea es que el sistema pueda aprender a partir de datos obtenidos experimenta
 
 Estas mediciones serán utilizadas como entradas del modelo:
 
-X = (X_vib, m)
+`X = (X_vib, m)`
 
 donde:
 * X_vib representa las características de la respuesta vibroacústica.
@@ -369,7 +411,7 @@ El modelo será entrenado utilizando granadillas cuya condición interna ya haya
 
 ---
 
-### Funciones de Machine Learning en nuestro proyecto
+### 14.1. Funciones de Machine Learning en nuestro proyecto
 
 1. **Aprendizaje de patrones:** El modelo analizará las características de las señales obtenidas y aprenderá relaciones entre el comportamiento vibroacústico y la condición interna de la granadilla.
 2. **Clasificación:** Una vez entrenado, el modelo podrá clasificar una granadilla dentro de las categorías que definamos experimentalmente:
@@ -377,7 +419,7 @@ El modelo será entrenado utilizando granadillas cuya condición interna ya haya
    * **1** → Condición B
 3. **Predicción:** Cuando se analice una nueva granadilla, el modelo recibirá sus características vibroacústicas y su masa para estimar su condición interna:
 
-    ŷ = f(X_vib, m)
+`ŷ = f(X_vib, m)`
 
 donde ŷ (y con sombrero) representa la condición interna estimada.
 
@@ -386,7 +428,7 @@ donde ŷ (y con sombrero) representa la condición interna estimada.
 
 ---
 
-### Modelos que utilizaríamos
+### 14.2. Modelos que utilizaríamos
 
 Como primera etapa, utilizaríamos modelos de Machine Learning supervisado, como:
 * **Random Forest**
@@ -399,7 +441,7 @@ Posteriormente, si contamos con suficientes datos, podríamos comparar estos res
 
 ---
 
-### Flujo del proyecto
+### 14.3. Flujo del proyecto
 ```text
 Granadilla
    │
@@ -438,7 +480,7 @@ En resumen, Machine Learning será el encargado de aprender la relación entre l
 
 ---
 
-# Conclusión
+# 15. Conclusión
 
 El taller permitió comprender diferentes conceptos fundamentales de las redes neuronales, desde el funcionamiento del perceptrón hasta arquitecturas más complejas como las CNN. También se analizaron técnicas como **Transfer Learning, Grad-CAM, regularización y Dropout**, que permiten mejorar el entrenamiento, evaluar el comportamiento del modelo e interpretar sus resultados.
 
@@ -448,7 +490,7 @@ La función del Machine Learning será **aprender patrones, clasificar, predecir
 
 La función del modelo puede representarse como:
 
-ŷ = f(X_vib, m)
+`ŷ = f(X_vib, m)`
 
 donde:
 
