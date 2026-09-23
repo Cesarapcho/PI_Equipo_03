@@ -433,7 +433,6 @@ En general, el taller me ayudó a entender que no basta con mirar si el modelo a
 
 ---
 
-# ¿Cuál utilizaríamos en nuestro proyecto?
 
 # ¿Cómo aplicaríamos lo aprendido en nuestro proyecto?
 
