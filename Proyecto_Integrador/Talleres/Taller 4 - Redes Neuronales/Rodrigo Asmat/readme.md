@@ -148,6 +148,14 @@ donde `x` representa las entradas, `w` los pesos, `b` el bias y `f` la función 
 ![XOR no es separable linealmente](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Rodrigo%20Asmat/Imagenes/perceptron_xor.png)
 
 </div>
+La función XOR produce:
+
+| X1 | X2 | XOR |
+|---:|---:|---:|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
 
 **Interpretación:** en XOR no existe una única línea que separe correctamente las clases. Por ello, un solo perceptrón no es suficiente y se necesitan varias capas.
 
