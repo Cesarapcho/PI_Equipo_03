@@ -102,7 +102,7 @@ Las zonas más claras o amarillas representan regiones con mayor influencia en l
 
 </div>
 
-### 2.1. Interpretación
+### Interpretación
 
 La figura contiene tres paneles:
 
@@ -124,7 +124,7 @@ Grad-CAM no demuestra por sí solo que la decisión sea correcta, pero permite c
 
 </div>
 
-### 3.0. Interpretación
+### Interpretación
 
 La matriz muestra el comportamiento de la CNN para las dos clases:
 
@@ -140,13 +140,13 @@ Por lo tanto:
 - **36** imágenes de la clase 1 fueron clasificadas incorrectamente como clase 0.
 - **37** imágenes de la clase 1 fueron clasificadas correctamente como clase 1.
 
-El número total de aciertos es 54 + 37 = 91.
+- El número total de aciertos es 54 + 37 = 91.
 
-El número total de imágenes es 54 + 22 + 36 + 37 = 149.
+- El número total de imágenes es 54 + 22 + 36 + 37 = 149.
 
 Por tanto:
 
-Accuracy = 91 / 149 ≈ 0.611
+- Accuracy = 91 / 149 ≈ 0.611
 
 La exactitud es aproximadamente 61.1 %.
 
@@ -194,7 +194,7 @@ donde:
 
 </div>
 
-### 5.0. Interpretación
+### Interpretación
 
 La gráfica muestra las fronteras de decisión para las funciones **AND** y **OR**.
 
@@ -330,7 +330,7 @@ El modelo utiliza:
 
 </div>
 
-### 10.0. Interpretación
+### Interpretación
 
 La curva de **training** disminuye progresivamente desde aproximadamente 0.55 hasta valores cercanos a 0.01. Esto indica que el error sobre los datos de entrenamiento disminuye de manera continua.
 
@@ -355,8 +355,23 @@ Se probaron diferentes estrategias:
 3. **Dropout:** desactiva aleatoriamente una proporción de neuronas durante el entrenamiento.
 
 ---
+# 12. Regularización L2
 
-# 12. Dropout
+La regularización L2 penaliza los pesos demasiado grandes del modelo, ayudando a reducir el sobreajuste y mejorar la capacidad de generalización.
+
+<div align="center">
+
+![Regularización L2](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%204%20-%20Redes%20Neuronales/Juan%20Berrocal/Imagenes/regularizacion.png)
+
+</div>
+
+### Interpretación
+
+La gráfica muestra el comportamiento de la pérdida durante el entrenamiento y la validación al aplicar regularización. La pérdida de entrenamiento continúa disminuyendo, mientras que la pérdida de validación presenta un comportamiento más controlado en comparación con el modelo original.
+
+Esto permite observar cómo la regularización ayuda a reducir el sobreajuste, evitando que el modelo se adapte excesivamente a los datos de entrenamiento.
+
+# 13. Dropout
 
 <div align="center">
 
@@ -364,7 +379,7 @@ Se probaron diferentes estrategias:
 
 </div>
 
-### 12.0. Interpretación
+### Interpretación
 
 La gráfica compara la pérdida de validación del modelo con **Dropout** frente al modelo original.
 
@@ -376,7 +391,7 @@ Por lo tanto, esta técnica puede mejorar la generalización, pero debe combinar
 
 ---
 
-# 13. Qué aprendimos
+# 14. Qué aprendimos
 
 - Una CNN analiza grupos de píxeles y conserva relaciones espaciales importantes.
 - Las primeras capas pueden aprender bordes y patrones simples, mientras que capas posteriores pueden aprender características más complejas.
@@ -391,9 +406,9 @@ Por lo tanto, esta técnica puede mejorar la generalización, pero debe combinar
 
 ---
 
-# 14. Aplicación al proyecto: evaluación no destructiva de la condición interna de la granadilla
+# 15. Aplicación al proyecto: evaluación no destructiva de la condición interna de la granadilla
 
-### 14.0. ¿Cómo utilizaríamos Machine Learning en nuestro proyecto?
+### ¿Cómo utilizaríamos Machine Learning en nuestro proyecto?
 
 En nuestro proyecto de evaluación no destructiva de la condición interna de la granadilla mediante excitación vibratoria controlada, utilizaremos Machine Learning mediante aprendizaje supervisado.
 
@@ -411,7 +426,7 @@ El modelo será entrenado utilizando granadillas cuya condición interna ya haya
 
 ---
 
-### 14.1. Funciones de Machine Learning en nuestro proyecto
+### 15.1. Funciones de Machine Learning en nuestro proyecto
 
 1. **Aprendizaje de patrones:** El modelo analizará las características de las señales obtenidas y aprenderá relaciones entre el comportamiento vibroacústico y la condición interna de la granadilla.
 2. **Clasificación:** Una vez entrenado, el modelo podrá clasificar una granadilla dentro de las categorías que definamos experimentalmente:
@@ -428,7 +443,7 @@ donde ŷ (y con sombrero) representa la condición interna estimada.
 
 ---
 
-### 14.2. Modelos que utilizaríamos
+### 15.2. Modelos que utilizaríamos
 
 Como primera etapa, utilizaríamos modelos de Machine Learning supervisado, como:
 * **Random Forest**
@@ -441,7 +456,7 @@ Posteriormente, si contamos con suficientes datos, podríamos comparar estos res
 
 ---
 
-### 14.3. Flujo del proyecto
+### 15.3. Flujo del proyecto
 ```text
 Granadilla
    │
@@ -480,7 +495,7 @@ En resumen, Machine Learning será el encargado de aprender la relación entre l
 
 ---
 
-# 15. Conclusión
+# 16. Conclusión
 
 El taller permitió comprender diferentes conceptos fundamentales de las redes neuronales, desde el funcionamiento del perceptrón hasta arquitecturas más complejas como las CNN. También se analizaron técnicas como **Transfer Learning, Grad-CAM, regularización y Dropout**, que permiten mejorar el entrenamiento, evaluar el comportamiento del modelo e interpretar sus resultados.
 
