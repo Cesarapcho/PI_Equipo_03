@@ -435,14 +435,112 @@ En general, el taller me ayudó a entender que no basta con mirar si el modelo a
 
 # ¿Cuál utilizaríamos en nuestro proyecto?
 
-Si en nuestro Proyecto Integrador incorporáramos una red neuronal, utilizaríamos una **CNN**.
+# ¿Cómo aplicaríamos lo aprendido en nuestro proyecto?
 
-Nuestro proyecto busca evaluar de manera no destructiva la condición interna de una granadilla mediante una **excitación vibroacústica controlada** y el análisis de la respuesta generada por el fruto.
+En nuestro Proyecto Integrador utilizaremos **Machine Learning** para apoyar la evaluación no destructiva de la condición interna de una granadilla. El sistema aplicará una **excitación vibroacústica controlada** al fruto y registrará su respuesta mediante sensores. Además, se obtendrán otros datos como la masa de la granadilla.
 
-Una posible forma de aplicar una CNN sería transformar las señales obtenidas por los sensores en **espectrogramas**, que representan visualmente cómo se distribuyen las frecuencias de una señal. La CNN podría aprender patrones presentes en estos espectrogramas y utilizarlos para diferenciar distintas condiciones de la granadilla.
+A diferencia del ejercicio de CNN del taller, nuestro proyecto no parte principalmente de fotografías. Los datos principales serán las **mediciones obtenidas de cada granadilla**, por lo que primero será necesario organizarlas, analizarlas y determinar cuáles aportan más información para realizar la clasificación.
 
-Elegiríamos una CNN porque puede identificar automáticamente patrones complejos en este tipo de representaciones, mientras que un perceptrón simple sería demasiado limitado para analizar relaciones de mayor complejidad.
+## Preparación y exploración de los datos
 
-Para implementar y entrenar esta CNN podríamos utilizar **Keras**, ya que facilita la construcción y evaluación de redes neuronales.
+Una parte importante de los talleres anteriores fue aprender a revisar un conjunto de datos antes de entrenar un modelo. En el taller de regresión utilizamos `Pandas` para cargar y explorar la información mediante funciones como:
 
-Por lo tanto, suponiendo que incorporáramos redes neuronales al proyecto, utilizaríamos una **CNN aplicada a espectrogramas de las señales vibroacústicas**, implementada mediante Keras.
+```python
+pd.read_csv()
+df.head()
+df.info()
+df.describe()
+```
+
+Estas funciones nos servirían en el proyecto para cargar las mediciones experimentales, verificar que los datos estén completos y observar valores como promedios, mínimos, máximos y dispersión de las variables.
+
+Por ejemplo, nuestro conjunto de datos podría contener información como:
+
+- masa de la granadilla;
+- características obtenidas de la respuesta vibroacústica;
+- amplitud de la señal;
+- frecuencias relevantes;
+- etiqueta correspondiente a la condición real del fruto.
+
+## Relación entre las variables
+
+También podríamos aplicar el análisis de correlación trabajado en el taller:
+
+```python
+numeric_df.corr()
+```
+
+Esto nos permitiría observar si algunas características presentan una mayor relación con la condición que queremos estudiar y detectar variables que aporten poca información.
+
+La idea no sería utilizar la correlación como único criterio para decidir, sino como una primera forma de conocer mejor los datos antes de construir el modelo.
+
+## División de los datos
+
+Otro paso que aplicaríamos directamente es separar los datos utilizados para entrenar el modelo de aquellos utilizados para evaluarlo.
+
+```python
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.3,
+    random_state=123
+)
+```
+
+Esta separación es importante porque permite comprobar si el modelo puede trabajar con granadillas que no utilizó durante su entrenamiento.
+
+## Entrenamiento y predicción
+
+En los talleres aprendimos el uso de dos funciones que se repiten en muchos modelos de Machine Learning:
+
+```python
+model.fit(x_train, y_train)
+```
+
+`fit()` permite entrenar el modelo utilizando las características y resultados conocidos.
+
+Después se puede utilizar:
+
+```python
+predictions = model.predict(x_test)
+```
+
+para obtener predicciones sobre datos que el modelo no utilizó directamente durante el entrenamiento.
+
+En nuestro proyecto, la misma lógica permitiría entrenar un modelo con mediciones de granadillas previamente evaluadas y posteriormente utilizarlo para estimar la condición de nuevas muestras.
+
+## Selección de características
+
+Otro aprendizaje útil del taller fue analizar qué variables tenían mayor influencia en un modelo. En el ejercicio con árboles de decisión utilizamos:
+
+```python
+tree_model.feature_importances_
+```
+
+Este concepto sería especialmente útil en nuestro proyecto porque podríamos evaluar qué características de la respuesta vibroacústica aportan más información al momento de diferenciar la condición de las granadillas.
+
+De esta manera, no solo buscaríamos que el modelo clasifique correctamente, sino también comprender **qué mediciones están influyendo más en sus resultados**.
+
+## Relación con el taller de redes neuronales
+
+De lo trabajado en este taller, una **CNN** sería una alternativa que podríamos probar si transformamos las señales vibroacústicas en una representación como un **espectrograma**.
+
+En ese caso, la CNN podría aprender directamente patrones presentes en la distribución de frecuencias de la señal. Para construirla podríamos utilizar **Keras**, aprovechando funciones como:
+
+```python
+model.fit()
+model.predict()
+model.evaluate()
+```
+
+Sin embargo, esta sería una alternativa adicional. En una primera etapa del proyecto podemos trabajar directamente con las **características numéricas extraídas de las señales** y comparar diferentes modelos de Machine Learning.
+
+## Aplicación en el proyecto
+
+Con lo aprendido en los talleres, el proceso que seguiríamos sería recolectar las mediciones de varias granadillas, organizar y explorar los datos, extraer las características de las señales, identificar cuáles son más útiles, separar los datos para entrenamiento y prueba, entrenar diferentes modelos y finalmente comparar sus resultados.
+
+La elección final del modelo no se realizará únicamente porque haya funcionado bien en un taller. Primero tendremos que realizar las pruebas experimentales con las granadillas y analizar qué tipo de datos obtenemos. A partir de esos resultados podremos determinar qué modelo se adapta mejor al problema.
+
+Por ello, los talleres de regresión y redes neuronales nos sirven principalmente como **base para preparar los datos, entrenar modelos, realizar predicciones, evaluar sus resultados e interpretar qué variables están aportando información a la clasificación**.
