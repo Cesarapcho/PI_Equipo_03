@@ -523,3 +523,14 @@ Este concepto sería especialmente útil en nuestro proyecto porque podríamos e
 De esta manera, no solo buscaríamos que el modelo clasifique correctamente, sino también comprender **qué mediciones están influyendo más en sus resultados**.
 
 
+---
+
+# Conclusión
+
+Este taller permitió comprender mejor cómo funcionan diferentes tipos de redes neuronales y qué aspectos deben considerarse al momento de entrenarlas y evaluarlas.
+
+A través de la CNN, Keras y el perceptrón pudimos observar distintas formas de aprendizaje, desde modelos simples hasta arquitecturas más complejas. También vimos que técnicas como Transfer Learning, Data Augmentation, Regularización y Dropout pueden influir bastante en el rendimiento y en la capacidad del modelo para trabajar con datos nuevos.
+
+Además, herramientas como la matriz de confusión y Grad-CAM mostraron que no basta con obtener un buen resultado, sino que también es importante analizar los errores y tratar de entender cómo el modelo toma sus decisiones.
+
+En general, el taller ayudó a relacionar la parte teórica con la práctica y a tener una mejor idea de cómo se construyen, entrenan y evalúan modelos de redes neuronales.
