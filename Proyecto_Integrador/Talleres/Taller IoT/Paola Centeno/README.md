@@ -134,27 +134,21 @@ Crear una red Wi-Fi utilizando un smartphone como Hotspot, conectar el ESP32 a d
 
 ## Uso de la biblioteca WiFi.h
 
-Para esta actividad se utilizó la biblioteca `WiFi.h`, la cual permite gestionar la conectividad Wi-Fi del ESP32.
+Para esta actividad se utilizó la biblioteca `WiFi.h`, que permite gestionar la conectividad Wi-Fi del ESP32.
 
-Entre sus principales funciones se encuentran:
+Esta biblioteca permite realizar acciones como:
 
-- Conectarse a redes Wi-Fi.
-- Escanear redes inalámbricas cercanas.
-- Obtener información de la conexión.
-- Enviar y recibir datos mediante una red.
+- Escanear las redes Wi-Fi disponibles.
+- Conectarse a una red inalámbrica.
+- Consultar el estado de la conexión.
+- Obtener la dirección IP asignada al ESP32.
+- Consultar la intensidad de la señal mediante el valor RSSI.
 
-## Escaneo de redes Wi-Fi
+El uso de `WiFi.h` permite que el ESP32 pueda conectarse a Internet y comunicarse con otros dispositivos o plataformas IoT.
 
-Antes de realizar la conexión al Hotspot, se realizó un escaneo de las redes Wi-Fi disponibles en el entorno.
+## Código utilizado
 
-El programa permitió visualizar en el Monitor Serial:
-
-- El número total de redes detectadas.
-- El nombre de cada red o SSID.
-- La intensidad de la señal mediante RSSI.
-- El estado de seguridad de cada red.
-
-### Código utilizado para el escaneo
+Para realizar el escaneo de las redes Wi-Fi disponibles se utilizó el siguiente código:
 
 ```cpp
 #include <WiFi.h>
@@ -219,4 +213,14 @@ void loop() {
   delay(5000);
 }
 
+```
 
+### Resultado y evidencia
+
+El ESP32 realizó correctamente el escaneo de las redes Wi-Fi disponibles en el entorno.
+
+En el Monitor Serial se muestran las redes detectadas junto con su nombre, intensidad de señal RSSI y estado de seguridad.
+
+<p align="center">
+  <img src="./imagenes/evidencia_scanner_wifi.png" width="650">
+</p>
