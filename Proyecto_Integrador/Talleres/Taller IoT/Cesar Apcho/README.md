@@ -18,7 +18,7 @@ El objetivo principal fue observar cómo variaba el valor leído por el ESP32 al
 
 ### Evidencia
 
-![Potenciómetro](imagenes/POTENCIOMETRO.jpeg)
+![Potenciómetro](Imagenes/POTENCIOMETRO.jpeg)
 
 ---
 
