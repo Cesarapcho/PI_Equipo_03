@@ -38,3 +38,24 @@ El potenciómetro se conectó al ESP32 utilizando el pin GPIO 34 como entrada an
 
 La conexión permite que el ESP32 lea la variación de voltaje generada al girar el potenciómetro.
 
+## Funcionamiento
+
+El ESP32 realiza la lectura analógica del potenciómetro mediante el pin GPIO 34.  
+El valor obtenido por el convertidor ADC varía entre 0 y 4095.
+
+Para obtener una lectura más estable, se toman varias muestras consecutivas y se calcula el promedio de los valores obtenidos.
+
+Posteriormente, el valor promedio del ADC se convierte a voltaje utilizando la siguiente expresión:
+
+\[
+V = \frac{ADC \times 3.3}{4095}
+\]
+
+donde:
+
+- `ADC` representa el valor promedio leído.
+- `3.3 V` corresponde al voltaje de referencia.
+- `4095` es el valor máximo del ADC de 12 bits.
+
+Finalmente, tanto el valor promedio del ADC como el voltaje calculado se muestran en el monitor serial.
+
