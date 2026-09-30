@@ -47,9 +47,7 @@ Para obtener una lectura más estable, se toman varias muestras consecutivas y s
 
 Posteriormente, el valor promedio del ADC se convierte a voltaje utilizando la siguiente expresión:
 
-\[
-V = \frac{ADC \times 3.3}{4095}
-\]
+**V = (ADC × 3.3) / 4095**
 
 donde:
 
@@ -58,4 +56,3 @@ donde:
 - `4095` es el valor máximo del ADC de 12 bits.
 
 Finalmente, tanto el valor promedio del ADC como el voltaje calculado se muestran en el monitor serial.
-
