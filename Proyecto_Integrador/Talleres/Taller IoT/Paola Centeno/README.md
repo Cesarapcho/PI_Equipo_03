@@ -383,3 +383,15 @@ void loop() {
 
 ```
 
+## Verificación y evidencia
+
+La siguiente imagen muestra el funcionamiento del sistema durante el envío de datos a Arduino Cloud.
+
+En el dashboard se puede observar en tiempo real la variación del voltaje del potenciómetro mediante una gráfica y un indicador.
+
+<p align="center">
+  <img src="./imagenes/evidencia_arduino_cloud.png" width="650">
+</p>
+
+En la evidencia se observa un valor de aproximadamente `2.818 V`, correspondiente al voltaje leído por el ESP32 y enviado a Arduino Cloud.
+
