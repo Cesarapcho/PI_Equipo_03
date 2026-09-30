@@ -121,143 +121,102 @@ Los resultados mostrados en el monitor serial permitieron comprobar que, al vari
 
 ## Objetivo
 
-Crear una red Wi-Fi utilizando un smartphone como Hotspot, conectar el ESP32 a dicha red y visualizar en el monitor serial la dirección IP asignada al dispositivo.
+Crear una red Wi-Fi utilizando un smartphone como Hotspot, conectar el ESP32 a dicha red y visualizar en el Monitor Serial la dirección IP asignada al dispositivo.
 
 ## Componentes utilizados
 
-Para el desarrollo de esta actividad se utilizaron los siguientes componentes:
-
 | Componente | Descripción | Imagen |
 |---|---|---|
-| ESP32 DevKit V1 | Tarjeta de desarrollo utilizada para realizar la conexión a la red Wi-Fi. | <img src="./imagenes/esp32_devkit.png" width="140"> |
+| ESP32 DevKit V1 | Tarjeta de desarrollo utilizada para realizar el escaneo y la conexión a redes Wi-Fi. | <img src="./imagenes/esp32_devkit.png" width="140"> |
 | Smartphone | Dispositivo utilizado para crear la red Wi-Fi mediante la función Hotspot. | <img src="./imagenes/smartphone.png" width="140"> |
 | Cable USB | Permite alimentar y programar el ESP32 desde la computadora. | <img src="./imagenes/cable_usb.png" width="140"> |
-| Computadora | Utilizada para programar el ESP32 y visualizar los resultados en el monitor serial. | <img src="./imagenes/computadora.png" width="140"> |
+| Computadora | Utilizada para programar el ESP32 y visualizar los resultados en el Monitor Serial. | <img src="./imagenes/computadora.png" width="140"> |
 
-## Configuración de la red
+## Uso de la biblioteca WiFi.h
 
-Primero se activó la función **Hotspot** del smartphone para crear una red Wi-Fi a la cual posteriormente se conectaría el ESP32.
+Para esta actividad se utilizó la biblioteca `WiFi.h`, la cual permite gestionar la conectividad Wi-Fi del ESP32.
 
-Se configuró un nombre para la red (**SSID**) y una contraseña de acceso. Además, se verificó que el Hotspot trabajara en la banda de **2.4 GHz**, compatible con el módulo Wi-Fi del ESP32.
+Entre sus principales funciones se encuentran:
 
-## Escaneo de redes Wi-Fi disponibles
+- Conectarse a redes Wi-Fi.
+- Escanear redes inalámbricas cercanas.
+- Obtener información de la conexión.
+- Enviar y recibir datos mediante una red.
 
-Antes de realizar la conexión, se programó el ESP32 para realizar un escaneo de las redes Wi-Fi disponibles en el entorno.
+## Escaneo de redes Wi-Fi
 
-Para ello, se utilizó la librería `WiFi.h` y la función `WiFi.scanNetworks()`, la cual permite detectar las redes inalámbricas cercanas.
+Antes de realizar la conexión al Hotspot, se realizó un escaneo de las redes Wi-Fi disponibles en el entorno.
 
-El programa muestra en el Monitor Serial la siguiente información de cada red detectada:
+El programa permitió visualizar en el Monitor Serial:
 
-- Número de la red encontrada.
-- Nombre de la red o **SSID**.
-- Intensidad de la señal mediante el valor **RSSI**, expresado en dBm.
-- Estado de seguridad de la red, indicando si se encuentra abierta o protegida.
+- El número total de redes detectadas.
+- El nombre de cada red o SSID.
+- La intensidad de la señal mediante RSSI.
+- El estado de seguridad de cada red.
 
-El escaneo se realiza nuevamente después de unos segundos para actualizar la lista de redes disponibles.
-
-## Verificación del escaneo
-
-Una vez cargado el programa en el ESP32, se abrió el **Monitor Serial** para observar los resultados.
-
-Durante la prueba, el ESP32 logró detectar múltiples redes Wi-Fi disponibles en el entorno. En la evidencia obtenida se observa que el dispositivo encontró aproximadamente **30 redes**, mostrando sus respectivos nombres y valores de intensidad de señal.
-
-Los valores RSSI permiten conocer qué tan fuerte es la señal recibida. Un valor más cercano a `0 dBm` representa una señal de mayor intensidad.
-
-## Evidencia
-
-La siguiente imagen muestra el ESP32 conectado a la computadora y el resultado del escaneo de redes Wi-Fi visualizado mediante el Monitor Serial.
-
-<p align="center">
-  <img src="./imagenes/evidencia_escaneo_wifi.png" width="650">
-</p>
-
-En el Monitor Serial se observa el mensaje `scan done`, seguido del número de redes encontradas y la información correspondiente a cada una de ellas.
-
-# Actividad 03 - Envío de datos del potenciómetro a Arduino Cloud
-
-## Objetivo
-
-Leer en tiempo real la variación de un potenciómetro conectado al ESP32 y enviar los datos obtenidos a **Arduino Cloud** para su visualización mediante un dashboard.
-
-## Componentes utilizados
-
-Para el desarrollo de esta actividad se utilizaron los siguientes componentes:
-
-| Componente | Descripción | Imagen |
-|---|---|---|
-| ESP32 DevKit V1 | Tarjeta de desarrollo encargada de leer el valor analógico del potenciómetro y enviar los datos a Arduino Cloud. | <img src="./imagenes/esp32_devkit.png" width="140"> |
-| Potenciómetro | Componente analógico cuya posición modifica el voltaje leído por el ESP32. | <img src="./imagenes/potenciometro.png" width="140"> |
-| Protoboard | Utilizada para realizar las conexiones entre el potenciómetro y el ESP32. | <img src="./imagenes/protoboard.png" width="140"> |
-| Cables jumper | Permiten realizar las conexiones eléctricas entre los componentes. | <img src="./imagenes/jumpers.png" width="140"> |
-| Cable USB | Utilizado para alimentar y programar el ESP32. | <img src="./imagenes/cable_usb.png" width="140"> |
-| Computadora | Utilizada para programar el ESP32 y acceder a Arduino Cloud. | <img src="./imagenes/computadora.png" width="140"> |
-| Smartphone | Utilizado como Hotspot para proporcionar conexión a Internet al ESP32. | <img src="./imagenes/smartphone.png" width="140"> |
-
-## Conexión del potenciómetro
-
-Se utilizó el mismo montaje realizado en la Actividad 01.
-
-| Potenciómetro | ESP32 |
-|---|---|
-| VCC | 3.3 V |
-| GND | GND |
-| Señal | GPIO 34 |
-
-El pin GPIO 34 se utilizó como entrada analógica para leer el valor entregado por el potenciómetro mediante el convertidor ADC del ESP32.
-
-## Configuración en Arduino Cloud
-
-Se ingresó a **Arduino Cloud** y se configuró un dispositivo basado en el ESP32.
-
-Posteriormente, se creó un **Thing** y una variable llamada `potenciometro`, encargada de almacenar el valor de voltaje obtenido a partir de la lectura del potenciómetro.
-
-También se configuraron las credenciales de la red Wi-Fi para permitir que el ESP32 se conectara a Internet y pudiera enviar los datos a la nube.
-
-Finalmente, se creó un dashboard para visualizar en tiempo real los valores enviados por el ESP32.
-
-Arduino Cloud permite conectar dispositivos IoT a Internet y gestionar sus datos mediante una interfaz web o móvil. :chatgpt-content-reference{index="1"}
-
-## Código utilizado
-
-Para realizar la lectura del potenciómetro y enviar los datos a Arduino Cloud se utilizó el siguiente código:
+### Código utilizado para el escaneo
 
 ```cpp
-#include "thingProperties.h"
-
-int potPin = 34;
-int numLecturas = 10;
+#include <WiFi.h>
 
 void setup() {
   Serial.begin(115200);
-  delay(1500);
+  delay(1000);
 
-  initProperties();
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
 
-  ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+  delay(100);
+
+  Serial.println("Escaneando redes WiFi...");
 }
 
 void loop() {
-  ArduinoCloud.update();
 
-  int suma = 0;
+  Serial.println();
+  Serial.println("Iniciando escaneo...");
 
-  for (int i = 0; i < numLecturas; i++) {
-    suma += analogRead(potPin);
-    delay(10);
+  int n = WiFi.scanNetworks();
+
+  Serial.println("Escaneo finalizado");
+
+  if (n == 0) {
+    Serial.println("No se encontraron redes WiFi");
+  } else {
+    Serial.print("Redes encontradas: ");
+    Serial.println(n);
+
+    Serial.println();
+
+    for (int i = 0; i < n; i++) {
+
+      Serial.print(i + 1);
+      Serial.print(": ");
+
+      Serial.print(WiFi.SSID(i));
+
+      Serial.print(" (");
+      Serial.print(WiFi.RSSI(i));
+      Serial.print(" dBm)");
+
+      Serial.print(" ");
+
+      if (WiFi.encryptionType(i) == WIFI_AUTH_OPEN) {
+        Serial.println("Abierta");
+      } else {
+        Serial.println("Protegida");
+      }
+
+      delay(10);
+    }
   }
 
-  float promedio = suma / (float)numLecturas;
+  Serial.println();
+  Serial.println("-----------------------------");
 
-  float voltaje = promedio * 3.3 / 4095.0;
+  WiFi.scanDelete();
 
-  potenciometro = voltaje;
-
-  Serial.print("ADC promedio: ");
-  Serial.print(promedio);
-
-  Serial.print(" | Voltaje: ");
-  Serial.print(voltaje, 2);
-  Serial.println(" V");
-
-  delay(500);
+  delay(5000);
 }
+
+
