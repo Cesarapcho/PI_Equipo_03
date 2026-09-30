@@ -26,3 +26,15 @@ Para el desarrollo de esta actividad se utilizaron los siguientes componentes:
 | Cables jumper | Se utilizan para realizar las conexiones entre el ESP32, el potenciómetro y la protoboard. | <img src="./imagenes/cables_jumper.png" width="140"> |
 
 
+## Conexión
+
+El potenciómetro se conectó al ESP32 utilizando el pin GPIO 34 como entrada analógica.
+
+| Potenciómetro | ESP32 |
+|---|---|
+| VCC | 3.3 V |
+| Señal | GPIO 34 |
+| GND | GND |
+
+La conexión permite que el ESP32 lea la variación de voltaje generada al girar el potenciómetro.
+
