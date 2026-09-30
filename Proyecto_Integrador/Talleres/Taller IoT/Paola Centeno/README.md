@@ -428,3 +428,78 @@ Medir la temperatura utilizando un sensor LM35 conectado al ESP32 y enviar los v
 | Cables jumper | Permiten realizar las conexiones eléctricas entre los componentes. | <img src="./imagenes/cables_jumper.png" width="140"> |
 | Cable USB | Utilizado para alimentar y programar el ESP32. | <img src="./imagenes/cable_usb.png" width="140"> |
 | Computadora | Utilizada para programar el ESP32 y visualizar los datos en Arduino Cloud. | <img src="./imagenes/computadora.png" width="140"> |
+
+## Conexión del sensor LM35
+
+Para medir la temperatura se utilizó el módulo LM35 del kit Keyestudio, conectado al ESP32 mediante una entrada analógica.
+
+La conexión realizada fue la siguiente:
+
+| Módulo LM35 | ESP32 |
+|---|---|
+| S | GPIO 34 |
+| + | 5 V |
+| - | GND |
+
+El pin `S` corresponde a la salida analógica del sensor y se conectó al GPIO 34 del ESP32 para realizar la lectura mediante el ADC.
+
+El módulo LM35 fue alimentado con `5 V`, mientras que la señal analógica generada por el sensor fue leída mediante el GPIO 34.
+
+## Código utilizado
+
+Para realizar la lectura del sensor LM35 y enviar la temperatura obtenida a Arduino Cloud se utilizó el siguiente código:
+
+```cpp
+#include "thingProperties.h"
+
+int lm35Pin = 34;
+int numLecturas = 10;
+
+void setup() {
+  Serial.begin(115200);
+  delay(1500);
+
+  initProperties();
+  ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+}
+
+void loop() {
+  ArduinoCloud.update();
+
+  int suma = 0;
+
+  for (int i = 0; i < numLecturas; i++) {
+    suma += analogRead(lm35Pin);
+    delay(10);
+  }
+
+  float promedio = suma / (float)numLecturas;
+
+  float voltaje = promedio * 3.3 / 4095.0;
+
+  float temperaturaC = voltaje * 100.0;
+
+  temperatura = temperaturaC;
+
+  Serial.print("ADC promedio: ");
+  Serial.print(promedio);
+
+  Serial.print(" | Voltaje: ");
+  Serial.print(voltaje, 3);
+
+  Serial.print(" V | Temperatura: ");
+  Serial.print(temperaturaC, 2);
+  Serial.println(" °C");
+
+  delay(500);
+}
+
+/*
+  Since Temperatura is READ_WRITE variable, onTemperaturaChange() is
+  executed every time a new value is received from IoT Cloud.
+*/
+void onTemperaturaChange()  {
+
+}
+
+
