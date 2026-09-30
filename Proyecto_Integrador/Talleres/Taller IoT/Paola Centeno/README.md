@@ -502,4 +502,22 @@ void onTemperaturaChange()  {
 
 }
 
+```
+
+## Verificación y evidencia
+
+La siguiente imagen muestra el funcionamiento del sistema durante la medición de temperatura con el sensor LM35 y el envío de datos a Arduino Cloud.
+
+<p align="center">
+  <img src="./imagenes/evidencia_lm35_arduino_cloud.png" width="650">
+</p>
+
+En la evidencia se observa que el ESP32 realiza la lectura del sensor LM35, calcula el voltaje correspondiente y obtiene la temperatura en grados Celsius.
+
+Además, los valores son enviados a Arduino Cloud y visualizados en tiempo real mediante una gráfica.
+
+Durante la prueba se registraron valores cercanos a `11 °C`, observándose su variación tanto en el Monitor Serial como en el dashboard.
+
+
+
 
