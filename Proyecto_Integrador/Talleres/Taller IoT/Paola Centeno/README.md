@@ -146,6 +146,8 @@ Esta biblioteca permite realizar acciones como:
 
 El uso de `WiFi.h` permite que el ESP32 pueda conectarse a Internet y comunicarse con otros dispositivos o plataformas IoT.
 
+## Parte 1 - Escaneo de redes Wi-Fi
+
 ## Código utilizado
 
 Para realizar el escaneo de las redes Wi-Fi disponibles se utilizó el siguiente código:
