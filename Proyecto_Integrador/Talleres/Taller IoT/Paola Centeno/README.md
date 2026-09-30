@@ -603,3 +603,31 @@ void onLedChange() {
 }
 
 ```
+
+## Verificación y evidencia
+
+Para verificar el funcionamiento, se utilizó un control en el dashboard de Arduino Cloud para modificar el estado de la variable `led`.
+
+Al activar el control, el LED conectado al GPIO 2 se encendió. Al desactivarlo, el LED se apagó.
+
+La siguiente imagen muestra el funcionamiento del sistema durante la prueba.
+
+<p align="center">
+  <img src="./imagenes/evidencia_led_arduino_cloud.png" width="650">
+</p>
+
+En la evidencia se puede observar el LED conectado al ESP32 y su control mediante Arduino Cloud.
+
+## Resultado
+
+Se logró controlar correctamente el encendido y apagado de un LED conectado al GPIO 2 del ESP32 mediante Arduino Cloud.
+
+Los cambios realizados desde el dashboard fueron recibidos por el ESP32, permitiendo modificar el estado del LED de forma remota.
+
+## Conclusión
+
+La actividad permitió comprobar que Arduino Cloud no solo puede utilizarse para visualizar datos enviados por el ESP32, sino también para controlar dispositivos conectados a sus pines digitales.
+
+Mediante una variable vinculada con Arduino Cloud fue posible cambiar el estado del GPIO 2 y controlar remotamente el encendido y apagado del LED.
+
+Esta actividad permitió comprender un ejemplo básico de control remoto aplicado a sistemas de Internet de las Cosas.
