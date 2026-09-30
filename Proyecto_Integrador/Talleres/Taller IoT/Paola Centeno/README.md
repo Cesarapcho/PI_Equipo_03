@@ -395,3 +395,18 @@ En el dashboard se puede observar en tiempo real la variación del voltaje del p
 
 En la evidencia se observa un valor de aproximadamente `2.818 V`, correspondiente al voltaje leído por el ESP32 y enviado a Arduino Cloud.
 
+## Resultado
+
+Se logró leer correctamente la variación del potenciómetro mediante el ESP32 y enviar los valores obtenidos a Arduino Cloud.
+
+Los datos fueron visualizados en tiempo real mediante un dashboard que mostró tanto la variación del voltaje en una gráfica como el valor instantáneo mediante un indicador.
+
+Durante la prueba se observó un valor aproximado de `2.818 V`, confirmando que la información obtenida por el ESP32 fue enviada correctamente a la plataforma.
+
+## Conclusión
+
+La actividad permitió integrar el ESP32 con Arduino Cloud para realizar el monitoreo en tiempo real de una variable analógica.
+
+Mediante la lectura del potenciómetro, el cálculo del promedio y la conversión del valor ADC a voltaje, fue posible obtener datos más estables antes de enviarlos a la nube.
+
+Finalmente, se comprobó que Arduino Cloud permite visualizar de manera remota y en tiempo real los datos generados por el ESP32 mediante un dashboard.
