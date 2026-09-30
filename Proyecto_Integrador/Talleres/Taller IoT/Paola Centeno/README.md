@@ -226,13 +226,67 @@ En el Monitor Serial se muestran las redes detectadas junto con su nombre, inten
 </p>
 
 
-## Configuración del Hotspot
+## Parte 2 - Configuración del Hotspot
 
-Para realizar la conexión del ESP32 se configuró un smartphone como punto de acceso Wi-Fi.
+Para realizar la conexión del ESP32 se configuró un smartphone como punto de acceso Wi-Fi o Hotspot.
 
 La red utilizada fue:
 
 - **SSID:** `3DS_WIFI`
 - **Seguridad:** red protegida mediante contraseña
 
-Posteriormente, esta red fue seleccionada en el código para permitir la conexión del ESP32.
+Una vez configurado el Hotspot, se activó la red para permitir que el ESP32 pudiera conectarse a ella.
+
+
+## Parte 3 - Conexión del ESP32 al Hotspot
+
+### Código utilizado
+
+Para conectar el ESP32 a la red Wi-Fi creada mediante el Hotspot se utilizó el siguiente código:
+
+```cpp
+#include <WiFi.h>
+
+const char* ssid = "3DS_WIFI";
+const char* password = "CONTRASEÑA_DEL_HOTSPOT";
+
+void setup() {
+  Serial.begin(115200);
+  delay(1000);
+
+  Serial.println();
+  Serial.print("Conectando a la red: ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("Conectado a WiFi correctamente");
+
+  Serial.print("Dirección IP asignada: ");
+  Serial.println(WiFi.localIP());
+
+  Serial.print("Intensidad de señal: ");
+  Serial.print(WiFi.RSSI());
+  Serial.println(" dBm");
+}
+
+void loop() {
+}
+
+```
+
+### Verificación y evidencia
+
+La siguiente imagen muestra el resultado obtenido en el Monitor Serial después de conectar el ESP32 a la red Wi-Fi `3DS_WIFI`.
+
+<p align="center">
+  <img src="./imagenes/evidencia_conexion_wifi.png" width="650">
+</p>
+
+En la evidencia se observa que el ESP32 se conectó correctamente a la red, obtuvo la dirección IP `10.149.161.237` y registró una intensidad de señal de `-25 dBm`.
