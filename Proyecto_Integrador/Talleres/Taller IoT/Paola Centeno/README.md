@@ -534,3 +534,72 @@ El uso del promedio de varias lecturas permitió obtener valores más estables a
 
 Finalmente, se comprobó que Arduino Cloud permite monitorear en tiempo real los datos provenientes de un sensor conectado al ESP32.
 
+
+
+# Actividad 05 - Control de un LED desde Arduino Cloud
+
+## Objetivo
+
+Controlar el encendido y apagado de un LED conectado al ESP32 mediante Arduino Cloud.
+
+## Componentes utilizados
+
+| Componente | Descripción | Imagen |
+|---|---|---|
+| ESP32 DevKit V1 | Tarjeta de desarrollo utilizada para controlar el LED y comunicarse con Arduino Cloud. | <img src="./imagenes/esp32_devkit.png" width="140"> |
+| LED | Componente utilizado como salida visual para comprobar el control remoto desde Arduino Cloud. | <img src="./imagenes/led.png" width="140"> |
+| Resistencia de 220 Ω | Limita la corriente que circula por el LED para protegerlo. | <img src="./imagenes/resistencia_220ohm.png" width="140"> |
+| Protoboard | Utilizada para realizar las conexiones entre el ESP32, la resistencia y el LED. | <img src="./imagenes/protoboard.png" width="140"> |
+| Cables jumper | Permiten realizar las conexiones eléctricas entre los componentes. | <img src="./imagenes/cables_jumper.png" width="140"> |
+| Cable USB | Utilizado para alimentar y programar el ESP32. | <img src="./imagenes/cable_usb.png" width="140"> |
+| Computadora | Utilizada para programar el ESP32 y acceder a Arduino Cloud. | <img src="./imagenes/computadora.png" width="140"> |
+
+## Conexión del LED
+
+Para controlar el encendido y apagado del LED se utilizó el pin digital GPIO 2 del ESP32.
+
+La conexión realizada fue la siguiente:
+
+| Componente | Conexión |
+|---|---|
+| Ánodo del LED (+) | GPIO 2 |
+| Cátodo del LED (-) | Resistencia de 220 Ω |
+| Resistencia de 220 Ω | GND |
+
+La resistencia de `220 Ω` se utilizó para limitar la corriente que circula por el LED y proteger el componente.
+
+## Código utilizado
+
+Para controlar el LED desde Arduino Cloud se utilizó el siguiente código:
+
+```cpp
+#include "thingProperties.h"
+
+int ledPin = 2;
+
+void setup() {
+  Serial.begin(115200);
+  delay(1500);
+
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+
+  initProperties();
+  ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+}
+
+void loop() {
+  ArduinoCloud.update();
+}
+
+void onLedChange() {
+  if (led) {
+    digitalWrite(ledPin, HIGH);
+    Serial.println("LED encendido");
+  } else {
+    digitalWrite(ledPin, LOW);
+    Serial.println("LED apagado");
+  }
+}
+
+```
