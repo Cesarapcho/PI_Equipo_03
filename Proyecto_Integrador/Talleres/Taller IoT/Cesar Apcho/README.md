@@ -28,11 +28,11 @@ En la segunda parte se realizó un cálculo matemático para determinar la **ecu
 
 De esta manera, las lecturas analógicas pudieron expresarse como valores de voltaje, facilitando su interpretación.
 
-![Fórmula de conversión](imagenes/FORMULA_CONVERSION.jpeg)
+![Fórmula de conversión](Imagenes/FORMULA_CONVERSION.jpeg)
 
 Además, se calcularon las **primeras diez mediciones** obtenidas y posteriormente se halló su promedio. Esto permitió obtener un valor más representativo de las lecturas realizadas y reducir el efecto de pequeñas variaciones entre mediciones.
 
-![Promedio de mediciones](imagenes/PROMEDIO_POTENCIOMETRO.jpeg)
+![Promedio de mediciones](Imagenes/PROMEDIO_POTENCIOMETRO.jpeg)
 
 ---
 
@@ -42,11 +42,11 @@ Antes de comenzar con la integración IoT, se comprobó una de las principales c
 
 Mediante un escaneo de redes se pudo verificar que el dispositivo era capaz de detectar diferentes redes WiFi disponibles en el entorno.
 
-![Escaneo de redes WiFi](imagenes/ESCANEO_REDES.jpeg)
+![Escaneo de redes WiFi](Imagenes/ESCANEO_REDES.jpeg)
 
 Entre las redes detectadas se encontró la red compartida desde un celular denominada **HonorX8B**, además de la red de la universidad **UPCH_CENTRAL**.
 
-![Red HonorX8B](imagenes/HONORX8B.jpeg)
+![Red HonorX8B](Imagenes/HONORX8B.jpeg)
 
 Esta prueba permitió comprobar que el ESP32 podía reconocer redes inalámbricas cercanas y que estaba preparado para conectarse a Internet y posteriormente comunicarse con una plataforma IoT.
 
@@ -70,7 +70,7 @@ Una vez configurada la comunicación con Arduino Cloud, se utilizó un **LDR (Li
 
 El ESP32 realizaba la lectura del sensor y enviaba los datos hacia Arduino Cloud, donde podían visualizarse prácticamente en tiempo real mediante un **dashboard**.
 
-![Lectura con LDR](imagenes/LDR.jpeg)
+![Lectura con LDR](Imagenes/LDR.jpeg)
 
 Para comprobar el funcionamiento del sistema, se acercó una linterna al LDR. Al aumentar la cantidad de luz recibida por el sensor, se pudo observar cómo los valores mostrados en el dashboard cambiaban de acuerdo con la luminosidad detectada.
 
@@ -88,11 +88,11 @@ Posteriormente, el LED fue vinculado con un **switch ubicado en el dashboard de 
 
 ### LED encendido
 
-![LED encendido](imagenes/LED_ON.jpeg)
+![LED encendido](Imagenes/LED_ON.jpeg)
 
 ### LED apagado
 
-![LED apagado](imagenes/LED_OFF.jpeg)
+![LED apagado](Imagenes/LED_OFF.jpeg)
 
 Con esta actividad se comprobó que una plataforma IoT no solo permite **recibir y visualizar información de sensores**, sino también **enviar órdenes desde Internet hacia dispositivos físicos**.
 
