@@ -60,3 +60,42 @@ La relación entre el valor ADC y el voltaje es lineal, como se observa en la si
 ![Relación entre ADC y voltaje](./imagenes/actividad01_adc_voltaje.png)
 
 Finalmente, tanto el valor promedio del ADC como el voltaje calculado se muestran en el monitor serial.
+
+## Código
+
+El siguiente programa realiza varias lecturas consecutivas del potenciómetro conectado al GPIO 34, calcula el promedio de los valores obtenidos y convierte el resultado del ADC a voltaje.
+
+```cpp
+int potPin = 34;          // Pin donde está conectado el potenciómetro
+int numLecturas = 10;     // Cantidad de lecturas para calcular el promedio
+
+void setup() {
+  Serial.begin(115200);   // Inicializar el monitor serial
+}
+
+void loop() {
+
+  int suma = 0;
+
+  // Tomar varias lecturas
+  for (int i = 0; i < numLecturas; i++) {
+    suma += analogRead(potPin);
+    delay(10);
+  }
+
+  // Calcular el promedio
+  float promedio = suma / (float)numLecturas;
+
+  // Convertir el valor ADC a voltaje
+  float voltaje = promedio * 3.3 / 4095.0;
+
+  // Mostrar resultados en el monitor serial
+  Serial.print("ADC promedio: ");
+  Serial.print(promedio);
+
+  Serial.print(" | Voltaje: ");
+  Serial.print(voltaje, 2);
+  Serial.println(" V");
+
+  delay(500);
+}
