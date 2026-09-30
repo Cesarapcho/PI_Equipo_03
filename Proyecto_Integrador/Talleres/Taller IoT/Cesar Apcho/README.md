@@ -44,7 +44,7 @@ Mediante un escaneo de redes se pudo verificar que el dispositivo era capaz de d
 
 ![Escaneo de redes WiFi](Imagenes/ESCANEO_REDES.jpeg)
 
-Entre las redes detectadas se encontró la red compartida desde un celular denominada **HonorX8B**, además de la red de la universidad **UPCH_CENTRAL**.
+Entre las redes detectadas se encontró la red compartida desde mi celular **HonorX8B**, además de la red de la universidad **UPCH_CENTRAL**.
 
 ![Red HonorX8B](Imagenes/HONORX8B.jpeg)
 
