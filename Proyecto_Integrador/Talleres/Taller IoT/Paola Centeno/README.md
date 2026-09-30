@@ -115,3 +115,61 @@ Durante la prueba se observaron valores promedio del ADC cercanos a 468 y un vol
 En esta actividad se logró realizar la lectura analógica de un potenciómetro utilizando el ESP32. Para mejorar la estabilidad de la medición se aplicó un promedio de varias muestras y posteriormente se convirtió el valor obtenido por el ADC a voltaje.
 
 Los resultados mostrados en el monitor serial permitieron comprobar que, al variar la posición del potenciómetro, también cambian de manera proporcional el valor ADC y el voltaje calculado. Con ello se reforzó el uso del convertidor ADC del ESP32 y el procesamiento básico de señales analógicas.
+
+
+# Actividad 02 - Conexión del ESP32 a una red Wi-Fi mediante Hotspot
+
+## Objetivo
+
+Crear una red Wi-Fi utilizando un smartphone como Hotspot, conectar el ESP32 a dicha red y visualizar en el monitor serial la dirección IP asignada al dispositivo.
+
+## Componentes utilizados
+
+Para el desarrollo de esta actividad se utilizaron los siguientes componentes:
+
+| Componente | Descripción | Imagen |
+|---|---|---|
+| ESP32 DevKit V1 | Tarjeta de desarrollo utilizada para realizar la conexión a la red Wi-Fi. | <img src="./imagenes/esp32_devkit.png" width="140"> |
+| Smartphone | Dispositivo utilizado para crear la red Wi-Fi mediante la función Hotspot. | <img src="./imagenes/smartphone.png" width="140"> |
+| Cable USB | Permite alimentar y programar el ESP32 desde la computadora. | <img src="./imagenes/cable_usb.png" width="140"> |
+| Computadora | Utilizada para programar el ESP32 y visualizar los resultados en el monitor serial. | <img src="./imagenes/computadora.png" width="140"> |
+
+## Configuración de la red
+
+Primero se activó la función **Hotspot** del smartphone para crear una red Wi-Fi a la cual posteriormente se conectaría el ESP32.
+
+Se configuró un nombre para la red (**SSID**) y una contraseña de acceso. Además, se verificó que el Hotspot trabajara en la banda de **2.4 GHz**, compatible con el módulo Wi-Fi del ESP32.
+
+## Escaneo de redes Wi-Fi disponibles
+
+Antes de realizar la conexión, se programó el ESP32 para realizar un escaneo de las redes Wi-Fi disponibles en el entorno.
+
+Para ello, se utilizó la librería `WiFi.h` y la función `WiFi.scanNetworks()`, la cual permite detectar las redes inalámbricas cercanas.
+
+El programa muestra en el Monitor Serial la siguiente información de cada red detectada:
+
+- Número de la red encontrada.
+- Nombre de la red o **SSID**.
+- Intensidad de la señal mediante el valor **RSSI**, expresado en dBm.
+- Estado de seguridad de la red, indicando si se encuentra abierta o protegida.
+
+El escaneo se realiza nuevamente después de unos segundos para actualizar la lista de redes disponibles.
+
+## Verificación del escaneo
+
+Una vez cargado el programa en el ESP32, se abrió el **Monitor Serial** para observar los resultados.
+
+Durante la prueba, el ESP32 logró detectar múltiples redes Wi-Fi disponibles en el entorno. En la evidencia obtenida se observa que el dispositivo encontró aproximadamente **30 redes**, mostrando sus respectivos nombres y valores de intensidad de señal.
+
+Los valores RSSI permiten conocer qué tan fuerte es la señal recibida. Un valor más cercano a `0 dBm` representa una señal de mayor intensidad.
+
+## Evidencia
+
+La siguiente imagen muestra el ESP32 conectado a la computadora y el resultado del escaneo de redes Wi-Fi visualizado mediante el Monitor Serial.
+
+<p align="center">
+  <img src="./imagenes/evidencia_escaneo_wifi.png" width="650">
+</p>
+
+En el Monitor Serial se observa el mensaje `scan done`, seguido del número de redes encontradas y la información correspondiente a cada una de ellas.
+
