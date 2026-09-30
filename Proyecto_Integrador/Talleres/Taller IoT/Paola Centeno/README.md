@@ -224,3 +224,15 @@ En el Monitor Serial se muestran las redes detectadas junto con su nombre, inten
 <p align="center">
   <img src="./imagenes/evidencia_scanner_wifi.png" width="650">
 </p>
+
+
+## Configuración del Hotspot
+
+Para realizar la conexión del ESP32 se configuró un smartphone como punto de acceso Wi-Fi.
+
+La red utilizada fue:
+
+- **SSID:** `3DS_WIFI`
+- **Seguridad:** red protegida mediante contraseña
+
+Posteriormente, esta red fue seleccionada en el código para permitir la conexión del ESP32.
