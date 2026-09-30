@@ -290,3 +290,18 @@ La siguiente imagen muestra el resultado obtenido en el Monitor Serial después 
 </p>
 
 En la evidencia se observa que el ESP32 se conectó correctamente a la red, obtuvo la dirección IP `10.149.161.237` y registró una intensidad de señal de `-25 dBm`.
+
+
+## Resultado
+
+Se logró realizar correctamente el escaneo de redes Wi-Fi disponibles y posteriormente conectar el ESP32 a la red `3DS_WIFI`.
+
+La conexión fue verificada mediante el Monitor Serial, donde se visualizó la dirección IP asignada al dispositivo y la intensidad de la señal recibida.
+
+## Conclusión
+
+La actividad permitió comprender el uso de la biblioteca `WiFi.h` para gestionar la conectividad Wi-Fi del ESP32.
+
+Primero se realizó un escaneo de las redes disponibles en el entorno y luego se estableció una conexión con una red Wi-Fi creada mediante un Hotspot.
+
+Finalmente, se comprobó la conexión observando la dirección IP asignada al ESP32 en el Monitor Serial.
