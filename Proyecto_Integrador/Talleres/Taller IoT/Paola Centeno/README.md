@@ -99,3 +99,12 @@ void loop() {
 
   delay(500);
 }
+
+
+## Resultado
+
+Se realizó la lectura del potenciómetro conectado al ESP32 y se visualizaron los valores obtenidos en el monitor serial.
+
+Durante la prueba se observaron valores promedio del ADC cercanos a 468 y un voltaje aproximado de 0.38 V. Al girar el potenciómetro, estos valores cambian, demostrando que el ESP32 detecta correctamente la variación de la señal analógica.
+
+![Resultado de la Actividad 01](./imagenes/actividad01_resultado.png)
