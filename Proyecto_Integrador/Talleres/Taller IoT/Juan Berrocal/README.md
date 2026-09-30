@@ -38,13 +38,17 @@ El ESP32 permitió integrar la adquisición de datos, procesamiento, comunicaci�
 
 Se conectó un potenciómetro a una entrada analógica del ESP32. Al modificar su posición, cambia la tensión de salida y el ADC del ESP32 transforma esta señal en un valor digital.
 
-### Montaje
+## Montaje
 
-![Conexión del potenciómetro](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/03_conexion_potenciometro.jpg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/03_conexion_potenciometro.jpg" width="700">
+</p>
 
-### Lectura mediante el Monitor Serie
+## Lectura mediante el Monitor Serie
 
-![Lectura del potenciómetro](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/01_potenciometro_montaje.jpeg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/01_potenciometro_montaje.jpeg" width="700">
+</p>
 
 Los valores obtenidos fueron mostrados mediante el Monitor Serie, permitiendo comprobar la variación de la lectura al girar el potenciómetro.
 
@@ -54,7 +58,9 @@ Los valores obtenidos fueron mostrados mediante el Monitor Serie, permitiendo co
 
 Después de obtener la lectura ADC, se realizó una conversión matemática para expresar el resultado como voltaje.
 
-![Conversión ADC a voltaje](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/02_conversion_adc_voltaje.jpg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/02_conversion_adc_voltaje.jpg" width="700">
+</p>
 
 Durante una de las pruebas se obtuvo:
 
@@ -71,7 +77,9 @@ Esta conversión permitió relacionar el valor digital obtenido por el ESP32 con
 
 El ESP32 fue configurado para conectarse a una red inalámbrica. Una vez establecida la conexión, se mostró información sobre el estado de la comunicación y la dirección IP asignada.
 
-![Conexión WiFi](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/04_conexion_wifi.jpg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/04_conexion_wifi.jpg" width="700">
+</p>
 
 En la prueba se obtuvo una dirección IP similar a:
 
@@ -105,7 +113,9 @@ Gráfica
 
 Los valores obtenidos mediante el potenciómetro fueron enviados a ThingSpeak y representados mediante una gráfica.
 
-![Potenciómetro en ThingSpeak](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/05_thingspeak_potenciometro.jpg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/05_thingspeak_potenciometro.jpg" width="700">
+</p>
 
 La gráfica permitió comprobar que los valores obtenidos físicamente podían ser transmitidos y visualizados mediante una plataforma IoT.
 
@@ -119,11 +129,15 @@ El sensor fue conectado al ESP32 y las mediciones fueron procesadas para obtener
 
 ## 5.1. Montaje
 
-![Conexión del HC-SR04](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/11_conexion_hcsr04.jpg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/11_conexion_hcsr04.jpg" width="700">
+</p>
 
 ## 5.2. Lecturas obtenidas
 
-![Lectura del HC-SR04](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/06_hcsr04_monitor_serial.jpg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/06_hcsr04_monitor_serial.jpg" width="700">
+</p>
 
 Durante las pruebas se obtuvieron valores como:
 
@@ -137,7 +151,9 @@ El Monitor Serie también permitió comprobar que los datos fueron enviados corr
 
 ## 5.3. Visualización en ThingSpeak
 
-![Gráfica del HC-SR04](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/07_thingspeak_hcsr04.jpg)
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/07_thingspeak_hcsr04.jpg" width="700">
+</p>
 
 La gráfica permite observar las variaciones de distancia registradas durante la prueba.
 
@@ -161,16 +177,22 @@ Gráfica
 
 En esta actividad se implementó una interfaz web para controlar el LED integrado del ESP32.
 
+## ESP32 utilizado
+
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/09_esp32.jpg" width="700">
+</p>
+
+## Interfaz web
+<p align="center">
+  <img src="https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/10_control_web_led.jpg" width="700">
+</p>
+
 La página permite ejecutar dos acciones:
 
 ```text
 ENCENDER LED
 APAGAR LED
-```
-
-![Control web del LED](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/Taller%20IoT/Juan%20Berrocal/Imagenes/10_control_web_led.jpg)
-
-El funcionamiento general es:
 
 ```text
 Navegador
@@ -256,6 +278,3 @@ Visualización / Control
 
 ---
 
-
-Ingeniería Informática  
-Universidad Peruana Cayetano Heredia
