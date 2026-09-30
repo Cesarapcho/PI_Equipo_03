@@ -322,7 +322,7 @@ Leer la variación de un potenciómetro conectado al ESP32 y enviar los valores 
 | ESP32 DevKit V1 | Tarjeta de desarrollo encargada de leer el valor analógico del potenciómetro y enviar los datos a Arduino Cloud. | <img src="./imagenes/esp32_devkit.png" width="140"> |
 | Potenciómetro | Componente analógico cuya posición modifica el voltaje leído por el ESP32. | <img src="./imagenes/potenciometro.png" width="140"> |
 | Protoboard | Utilizada para realizar las conexiones entre el potenciómetro y el ESP32. | <img src="./imagenes/protoboard.png" width="140"> |
-| Cables jumper | Permiten realizar las conexiones eléctricas entre los componentes. | <img src="./imagenes/jumpers.png" width="140"> |
+| Cables jumper | Permiten realizar las conexiones eléctricas entre los componentes. | <img src="./imagenes/cables_jumper.png" width="140"> |
 | Cable USB | Utilizado para alimentar y programar el ESP32. | <img src="./imagenes/cable_usb.png" width="140"> |
 | Computadora | Utilizada para programar el ESP32 y acceder a Arduino Cloud. | <img src="./imagenes/computadora.png" width="140"> |
 
