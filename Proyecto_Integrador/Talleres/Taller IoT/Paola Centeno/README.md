@@ -307,3 +307,79 @@ La actividad permitió comprender el uso de la biblioteca `WiFi.h` para gestiona
 Primero se realizó un escaneo de las redes disponibles en el entorno y luego se estableció una conexión con una red Wi-Fi creada mediante un Hotspot.
 
 Finalmente, se comprobó la conexión observando la dirección IP asignada al ESP32 en el Monitor Serial.
+
+
+# Actividad 03 - Envío de datos del potenciómetro a Arduino Cloud
+
+## Objetivo
+
+Leer la variación de un potenciómetro conectado al ESP32 y enviar los valores obtenidos a Arduino Cloud para visualizarlos en tiempo real mediante un dashboard.
+
+## Componentes utilizados
+
+| Componente | Descripción | Imagen |
+|---|---|---|
+| ESP32 DevKit V1 | Tarjeta de desarrollo encargada de leer el valor analógico del potenciómetro y enviar los datos a Arduino Cloud. | <img src="./imagenes/esp32_devkit.png" width="140"> |
+| Potenciómetro | Componente analógico cuya posición modifica el voltaje leído por el ESP32. | <img src="./imagenes/potenciometro.png" width="140"> |
+| Protoboard | Utilizada para realizar las conexiones entre el potenciómetro y el ESP32. | <img src="./imagenes/protoboard.png" width="140"> |
+| Cables jumper | Permiten realizar las conexiones eléctricas entre los componentes. | <img src="./imagenes/jumpers.png" width="140"> |
+| Cable USB | Utilizado para alimentar y programar el ESP32. | <img src="./imagenes/cable_usb.png" width="140"> |
+| Computadora | Utilizada para programar el ESP32 y acceder a Arduino Cloud. | <img src="./imagenes/computadora.png" width="140"> |
+
+## Configuración en Arduino Cloud
+
+Se configuró el ESP32 en Arduino Cloud y se creó un **Thing** para gestionar la comunicación entre el dispositivo y la plataforma.
+
+Dentro del Thing se creó una variable llamada `potenciometro`, encargada de almacenar el valor de voltaje obtenido a partir de la lectura del potenciómetro.
+
+También se configuró la conexión Wi-Fi para permitir que el ESP32 pudiera conectarse a Internet y enviar los datos a Arduino Cloud.
+
+Finalmente, se creó un dashboard para visualizar en tiempo real la variación del potenciómetro.
+
+## Código utilizado
+
+Para leer el valor del potenciómetro y enviar el voltaje obtenido a Arduino Cloud se utilizó el siguiente código:
+
+```cpp
+#include "thingProperties.h"
+
+int potPin = 34;
+int numLecturas = 10;
+
+void setup() {
+  Serial.begin(115200);
+  delay(1500);
+
+  initProperties();
+
+  ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+}
+
+void loop() {
+  ArduinoCloud.update();
+
+  int suma = 0;
+
+  for (int i = 0; i < numLecturas; i++) {
+    suma += analogRead(potPin);
+    delay(10);
+  }
+
+  float promedio = suma / (float)numLecturas;
+
+  float voltaje = promedio * 3.3 / 4095.0;
+
+  potenciometro = voltaje;
+
+  Serial.print("ADC promedio: ");
+  Serial.print(promedio);
+
+  Serial.print(" | Voltaje: ");
+  Serial.print(voltaje, 2);
+  Serial.println(" V");
+
+  delay(500);
+}
+
+```
+
