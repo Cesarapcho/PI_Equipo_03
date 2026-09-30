@@ -410,3 +410,21 @@ La actividad permitió integrar el ESP32 con Arduino Cloud para realizar el moni
 Mediante la lectura del potenciómetro, el cálculo del promedio y la conversión del valor ADC a voltaje, fue posible obtener datos más estables antes de enviarlos a la nube.
 
 Finalmente, se comprobó que Arduino Cloud permite visualizar de manera remota y en tiempo real los datos generados por el ESP32 mediante un dashboard.
+
+
+# Actividad 04 - Monitoreo de temperatura con LM35 en Arduino Cloud
+
+## Objetivo
+
+Medir la temperatura utilizando un sensor LM35 conectado al ESP32 y enviar los valores obtenidos a Arduino Cloud para visualizarlos en tiempo real mediante un dashboard.
+
+## Componentes utilizados
+
+| Componente | Descripción | Imagen |
+|---|---|---|
+| ESP32 DevKit V1 | Tarjeta de desarrollo encargada de leer la señal analógica del sensor LM35 y enviar los datos a Arduino Cloud. | <img src="./imagenes/esp32_devkit.png" width="140"> |
+| Sensor LM35 | Sensor analógico utilizado para medir la temperatura. | <img src="./imagenes/lm35.png" width="140"> |
+| Protoboard | Utilizada para realizar las conexiones entre el LM35 y el ESP32. | <img src="./imagenes/protoboard.png" width="140"> |
+| Cables jumper | Permiten realizar las conexiones eléctricas entre los componentes. | <img src="./imagenes/jumpers.png" width="140"> |
+| Cable USB | Utilizado para alimentar y programar el ESP32. | <img src="./imagenes/cable_usb.png" width="140"> |
+| Computadora | Utilizada para programar el ESP32 y visualizar los datos en Arduino Cloud. | <img src="./imagenes/computadora.png" width="140"> |
