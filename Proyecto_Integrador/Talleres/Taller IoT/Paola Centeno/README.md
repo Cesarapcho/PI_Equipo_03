@@ -55,4 +55,8 @@ donde:
 - `3.3 V` corresponde al voltaje de referencia.
 - `4095` es el valor máximo del ADC de 12 bits.
 
+La relación entre el valor ADC y el voltaje es lineal, como se observa en la siguiente gráfica:
+
+![Relación entre ADC y voltaje](./imagenes/actividad01_adc_voltaje.png)
+
 Finalmente, tanto el valor promedio del ADC como el voltaje calculado se muestran en el monitor serial.
