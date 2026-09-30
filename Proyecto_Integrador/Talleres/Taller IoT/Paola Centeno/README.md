@@ -518,6 +518,19 @@ Además, los valores son enviados a Arduino Cloud y visualizados en tiempo real 
 
 Durante la prueba se registraron valores cercanos a `11 °C`, observándose su variación tanto en el Monitor Serial como en el dashboard.
 
+## Resultado
 
+Se logró medir correctamente la temperatura mediante el sensor LM35 conectado al ESP32.
 
+El programa realizó varias lecturas del sensor, calculó un promedio y convirtió el valor obtenido en voltaje para posteriormente determinar la temperatura en grados Celsius.
+
+Los datos fueron enviados a Arduino Cloud y se visualizaron en tiempo real mediante una gráfica. Durante la prueba se registraron valores cercanos a `11 °C`.
+
+## Conclusión
+
+La actividad permitió utilizar el sensor LM35 para medir temperatura y enviar los datos obtenidos desde el ESP32 hacia Arduino Cloud.
+
+El uso del promedio de varias lecturas permitió obtener valores más estables antes de realizar la conversión a temperatura.
+
+Finalmente, se comprobó que Arduino Cloud permite monitorear en tiempo real los datos provenientes de un sensor conectado al ESP32.
 
