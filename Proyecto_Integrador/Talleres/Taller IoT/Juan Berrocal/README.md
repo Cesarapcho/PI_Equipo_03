@@ -52,6 +52,25 @@ Se conectó un potenciómetro a una entrada analógica del ESP32. Al modificar s
 
 Los valores obtenidos fueron mostrados mediante el Monitor Serie, permitiendo comprobar la variación de la lectura al girar el potenciómetro.
 
+```cpp
+const int pinPot = 34;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(pinPot, INPUT);
+}
+
+void loop() {
+
+  int lecturaPot = analogRead(pinPot);
+
+  Serial.print("Lectura del potenciometro: ");
+  Serial.println(lecturaPot);
+
+  delay(500);
+}
+```
+
 ---
 
 # 2. Conversión ADC a voltaje
@@ -71,6 +90,41 @@ Voltaje: 3.30 V
 
 Esta conversión permitió relacionar el valor digital obtenido por el ESP32 con el nivel de tensión correspondiente.
 
+```cpp
+const int entradaAnalogica = 34;
+const int cantidadMuestras = 10;
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+
+  long acumulador = 0;
+
+  for (int muestra = 0; muestra < cantidadMuestras; muestra++) {
+
+    acumulador += analogRead(entradaAnalogica);
+
+    delay(10);
+  }
+
+  float promedioADC = acumulador / (float)cantidadMuestras;
+
+  float tension = (promedioADC * 3.3) / 4095.0;
+
+  Serial.print("ADC promedio: ");
+  Serial.print(promedioADC, 2);
+
+  Serial.print(" | Voltaje: ");
+  Serial.print(tension, 2);
+
+  Serial.println(" V");
+
+  delay(500);
+}
+```
+
 ---
 
 # 3. Conectividad WiFi
@@ -88,6 +142,41 @@ Dirección IP asignada: 172.20.10.2
 ```
 
 La conexión WiFi permitió utilizar posteriormente servicios de comunicación y plataformas IoT.
+
+```cpp
+#include <WiFi.h>
+
+const char* nombreRed = "NOMBRE_DE_LA_RED";
+const char* claveRed = "CONTRASEÑA_DE_LA_RED";
+
+void setup() {
+
+  Serial.begin(115200);
+
+  Serial.println("Iniciando conexion WiFi...");
+
+  WiFi.begin(nombreRed, claveRed);
+
+  while (WiFi.status() != WL_CONNECTED) {
+
+    delay(500);
+
+    Serial.print(".");
+  }
+
+  Serial.println();
+
+  Serial.println("WiFi conectado correctamente");
+
+  Serial.print("Direccion IP asignada: ");
+
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+
+}
+```
 
 ---
 
@@ -118,6 +207,78 @@ Los valores obtenidos mediante el potenciómetro fueron enviados a ThingSpeak y 
 </p>
 
 La gráfica permitió comprobar que los valores obtenidos físicamente podían ser transmitidos y visualizados mediante una plataforma IoT.
+
+```cpp
+#include <WiFi.h>
+#include <ThingSpeak.h>
+
+const char* redWiFi = "NOMBRE_DE_LA_RED";
+const char* passwordWiFi = "CONTRASEÑA_DE_LA_RED";
+
+unsigned long idCanal = TU_CHANNEL_ID;
+const char* claveEscritura = "TU_WRITE_API_KEY";
+
+WiFiClient conexion;
+
+const int sensorPot = 34;
+
+void setup() {
+
+  Serial.begin(115200);
+
+  WiFi.begin(redWiFi, passwordWiFi);
+
+  Serial.print("Conectando");
+
+  while (WiFi.status() != WL_CONNECTED) {
+
+    delay(500);
+
+    Serial.print(".");
+  }
+
+  Serial.println();
+
+  Serial.println("WiFi conectado correctamente");
+
+  Serial.print("IP del ESP32: ");
+
+  Serial.println(WiFi.localIP());
+
+  ThingSpeak.begin(conexion);
+}
+
+void loop() {
+
+  int datoPot = analogRead(sensorPot);
+
+  Serial.print("Potenciometro: ");
+
+  Serial.println(datoPot);
+
+  ThingSpeak.setField(1, datoPot);
+
+  int estadoEnvio = ThingSpeak.writeFields(
+    idCanal,
+    claveEscritura
+  );
+
+  if (estadoEnvio == 200) {
+
+    Serial.println("Dato enviado correctamente a ThingSpeak");
+
+  } else {
+
+    Serial.print("Error en el envio: ");
+
+    Serial.println(estadoEnvio);
+  }
+
+  Serial.println("---------------------------");
+
+  delay(20000);
+}
+```
 
 ---
 
@@ -171,6 +332,101 @@ ThingSpeak
 Gráfica
 ```
 
+```cpp
+#include <WiFi.h>
+#include <ThingSpeak.h>
+
+const char* wifiNombre = "NOMBRE_DE_LA_RED";
+const char* wifiClave = "CONTRASEÑA_DE_LA_RED";
+
+unsigned long numeroCanal = TU_CHANNEL_ID;
+const char* apiThingSpeak = "TU_WRITE_API_KEY";
+
+WiFiClient clienteIoT;
+
+const int pinTrigger = 25;
+const int pinEcho = 26;
+
+float calcularDistancia() {
+
+  digitalWrite(pinTrigger, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(pinTrigger, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(pinTrigger, LOW);
+
+  long tiempoEco = pulseIn(pinEcho, HIGH, 30000);
+
+  if (tiempoEco == 0) {
+    return 0;
+  }
+
+  float distanciaCm = (tiempoEco * 0.0343) / 2.0;
+
+  return distanciaCm;
+}
+
+void setup() {
+
+  Serial.begin(115200);
+
+  pinMode(pinTrigger, OUTPUT);
+  pinMode(pinEcho, INPUT);
+
+  WiFi.begin(wifiNombre, wifiClave);
+
+  Serial.print("Conectando al WiFi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+
+    delay(500);
+
+    Serial.print(".");
+  }
+
+  Serial.println();
+
+  Serial.println("WiFi conectado");
+
+  Serial.print("Direccion IP: ");
+
+  Serial.println(WiFi.localIP());
+
+  ThingSpeak.begin(clienteIoT);
+}
+
+void loop() {
+
+  float medida = calcularDistancia();
+
+  Serial.print("Distancia: ");
+  Serial.print(medida, 2);
+  Serial.println(" cm");
+
+  ThingSpeak.setField(1, medida);
+
+  int resultado = ThingSpeak.writeFields(
+    numeroCanal,
+    apiThingSpeak
+  );
+
+  if (resultado == 200) {
+
+    Serial.println("Dato enviado correctamente a ThingSpeak");
+
+  } else {
+
+    Serial.print("Error al enviar datos: ");
+
+    Serial.println(resultado);
+  }
+
+  delay(20000);
+}
+```
+
 ---
 
 # 6. Control del LED mediante una interfaz web
@@ -206,6 +462,182 @@ LED
 ```
 
 Al seleccionar una opción desde la interfaz, el ESP32 recibe la solicitud y modifica el estado del LED.
+
+```cpp
+#include <WiFi.h>
+#include <WebServer.h>
+
+const char* ssidWeb = "NOMBRE_DE_LA_RED";
+const char* passwordWeb = "CONTRASEÑA_DE_LA_RED";
+
+const int salidaLed = 23;
+
+WebServer servidor(80);
+
+String crearPagina() {
+
+  String pagina = R"rawliteral(
+
+  <!DOCTYPE html>
+
+  <html>
+
+  <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>ESP32 - Control Web</title>
+
+    <style>
+
+      body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      button {
+        width: 200px;
+        padding: 15px;
+        margin: 10px;
+        font-size: 18px;
+        color: white;
+        border: none;
+        border-radius: 8px;
+      }
+
+      .on {
+        background-color: green;
+      }
+
+      .off {
+        background-color: red;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>ESP32 - Control Web</h1>
+
+    <h2>Actividad 05 - IoT</h2>
+
+    <p>Control del LED integrado del ESP32</p>
+
+    <a href="/on">
+
+      <button class="on">
+
+        ENCENDER LED
+
+      </button>
+
+    </a>
+
+    <br>
+
+    <a href="/off">
+
+      <button class="off">
+
+        APAGAR LED
+
+      </button>
+
+    </a>
+
+  </body>
+
+  </html>
+
+  )rawliteral";
+
+  return pagina;
+}
+
+void mostrarInicio() {
+
+  servidor.send(
+    200,
+    "text/html",
+    crearPagina()
+  );
+}
+
+void activarLed() {
+
+  digitalWrite(salidaLed, HIGH);
+
+  Serial.println("LED encendido");
+
+  servidor.send(
+    200,
+    "text/html",
+    crearPagina()
+  );
+}
+
+void desactivarLed() {
+
+  digitalWrite(salidaLed, LOW);
+
+  Serial.println("LED apagado");
+
+  servidor.send(
+    200,
+    "text/html",
+    crearPagina()
+  );
+}
+
+void setup() {
+
+  Serial.begin(115200);
+
+  pinMode(salidaLed, OUTPUT);
+
+  digitalWrite(salidaLed, LOW);
+
+  WiFi.begin(ssidWeb, passwordWeb);
+
+  Serial.print("Conectando al WiFi");
+
+  while (WiFi.status() != WL_CONNECTED) {
+
+    delay(500);
+
+    Serial.print(".");
+  }
+
+  Serial.println();
+
+  Serial.println("WiFi conectado correctamente");
+
+  Serial.print("IP del ESP32: ");
+
+  Serial.println(WiFi.localIP());
+
+  servidor.on("/", mostrarInicio);
+
+  servidor.on("/on", activarLed);
+
+  servidor.on("/off", desactivarLed);
+
+  servidor.begin();
+
+  Serial.println("Servidor web iniciado");
+}
+
+void loop() {
+
+  servidor.handleClient();
+}
+```
 
 ---
 
@@ -278,4 +710,3 @@ Visualización / Control
 ```
 
 ---
-
