@@ -175,22 +175,6 @@ Solo si las pruebas muestran diferencias reproducibles y útiles se avanzará ha
 
 ---
 
-<div align="center">
-
-⚙️ **¿Cómo funciona el sistema?**
-
-<img
-src="./Recursos/Imágenes/animacion.svg"
-width="100%"
-alt="Animación SVG del funcionamiento del sistema de evaluación no destructiva de granadilla mediante excitación vibratoria/acústica"
-/>
-
-Colocar → Emitir vibración/onda acústica → Registrar respuesta → Analizar → Clasificar
-
-</div>
-
----
-
 # ⚠️ El Problema
 
 La calidad comercial de la granadilla no depende únicamente de lo que puede observarse desde el exterior. La **NTP 012.005:2023 de INACAL** establece que durante la poscosecha deben considerarse parámetros físicos como **peso, longitud y diámetro**, pero también parámetros químicos como **°Brix y pH**, además de características sensoriales como **color, sabor, consistencia y aroma** [1].
