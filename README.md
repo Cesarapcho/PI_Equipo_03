@@ -25,24 +25,29 @@
 
 ------------------------------------------------------------------------
 
-# Contenido
+## Navegación
 
-- [Sobre LIGURA](#sobre-ligura)
-- [Fotografía del equipo](#fotografía-del-equipo)
-- [Equipo](#equipo)
-- [El proyecto](#el-proyecto)
-- [El problema](#el-problema)
-- [Antecedentes científicos](#antecedentes-científicos)
-- [Propuesta LIGURA](#propuesta-ligura)
-- [Innovación](#innovación)
-- [ODS 9](#ods-9)
-- [ODS 12](#ods-12)
-- [Objetivos](#objetivos)
-- [Referencias](#referencias)
+<div align="center">
 
-------------------------------------------------------------------------
+|                   **LIGURA**                    |                    **Desarrollo**                     |         **Impacto**         |
+|:-----------------------------------------------:|:-----------------------------------------------------:|:---------------------------:|
+|          [Sobre LIGURA](#sobre-ligura)          |              [El proyecto](#el-proyecto)              |       [ODS 9](#ods-9)       |
+| [Fotografía del equipo](#fotografía-del-equipo) |              [El problema](#el-problema)              |      [ODS 12](#ods-12)      |
+|                [Equipo](#equipo)                | [Antecedentes científicos](#antecedentes-científicos) |   [Objetivos](#objetivos)   |
+|                                                 |         [Propuesta LIGURA](#propuesta-ligura)         | [Referencias](#referencias) |
+|                                                 |               [Innovación](#innovación)               |                             |
+
+</div>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=5&section=header" width="100%" alt="Separador"/>
+</p>
 
 # Sobre LIGURA
+
+| **Identidad** |            **Enfoque**            |           **Propósito**           |
+|:-------------:|:---------------------------------:|:---------------------------------:|
+|  **LIGURA**   | Mecatrónica + acústica + software | Evaluación interna no destructiva |
 
 **LIGURA** es el proyecto desarrollado por el **Equipo 03** del curso
 **Proyecto Integrador 2026-2** de la **Universidad Peruana Cayetano
@@ -71,7 +76,13 @@ Nuestro proyecto nace de una pregunta:
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # Fotografía del equipo
+
+<p align="center"><sub>LIGURA · Equipo 03 · Proyecto Integrador 2026-2</sub></p>
 
 <p align="center">
   <img
@@ -87,7 +98,13 @@ Nuestro proyecto nace de una pregunta:
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # Equipo
+
+<p align="center"><strong>Ingeniería Industrial + Ingeniería Informática</strong></p>
 
 <div align="center">
 
@@ -102,13 +119,24 @@ Nuestro proyecto nace de una pregunta:
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # El proyecto
 
 <div align="center">
 
-## LIGURA
+### LIGURA
 
-### Sistema Mecatrónico No Destructivo para la Evaluación de Calidad Interna de Granadilla
+#### Sistema Mecatrónico No Destructivo para la Evaluación de Calidad Interna de Granadilla
+
+`EXCITACIÓN CONTROLADA` → `REGISTRO ACÚSTICO` → `ANÁLISIS` →
+`CLASIFICACIÓN`
+
+</div>
+
+<div align="center">
 
 ### Mediante excitación vibratoria/acústica, análisis de respuesta y aprendizaje automático
 
@@ -150,7 +178,14 @@ avanzará hacia una etapa de clasificación mediante **Machine Learning**.
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # El problema
+
+> **Desafío:** complementar la inspección externa con información sobre
+> la condición interna de la granadilla, sin abrirla ni dañarla.
 
 La calidad comercial de la granadilla no depende únicamente de lo que
 puede observarse desde el exterior. La **NTP 012.005:2023 de INACAL**
@@ -251,7 +286,17 @@ permitan diferenciar condiciones internas.
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # Antecedentes científicos
+
+<div align="center">
+
+**EVIDENCIA CIENTÍFICA → DISEÑO EXPERIMENTAL → LIGURA**
+
+</div>
 
 La propuesta no parte desde cero. Existen antecedentes científicos que
 muestran que las **señales acústicas y vibracionales** pueden contener
@@ -276,7 +321,20 @@ información útil sobre la condición interna de distintas frutas \[4\].
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # Propuesta LIGURA
+
+<div align="center">
+
+|      **01**      |        **02**         |        **03**        |      **04**       |
+|:----------------:|:---------------------:|:--------------------:|:-----------------:|
+|  **Excitación**  | **Registro acústico** | **Medición de masa** | **Clasificación** |
+| Señal controlada |  Respuesta del fruto  |  Variable auxiliar   |     DSP + ML      |
+
+</div>
 
 El sistema combinará cuatro elementos principales:
 
@@ -325,7 +383,16 @@ interna de la granadilla.
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # Innovación
+
+> **LIGURA no plantea como innovación solamente “excitar, registrar y
+> clasificar”.** La diferenciación se busca en la adaptación del método
+> a la estructura particular de la granadilla y en los patrones que
+> puedan descubrirse experimentalmente.
 
 El uso de señales acústicas para evaluar frutas cuenta con antecedentes
 tecnológicos \[4\]–\[7\].
@@ -393,7 +460,19 @@ encuentran:
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # ODS 9
+
+<div align="center">
+
+### Industria, Innovación e Infraestructura
+
+**Meta 9.5 · Investigación científica y capacidades tecnológicas**
+
+</div>
 
 <div align="center">
 
@@ -444,7 +523,19 @@ integración de:
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # ODS 12
+
+<div align="center">
+
+### Producción y Consumo Responsables
+
+**Meta 12.3 · Reducción de pérdidas de alimentos**
+
+</div>
 
 <div align="center">
 
@@ -500,7 +591,17 @@ Una evaluación adicional de la condición interna podría contribuir a:
 
 ------------------------------------------------------------------------
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
+
 # Objetivos
+
+<div align="center">
+
+**DISEÑAR → CARACTERIZAR → DESARROLLAR → VALIDAR → INTEGRAR**
+
+</div>
 
 **Diseñar y validar un sistema mecatrónico no destructivo capaz de
 clasificar la calidad interna de granadillas mediante el análisis de su
@@ -531,6 +632,10 @@ de aprendizaje automático.**
     provenientes de lotes comerciales.
 
 ------------------------------------------------------------------------
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:F7C65A,30:F39200,70:E9A21B,100:159A9C&height=4&section=header" width="100%" alt="Separador"/>
+</p>
 
 # Referencias
 
