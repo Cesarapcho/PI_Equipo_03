@@ -129,12 +129,7 @@ La validación completa requiere comprobar experimentalmente la respuesta del LE
 - Se configuró una regla de activación mediante GPIO para controlar un LED.
 - La comprobación física de la salida permitirá confirmar el funcionamiento integral del sistema.
 
-## 👥 11. Integrantes del equipo
-
-1. **RODRIGO SEBASTIAN ASMAT MENDOZA**
-2. **PAOLA ANDREA CENTENO BAZAN**
-
-## 📚 12. Referencias
+## 📚 11. Referencias
 
 - [SenseCraft AI](https://sensecraft.seeed.cc/)
 - [Documentación oficial de Seeed Studio](https://wiki.seeedstudio.com/)
