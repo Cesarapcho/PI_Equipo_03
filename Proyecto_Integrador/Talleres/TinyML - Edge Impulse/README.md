@@ -312,5 +312,6 @@ En conclusión, las evidencias documentadas muestran que el modelo distingue cor
 
 ---
 
+
 **Proyecto Integrador · Taller de TinyML**  
 Universidad Peruana Cayetano Heredia (UPCH)
