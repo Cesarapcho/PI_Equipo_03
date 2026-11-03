@@ -123,6 +123,14 @@ La arquitectura conceptual de Ligura integra las funciones necesarias para pesar
 
 El ESP32 actuará como unidad coordinadora. Recibirá las señales del pesaje, del FSR y del receptor piezoeléctrico, y enviará las órdenes correspondientes al servomotor, al generador de señal y a los elementos de visualización.
 
+El esquema de funciones representa las operaciones necesarias para transformar las entradas del sistema —granadilla, energía eléctrica y señales de control— en una evaluación registrada y la liberación del fruto.
+
+Permite relacionar las funciones de soporte, pesaje, sujeción, excitación, adquisición, procesamiento y visualización con la arquitectura conceptual de Ligura.
+
+[![Esquema de funciones de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/Esquema_de_funciones_ultimo_2.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/Esquema_de_funciones_ultimo_2.png)
+
+*Figura 4.1. Esquema de funciones de Ligura. Haz clic sobre la imagen para verla en tamaño completo.*
+
 ### 4.1 Módulo de soporte y medición de masa
 
 El fruto se colocará en una cuna cóncava situada sobre el sistema de pesaje. La celda de carga y el HX711 permitirán obtener la masa antes de que los brazos establezcan contacto con la granadilla.
