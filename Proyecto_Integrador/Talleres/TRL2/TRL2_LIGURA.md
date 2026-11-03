@@ -323,9 +323,13 @@ El modelo comprende la base, la placa superior, el soporte posterior, el mecanis
 
 #### Vista general del ensamble
 
-[![Ensamble general de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07a-ensamble-general.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07a-ensamble-general.png)
+[![Ensamble general de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07a-ensamble-general.png)](https://cad.onshape.com/documents/ff89f7bc2a25d26004de773a/w/684c83361a04b421324a0321/e/841d3118aa7f10e8925417ff)
 
-*Figura 5.5. Vista general del ensamble conceptual de Ligura.*
+*Figura 5.5. Vista general del ensamble conceptual de Ligura. Haz clic sobre la imagen para abrir el modelo 3D en Onshape.*
+
+[**Abrir modelo 3D interactivo de Ligura en Onshape**](https://cad.onshape.com/documents/ff89f7bc2a25d26004de773a/w/684c83361a04b421324a0321/e/841d3118aa7f10e8925417ff)
+
+El modelo puede explorarse en Onshape para girar la vista, acercar y alejar el ensamble, según los permisos de acceso del documento.
 
 El ensamble muestra la cuna ubicada frente al soporte posterior y debajo de la pinza. La base contempla el alojamiento de la electrónica y la ubicación de los elementos de interacción con el usuario.
 
