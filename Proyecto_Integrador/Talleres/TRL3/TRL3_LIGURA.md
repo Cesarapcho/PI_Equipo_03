@@ -1,9 +1,9 @@
-# TLR 3 – Simulación estructural de los componentes del sistema mecatrónico
+# TRL3 – Simulación estructural de los componentes del sistema mecatrónico
 
 ## Evaluación mediante análisis estático en SimScale
 
 **Proyecto:** Sistema mecatrónico no destructivo para evaluar y clasificar la calidad interna de la granadilla mediante excitación vibratoria controlada y análisis de su respuesta vibroacústica.  
-**Etapa:** TLR 3 – Prueba de concepto y evaluación de componentes.  
+**Etapa:** TRL 3 – Prueba de concepto y evaluación de componentes.  
 **Software:** SimScale.  
 **Material:** PLA.  
 **Tipo de análisis:** Análisis estructural estático.
@@ -20,7 +20,9 @@ Se analizaron cuatro componentes de manera individual: carcasa, tapa, embudo y s
 
 Los componentes mecánicos fueron desarrollados mediante modelado CAD y preparados para su evaluación estructural. El diseño considera las geometrías de soporte, montaje y posicionamiento necesarias para integrar los elementos del sistema de evaluación vibroacústica.
 
-![Modelo tridimensional del sistema](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/modelado%203D.png)
+![Modelo tridimensional del sistema]
+<img width="817" height="662" alt="modelado 3D" src="https://github.com/user-attachments/assets/046e4187-0d5e-4ca9-a60c-242e74979eab" />
+
 
 **Figura 1.** Modelo tridimensional del sistema mecatrónico.
 
@@ -87,7 +89,9 @@ Los resultados se obtuvieron de los paneles de estadísticas de SimScale. Se pre
 
 La distribución del esfuerzo muestra valores reducidos en la mayor parte de la carcasa y concentraciones localizadas alrededor de los apoyos y elementos geométricos interiores. Estas regiones corresponden a zonas de transmisión de carga y cambios de sección.
 
-![Carcasa – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/CARCASA%20-%20Von%20Mises%20Stree.jpg)
+
+<img width="1535" height="736" alt="CARCASA - Von Mises Stree" src="https://github.com/user-attachments/assets/46858569-4938-42eb-981d-5a69ce855dfc" />
+
 
 **Figura 2.** Distribución del esfuerzo equivalente de Von Mises en la carcasa.
 
@@ -98,7 +102,9 @@ La distribución del esfuerzo muestra valores reducidos en la mayor parte de la 
 
 El mayor desplazamiento se localiza en la región central del fondo de la carcasa. Las zonas próximas a los apoyos presentan desplazamientos menores, de acuerdo con las restricciones aplicadas.
 
-![Carcasa – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/CARCASA%20-%20Displacement%20Magnitude.jpg)
+
+<img width="1535" height="727" alt="CARCASA - Displacement Magnitude" src="https://github.com/user-attachments/assets/1d14a160-095c-443b-870d-ffa27c25f92e" />
+
 
 **Figura 3.** Distribución de la magnitud del desplazamiento en la carcasa.
 
@@ -113,7 +119,9 @@ El mayor desplazamiento se localiza en la región central del fondo de la carcas
 
 La distribución presenta concentraciones localizadas de esfuerzo en la región de montaje y transmisión de cargas. El resto de la superficie muestra niveles inferiores. El máximo registrado corresponde al mayor esfuerzo equivalente entre los cuatro componentes evaluados.
 
-![Tapa – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/TAPA_NATIVA%20-%20Von%20Mises%20Stress.jpg)
+
+<img width="1600" height="740" alt="TAPA_NATIVA - Von Mises Stress" src="https://github.com/user-attachments/assets/bf80b6e3-06fa-4b85-a08b-472776f55b80" />
+
 
 **Figura 4.** Distribución del esfuerzo equivalente de Von Mises en la tapa.
 
@@ -124,7 +132,9 @@ La distribución presenta concentraciones localizadas de esfuerzo en la región 
 
 El campo de desplazamiento muestra una mayor deformación en la región próxima a la zona cargada, con valores decrecientes hacia los puntos de fijación. La distribución es característica de la flexión de una superficie sometida a cargas.
 
-![Tapa – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/TAPA-NATIVA%20-%20Displacement%20Magnitude.jpg)
+
+<img width="1600" height="732" alt="TAPA-NATIVA - Displacement Magnitude" src="https://github.com/user-attachments/assets/ae57c352-ac00-434b-8e8c-e56b6678bd40" />
+
 
 **Figura 5.** Distribución de la magnitud del desplazamiento en la tapa.
 
@@ -139,7 +149,9 @@ El campo de desplazamiento muestra una mayor deformación en la región próxima
 
 Los esfuerzos de mayor magnitud se localizan principalmente en la región inferior y en las transiciones próximas a la zona de apoyo. Estas áreas transmiten las cargas hacia los puntos de montaje del embudo.
 
-![Embudo – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/EMBUDO-%20Von%20Mises%20Strees.jpg)
+
+<img width="1600" height="746" alt="EMBUDO- Von Mises Strees" src="https://github.com/user-attachments/assets/f70393f9-9153-478a-9219-87d4f2cf1db4" />
+
 
 **Figura 6.** Distribución del esfuerzo equivalente de Von Mises en el embudo.
 
@@ -150,7 +162,9 @@ Los esfuerzos de mayor magnitud se localizan principalmente en la región inferi
 
 La mayor magnitud de desplazamiento se observa hacia la zona superior del embudo, mientras que la región de montaje presenta valores menores debido a las restricciones aplicadas.
 
-![Embudo – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/EMBUDO-Displacement%20Magnitude.jpg)
+
+<img width="1600" height="742" alt="EMBUDO-Displacement Magnitude" src="https://github.com/user-attachments/assets/fbf8f35f-d7b2-468e-a915-4e81ba054ba0" />
+
 
 **Figura 7.** Distribución de la magnitud del desplazamiento en el embudo.
 
@@ -165,7 +179,8 @@ La mayor magnitud de desplazamiento se observa hacia la zona superior del embudo
 
 La distribución muestra concentraciones localizadas en las zonas próximas a los agujeros y puntos de unión del soporte. Estas regiones transmiten las cargas del gripper y del servomotor hacia la base de fijación.
 
-![Soporte del gripper – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/SOPORTE-GRIPPER%20von%20MIses%20Stress.jpg)
+<img width="1600" height="724" alt="SOPORTE-GRIPPER von MIses Stress" src="https://github.com/user-attachments/assets/1ccbd266-7bd4-4c42-a2cd-ec0daa3399b4" />
+
 
 **Figura 8.** Distribución del esfuerzo equivalente de Von Mises en el soporte del gripper.
 
@@ -176,7 +191,8 @@ La distribución muestra concentraciones localizadas en las zonas próximas a lo
 
 El desplazamiento calculado es muy pequeño y disminuye hacia la zona de fijación del soporte. La distribución representa la respuesta del componente frente a las cargas aplicadas en los puntos de montaje.
 
-![Soporte del gripper – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/SOPORTE%20GRIPPER-%20Displacement%20Magnitude.jpg)
+<img width="1600" height="739" alt="SOPORTE GRIPPER- Displacement Magnitude" src="https://github.com/user-attachments/assets/50c3f276-8fac-4908-adc0-16bb684b30e9" />
+
 
 **Figura 9.** Distribución de la magnitud del desplazamiento en el soporte del gripper.
 
