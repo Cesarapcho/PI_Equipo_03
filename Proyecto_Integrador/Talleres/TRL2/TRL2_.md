@@ -503,3 +503,359 @@ El registro de eventos permite seguir la secuencia desde el inicio y la sujeció
 *Figura 5.18. Diseño conceptual de la pantalla de estado del equipo y registro de eventos. Escenario simulado de interrupción.*
 
 El diseño en Figma constituye una evidencia de la propuesta de interacción y visualización de Ligura. La conexión con el ESP32, el almacenamiento de mediciones, el procesamiento de señales y la presentación de resultados reales se implementarán y verificarán en etapas posteriores.
+
+## 6. Requisitos conceptuales
+
+A partir del concepto tecnológico de Ligura, se establecen los siguientes requisitos para orientar su implementación y posterior evaluación experimental.
+
+Los requisitos describen el comportamiento esperado del sistema. Su cumplimiento deberá comprobarse durante las siguientes etapas de desarrollo.
+
+### 6.1 Colocación y soporte de la granadilla
+
+El sistema deberá permitir la colocación y el retiro de una granadilla mediante acceso superior.
+
+La estructura deberá incorporar una cuna cóncava que proporcione apoyo al fruto y permita su posicionamiento frente al mecanismo de sujeción.
+
+El diseño deberá respetar las siguientes restricciones geométricas:
+
+- Base máxima de 150 × 150 mm.
+- Altura máxima de 200 mm.
+- Estructura abierta con acceso al área de evaluación.
+
+Estas dimensiones deberán verificarse mediante planos acotados y mediciones del conjunto fabricado.
+
+### 6.2 Medición de masa
+
+El sistema deberá registrar la masa de la granadilla mediante una celda de carga conectada al módulo HX711.
+
+La medición se realizará antes del cierre de la pinza, para evitar que las fuerzas de sujeción lateral alteren el registro.
+
+La masa deberá expresarse en gramos y quedar asociada al identificador del fruto. Su utilización como variable de ajuste o normalización se evaluará durante el análisis experimental.
+
+### 6.3 Sujeción y supervisión del contacto
+
+El mecanismo de sujeción deberá aproximar los brazos del gripper mediante un servomotor y establecer el contacto entre el fruto y los transductores.
+
+El FSR ubicado en uno de los brazos deberá proporcionar una lectura para detener el cierre cuando se alcance el umbral establecido.
+
+El control deberá contemplar un límite de recorrido o tiempo de cierre. Si el contacto no se establece dentro de ese límite, el ciclo deberá interrumpirse y registrarse como inválido.
+
+El umbral del FSR deberá determinarse experimentalmente. Su lectura no se interpretará como una fuerza en newtons sin una calibración específica.
+
+### 6.4 Excitación vibratoria
+
+El sistema deberá generar una señal de excitación mediante el módulo AD9833 y amplificarla mediante el LM386 para accionar el piezoeléctrico emisor.
+
+El barrido deberá contar con parámetros definidos y registrados:
+
+- Frecuencia inicial y final.
+- Incremento o velocidad del barrido.
+- Duración.
+- Nivel de excitación utilizado.
+
+Estos parámetros se establecerán mediante pruebas de señal y respuesta del conjunto. Los valores ilustrativos del dashboard no constituyen parámetros definitivos de operación.
+
+La excitación solo deberá comenzar después de establecer el contacto previsto con el fruto.
+
+### 6.5 Recepción y adquisición de señales
+
+El piezoeléctrico receptor deberá captar la respuesta vibratoria del fruto. La señal deberá acondicionarse mediante el circuito basado en MCP6022 antes de su adquisición por el ESP32.
+
+La etapa de adquisición deberá considerar:
+
+- Compatibilidad de los niveles eléctricos con la entrada del ESP32.
+- Frecuencia de muestreo suficiente para el intervalo de frecuencias estudiado.
+- Filtrado y control de componentes fuera de la banda de interés.
+- Detección de saturación, señal ausente o adquisición incompleta.
+- Registro de los parámetros de muestreo.
+
+La señal y los parámetros utilizados deberán asociarse al mismo identificador del fruto.
+
+### 6.6 Procesamiento y estimación
+
+El sistema deberá permitir el análisis de la señal mediante FFT para obtener su representación en frecuencia.
+
+Se evaluarán características como la ubicación y magnitud de los picos espectrales y la distribución de la respuesta en bandas de frecuencia. La selección definitiva dependerá de la calidad de las señales y de los resultados experimentales.
+
+El desarrollo posterior deberá estudiar si estas características, junto con la masa y las condiciones de contacto, permiten estimar la presencia o ausencia de zonas oscurecidas visibles en la pulpa.
+
+Mientras no exista un método validado, el resultado deberá mostrarse como **«Pendiente de validación»**. Una adquisición inválida deberá presentarse como **«Sin resultado»**.
+
+### 6.7 Visualización y trazabilidad
+
+El dashboard deberá permitir consultar:
+
+- Identificador del fruto.
+- Masa registrada.
+- Fecha y hora de evaluación.
+- Estado del ciclo.
+- Señal adquirida y representación en frecuencia.
+- Resultado estimado, cuando esté disponible.
+- Observaciones y eventos de la evaluación.
+
+Cada registro deberá conservar la relación entre el fruto, la señal, las condiciones de adquisición y la observación interna de referencia.
+
+Las interfaces que utilicen datos ilustrativos deberán mantener visible la etiqueta **«Simulación — datos de ejemplo»**.
+
+### 6.8 Alimentación, señalización y gestión de errores
+
+El sistema deberá alimentarse mediante el adaptador AC/DC de 5 V y los circuitos de alimentación definidos en el diseño electrónico.
+
+Deberá contar con interruptor de encendido, botón de inicio e indicadores LED. El significado de los indicadores deberá documentarse y mantenerse coherente con los mensajes del dashboard.
+
+Ante un error de sujeción, adquisición o procesamiento, el sistema deberá:
+
+1. Interrumpir la excitación.
+2. Ejecutar la secuencia de detención y liberación que se defina para el mecanismo.
+3. Identificar el ciclo como interrumpido o inválido.
+4. Registrar el evento.
+5. Informar al usuario de la acción necesaria antes de repetir la evaluación.
+
+### 6.9 Mantenimiento y repetibilidad
+
+El diseño deberá permitir el acceso a los componentes electrónicos, las conexiones, la celda de carga, los transductores y el mecanismo de sujeción.
+
+Se deberá facilitar la limpieza de las superficies de contacto y la inspección de las piezas mecánicas.
+
+La repetibilidad se evaluará mediante mediciones sucesivas del mismo fruto, incluyendo su retiro y recolocación. También deberá comprobarse que la sujeción y la excitación no produzcan daño observable bajo las condiciones ensayadas.
+
+## 7. Análisis de patentabilidad y protección
+
+### 7.1 Búsqueda de antecedentes relacionados
+
+Se realizó una revisión preliminar de documentos de patente relacionados con la evaluación no destructiva de frutos mediante vibraciones.
+
+La búsqueda se orientó a identificar tecnologías que incorporan sujeción del fruto, excitación controlada, recepción de señales, análisis en frecuencia y medición de masa.
+
+| Elemento | Descripción |
+|---|---|
+| Fecha de revisión | 3 de noviembre de 2026. |
+| Fuente de documentos | Google Patents. |
+| Orientación sobre patentabilidad | Información de la Organización Mundial de la Propiedad Intelectual — OMPI. |
+| Consultas utilizadas | `fruit vibration piezoelectric gripper force sensor` y `fruit firmness vibration weight resonance`. |
+| Documentos examinados | US5691473A, US6276536B1 y CN118746544B. |
+| Criterio de selección | Relación directa con la sujeción, excitación, recepción vibratoria y análisis de propiedades del fruto. |
+
+La revisión comprendió los resúmenes y las partes pertinentes de las descripciones y reivindicaciones. Su alcance es exploratorio y no constituye una búsqueda exhaustiva.
+
+#### US5691473A
+
+La patente *Method and equipment for measuring firmness of fruits and vegetables* describe la sujeción del fruto en puntos opuestos, la aplicación de vibraciones y la medición de señales de aceleración para calcular un índice de firmeza [4].
+
+Es relevante para Ligura porque muestra antecedentes del contacto opuesto y la evaluación vibratoria de frutos.
+
+#### US6276536B1
+
+La patente *Method of measuring ripeness and texture of vegetable or fruit and measuring instrument* combina excitación con frecuencias variables, análisis de la respuesta y medición del peso para obtener parámetros relacionados con madurez y textura [5].
+
+Este documento evidencia que la asociación entre masa y comportamiento vibratorio ya se ha considerado en tecnologías anteriores.
+
+#### CN118746544B
+
+La patente *Vibration sensing manipulator for fruit quality detection and detection method* describe una pinza con elementos piezoeléctricos de excitación y recepción en dedos opuestos. También incorpora sensores resistivos de presión y una secuencia de cierre hasta alcanzar un umbral antes de aplicar un barrido sinusoidal [6].
+
+Su descripción incluye la evaluación de diferencias de pardeamiento interno en peras. Es el antecedente más cercano entre los documentos examinados.
+
+### 7.2 Comparación con Ligura
+
+| Antecedente | Coincidencia con Ligura | Aspecto que debe examinarse |
+|---|---|---|
+| US5691473A [4] | Sujeción opuesta y excitación vibratoria. | Diferencias entre su método de aceleraciones y el procedimiento de adquisición propuesto. |
+| US6276536B1 [5] | Análisis en frecuencia asociado a la masa del fruto. | Diferencias entre sus parámetros de evaluación y las características que se investigarán en granadilla. |
+| CN118746544B [6] | Piezoeléctricos opuestos, supervisión del contacto y barrido posterior a la sujeción. | Coincidencias del montaje y de la secuencia de contacto y medición. |
+
+La comparación indica que el uso de piezoeléctricos, FFT, masa o sensores de contacto no permite afirmar por sí solo una novedad tecnológica.
+
+En particular, incorporar un FSR no constituye una diferencia suficiente frente al antecedente CN118746544B. La aplicación a granadilla tampoco demuestra por sí sola que el mecanismo sea nuevo.
+
+### 7.3 Elemento técnico que merece evaluación
+
+Se propone examinar la configuración concreta formada por la cuna vinculada al sistema de pesaje, el soporte posterior y el mecanismo que establece el contacto lateral después de registrar la masa.
+
+La característica por investigar es si esta disposición permite conservar una posición de medición repetible y reducir la influencia de la sujeción sobre el pesaje y la respuesta adquirida.
+
+Para sustentar una posible diferencia será necesario documentar:
+
+- Geometría y relaciones de montaje.
+- Secuencia de pesaje y establecimiento del contacto.
+- Condiciones de apoyo durante la adquisición.
+- Diferencias frente a las reivindicaciones de los antecedentes.
+- Efecto técnico observado mediante pruebas comparativas.
+
+Este planteamiento es una línea de evaluación y no una conclusión de patentabilidad.
+
+### 7.4 Evaluación preliminar y documentación
+
+La OMPI identifica entre las condiciones centrales de patentabilidad la novedad, la actividad inventiva y la aplicación industrial [7].
+
+| Criterio | Situación preliminar de Ligura |
+|---|---|
+| Novedad | Pendiente de establecer; se identificaron antecedentes cercanos. |
+| Actividad inventiva | Pendiente de demostrar una diferencia técnica que no resulte evidente frente a los antecedentes. |
+| Aplicación industrial | Se plantea su uso en evaluación poscosecha; su funcionamiento todavía requiere validación. |
+
+Se conservarán versiones de los diseños CAD, esquemáticos, PCB, programas, protocolos y resultados, con identificación de autores y fechas.
+
+La conclusión actual es que **no se ha establecido la patentabilidad de Ligura**. Una evaluación posterior deberá ampliar la búsqueda y comparar las reivindicaciones con la solución finalmente desarrollada.
+
+## 8. Perfil del proyecto Ligura
+
+### 8.1 Problema
+
+La inspección externa de una granadilla permite observar su apariencia, pero no muestra directamente el estado de la pulpa.
+
+La apertura del fruto permite examinar su interior, aunque impide conservar intacta la unidad inspeccionada. Esto plantea la necesidad de investigar métodos que obtengan información relacionada con su condición interna antes de abrirlo.
+
+Ligura aborda este problema mediante el estudio de la respuesta vibratoria de granadillas intactas. La condición inicial de interés será la presencia o ausencia de zonas oscurecidas visibles en la pulpa.
+
+### 8.2 Objetivo general
+
+Formular el concepto tecnológico de Ligura como un sistema mecatrónico de evaluación no destructiva de granadilla mediante pesaje, sujeción supervisada y análisis de la respuesta vibratoria, orientado a investigar su relación con la presencia o ausencia de zonas oscurecidas visibles en la pulpa.
+
+### 8.3 Objetivos específicos
+
+- Sustentar el concepto mediante antecedentes científicos y tecnológicos relacionados.
+- Definir la arquitectura mecánica, electrónica y de control.
+- Plantear el registro de masa previo a la sujeción lateral.
+- Establecer una estrategia de contacto mediante servomotor y lectura del FSR.
+- Proponer la cadena de excitación, recepción y acondicionamiento de señales.
+- Definir el análisis en frecuencia y la asociación de cada señal con su fruto.
+- Diseñar la interfaz conceptual para consultar evaluaciones y eventos.
+- Identificar antecedentes de patente y aspectos que requieren comparación.
+- Formular el procedimiento inicial de prueba de concepto.
+
+### 8.4 Usuarios y beneficiarios
+
+Los usuarios potenciales son responsables de selección poscosecha, personal técnico e investigadores interesados en evaluar granadillas mediante métodos no destructivos.
+
+Si el método demuestra utilidad, podría aportar información complementaria para apoyar decisiones de selección. Este beneficio dependerá de su desempeño experimental y de su viabilidad de uso.
+
+### 8.5 Propuesta tecnológica e hipótesis
+
+Ligura se plantea como un equipo de sobremesa con una cuna cóncava, celda de carga, pinza accionada por servomotor, FSR y dos transductores piezoeléctricos.
+
+La excitación se generará mediante AD9833 y LM386. La respuesta se acondicionará mediante MCP6022 y será adquirida por el ESP32 para su análisis y presentación en el dashboard.
+
+La hipótesis de trabajo es que, bajo condiciones de adquisición y contacto suficientemente repetibles, algunas características de la respuesta vibratoria podrían diferir entre granadillas con y sin zonas oscurecidas visibles en la pulpa.
+
+Esta hipótesis deberá contrastarse con la inspección del mismo fruto después de abrirlo.
+
+### 8.6 Resultados esperados
+
+Como productos del TRL 2 se consideran:
+
+- Concepto tecnológico y aplicación definidos.
+- Arquitectura conceptual y flujo de funcionamiento.
+- Matriz morfológica y selección de componentes.
+- Tres bocetos, con el Boceto 2 identificado como seleccionado.
+- Modelado tridimensional preliminar.
+- Esquemáticos y diseño preliminar de PCB.
+- Dashboard conceptual editable en Figma.
+- Requisitos de funcionamiento y trazabilidad.
+- Análisis preliminar de antecedentes de patente.
+- Propuesta de prueba de concepto.
+
+Estos productos orientan el desarrollo posterior; no constituyen evidencia de una capacidad de clasificación ya demostrada.
+
+### 8.7 Alcance y limitaciones
+
+El TRL 2 comprende la formulación y representación de la solución, su sustento documental y la planificación de la evaluación experimental.
+
+Todavía no se han establecido:
+
+- Precisión y repetibilidad del pesaje.
+- Umbral de contacto y condiciones de sujeción sin daño.
+- Intervalo útil de excitación.
+- Calidad y repetibilidad de la señal adquirida.
+- Características que permitan diferenciar la condición interna.
+- Exactitud de un posible método de clasificación.
+- Funcionamiento del dashboard con mediciones reales.
+
+La propuesta no incluye una medición directa de °Brix, pH o inocuidad. Su condición inicial de estudio se limita a la observación de zonas oscurecidas en la pulpa.
+
+### 8.8 Continuidad hacia la prueba de concepto
+
+La siguiente etapa deberá evaluar los principios críticos antes de concluir que el sistema puede estimar una condición interna.
+
+| Actividad | Evidencia prevista |
+|---|---|
+| Comprobar pesaje y adquisición | Registros de calibración, señales de prueba y parámetros utilizados. |
+| Evaluar sujeción y contacto | Lecturas del FSR, repetición del cierre y observación de daño. |
+| Evaluar excitación y recepción | Señales obtenidas con diferentes parámetros y control de saturación. |
+| Medir frutos intactos | Registros identificados de masa, señal y condiciones de medición. |
+| Abrir los mismos frutos | Fotografías y etiquetas de la condición interna observada. |
+| Comparar grupos y repeticiones | Análisis de variabilidad y de posibles diferencias entre condiciones. |
+
+El protocolo deberá definir previamente el número de frutos, las repeticiones y las condiciones de conservación y medición.
+
+Las repeticiones de una misma granadilla deberán mantenerse juntas al separar datos de desarrollo y evaluación, para evitar que el mismo fruto aparezca en ambos conjuntos.
+
+Si no se obtienen señales repetibles o diferencias suficientes, se revisarán las condiciones de contacto, el montaje y el procedimiento antes de avanzar hacia una clasificación.
+
+## 9. Cumplimiento de indicadores del TRL 2
+
+El documento organiza las evidencias de Ligura alrededor de los tres indicadores principales considerados para esta etapa.
+
+| Indicador del TRL 2 | Evidencia presentada | Ubicación |
+|---|---|---|
+| Artículos científicos publicados que respalden o tengan relación directa con la propuesta tecnológica. | Antecedentes sobre respuesta acústica, evaluación vibratoria de frutos y caracterización de granadilla [1]–[3]. Se identifican sus aportes y límites para la propuesta. | Apartado 2 y referencias. |
+| Análisis de patentabilidad y protección. | Búsqueda preliminar, comparación de tres documentos de patente y delimitación del elemento técnico que requiere evaluación. | Apartado 7. |
+| Perfil o propuesta de proyecto. | Problema, objetivos, usuarios, propuesta tecnológica, resultados esperados, alcance y continuidad experimental. | Apartado 8. |
+
+Los apartados 3 al 6 complementan estas evidencias mediante la formulación del concepto, la arquitectura, las representaciones de diseño y los requisitos.
+
+La evidencia corresponde a una formulación tecnológica sustentada. La demostración experimental de sus funciones críticas se desarrollará en la prueba de concepto posterior.
+
+## 10. Conclusión
+
+Durante el TRL 2 se formuló el concepto tecnológico de Ligura como una propuesta de evaluación no destructiva de granadilla mediante excitación vibratoria controlada y análisis de su respuesta.
+
+La arquitectura contempla el pesaje previo a la sujeción, el establecimiento del contacto mediante un gripper supervisado por FSR, la excitación con AD9833 y LM386, la recepción piezoeléctrica y el acondicionamiento de la señal para su adquisición por el ESP32.
+
+Se desarrollaron representaciones del diseño mecánico y electrónico, se identificó el Boceto 2 como alternativa seleccionada y se elaboró un dashboard conceptual en Figma para consultar registros, señales y eventos.
+
+La revisión de patentes identificó antecedentes cercanos, por lo que todavía no se establece la novedad ni la patentabilidad de la solución.
+
+La viabilidad de estimar la presencia o ausencia de zonas oscurecidas visibles en la pulpa permanece como hipótesis. Su evaluación requerirá mediciones repetibles de frutos intactos y su comparación con la inspección interna posterior.
+
+Con ello, Ligura dispone de una base conceptual y de una propuesta de trabajo para continuar hacia la prueba de concepto.
+
+---
+
+## Referencias
+
+<a id="ref1"></a>
+
+[1] B. Diezma-Iglesias, M. Ruiz-Altisent y P. Barreiro, “Detection of internal quality in seedless watermelon by acoustic impulse response”, *Biosystems Engineering*, vol. 88, n.º 2, pp. 221–230, 2004. DOI: [10.1016/j.biosystemseng.2004.03.007](https://doi.org/10.1016/j.biosystemseng.2004.03.007).
+
+<a id="ref2"></a>
+
+[2] S. Tian, J. Wang y H. Xu, “Firmness measurement of kiwifruit using self-designed device based on acoustic vibration technology”, *Postharvest Biology and Technology*, vol. 187, art. 111851, 2022. DOI: [10.1016/j.postharvbio.2022.111851](https://doi.org/10.1016/j.postharvbio.2022.111851).
+
+<a id="ref3"></a>
+
+[3] D. S. Espinosa, L. M. Melgarejo, M. S. Hernández, S. E. Melo y J. P. Fernández-Trujillo, “Physiological and biochemical characterization of sweet granadilla (Passiflora ligularis Juss) at different locations”, *Acta Horticulturae*, n.º 1194, 2018. DOI: [10.17660/ActaHortic.2018.1194.204](https://doi.org/10.17660/ActaHortic.2018.1194.204).
+
+<a id="ref4"></a>
+
+[4] K. Peleg, “Method and equipment for measuring firmness of fruits and vegetables”, patente US5691473A, 25 de noviembre de 1997. Disponible en: [Google Patents](https://patents.google.com/patent/US5691473A/en).
+
+<a id="ref5"></a>
+
+[5] S. Terasaki y N. Wada, “Method of measuring ripeness and texture of vegetable or fruit and measuring instrument”, patente US6276536B1, 21 de agosto de 2001. Disponible en: [Google Patents](https://patents.google.com/patent/US6276536B1/en).
+
+<a id="ref6"></a>
+
+[6] Nanjing Forestry University, “Vibration sensing manipulator for fruit quality detection and detection method”, patente CN118746544B, 22 de abril de 2025. Disponible en: [Google Patents](https://patents.google.com/patent/CN118746544B/en).
+
+<a id="ref7"></a>
+
+[7] Organización Mundial de la Propiedad Intelectual, “How to Protect Inventions through Patents”. Consultado el 3 de noviembre de 2026. Disponible en: [OMPI](https://www.wipo.int/en/web/patents/protection).
+
+<a id="ref8"></a>
+
+[8] Equipo 3, “Ligura: documentación de diseño conceptual”, repositorio del curso Proyecto Integrador, Universidad Peruana Cayetano Heredia, 2026. Disponible en: [PI_Equipo_03](https://github.com/Cesarapcho/PI_Equipo_03).
+
+<a id="ref9"></a>
+
+[9] Equipo 3, “Ligura — Dashboard TRL 2”, diseño conceptual editable en Figma, 2026. Disponible en: [Dashboard de Ligura](https://www.figma.com/design/PDqMWSpBy16A39IbHWTqc9?node-id=3-138).
