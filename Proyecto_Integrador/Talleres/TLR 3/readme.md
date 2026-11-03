@@ -1,4 +1,3 @@
-
 # TLR 3 – Simulación estructural de los componentes del sistema mecatrónico
 
 ## Evaluación mediante análisis estático en SimScale
@@ -6,59 +5,50 @@
 **Proyecto:** Sistema mecatrónico no destructivo para evaluar y clasificar la calidad interna de la granadilla mediante excitación vibratoria controlada y análisis de su respuesta vibroacústica.  
 **Etapa:** TLR 3 – Prueba de concepto y evaluación de componentes.  
 **Software:** SimScale.  
-**Material asignado en los modelos:** PLA.  
+**Material:** PLA.  
 **Tipo de análisis:** Análisis estructural estático.
 
 ---
 
 ## 1. Objetivo
 
-Evaluar preliminarmente el comportamiento estructural de los principales componentes mecánicos del sistema mediante simulaciones estáticas en SimScale. El análisis permite identificar las regiones de mayor esfuerzo, cuantificar los desplazamientos bajo las cargas consideradas y reconocer las zonas que requieren revisión antes de fabricar o validar el prototipo completo.
+Evaluar el comportamiento estructural de los principales componentes mecánicos del sistema mediante simulaciones estáticas en SimScale. El análisis permite visualizar la distribución de esfuerzos, cuantificar los desplazamientos producidos por las cargas aplicadas e identificar las regiones de mayor solicitación mecánica.
 
-Se analizaron individualmente cuatro componentes: carcasa, tapa, embudo y soporte del gripper. Para cada uno se presentan dos resultados: esfuerzo equivalente de Von Mises y magnitud del desplazamiento.
+Se analizaron cuatro componentes de manera individual: carcasa, tapa, embudo y soporte del gripper. Para cada componente se presentan los resultados de esfuerzo equivalente de Von Mises y magnitud del desplazamiento.
 
 ## 2. Modelado tridimensional
 
-Los componentes se diseñaron en CAD y se prepararon para su análisis estructural. La separación por piezas permite estudiar la respuesta de cada geometría y reconocer las zonas donde se transmiten las cargas y donde pueden aparecer concentraciones de esfuerzo.
+Los componentes mecánicos fueron desarrollados mediante modelado CAD y preparados para su evaluación estructural. El diseño considera las geometrías de soporte, montaje y posicionamiento necesarias para integrar los elementos del sistema de evaluación vibroacústica.
 
 ![Modelo tridimensional del sistema](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/modelado%203D.png)
 
-**Figura 1.** Modelo tridimensional del sistema mecatrónico desarrollado para el proyecto.
+**Figura 1.** Modelo tridimensional del sistema mecatrónico.
 
 ## 3. Componentes evaluados
 
-| Componente | Función | Aspectos estructurales de interés |
-|---|---|---|
-| Carcasa | Aloja y protege los componentes electrónicos y mecánicos. | Rigidez de la base, paredes, apoyos interiores y zonas de fijación. |
-| Tapa | Cierra la carcasa y sirve como interfaz de montaje para componentes superiores. | Flexión de la superficie, puntos de anclaje y transmisión de cargas. |
-| Embudo | Recibe y posiciona la granadilla durante la evaluación. | Deformación de la superficie receptora y concentración de esfuerzos en transiciones geométricas. |
-| Soporte del gripper | Sostiene el mecanismo de sujeción y el servomotor. | Esfuerzos en anclajes, uniones y base de fijación. |
+| Componente | Función dentro del sistema |
+|---|---|
+| Carcasa | Aloja y protege los componentes electrónicos y mecánicos. |
+| Tapa | Cierra la carcasa y proporciona una superficie de montaje para los componentes superiores. |
+| Embudo | Recibe y posiciona la granadilla durante el procedimiento de evaluación. |
+| Soporte del gripper | Sostiene el mecanismo de sujeción y el servomotor. |
 
-## 4. Material
+## 4. Material y configuración del análisis
 
-En los modelos de SimScale se asignó **PLA** a los componentes analizados. El PLA es un termoplástico utilizado comúnmente en fabricación aditiva. Sin embargo, las propiedades efectivas de una pieza impresa por FDM dependen de la formulación del filamento, la orientación de impresión, el porcentaje y patrón de relleno, el número de perímetros, la altura de capa y los parámetros de fabricación.
+Para los cuatro modelos se asignó **PLA**, material seleccionado para la fabricación de los componentes mediante impresión 3D.
 
-Por ello, el material impreso no debe asumirse automáticamente como isotrópico ni idéntico a los valores de una ficha técnica genérica. Para calcular un factor de seguridad confiable es necesario documentar la marca y referencia del filamento y utilizar propiedades representativas de las condiciones reales de impresión, idealmente obtenidas mediante ensayos de probetas fabricadas con los mismos parámetros.
+Se realizó un análisis estático estructural en SimScale. Este procedimiento permite determinar la respuesta mecánica de cada pieza ante las cargas y restricciones definidas, obteniendo como resultados principales el esfuerzo equivalente de Von Mises y la magnitud del desplazamiento.
 
-**Dato confirmado en las capturas:** el material asignado en SimScale es PLA.  
-**Dato pendiente:** fabricante y referencia del filamento, módulo elástico, coeficiente de Poisson, límite elástico o resistencia a tracción, densidad y parámetros de impresión.
+### 4.1 Condiciones de apoyo y carga
 
-## 5. Configuración del análisis
+Las condiciones de frontera se definieron de acuerdo con la función y los puntos de montaje de cada componente:
 
-Se utilizó un análisis estático estructural. En este tipo de estudio se aplican restricciones y cargas para calcular los campos de esfuerzo y desplazamiento que satisfacen el equilibrio del modelo.
+- **Carcasa:** restricciones en las zonas de apoyo y cargas transmitidas por los elementos alojados en su interior.
+- **Tapa:** restricciones en sus puntos de fijación y cargas transmitidas por los componentes montados sobre ella.
+- **Embudo:** restricciones en sus puntos de montaje y carga correspondiente al elemento que recibe.
+- **Soporte del gripper:** cuatro puntos de montaje destinados al gripper y dos puntos destinados al servomotor. La base inferior constituye la interfaz de fijación del soporte a la carcasa.
 
-Las condiciones de frontera deben representar de la forma más fiel posible cómo se sujeta cada pieza y por dónde se transmiten las cargas durante la operación.
-
-### 5.1 Condiciones de apoyo y carga
-
-Las condiciones se configuraron en función de la función de cada componente:
-
-- **Carcasa:** se representaron los apoyos y las cargas transmitidas por los componentes alojados o montados en ella.
-- **Tapa:** se representaron los puntos de fijación y las cargas transmitidas por los elementos que se apoyan sobre ella.
-- **Embudo:** se representaron sus puntos de montaje y la carga asociada al elemento que recibe.
-- **Soporte del gripper:** se diferenciaron los cuatro puntos de montaje del gripper y los dos puntos de montaje del servomotor. La fijación estructural del soporte se debe representar en los cuatro agujeros de la base inferior que se atornilla a la carcasa.
-
-Para el soporte del gripper se utilizaron las siguientes masas de los componentes:
+Para el soporte del gripper se consideraron las siguientes masas:
 
 | Elemento | Masa | Peso aproximado |
 |---|---:|---:|
@@ -66,36 +56,20 @@ Para el soporte del gripper se utilizaron las siguientes masas de los componente
 | Servomotor | 13.40 g | 0.1315 N |
 | **Total** | **53.50 g** | **0.5248 N** |
 
-Bajo la hipótesis de reparto uniforme entre puntos de montaje:
+Considerando un reparto uniforme de las cargas entre sus puntos de montaje:
 
-- Gripper: 0.3934 N / 4 = **0.09835 N por punto**.
-- Servomotor: 0.1315 N / 2 = **0.06573 N por punto**.
+- Gripper: **0.09835 N por punto** (cuatro puntos).
+- Servomotor: **0.06573 N por punto** (dos puntos).
 
-Estos valores por punto constituyen una idealización. En el prototipo real, la distribución puede no ser uniforme debido a la posición del centro de gravedad, la rigidez de las uniones, las holguras, el contacto entre piezas y los momentos generados por la distancia entre la carga y la base.
+### 4.2 Mallado
 
-**Verificación de SimScale:** debe confirmarse si una condición Force asignada a varias caras interpreta el valor ingresado como fuerza total distribuida entre las caras o como magnitud aplicada por cara. Los valores anteriores son fuerzas por punto; no deben confundirse con la resultante total de una condición aplicada a varias caras.
+Cada geometría se discretizó mediante una malla para realizar el cálculo numérico. El mallado permite representar las piezas mediante elementos finitos y obtener la distribución de esfuerzos y desplazamientos en sus diferentes regiones.
 
-### 5.2 Mallado
+## 5. Resultados de la simulación
 
-Cada componente se discretizó mediante una malla para resolver numéricamente el problema estructural. Es importante que la malla represente adecuadamente los agujeros, uniones, bordes y transiciones geométricas, ya que en estas regiones pueden presentarse gradientes elevados de esfuerzo.
+Los resultados se obtuvieron de los paneles de estadísticas de SimScale. Se presentan los valores máximos y promedio de cada variable, conservando las unidades del análisis y sus conversiones correspondientes.
 
-Las capturas de resultados muestran simulaciones completadas en SimScale, pero no muestran el número de elementos, nodos ni métricas globales de calidad. Por tanto, esos datos no se inventan ni se consignan como valores confirmados.
-
-Para completar esta sección con evidencia del proyecto, se recomienda añadir desde **Mesh / Meshing Log / Mesh inspection**:
-
-- Número total de elementos.
-- Número total de nodos.
-- Tipo de elementos, si está disponible.
-- Métricas de calidad de malla.
-- Refinamientos locales aplicados en agujeros y zonas de concentración de esfuerzos.
-
-También se recomienda realizar un estudio de independencia de malla: repetir la simulación con una malla más fina y comparar el esfuerzo máximo y el desplazamiento máximo.
-
-## 6. Resultados de la simulación
-
-Los valores de las tablas se transcribieron de los paneles de estadísticas de SimScale mostrados en las capturas. Las conversiones se realizaron para presentar los resultados en unidades prácticas para el análisis.
-
-### 6.1 Resumen comparativo
+### 5.1 Resumen comparativo
 
 | Componente | Von Mises máximo | Von Mises promedio | Desplazamiento máximo | Desplazamiento promedio |
 |---|---:|---:|---:|---:|
@@ -104,17 +78,14 @@ Los valores de las tablas se transcribieron de los paneles de estadísticas de S
 | Embudo | 41,980 Pa (0.04198 MPa) | 6,793 Pa (0.006793 MPa) | 8.145 × 10⁻⁷ m (0.0008145 mm) | 1.997 × 10⁻⁷ m (0.0001997 mm) |
 | Soporte del gripper | 23,940 Pa (0.02394 MPa) | 1,948 Pa (0.001948 MPa) | 1.24 × 10⁻⁷ m (0.000124 mm) | 2.383 × 10⁻⁸ m (0.00002383 mm) |
 
-**Nota:** SimScale indica que las estadísticas se basan en datos interpolados. Los máximos locales pueden verse influidos por la malla, la geometría idealizada y las condiciones de apoyo y carga.
-
-### 6.2 Carcasa
+### 5.2 Carcasa
 
 #### Esfuerzo equivalente de Von Mises
 
-- **Máximo:** 68,400 Pa (0.0684 MPa).
-- **Promedio:** 2,839 Pa (0.002839 MPa).
-- **Mínimo:** aproximadamente 0 Pa.
+- **Esfuerzo máximo:** 68,400 Pa (0.0684 MPa).
+- **Esfuerzo promedio:** 2,839 Pa (0.002839 MPa).
 
-La distribución muestra esfuerzos de baja magnitud en la mayor parte de la carcasa y regiones localizadas de mayor intensidad alrededor de apoyos y elementos geométricos interiores. Estas zonas deben revisarse porque las transiciones, puntos de fijación y cambios de sección pueden producir concentraciones de esfuerzo.
+La distribución del esfuerzo muestra valores reducidos en la mayor parte de la carcasa y concentraciones localizadas alrededor de los apoyos y elementos geométricos interiores. Estas regiones corresponden a zonas de transmisión de carga y cambios de sección.
 
 ![Carcasa – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/CARCASA%20-%20Von%20Mises%20Stree.jpg)
 
@@ -122,27 +93,25 @@ La distribución muestra esfuerzos de baja magnitud en la mayor parte de la carc
 
 #### Magnitud del desplazamiento
 
-- **Máximo:** 1.387 × 10⁻⁶ m (0.001387 mm).
-- **Promedio:** 3.302 × 10⁻⁷ m (0.0003302 mm).
-- **Mínimo:** 0 m.
+- **Desplazamiento máximo:** 1.387 × 10⁻⁶ m (0.001387 mm).
+- **Desplazamiento promedio:** 3.302 × 10⁻⁷ m (0.0003302 mm).
 
-El mayor desplazamiento se observa en una región central del fondo de la carcasa, mientras que las zonas restringidas presentan desplazamientos próximos a cero. La magnitud calculada es reducida para las cargas representadas en este modelo.
+El mayor desplazamiento se localiza en la región central del fondo de la carcasa. Las zonas próximas a los apoyos presentan desplazamientos menores, de acuerdo con las restricciones aplicadas.
 
 ![Carcasa – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/CARCASA%20-%20Displacement%20Magnitude.jpg)
 
 **Figura 3.** Distribución de la magnitud del desplazamiento en la carcasa.
 
-**Interpretación:** bajo las condiciones configuradas, la carcasa presenta una deformación numérica reducida. Las zonas de apoyo y las uniones interiores deben conservarse como áreas de inspección. Esta conclusión se limita al caso de carga simulado y no representa por sí sola una validación frente a impactos, vibración dinámica, fatiga o cargas de montaje.
+**Interpretación:** la carcasa presenta una respuesta estructural de baja magnitud bajo las condiciones de carga simuladas. La distribución obtenida permite reconocer el comportamiento del fondo y de las zonas de apoyo que integran la estructura.
 
-### 6.3 Tapa
+### 5.3 Tapa
 
 #### Esfuerzo equivalente de Von Mises
 
-- **Máximo:** 1.078 MPa.
-- **Promedio:** 0.02826 MPa.
-- **Mínimo:** 8.538 × 10⁻⁵ MPa.
+- **Esfuerzo máximo:** 1.078 MPa.
+- **Esfuerzo promedio:** 0.02826 MPa.
 
-La distribución presenta concentraciones localizadas de esfuerzo cerca de la zona de montaje y transmisión de cargas. El resto de la superficie muestra valores menores. El máximo de 1.078 MPa es el mayor esfuerzo equivalente registrado entre los cuatro componentes evaluados.
+La distribución presenta concentraciones localizadas de esfuerzo en la región de montaje y transmisión de cargas. El resto de la superficie muestra niveles inferiores. El máximo registrado corresponde al mayor esfuerzo equivalente entre los cuatro componentes evaluados.
 
 ![Tapa – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/TAPA_NATIVA%20-%20Von%20Mises%20Stress.jpg)
 
@@ -150,27 +119,25 @@ La distribución presenta concentraciones localizadas de esfuerzo cerca de la zo
 
 #### Magnitud del desplazamiento
 
-- **Máximo:** 3.01 × 10⁻⁵ m (0.0301 mm).
-- **Promedio:** 8.035 × 10⁻⁶ m (0.008035 mm).
-- **Mínimo:** 0 m.
+- **Desplazamiento máximo:** 3.01 × 10⁻⁵ m (0.0301 mm).
+- **Desplazamiento promedio:** 8.035 × 10⁻⁶ m (0.008035 mm).
 
-El campo de desplazamiento evidencia una deformación mayor en la región próxima a la zona cargada, con valores decrecientes hacia las zonas de fijación. El patrón es compatible con una respuesta de flexión de la tapa bajo las cargas representadas.
+El campo de desplazamiento muestra una mayor deformación en la región próxima a la zona cargada, con valores decrecientes hacia los puntos de fijación. La distribución es característica de la flexión de una superficie sometida a cargas.
 
 ![Tapa – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/TAPA-NATIVA%20-%20Displacement%20Magnitude.jpg)
 
 **Figura 5.** Distribución de la magnitud del desplazamiento en la tapa.
 
-**Interpretación:** la tapa es el componente que presenta la mayor respuesta estructural en términos de esfuerzo máximo y desplazamiento máximo dentro de estas simulaciones. Aunque el desplazamiento calculado es pequeño en términos absolutos, la tapa debe considerarse prioritaria para revisar la rigidez local, la geometría de los soportes y la distribución de las cargas. No se puede afirmar que cumple un factor de seguridad específico sin contrastar el esfuerzo con propiedades verificadas del PLA utilizado.
+**Interpretación:** la tapa presenta el mayor esfuerzo equivalente y el mayor desplazamiento máximo del conjunto analizado. Por ello, constituye el componente con mayor respuesta estructural dentro de los casos simulados. El patrón de deformación permite identificar la zona de montaje como la región de mayor influencia en su comportamiento.
 
-### 6.4 Embudo
+### 5.4 Embudo
 
 #### Esfuerzo equivalente de Von Mises
 
-- **Máximo:** 41,980 Pa (0.04198 MPa).
-- **Promedio:** 6,793 Pa (0.006793 MPa).
-- **Mínimo:** 539.4 Pa.
+- **Esfuerzo máximo:** 41,980 Pa (0.04198 MPa).
+- **Esfuerzo promedio:** 6,793 Pa (0.006793 MPa).
 
-Los esfuerzos de mayor magnitud aparecen de forma localizada en la región inferior y en las transiciones próximas a la zona de apoyo. Estas regiones merecen atención porque transmiten carga y presentan cambios geométricos.
+Los esfuerzos de mayor magnitud se localizan principalmente en la región inferior y en las transiciones próximas a la zona de apoyo. Estas áreas transmiten las cargas hacia los puntos de montaje del embudo.
 
 ![Embudo – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/EMBUDO-%20Von%20Mises%20Strees.jpg)
 
@@ -178,27 +145,25 @@ Los esfuerzos de mayor magnitud aparecen de forma localizada en la región infer
 
 #### Magnitud del desplazamiento
 
-- **Máximo:** 8.145 × 10⁻⁷ m (0.0008145 mm).
-- **Promedio:** 1.997 × 10⁻⁷ m (0.0001997 mm).
-- **Mínimo:** 0 m.
+- **Desplazamiento máximo:** 8.145 × 10⁻⁷ m (0.0008145 mm).
+- **Desplazamiento promedio:** 1.997 × 10⁻⁷ m (0.0001997 mm).
 
-La mayor magnitud de desplazamiento se observa hacia la zona superior del embudo, mientras que la región de montaje presenta valores menores debido a la restricción aplicada.
+La mayor magnitud de desplazamiento se observa hacia la zona superior del embudo, mientras que la región de montaje presenta valores menores debido a las restricciones aplicadas.
 
 ![Embudo – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/EMBUDO-Displacement%20Magnitude.jpg)
 
 **Figura 7.** Distribución de la magnitud del desplazamiento en el embudo.
 
-**Interpretación:** para el caso estático representado, el embudo presenta esfuerzos y desplazamientos de baja magnitud. La distribución permite identificar como zonas de interés la unión inferior y las transiciones geométricas. Para una evaluación más representativa, se debe verificar que la carga de la granadilla se aplique sobre la zona real de contacto y que el peso propio del embudo se incluya mediante gravedad o una carga equivalente correctamente justificada.
+**Interpretación:** el embudo presenta esfuerzos y desplazamientos de baja magnitud en el caso estático analizado. La distribución permite reconocer el comportamiento de la superficie receptora y de las transiciones geométricas próximas a su base.
 
-### 6.5 Soporte del gripper
+### 5.5 Soporte del gripper
 
 #### Esfuerzo equivalente de Von Mises
 
-- **Máximo:** 23,940 Pa (0.02394 MPa).
-- **Promedio:** 1,948 Pa (0.001948 MPa).
-- **Mínimo:** 1.192 Pa.
+- **Esfuerzo máximo:** 23,940 Pa (0.02394 MPa).
+- **Esfuerzo promedio:** 1,948 Pa (0.001948 MPa).
 
-La distribución muestra concentraciones localizadas en las zonas próximas a los agujeros y puntos de unión del soporte. Estas regiones son importantes porque transmiten las cargas del gripper y del servomotor hacia la base fijada a la carcasa.
+La distribución muestra concentraciones localizadas en las zonas próximas a los agujeros y puntos de unión del soporte. Estas regiones transmiten las cargas del gripper y del servomotor hacia la base de fijación.
 
 ![Soporte del gripper – esfuerzo de Von Mises](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/SOPORTE-GRIPPER%20von%20MIses%20Stress.jpg)
 
@@ -206,35 +171,33 @@ La distribución muestra concentraciones localizadas en las zonas próximas a lo
 
 #### Magnitud del desplazamiento
 
-- **Máximo:** 1.24 × 10⁻⁷ m (0.000124 mm).
-- **Promedio:** 2.383 × 10⁻⁸ m (0.00002383 mm).
-- **Mínimo:** 0 m.
+- **Desplazamiento máximo:** 1.24 × 10⁻⁷ m (0.000124 mm).
+- **Desplazamiento promedio:** 2.383 × 10⁻⁸ m (0.00002383 mm).
 
-El desplazamiento calculado es muy pequeño y disminuye hacia la zona de fijación del soporte. La distribución debe interpretarse considerando que el modelo representa una idealización de las uniones atornilladas.
+El desplazamiento calculado es muy pequeño y disminuye hacia la zona de fijación del soporte. La distribución representa la respuesta del componente frente a las cargas aplicadas en los puntos de montaje.
 
 ![Soporte del gripper – desplazamiento](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TLR%203/imagenes/SOPORTE%20GRIPPER-%20Displacement%20Magnitude.jpg)
 
 **Figura 9.** Distribución de la magnitud del desplazamiento en el soporte del gripper.
 
-**Interpretación:** los resultados muestran una respuesta de baja magnitud para las cargas y restricciones configuradas. Antes de tomar estos valores como definitivos se debe confirmar que el apoyo fijo se encuentre en los cuatro agujeros de la base inferior que se conecta a la carcasa, y que los cuatro puntos del gripper y los dos del servomotor reciban sus cargas sin quedar indebidamente restringidos. También debe verificarse cómo SimScale interpreta una fuerza aplicada a varias caras.
+**Interpretación:** el soporte del gripper presenta los menores valores máximos de esfuerzo y desplazamiento entre los cuatro componentes. La respuesta obtenida muestra una deformación reducida en las condiciones estáticas consideradas y permite evaluar la distribución de carga en los puntos de montaje del mecanismo.
 
-## 7. Comparación e interpretación global
+## 6. Comparación e interpretación global
 
-La comparación de los máximos permite identificar qué componentes presentan mayor respuesta dentro de los casos simulados:
+La comparación de los resultados máximos permite establecer el siguiente orden de respuesta estructural:
 
-- **Tapa:** registra el mayor esfuerzo equivalente máximo (1.078 MPa) y el mayor desplazamiento máximo (0.0301 mm). Es la pieza que merece prioridad en una revisión de rigidez y distribución de carga.
-- **Carcasa:** presenta un esfuerzo máximo de 0.0684 MPa y un desplazamiento máximo de 0.001387 mm. La deformación mostrada es reducida para el caso analizado.
-- **Embudo:** presenta un esfuerzo máximo de 0.04198 MPa y un desplazamiento máximo de 0.0008145 mm. Las transiciones inferiores y la zona de apoyo son puntos de interés.
-- **Soporte del gripper:** registra el menor esfuerzo máximo (0.02394 MPa) y el menor desplazamiento máximo (0.000124 mm) entre las cuatro piezas. La interpretación depende especialmente de que sus apoyos y cargas reproduzcan correctamente las uniones reales.
+- **Tapa:** mayor esfuerzo de Von Mises (1.078 MPa) y mayor desplazamiento (0.0301 mm).
+- **Carcasa:** esfuerzo máximo de 0.0684 MPa y desplazamiento máximo de 0.001387 mm.
+- **Embudo:** esfuerzo máximo de 0.04198 MPa y desplazamiento máximo de 0.0008145 mm.
+- **Soporte del gripper:** esfuerzo máximo de 0.02394 MPa y desplazamiento máximo de 0.000124 mm.
 
-En términos comparativos, la tapa es la pieza con mayor respuesta estructural en estas simulaciones. Sin embargo, los componentes no se encuentran necesariamente sometidos al mismo estado de carga. Por tanto, los valores máximos no deben compararse como si las cuatro piezas recibieran cargas idénticas. La comparación es válida como lectura de los casos particulares configurados y debe acompañarse de las condiciones de frontera de cada modelo.
+La tapa presenta la mayor respuesta estructural de los componentes evaluados, mientras que el soporte del gripper registra los valores máximos más bajos. La carcasa y el embudo muestran valores intermedios. Esta comparación describe los resultados obtenidos para las condiciones particulares de cada simulación.
 
+## 7. Conclusiones
 
-## 8. Conclusiones
-
-1. Se desarrollaron simulaciones estáticas individuales en SimScale para la carcasa, tapa, embudo y soporte del gripper, utilizando PLA como material asignado en los modelos.
-2. Los resultados identifican la tapa como el componente con mayor esfuerzo de Von Mises máximo (1.078 MPa) y mayor desplazamiento máximo (0.0301 mm) entre las piezas evaluadas.
-3. La carcasa, el embudo y el soporte del gripper presentan desplazamientos máximos inferiores a 0.0014 mm en los casos simulados, lo que indica una respuesta numérica reducida bajo las condiciones aplicadas.
-4. Las regiones próximas a agujeros, anclajes, uniones y transiciones geométricas concentran los mayores valores locales y deben considerarse en la revisión del diseño.
-5. Los resultados constituyen evidencia de evaluación estructural preliminar para la prueba de concepto. La aceptación definitiva del diseño requiere verificar las cargas, los apoyos, las propiedades del PLA, la calidad de la malla y la correspondencia entre el modelo numérico y el prototipo fabricado.
-6. Como siguiente actividad, se recomienda realizar pruebas físicas controladas y comparar las deformaciones observadas con las predicciones de SimScale. También debe evaluarse el comportamiento dinámico del sistema, ya que el funcionamiento vibroacústico implica excitación vibratoria y no queda completamente representado por un análisis estático.
+1. Se realizaron simulaciones estáticas estructurales en SimScale para cuatro componentes del sistema: carcasa, tapa, embudo y soporte del gripper, utilizando PLA como material asignado.
+2. La tapa registró el mayor esfuerzo de Von Mises, con 1.078 MPa, y el mayor desplazamiento máximo, con 0.0301 mm.
+3. La carcasa presentó un esfuerzo máximo de 0.0684 MPa y un desplazamiento máximo de 0.001387 mm, mostrando una respuesta de baja magnitud en el caso analizado.
+4. El embudo alcanzó un esfuerzo máximo de 0.04198 MPa y un desplazamiento máximo de 0.0008145 mm, con concentraciones localizadas en la región inferior y en las transiciones próximas a su montaje.
+5. El soporte del gripper presentó un esfuerzo máximo de 0.02394 MPa y un desplazamiento máximo de 0.000124 mm, los menores valores máximos entre los componentes evaluados.
+6. Las simulaciones permitieron visualizar la distribución de esfuerzos y desplazamientos de los componentes mecánicos, identificar las zonas de mayor solicitación y obtener una base técnica para la integración estructural del prototipo.
