@@ -252,10 +252,3 @@ No se calcula un factor de seguridad en este informe porque no se ha documentado
 5. Los resultados constituyen evidencia de evaluación estructural preliminar para la prueba de concepto. La aceptación definitiva del diseño requiere verificar las cargas, los apoyos, las propiedades del PLA, la calidad de la malla y la correspondencia entre el modelo numérico y el prototipo fabricado.
 6. Como siguiente actividad, se recomienda realizar pruebas físicas controladas y comparar las deformaciones observadas con las predicciones de SimScale. También debe evaluarse el comportamiento dinámico del sistema, ya que el funcionamiento vibroacústico implica excitación vibratoria y no queda completamente representado por un análisis estático.
 
-## 10. Registro de figuras
-
-Las nueve imágenes se encuentran insertadas en el desarrollo del informe en el orden correspondiente: modelo 3D, resultados de carcasa, tapa, embudo y soporte del gripper. Al visualizar este archivo en GitHub, las imágenes se cargan desde la carpeta de evidencias del propio repositorio.
-
-**Recomendación de presentación:** conservar las capturas originales de SimScale y no recortar las escalas de colores ni los paneles de estadísticas, ya que estos elementos permiten identificar la variable representada, las unidades y los valores máximos y promedio.
-
----
