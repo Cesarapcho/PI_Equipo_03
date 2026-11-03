@@ -229,3 +229,178 @@ flowchart TD
 ```
 
 La estimación indicada en el flujo corresponde a la función que se pretende desarrollar y evaluar. Durante las primeras pruebas se registrarán la masa, la señal y el estado del ciclo para estudiar la repetibilidad y establecer el criterio de clasificación.
+
+## 5. Evidencias de diseño conceptual
+
+Las evidencias de diseño conceptual de Ligura comprenden la matriz morfológica, las alternativas de bocetado, el modelado tridimensional y el diseño electrónico preliminar. Estos elementos permiten representar la solución propuesta y la integración prevista de sus componentes mecánicos, electrónicos y de control.
+
+### 5.1 Matriz morfológica
+
+La matriz morfológica organiza las funciones principales de Ligura y las alternativas tecnológicas consideradas para resolverlas. Su elaboración permitió comparar opciones para el soporte del fruto, el pesaje, la sujeción, la excitación vibratoria, la adquisición de señales y la presentación de resultados.
+
+[![Matriz morfológica de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Entregables/imagenes/matriz_morfo_v4.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Entregables/imagenes/matriz_morfo_v4.png)
+
+*Figura 5.1. Matriz morfológica de Ligura. Haz clic sobre la imagen para verla en tamaño completo.*
+
+La configuración conceptual actual considera los siguientes componentes:
+
+| Elemento | Componente seleccionado | Función |
+|---|---|---|
+| Control del sistema | ESP32 DevKit V1 | Coordinar el ciclo de evaluación, adquirir las señales y gestionar la comunicación con la interfaz web. |
+| Apoyo del fruto | Cuna cóncava | Sostener la granadilla durante su colocación y evaluación. |
+| Medición de masa | Celda de carga y módulo HX711 | Registrar la masa del fruto antes del cierre de la pinza. |
+| Sujeción | Gripper accionado por servomotor | Aproximar los brazos y establecer el contacto con la granadilla. |
+| Supervisión del contacto | Sensor resistivo FSR | Proporcionar una lectura de contacto para detener el cierre al alcanzar el umbral establecido. |
+| Generación de señal | Módulo AD9833 | Generar la señal de excitación para el barrido de frecuencias. |
+| Amplificación de excitación | Módulo LM386 | Amplificar la señal destinada al piezoeléctrico emisor. |
+| Emisión de vibraciones | Transductor piezoeléctrico emisor | Aplicar la excitación vibratoria al fruto mediante contacto. |
+| Recepción de vibraciones | Transductor piezoeléctrico receptor | Captar la respuesta vibratoria de la granadilla. |
+| Acondicionamiento de señal | Circuito basado en MCP6022 | Acondicionar la señal del receptor para su adquisición por el ESP32. |
+| Procesamiento | Análisis mediante FFT | Obtener la representación en frecuencia de la señal adquirida y extraer características para su posterior evaluación. |
+| Alimentación | Adaptador AC/DC de 5 V y circuitos de alimentación | Suministrar energía a los componentes del sistema. |
+| Encendido | Interruptor basculante | Permitir el encendido y apagado del equipo. |
+| Inicio del ciclo | Botón físico | Permitir al usuario iniciar una evaluación. |
+| Señalización | LED verde y LED rojo | Comunicar estados o resultados según la lógica de funcionamiento definida. |
+| Visualización | Dashboard web | Mostrar el identificador del fruto, la masa, el estado del ciclo y el resultado estimado. |
+
+La tabla resume la configuración actual e incorpora el **LM386** como amplificador de excitación. Si la imagen de la matriz conserva una alternativa anterior, deberá actualizarse para mantener la coherencia entre las evidencias.
+
+La lectura del FSR se utilizará inicialmente como criterio de contacto. Su conversión a una fuerza expresada en newtons requerirá una calibración específica.
+
+### 5.2 Bocetos conceptuales
+
+Se desarrollaron tres bocetos para explorar la distribución de los componentes y la configuración física de Ligura. Las propuestas consideran el apoyo de la granadilla, la ubicación del mecanismo de sujeción, la disposición de los transductores y el alojamiento de la electrónica.
+
+Los tres bocetos se presentan como evidencia del proceso de formulación y comparación de alternativas.
+
+#### Boceto 1 — Alternativa evaluada
+
+[![Boceto 1 de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/1.boceto.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/1.boceto.png)
+
+*Figura 5.2. Boceto 1 de Ligura: alternativa evaluada.*
+
+#### Boceto 2 — Diseño conceptual seleccionado
+
+[![Boceto 2 seleccionado de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/2.boceto.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/2.boceto.png)
+
+*Figura 5.3. Boceto 2 de Ligura: diseño conceptual seleccionado.*
+
+#### Boceto 3 — Alternativa evaluada
+
+[![Boceto 3 de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/boceto_3.jpg)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/boceto_3.jpg)
+
+*Figura 5.4. Boceto 3 de Ligura: alternativa evaluada.*
+
+Se seleccionó el **Boceto 2** como base para el desarrollo del diseño conceptual. La propuesta reúne una base para alojar la electrónica, un soporte de pesaje, una cuna de apoyo y un mecanismo de sujeción con transductores ubicados en brazos opuestos.
+
+Esta disposición plantea el ingreso del fruto por la parte superior y el acceso al área de evaluación. Asimismo, permite organizar la secuencia de funcionamiento: colocar la granadilla, registrar su masa, establecer el contacto lateral, aplicar la excitación y adquirir la respuesta vibratoria.
+
+El diseño seleccionado se desarrolló posteriormente mediante modelado tridimensional. La estabilidad del conjunto, la repetibilidad del contacto y la ausencia de daño durante la sujeción deberán comprobarse experimentalmente.
+
+### 5.3 Modelado 3D
+
+Se elaboró un modelado tridimensional preliminar de Ligura en Onshape para representar el ensamble y la distribución física de sus principales componentes.
+
+El modelo comprende la base, la placa superior, el soporte posterior, el mecanismo de sujeción y la cuna cóncava. Estas representaciones permiten examinar las relaciones de montaje y planificar la fabricación de las piezas.
+
+#### Vista general del ensamble
+
+[![Ensamble general de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07a-ensamble-general.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07a-ensamble-general.png)
+
+*Figura 5.5. Vista general del ensamble conceptual de Ligura.*
+
+El ensamble muestra la cuna ubicada frente al soporte posterior y debajo de la pinza. La base contempla el alojamiento de la electrónica y la ubicación de los elementos de interacción con el usuario.
+
+#### Placa superior de la base
+
+[![Placa superior de la base de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07b-placa-superior-base.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07b-placa-superior-base.png)
+
+*Figura 5.6. Placa superior de la base y puntos de montaje.*
+
+La placa superior proporciona una superficie para montar el soporte posterior y los elementos asociados al apoyo y pesaje del fruto. Incluye perforaciones destinadas a la fijación y al paso de conexiones.
+
+#### Mecanismo de sujeción
+
+[![Gripper de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07c-gripper.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07c-gripper.png)
+
+*Figura 5.7. Modelo tridimensional del mecanismo de sujeción de la granadilla.*
+
+La pinza contempla dos brazos opuestos para establecer el contacto lateral con el fruto. Se prevé ubicar el piezoeléctrico emisor en un brazo y el receptor en el otro, además del FSR para supervisar el contacto durante el cierre.
+
+El recorrido de la pinza, el montaje de los sensores y el umbral de detención deberán ajustarse durante las pruebas posteriores.
+
+#### Soporte posterior
+
+[![Soporte posterior de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07d-soporte-posterior.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07d-soporte-posterior.png)
+
+*Figura 5.8. Soporte posterior del mecanismo de sujeción.*
+
+El soporte posterior permite fijar el mecanismo de sujeción respecto a la base. Su configuración contempla puntos de montaje y una abertura para la integración del conjunto.
+
+#### Cuna de apoyo
+
+[![Cuna de apoyo de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07e-cuna-apoyo.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07e-cuna-apoyo.png)
+
+*Figura 5.9. Cuna cóncava para el apoyo de la granadilla.*
+
+La cuna ofrece una superficie de apoyo para colocar el fruto antes del cierre de la pinza. Su integración con la celda de carga debe permitir que la masa se registre antes de aplicar la sujeción lateral.
+
+El diseño tiene como restricciones una base máxima de **150 × 150 mm** y una altura máxima de **200 mm**. Su cumplimiento deberá documentarse mediante planos o vistas acotadas; las imágenes del modelo permiten observar la geometría, pero no verificar por sí solas estas dimensiones.
+
+### 5.4 Diseño electrónico preliminar
+
+El diseño electrónico preliminar de Ligura comprende los esquemáticos de sus subsistemas, la distribución de pistas de la placa de circuito impreso y su representación tridimensional.
+
+La arquitectura considera un ESP32 para coordinar el pesaje, la sujeción, la generación de la excitación, la adquisición de la respuesta y la comunicación con la interfaz web.
+
+#### Excitación y recepción piezoeléctrica
+
+[![Esquemático de excitación y recepción piezoeléctrica](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07a-piezoelectricos.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07a-piezoelectricos.png)
+
+*Figura 5.10. Esquemático preliminar de excitación y recepción piezoeléctrica.*
+
+La etapa emisora considera el módulo AD9833 como generador de señal y el LM386 como amplificador para excitar el transductor piezoeléctrico.
+
+La etapa receptora contempla la conexión del segundo piezoeléctrico y un circuito de acondicionamiento basado en MCP6022. El diseño incluye una referencia de tensión, acoplamiento de señal y elementos de protección y filtrado para preparar la señal destinada a la adquisición.
+
+La ganancia, el ancho de banda y los niveles de tensión deberán verificarse antes de conectar la salida al convertidor analógico-digital del ESP32.
+
+#### Pesaje, control y señalización
+
+[![Esquemático de pesaje y control](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07b-pesaje-control.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07b-pesaje-control.png)
+
+*Figura 5.11. Esquemático preliminar de pesaje, control, servomotor y señalización.*
+
+Este esquema contempla la conexión de la celda de carga mediante el módulo HX711, el ESP32, el servomotor, el botón de inicio y los indicadores LED.
+
+El ESP32 coordinará el registro de masa antes de la sujeción y el accionamiento del servomotor durante el establecimiento del contacto. También gestionará los estados del ciclo y la señalización correspondiente.
+
+#### Alimentación y sensor FSR
+
+[![Esquemático de alimentación y FSR](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07c-alimentacion-fsr.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/07c-alimentacion-fsr.png)
+
+*Figura 5.12. Esquemático preliminar de alimentación y conexión del sensor FSR.*
+
+La etapa de alimentación contempla la entrada de energía, un fusible y condensadores de filtrado. La conexión del FSR utiliza un divisor resistivo para obtener una señal que pueda leer el ESP32.
+
+Esta lectura permitirá definir un umbral para detener el cierre de la pinza. Dicho umbral deberá determinarse mediante pruebas de contacto y repetibilidad con granadillas.
+
+#### Distribución de pistas de la PCB
+
+[![Diseño de pistas de la PCB de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/10e-pcb-diseno-pistas.jpeg)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/10e-pcb-diseno-pistas.jpeg)
+
+*Figura 5.13. Diseño preliminar de pistas y distribución de componentes de la PCB de Ligura.*
+
+La distribución de la PCB representa la ubicación prevista de los componentes, los conectores y las pistas que vinculan los subsistemas.
+
+Antes de su fabricación, deberá comprobarse la correspondencia con los esquemáticos, la asignación de pines, las dimensiones de las huellas y los espacios necesarios para montar los módulos. También deberá revisarse el recorrido de alimentación y de las señales analógicas para reducir posibles interferencias.
+
+#### Representación tridimensional de la PCB
+
+[![Vista 3D de la PCB de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/10d-pcb-vista-3d.jpeg)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/10d-pcb-vista-3d.jpeg)
+
+*Figura 5.14. Representación tridimensional de la PCB de Ligura con los componentes modelados.*
+
+La vista tridimensional permite examinar la disposición de los componentes representados, los conectores y los orificios de fijación. Algunos módulos aparecen mediante sus posiciones de montaje, por lo que deberá considerarse su volumen real al comprobar el alojamiento dentro de la base.
+
+Los esquemáticos, el trazado y la vista 3D constituyen evidencias del diseño preliminar. La comprobación del funcionamiento eléctrico y de la integración con el mecanismo se realizará en las siguientes etapas de desarrollo.
