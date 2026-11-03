@@ -407,106 +407,99 @@ Los esquemáticos, el trazado y la vista 3D constituyen evidencias del diseño p
 
 ### 5.5 Diseño conceptual del dashboard
 
-Se propone una interfaz web para consultar y registrar las evaluaciones realizadas con Ligura. Su diseño se desarrollará en Figma y se organizará en cuatro pantallas: evaluación, detalle del fruto, historial y estado del equipo.
+Se elaboró un diseño conceptual del dashboard de Ligura en Figma para representar la consulta de las evaluaciones, la visualización de las señales y la supervisión del equipo.
 
-La interfaz permitirá relacionar cada granadilla con su identificador, masa, estado del ciclo y resultado estimado. También contempla la consulta de la respuesta vibratoria y de los eventos que puedan afectar la validez de una medición.
+La interfaz comprende cuatro pantallas: evaluación de granadilla, detalle del fruto, historial de evaluaciones y estado del equipo. Las pantallas cuentan con navegación entre ellas y elementos editables.
 
-Las pantallas que utilicen valores ilustrativos deberán mostrar de forma visible la etiqueta **«Simulación — datos de ejemplo»**.
+El diseño utiliza fondo crema, naranja, azul petróleo y títulos oscuros, siguiendo la identidad visual de la presentación del proyecto.
 
-#### 5.5.1 Pantalla de evaluación
+[Consultar el diseño editable del dashboard en Figma](https://www.figma.com/design/PDqMWSpBy16A39IbHWTqc9?node-id=3-138).
 
-La pantalla principal estará orientada al seguimiento de la evaluación de una granadilla. Contemplará los siguientes elementos:
+Todas las pantallas incluyen el aviso **«Simulación — datos de ejemplo»**. Los valores, gráficos y estados presentados son ilustrativos y no corresponden a mediciones experimentales.
 
-- **Identificador del fruto:** código único asociado a la evaluación.
-- **Masa registrada:** valor expresado en gramos, obtenido antes de la sujeción lateral.
-- **Estado del ciclo:** en espera, pesaje, sujeción, excitación, adquisición, procesamiento, finalizado o error.
-- **Resultado estimado:** salida del análisis, cuando exista un método de clasificación validado.
-- **Estado de conexión:** disponibilidad de comunicación con el equipo.
-- **Mensaje de operación:** indicaciones para colocar el fruto, esperar la evaluación o retirarlo.
+#### 5.5.1 Evaluación de granadilla
 
-Antes de contar con un método validado, el campo de resultado mostrará **«Pendiente de validación»**. Si una medición presenta un error, se indicará **«Evaluación inválida»** y el motivo correspondiente.
+La pantalla principal presenta la información general de la evaluación de un fruto:
 
-<!-- Insertar aquí la captura exportada desde Figma:
-![Pantalla de evaluación de Ligura](imagenes/11-figma-evaluacion.png)
--->
+- Identificador de la granadilla.
+- Masa registrada en gramos antes de la sujeción lateral.
+- Estado del ciclo de evaluación.
+- Secuencia de pesaje, sujeción, excitación, adquisición, procesamiento y liberación.
+- Resultado estimado.
+- Fecha y hora del registro.
+- Estado de la inspección interna de referencia.
 
-*Figura 5.15. Propuesta conceptual de la pantalla de evaluación de Ligura.*
+La maqueta muestra un ciclo finalizado y una adquisición válida como escenario de ejemplo. El resultado permanece como **«Pendiente de validación»**, debido a que todavía debe comprobarse la relación entre las características de la señal y la condición interna del fruto.
 
-#### 5.5.2 Detalle de la evaluación
+También se incluyen accesos al detalle de la evaluación y al historial. El inicio del ciclo se plantea mediante el botón físico del equipo.
 
-Esta pantalla permitirá consultar la información asociada a un fruto seleccionado y examinar la señal obtenida durante su evaluación.
+[![Pantalla de evaluación de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/11-figma-evaluacion.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/11-figma-evaluacion.png)
 
-Se propone incluir:
+*Figura 5.15. Diseño conceptual de la pantalla de evaluación de Ligura. Simulación con datos de ejemplo.*
 
-- Identificador del fruto, fecha y hora de evaluación.
-- Masa registrada en gramos.
-- Parámetros del barrido de excitación utilizado.
-- Gráfico de la señal adquirida en función del tiempo.
-- Espectro de magnitud obtenido mediante FFT.
-- Características extraídas de la señal, según el procedimiento que se defina.
-- Estado de validez de la adquisición y observaciones del ciclo.
+#### 5.5.2 Detalle del fruto
 
-Los gráficos deberán identificar sus ejes y unidades. La amplitud se expresará en unidades del ADC o en voltios, según la conversión y calibración disponibles.
+La segunda pantalla permite representar la consulta de la información asociada a una granadilla seleccionada.
 
-Durante la validación experimental se contempla asociar cada registro con la inspección del mismo fruto después de abrirlo. Esta referencia incluirá fotografías y una etiqueta de presencia o ausencia de zonas oscurecidas visibles en la pulpa.
+Incluye la masa, el estado de la adquisición y el estado de la estimación. Asimismo, presenta dos gráficos ilustrativos:
 
-La observación de referencia y el resultado estimado por Ligura se mostrarán en campos separados para permitir su comparación.
+- **Respuesta en el tiempo:** amplitud expresada en cuentas del convertidor analógico-digital frente al tiempo en milisegundos.
+- **Espectro de magnitud mediante FFT:** magnitud en unidades arbitrarias frente a la frecuencia en hercios.
 
-<!-- Insertar aquí la captura exportada desde Figma:
-![Detalle de la evaluación de Ligura](imagenes/12-figma-detalle.png)
--->
+Estos gráficos representan el tipo de información que se espera consultar durante el desarrollo experimental. El rango de frecuencias mostrado es ilustrativo y deberá definirse mediante pruebas.
 
-*Figura 5.16. Propuesta conceptual de consulta de la señal y del detalle de una evaluación.*
+La pantalla también contempla una sección de referencia de la condición interna. Durante la validación, se propone abrir cada fruto después de su medición y registrar fotografías de la pulpa, junto con una etiqueta de presencia o ausencia de zonas oscurecidas visibles.
+
+La observación interna de referencia se mantendrá separada del resultado estimado por el sistema para permitir su comparación.
+
+[![Pantalla de detalle del fruto de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/12-figma-detalle.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/12-figma-detalle.png)
+
+*Figura 5.16. Diseño conceptual de la pantalla de detalle del fruto y visualización de señales. Gráficos ilustrativos.*
 
 #### 5.5.3 Historial de evaluaciones
 
-La pantalla de historial permitirá consultar los registros de las granadillas evaluadas y acceder al detalle de cada medición.
+La pantalla de historial presenta una tabla de registros que permite identificar las evaluaciones realizadas y consultar su detalle.
 
-La propuesta contempla una tabla con los siguientes campos:
+La tabla contempla los siguientes campos:
 
 | Campo | Información presentada |
 |---|---|
-| Identificador | Código del fruto evaluado. |
-| Fecha y hora | Momento de realización del ciclo. |
+| Fruto | Identificador de la granadilla. |
+| Fecha y hora | Momento de realización de la evaluación. |
 | Masa | Valor registrado en gramos. |
-| Estado del ciclo | Finalizado, interrumpido o inválido. |
-| Resultado estimado | Resultado disponible o indicación de que está pendiente de validación. |
-| Referencia interna | Observación posterior a la apertura del fruto, cuando se encuentre registrada. |
-| Detalle | Acceso a las señales, gráficos y observaciones de la evaluación. |
+| Estado | Ciclo finalizado o inválido. |
+| Resultado estimado | Estimación disponible, pendiente de validación o sin resultado. |
+| Detalle | Acceso a la evaluación o al evento correspondiente. |
 
-Se consideran filtros por identificador, fecha y estado del ciclo, además de una opción de exportación de los registros para su análisis.
+La maqueta incluye seis registros de ejemplo y diferencia visualmente un ciclo inválido. Este registro se conserva para mantener la trazabilidad, pero no se interpreta como un resultado sobre la condición interna de la granadilla.
 
-Los ciclos inválidos deberán conservarse identificados como tales, evitando que se interpreten como evaluaciones concluyentes.
+Se representan controles de búsqueda por identificador y filtrado por fecha y estado. Su funcionamiento y la exportación de datos se contemplan para la implementación posterior.
 
-<!-- Insertar aquí la captura exportada desde Figma:
-![Historial de evaluaciones de Ligura](imagenes/13-figma-historial.png)
--->
+[![Historial de evaluaciones de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/13-figma-historial.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/13-figma-historial.png)
 
-*Figura 5.17. Propuesta conceptual del historial de evaluaciones de Ligura.*
+*Figura 5.17. Diseño conceptual del historial de evaluaciones de Ligura. Registros simulados.*
 
 #### 5.5.4 Estado del equipo y eventos
 
-La cuarta pantalla estará orientada a consultar la disponibilidad del equipo y los eventos registrados durante su funcionamiento.
+La cuarta pantalla representa la supervisión del equipo mediante un escenario de interrupción por contacto insuficiente durante la sujeción.
 
-Contemplará:
+La interfaz muestra:
 
-- Estado de conexión con el ESP32.
-- Etapa actual del ciclo.
-- Última actualización recibida.
-- Lectura del FSR y umbral de contacto configurado.
-- Mensajes de adquisición o procesamiento.
-- Registro de interrupciones y errores.
+- Estado de comunicación.
+- Estado del ciclo.
+- Lectura normalizada del FSR.
+- Umbral de contacto ilustrativo.
+- Mensaje de acción requerida.
+- Registro cronológico de eventos.
 
-La lectura del FSR se presentará como valor del sensor o como indicador de contacto. Solo se expresará en newtons si se dispone de una calibración que sustente esa conversión.
+En el ejemplo, la lectura del FSR no alcanza el umbral dentro del límite configurado. La interfaz presenta el ciclo como **«Interrumpido»**, identifica la evaluación como inválida e indica que debe revisarse la colocación del fruto antes de repetirla.
 
-Los mensajes deberán distinguir entre una condición observada y su posible causa. Por ejemplo, una señal ausente se mostrará como **«No se obtuvo una señal válida»**, sin atribuir automáticamente el problema a un sensor averiado.
+La lectura normalizada y el umbral mostrados son valores de ejemplo, sin unidad. No representan una fuerza calibrada en newtons.
 
-Ante un error, la interfaz indicará la interrupción del ciclo y la acción que debe realizar el usuario antes de repetir la evaluación.
+El registro de eventos permite seguir la secuencia desde el inicio y la sujeción hasta la interrupción. Los mensajes describen la condición observada sin atribuir automáticamente el problema a un sensor averiado.
 
-<!-- Insertar aquí la captura exportada desde Figma:
-![Estado del equipo Ligura](imagenes/14-figma-estado.png)
--->
+[![Estado del equipo Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/14-figma-estado.png)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/14-figma-estado.png)
 
-*Figura 5.18. Propuesta conceptual de supervisión del equipo y consulta de eventos.*
+*Figura 5.18. Diseño conceptual de la pantalla de estado del equipo y registro de eventos. Escenario simulado de interrupción.*
 
-Las capturas del diseño en Figma se incorporarán como evidencia de la interfaz conceptual. Su implementación, comunicación con el ESP32 y funcionamiento con mediciones reales se comprobarán en etapas posteriores.
+El diseño en Figma constituye una evidencia de la propuesta de interacción y visualización de Ligura. La conexión con el ESP32, el almacenamiento de mediciones, el procesamiento de señales y la presentación de resultados reales se implementarán y verificarán en etapas posteriores.
