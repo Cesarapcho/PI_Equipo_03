@@ -419,9 +419,13 @@ Antes de su fabricación, deberá comprobarse la correspondencia con los esquem�
 
 #### Representación tridimensional de la PCB
 
-[![Vista 3D de la PCB de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/10d-pcb-vista-3d.jpeg)](https://github.com/Cesarapcho/PI_Equipo_03/blob/main/Proyecto_Integrador/Talleres/TRL2/imagenes/10d-pcb-vista-3d.jpeg)
+[![Vista 3D de la PCB de Ligura](https://raw.githubusercontent.com/Cesarapcho/PI_Equipo_03/main/Proyecto_Integrador/Talleres/TRL2/imagenes/10d-pcb-vista-3d.jpeg)](https://cesarapcho.github.io/PCB-GitHub-Pages/)
 
-*Figura 5.14. Representación tridimensional de la PCB de Ligura con los componentes modelados.*
+*Figura 5.14. Representación tridimensional de la PCB de Ligura con los componentes modelados. Haz clic sobre la imagen para abrir el visor interactivo.*
+
+[**Abrir diseño interactivo de la PCB de Ligura**](https://cesarapcho.github.io/PCB-GitHub-Pages/)
+
+El visor publicado en GitHub Pages permite girar el modelo, acercar y alejar la vista y examinar la distribución tridimensional de la placa y los componentes representados. Se utiliza arrastrando para rotar, la rueda del ratón para ajustar el zoom y el clic derecho para desplazar la vista.
 
 La vista tridimensional permite examinar la disposición de los componentes representados, los conectores y los orificios de fijación. Algunos módulos aparecen mediante sus posiciones de montaje, por lo que deberá considerarse su volumen real al comprobar el alojamiento dentro de la base.
 
