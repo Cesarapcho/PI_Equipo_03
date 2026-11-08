@@ -121,9 +121,3 @@ Con este montaje, una menor resistencia del FSR provoca un mayor voltaje de sali
 ## 8. Conclusión
 
 Se estableció un modelo matemático para transformar cambios de resistencia del FSR en cambios de voltaje medibles por el ESP32. El análisis fundamenta la adquisición de una señal de contacto, pero **no valida aún una medida de fuerza ni un umbral de sujeción seguro**. Esas afirmaciones requerirán calibración y ensayos físicos posteriores.
-
-## 9. Evidencia y relación con las siguientes actividades
-
-- **Actividad 02:** implementación numérica del modelo con resistencias sintéticas y visualización de resultados.
-- **Actividad 03:** prueba física individual del FSR y lectura ADC mediante ESP32.
-- **Actividad 04 (pendiente):** calibración con fuerzas de referencia y análisis de repetibilidad.
