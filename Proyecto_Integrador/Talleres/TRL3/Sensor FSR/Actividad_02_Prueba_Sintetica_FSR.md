@@ -147,10 +147,3 @@ La prueba respalda la coherencia numérica de la ecuación del divisor y permite
 ## 8. Conclusión
 
 La prueba sintética permitió reproducir mediante Python el comportamiento previsto del circuito de lectura del FSR. La disminución hipotética de la resistencia aumenta el voltaje de salida y la lectura ADC ideal. Estos resultados **validan el cálculo numérico del modelo**, pero requieren contraste con las pruebas físicas de la Actividad 03 y la calibración posterior.
-
-## 9. Evidencias
-
-- Notebook: [`Actividad_02_Prueba_Sintetica_FSR.ipynb`](./Actividad_02_Prueba_Sintetica_FSR.ipynb)
-- [Notebook en Google Colab](https://colab.research.google.com/drive/1-GkpycZoicLZNaBiHvb5dPfK2t-pTNuV?usp=sharing)
-- Gráfica 1: [`imagenes/actividad02_resistencia_voltaje.png`](./imagenes/actividad02_resistencia_voltaje.png)
-- Gráfica 2: [`imagenes/actividad02_voltaje_adc.png`](./imagenes/actividad02_voltaje_adc.png)
