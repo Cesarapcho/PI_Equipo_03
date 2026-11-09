@@ -142,11 +142,3 @@ El retorno a 0 ADC al retirar la carga demuestra un comportamiento de liberació
 ## 11. Relación con el proyecto Ligura
 
 En Ligura se prevé utilizar el FSR en uno de los brazos del gripper para reconocer contacto y monitorear la fuerza durante la sujeción. Esta simulación sirve para estudiar cómo una fuerza configurada puede reflejarse en una lectura analógica; la correspondencia exacta debe validarse con el sensor físico, el circuito definitivo y la geometría real de contacto con la granadilla.
-
-## 12. Evidencias adicionales
-
-- [Captura sin fuerza al iniciar](./imagenes/03_sin_fuerza.png)
-- [Capturas del circuito y el programa](./imagenes/01_montaje_inicial.png)
-- [Gráfica de respuesta fuerza–ADC](./imagenes/fsr_fuerza_adc_tinkercad.png)
-
-**Siguiente etapa:** contrastar el modelo simulado con la prueba individual física ya realizada y, cuando sea posible, efectuar calibración con cargas de referencia.
