@@ -143,7 +143,7 @@ Se transcribieron las **19 lecturas visibles** de la captura final del Monitor S
 
 ### 7.2. Gráfica de los valores registrados
 
-![Lecturas ADC del FSR durante la prueba de presión y liberación](./imagenes/actividad03_grafica_adc.png)
+<img src="./imagenes/actividad03_grafica_adc.png" alt="Lecturas ADC del FSR durante la prueba de presión y liberación" width="450">
 
 La serie muestra un incremento inicial, variaciones mientras se manipula el sensor y un descenso hasta cero al retirar la presión. La presión manual no fue cuantificada ni mantenida necesariamente constante, por lo que las fluctuaciones **no permiten evaluar por sí solas la precisión ni la repetibilidad del FSR**.
 
@@ -151,19 +151,19 @@ La serie muestra un incremento inicial, variaciones mientras se manipula el sens
 
 ### 8.1. Montaje experimental con ESP32
 
-![Vista superior del montaje experimental con ESP32 y protoboard](./imagenes/actividad03_montaje_esp32.png)
+<img src="./imagenes/actividad03_montaje_esp32.png" alt="Vista superior del montaje experimental con ESP32 y protoboard" width="450">
 
 **Figura 1.** Vista superior del montaje físico utilizado para la prueba individual. Se observa el ESP32 conectado por USB, la protoboard, los conductores y el circuito resistivo de lectura.
 
 ### 8.2. Detalle del sensor FSR y sus conexiones
 
-![Detalle del FSR sobre la protoboard conectado al ESP32](./imagenes/actividad03_conexion_fsr.png)
+<img src="./imagenes/actividad03_conexion_fsr.png" alt="Detalle del FSR sobre la protoboard conectado al ESP32" width="450">
 
 **Figura 2.** Detalle del sensor FSR, la resistencia y el cableado hacia la placa ESP32. La fotografía documenta la disposición física; la continuidad eléctrica de cada conexión se describe mediante el esquema de la sección 4.
 
 ### 8.3. Registro de datos en Arduino IDE
 
-![Monitor Serie de Arduino IDE durante el ensayo del FSR](./imagenes/actividad03_monitor_serie.png)
+<img src="./imagenes/actividad03_monitor_serie.png" alt="Monitor Serie de Arduino IDE durante el ensayo del FSR" width="450">
 
 **Figura 3.** Captura real de Arduino IDE con el programa de adquisición y las lecturas del sensor durante una secuencia de presión y liberación.
 
@@ -194,3 +194,4 @@ Este resultado **no demuestra todavía una medición calibrada de fuerza**, ni a
 
 **Evidencias incluidas:** dos fotografías reales del montaje, captura real del Monitor Serie y gráfica elaborada a partir de las lecturas registradas.  
 **Siguiente actividad del plan:** Actividad 4 — Simulación electrónica del FSR en Tinkercad.
+
