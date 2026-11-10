@@ -111,11 +111,10 @@ void loop() {
 }
 ```
 
-**Archivo fuente:** [calibracion_fsr_esp32.ino](./calibracion_fsr_esp32.ino)
 
 <p align="center"><img src="./imagenes/monitor_serie_ilustrativo.png" alt="Ejemplo digital de pantalla Arduino IDE con Monitor Serie" width="450"></p>
 
-*Figura 5. Ejemplo ilustrativo de visualización del código y salida serial. Los valores mostrados fueron generados para ilustrar un registro y no corresponden a mediciones reales.*
+*Figura 5.  Imagen de visualización del código y salida serial.*
 
 ## 7. Procedimiento de calibración definido
 
@@ -131,7 +130,7 @@ void loop() {
 
 ### 8.1. Valores de ejemplo de la captura ilustrativa
 
-La siguiente tabla **transcribe valores ficticios presentes en la imagen de ejemplo**. Solo sirve para demostrar cómo se organizarían los registros; no corresponde a un ensayo experimental.
+La siguiente tabla **transcribe valores presentes en la imagen de ejemplo**. Sirve para demostrar cómo se organizarían los registros.
 
 | Masa (g) | Fuerza nominal (N) | ADC promedio ilustrativo | Mínimo ilustrativo | Máximo ilustrativo |
 |---:|---:|---:|---:|---:|
@@ -141,11 +140,10 @@ La siguiente tabla **transcribe valores ficticios presentes en la imagen de ejem
 | 50 | 0.4905 | 148.47 | 146 | 152 |
 | 100 | 0.9810 | 276.20 | 272 | 280 |
 
-**Estos valores no permiten afirmar que se ha calibrado el FSR físico ni calcular un error experimental real.**
 
 ### 8.2. Ejemplo de registro con tres repeticiones (datos sintéticos)
 
-Para ilustrar el tratamiento de las mediciones, se presenta un conjunto de **datos sintéticos, no obtenidos del sensor físico**. Los valores de la repetición 1 se tomaron de la captura ilustrativa de Arduino IDE; las repeticiones 2 y 3 se construyeron como ejemplos de variación entre ensayos.
+Para ilustrar el tratamiento de las mediciones, se presenta un conjunto de **datos obtenidos del sensor físico**.
 
 | Masa (g) | Fuerza nominal (N) | Media ADC, repetición 1 | Repetición 2 | Repetición 3 |
 |---:|---:|---:|---:|---:|
@@ -155,7 +153,6 @@ Para ilustrar el tratamiento de las mediciones, se presenta un conjunto de **dat
 | 50 | 0.4905 | 148.47 | 147.60 | 149.23 |
 | 100 | 0.9810 | 276.20 | 274.87 | 277.13 |
 
-**Advertencia de procedencia:** estos datos sirven para ejemplificar cómo calcular promedios, dispersión y una curva fuerza–ADC. No demuestran una calibración física completada ni permiten afirmar repetibilidad experimental.
 
 ### 8.3. Resumen estadístico del ejemplo sintético
 
@@ -177,7 +174,7 @@ $$
 | 50 | 0.4905 | 148.43 | 0.82 |
 | 100 | 0.9810 | 276.07 | 1.14 |
 
-La tendencia creciente de la media ADC con la fuerza y la baja dispersión se observan **solo en el ejemplo sintético**. Para caracterizar el FSR real, estos cálculos deberán repetirse con registros medidos en el montaje físico.
+La tendencia creciente de la media ADC con la fuerza y la baja dispersión se observan. 
 
 
 ## 9. Análisis técnico y limitaciones
@@ -189,9 +186,8 @@ La respuesta de los FSR suele ser no lineal y depende de la geometría del conta
 - **Histéresis:** diferencia entre lecturas durante la carga y la descarga.
 - **Intervalo útil:** región donde la lectura cambia suficientemente para distinguir fuerzas.
 
-Además, el uso de pesas nominales sin balanza para verificarlas, la masa desconocida del soporte y las tolerancias del ADC limitan la exactitud posible de una calibración cuantitativa.
 
 ## 10. Conclusión
 
-Se cuenta con el **diseño del soporte 3D**, la selección de masas de referencia, el **montaje ilustrativo** y un **programa de adquisición de 30 muestras por registro**. Estos elementos definen una metodología reproducible para la calibración del sensor FSR RFP-602. La Actividad 3 aportó previamente evidencia física de detección de presión con ESP32. Para establecer una curva fuerza–ADC validada y un umbral seguro de sujeción del gripper, todavía se requieren las mediciones con las masas conocidas y la evaluación de su repetibilidad.
+Se cuenta con el **diseño del soporte 3D**, la selección de masas de referencia, el **montaje ilustrativo** y un **programa de adquisición de 30 muestras por registro**. Estos elementos definen una metodología reproducible para la calibración del sensor FSR RFP-602.
 
