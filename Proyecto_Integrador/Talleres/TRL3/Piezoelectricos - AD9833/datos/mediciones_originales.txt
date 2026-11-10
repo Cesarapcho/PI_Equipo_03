@@ -1,0 +1,552 @@
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 159
+Nivel 2000 Hz: 1.45
+Nivel 1500 Hz: 0.78
+Nivel 2500 Hz: 0.93
+Nivel 60 Hz: 11.00
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 181
+Nivel 2000 Hz: 1.48
+Nivel 1500 Hz: 7.11
+Nivel 2500 Hz: 4.40
+Nivel 60 Hz: 11.92
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 147
+Nivel 2000 Hz: 1.28
+Nivel 1500 Hz: 1.72
+Nivel 2500 Hz: 1.98
+Nivel 60 Hz: 9.73
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 129
+Nivel 2000 Hz: 1.56
+Nivel 1500 Hz: 2.21
+Nivel 2500 Hz: 2.22
+Nivel 60 Hz: 13.88
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 168
+Nivel 2000 Hz: 1.73
+Nivel 1500 Hz: 1.52
+Nivel 2500 Hz: 1.81
+Nivel 60 Hz: 11.51
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 177
+Nivel 2000 Hz: 3.07
+Nivel 1500 Hz: 0.40
+Nivel 2500 Hz: 2.36
+Nivel 60 Hz: 12.10
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 116
+Nivel 2000 Hz: 1.68
+Nivel 1500 Hz: 1.02
+Nivel 2500 Hz: 0.99
+Nivel 60 Hz: 11.72
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 142
+Nivel 2000 Hz: 2.21
+Nivel 1500 Hz: 2.00
+Nivel 2500 Hz: 1.85
+Nivel 60 Hz: 17.51
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 162
+Nivel 2000 Hz: 1.08
+Nivel 1500 Hz: 4.27
+Nivel 2500 Hz: 1.83
+Nivel 60 Hz: 15.22
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 187
+Nivel 2000 Hz: 2.43
+Nivel 1500 Hz: 1.89
+Nivel 2500 Hz: 3.56
+Nivel 60 Hz: 15.44
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 187
+Nivel 2000 Hz: 1.44
+Nivel 1500 Hz: 1.11
+Nivel 2500 Hz: 1.91
+Nivel 60 Hz: 13.38
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 150
+Nivel 2000 Hz: 2.67
+Nivel 1500 Hz: 3.41
+Nivel 2500 Hz: 2.11
+Nivel 60 Hz: 18.90
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 152
+Nivel 2000 Hz: 3.84
+Nivel 1500 Hz: 5.11
+Nivel 2500 Hz: 1.42
+Nivel 60 Hz: 14.61
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 169
+Nivel 2000 Hz: 2.91
+Nivel 1500 Hz: 0.84
+Nivel 2500 Hz: 2.10
+Nivel 60 Hz: 16.17
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 175
+Nivel 2000 Hz: 1.90
+Nivel 1500 Hz: 2.29
+Nivel 2500 Hz: 1.91
+Nivel 60 Hz: 13.36
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 165
+Nivel 2000 Hz: 3.58
+Nivel 1500 Hz: 2.25
+Nivel 2500 Hz: 1.84
+Nivel 60 Hz: 15.78
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 162
+Nivel 2000 Hz: 0.97
+Nivel 1500 Hz: 4.04
+Nivel 2500 Hz: 1.67
+Nivel 60 Hz: 15.16
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 190
+Nivel 2000 Hz: 2.41
+Nivel 1500 Hz: 0.63
+Nivel 2500 Hz: 2.12
+Nivel 60 Hz: 17.86
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 170
+Nivel 2000 Hz: 0.89
+Nivel 1500 Hz: 4.64
+Nivel 2500 Hz: 4.43
+Nivel 60 Hz: 15.51
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 160
+Nivel 2000 Hz: 0.95
+Nivel 1500 Hz: 1.98
+Nivel 2500 Hz: 1.95
+Nivel 60 Hz: 15.16
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 173
+Nivel 2000 Hz: 1.11
+Nivel 1500 Hz: 2.49
+Nivel 2500 Hz: 1.52
+Nivel 60 Hz: 17.10
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 157
+Nivel 2000 Hz: 2.12
+Nivel 1500 Hz: 3.16
+Nivel 2500 Hz: 1.59
+Nivel 60 Hz: 13.57
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 132
+Nivel 2000 Hz: 0.34
+Nivel 1500 Hz: 3.84
+Nivel 2500 Hz: 1.42
+Nivel 60 Hz: 14.09
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 188
+Nivel 2000 Hz: 2.66
+Nivel 1500 Hz: 1.42
+Nivel 2500 Hz: 0.30
+Nivel 60 Hz: 15.87
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 155
+Nivel 2000 Hz: 3.64
+Nivel 1500 Hz: 1.78
+Nivel 2500 Hz: 0.30
+Nivel 60 Hz: 15.72
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 162
+Nivel 2000 Hz: 0.66
+Nivel 1500 Hz: 1.33
+Nivel 2500 Hz: 2.49
+Nivel 60 Hz: 11.04
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 137
+Nivel 2000 Hz: 3.12
+Nivel 1500 Hz: 2.11
+Nivel 2500 Hz: 1.15
+Nivel 60 Hz: 14.19
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 144
+Nivel 2000 Hz: 1.09
+Nivel 1500 Hz: 1.53
+Nivel 2500 Hz: 2.35
+Nivel 60 Hz: 11.69
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 179
+Nivel 2000 Hz: 0.61
+Nivel 1500 Hz: 3.60
+Nivel 2500 Hz: 1.72
+Nivel 60 Hz: 16.53
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 172
+Nivel 2000 Hz: 2.40
+Nivel 1500 Hz: 3.67
+Nivel 2500 Hz: 2.01
+Nivel 60 Hz: 15.99
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 164
+Nivel 2000 Hz: 1.25
+Nivel 1500 Hz: 2.79
+Nivel 2500 Hz: 0.83
+Nivel 60 Hz: 16.90
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 132
+Nivel 2000 Hz: 2.21
+Nivel 1500 Hz: 3.92
+Nivel 2500 Hz: 1.75
+Nivel 60 Hz: 15.33
+------------------------------
+Emisor: APAGADO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 169
+Nivel 2000 Hz: 4.87
+Nivel 1500 Hz: 3.80
+Nivel 2500 Hz: 3.21
+Nivel 60 Hz: 15.30
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 179
+Nivel 2000 Hz: 3.59
+Nivel 1500 Hz: 3.98
+Nivel 2500 Hz: 1.74
+Nivel 60 Hz: 14.75
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 144
+Nivel 2000 Hz: 5.12
+Nivel 1500 Hz: 4.68
+Nivel 2500 Hz: 2.73
+Nivel 60 Hz: 15.39
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 159
+Nivel 2000 Hz: 8.24
+Nivel 1500 Hz: 1.50
+Nivel 2500 Hz: 2.10
+Nivel 60 Hz: 18.36
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 150
+Nivel 2000 Hz: 4.15
+Nivel 1500 Hz: 2.40
+Nivel 2500 Hz: 1.01
+Nivel 60 Hz: 14.80
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 174
+Nivel 2000 Hz: 3.14
+Nivel 1500 Hz: 5.36
+Nivel 2500 Hz: 2.56
+Nivel 60 Hz: 14.70
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 125
+Nivel 2000 Hz: 6.88
+Nivel 1500 Hz: 1.67
+Nivel 2500 Hz: 0.88
+Nivel 60 Hz: 14.97
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 158
+Nivel 2000 Hz: 3.74
+Nivel 1500 Hz: 1.05
+Nivel 2500 Hz: 0.88
+Nivel 60 Hz: 15.86
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 194
+Nivel 2000 Hz: 5.06
+Nivel 1500 Hz: 2.41
+Nivel 2500 Hz: 2.41
+Nivel 60 Hz: 16.29
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 169
+Nivel 2000 Hz: 2.35
+Nivel 1500 Hz: 2.80
+Nivel 2500 Hz: 2.78
+Nivel 60 Hz: 16.98
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 192
+Nivel 2000 Hz: 5.44
+Nivel 1500 Hz: 2.54
+Nivel 2500 Hz: 3.15
+Nivel 60 Hz: 15.57
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 152
+Nivel 2000 Hz: 3.53
+Nivel 1500 Hz: 3.87
+Nivel 2500 Hz: 2.67
+Nivel 60 Hz: 15.09
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 182
+Nivel 2000 Hz: 5.15
+Nivel 1500 Hz: 5.66
+Nivel 2500 Hz: 2.06
+Nivel 60 Hz: 16.25
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 151
+Nivel 2000 Hz: 3.61
+Nivel 1500 Hz: 5.97
+Nivel 2500 Hz: 1.12
+Nivel 60 Hz: 14.74
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 129
+Nivel 2000 Hz: 6.19
+Nivel 1500 Hz: 1.89
+Nivel 2500 Hz: 2.55
+Nivel 60 Hz: 14.20
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 125
+Nivel 2000 Hz: 5.24
+Nivel 1500 Hz: 1.64
+Nivel 2500 Hz: 0.93
+Nivel 60 Hz: 15.23
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 167
+Nivel 2000 Hz: 4.40
+Nivel 1500 Hz: 3.84
+Nivel 2500 Hz: 1.09
+Nivel 60 Hz: 17.13
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 157
+Nivel 2000 Hz: 7.13
+Nivel 1500 Hz: 0.98
+Nivel 2500 Hz: 3.59
+Nivel 60 Hz: 15.30
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 125
+Nivel 2000 Hz: 6.02
+Nivel 1500 Hz: 2.15
+Nivel 2500 Hz: 2.79
+Nivel 60 Hz: 15.92
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 137
+Nivel 2000 Hz: 3.35
+Nivel 1500 Hz: 2.18
+Nivel 2500 Hz: 0.75
+Nivel 60 Hz: 14.43
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 141
+Nivel 2000 Hz: 3.80
+Nivel 1500 Hz: 2.47
+Nivel 2500 Hz: 0.64
+Nivel 60 Hz: 13.16
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 99
+Nivel 2000 Hz: 4.98
+Nivel 1500 Hz: 2.61
+Nivel 2500 Hz: 2.87
+Nivel 60 Hz: 15.85
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 165
+Nivel 2000 Hz: 6.04
+Nivel 1500 Hz: 2.68
+Nivel 2500 Hz: 0.71
+Nivel 60 Hz: 14.72
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 161
+Nivel 2000 Hz: 4.59
+Nivel 1500 Hz: 2.28
+Nivel 2500 Hz: 1.50
+Nivel 60 Hz: 14.37
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 178
+Nivel 2000 Hz: 5.06
+Nivel 1500 Hz: 1.97
+Nivel 2500 Hz: 1.97
+Nivel 60 Hz: 18.03
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 178
+Nivel 2000 Hz: 5.22
+Nivel 1500 Hz: 1.58
+Nivel 2500 Hz: 2.69
+Nivel 60 Hz: 14.92
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 210
+Nivel 2000 Hz: 6.15
+Nivel 1500 Hz: 3.03
+Nivel 2500 Hz: 3.23
+Nivel 60 Hz: 14.84
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 140
+Nivel 2000 Hz: 5.55
+Nivel 1500 Hz: 4.24
+Nivel 2500 Hz: 0.94
+Nivel 60 Hz: 13.98
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 113
+Nivel 2000 Hz: 6.23
+Nivel 1500 Hz: 1.60
+Nivel 2500 Hz: 1.50
+Nivel 60 Hz: 13.27
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 166
+Nivel 2000 Hz: 3.22
+Nivel 1500 Hz: 1.57
+Nivel 2500 Hz: 2.68
+Nivel 60 Hz: 13.79
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 159
+Nivel 2000 Hz: 4.39
+Nivel 1500 Hz: 2.43
+Nivel 2500 Hz: 2.20
+Nivel 60 Hz: 15.97
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 162
+Nivel 2000 Hz: 6.52
+Nivel 1500 Hz: 3.49
+Nivel 2500 Hz: 2.04
+Nivel 60 Hz: 15.33
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 192
+Nivel 2000 Hz: 4.15
+Nivel 1500 Hz: 3.33
+Nivel 2500 Hz: 1.91
+Nivel 60 Hz: 14.66
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 174
+Nivel 2000 Hz: 6.51
+Nivel 1500 Hz: 0.35
+Nivel 2500 Hz: 4.00
+Nivel 60 Hz: 11.76
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7990.0 Hz
+ADC pico-pico: 136
+Nivel 2000 Hz: 5.22
+Nivel 1500 Hz: 2.76
+Nivel 2500 Hz: 0.12
+Nivel 60 Hz: 15.41
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 152
+Nivel 2000 Hz: 5.38
+Nivel 1500 Hz: 0.65
+Nivel 2500 Hz: 0.95
+Nivel 60 Hz: 13.52
+------------------------------
+Emisor: ENCENDIDO
+Muestreo aprox.: 7989.7 Hz
+ADC pico-pico: 112
+Nivel 2000 Hz: 4.44
+Nivel 1500 Hz: 4.32
+Nivel 2500 Hz: 1.62
+Nivel 60 Hz: 12.34
