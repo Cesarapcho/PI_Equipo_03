@@ -36,11 +36,11 @@ El plano permite verificar dimensiones geométricas, pero no establece por sí s
 
 ## 4. Montaje y conexiones
 
-La siguiente imagen permite visualizar la configuración propuesta. **Es una representación digital**, no una fotografía de una calibración ejecutada.
+La siguiente imagen permite visualizar la configuracionc. 
 
 <p align="center"><img src="./imagenes/montaje_conceptual_fsr.png" alt="Representación conceptual del montaje con pesa, soporte y FSR" width="420"></p>
 
-*Figura 4. Representación del montaje con pesa de 100 g, soporte 3D y sensor FSR.*
+*Figura 4. Imagen del montaje con pesa de 100 g, soporte 3D y sensor FSR.*
 
 La lectura del sensor utiliza un divisor de voltaje:
 
