@@ -42,7 +42,7 @@ Donde $F$ se expresa en newtons, $m$ en kilogramos y $g=9.81\ \mathrm{m/s^2}$.
 
 <img src="./imagenes/pesas_referencia_disponibles.png" alt="Estuche con pesas metálicas de referencia y accesorio de manipulación" width="400">
 
-*Figura 1. Fotografía del juego de pesas metálicas disponible para preparar las pruebas de carga. La imagen permite observar el material de referencia, pero no constituye un registro de lecturas ADC ni certifica la masa de cada pesa.*
+*Figura 1. Fotografía del juego de pesas metálicas disponible para preparar las pruebas de carga.*
 
 ## 4. Diseño del soporte de carga en Onshape
 
@@ -62,7 +62,7 @@ El plano proporciona referencias geométricas para reproducir el soporte. **Su d
 
 <img src="./imagenes/montaje_conceptual_fsr.png" alt="Montaje conceptual de calibración del FSR con pesa y soporte 3D" width="450">
 
-*Figura 4. Imagen ilustrativa generada digitalmente del montaje propuesto para la calibración. No es una fotografía de una calibración realizada y no acredita la continuidad ni la corrección de todas las conexiones.*
+*Figura 4. Imagen ilustrativa del montaje para la calibración.*
 
 El soporte se plantea para posicionar la carga de referencia sobre la superficie activa del FSR. Antes de una prueba real debe verificarse que el montaje no desvíe parte del peso a la mesa u otras superficies y que la carga no exceda el rango especificado para la variante del RFP-602 utilizada.
 
