@@ -1,86 +1,82 @@
-# Actividad 05. Calibración propuesta del sensor FSR con masas conocidas
+# Actividad 05. Calibración del sensor FSR RFP-602
 
-**Proyecto:** Ligura  
-**Nivel de madurez tecnológica:** TRL 3  
-**Componente:** Sensor de fuerza FSR RFP-602  
-**Estado:** Diseño del procedimiento y preparación del programa de adquisición. **La calibración física con masas conocidas no ha sido ejecutada ni validada.**
+**Proyecto:** Ligura · **Etapa:** TRL 3 · **Componente:** Sensor FSR RFP-602
+
+> **Alcance de la evidencia.** Se dispone del diseño de soporte, fotografías de las pesas, un montaje ilustrativo y un programa de adquisición. La captura del Monitor Serie contiene **datos de ejemplo generados digitalmente**, no mediciones de una calibración física. Los apartados siguientes describen el procedimiento de calibración y sus criterios de verificación.
 
 ## 1. Objetivo
 
-Definir un procedimiento de calibración preliminar del sensor FSR RFP-602 utilizando cargas nominales de 10, 20, 50 y 100 g y la adquisición de lecturas analógicas con un ESP32 DevKit V1. El propósito es obtener, cuando se realice el experimento, una relación entre fuerza aplicada y lectura ADC para evaluar su posible uso en el brazo del gripper de Ligura.
+Establecer un procedimiento para relacionar la fuerza aplicada al sensor FSR con la lectura analógica de un ESP32 DevKit V1, utilizando masas nominales de **10, 20, 50 y 100 g**. Esta relación serviría para evaluar la detección de contacto y, tras una validación experimental, determinar umbrales de fuerza para el gripper de Ligura.
 
-## 2. Fundamento matemático
+## 2. Materiales e instrumentación
 
-La fuerza gravitatoria nominal de una masa conocida se calcula mediante:
+- Sensor resistivo de fuerza **FSR RFP-602**.
+- ESP32 DevKit V1, cable USB y Arduino IDE.
+- Protoboard, cables Dupont y resistencia de **10 kΩ** en un divisor de voltaje.
+- Masas de referencia nominales de **10, 20, 50 y 100 g**.
+- Soporte de carga diseñado en Onshape.
 
-$$
-F = m\,g
-$$
+<p align="center"><img src="./imagenes/pesas_referencia_disponibles.png" alt="Juego de pesas disponible" width="350"></p>
 
-Donde $F$ se expresa en newtons, $m$ en kilogramos y $g=9.81\ \mathrm{m/s^2}$.
+*Figura 1. Juego de pesas utilizado como referencia para planificar las condiciones de carga.*
 
-| Condición | Masa nominal (g) | Fuerza nominal (N) |
-|---|---:|---:|
-| Sin carga adicional | 0 | 0.0000 |
-| Referencia 1 | 10 | 0.0981 |
-| Referencia 2 | 20 | 0.1962 |
-| Referencia 3 | 50 | 0.4905 |
-| Referencia 4 | 100 | 0.9810 |
+## 3. Diseño del soporte en Onshape
 
-**Nota:** Estas fuerzas son cálculos teóricos correspondientes exclusivamente a las masas indicadas. La fuerza total también puede incluir la masa del soporte, y puede diferir si parte del peso se apoya fuera del área activa del sensor. Para una calibración cuantitativa deben conocerse las masas efectivas y verificarse que la transmisión de carga sea correcta.
+Se diseñó el **soporte cónico de base cerrada**, con una plataforma circular superior y un saliente inferior. Su finalidad es definir la posición de la masa y la región de contacto con la zona sensible del FSR.
 
-## 3. Materiales previstos
+<p align="center"><img src="./imagenes/soporte_3d_vista_isometrica.png" alt="Modelo isométrico del soporte de calibración" width="360"></p>
 
-- Sensor FSR RFP-602.
-- ESP32 DevKit V1 y cable USB de datos.
-- Protoboard, cables de conexión y resistencia fija de 10 kΩ (configuración inicial del divisor de voltaje).
-- Masas nominales de 10, 20, 50 y 100 g.
-- Soporte de carga diseñado en 3D, con superficie de contacto apropiada para el sensor.
-- Computadora con Arduino IDE.
+*Figura 2. Modelo tridimensional del soporte en Onshape.*
 
-### Registro fotográfico de los materiales de referencia
+<p align="center"><img src="./imagenes/soporte_3d_plano_acotado.png" alt="Plano acotado del soporte 3D" width="420"></p>
 
-<img src="./imagenes/pesas_referencia_disponibles.png" alt="Estuche con pesas metálicas de referencia y accesorio de manipulación" width="400">
+*Figura 3. Plano técnico del soporte con cotas en milímetros (diámetro exterior señalado: 18.66 mm).*
 
-*Figura 1. Fotografía del juego de pesas metálicas disponible para preparar las pruebas de carga.*
+El plano permite verificar dimensiones geométricas, pero no establece por sí solo que toda la carga se transmita al sensor. Antes de calibrar debe evaluarse la alineación, la base de apoyo y la masa propia de la pieza.
 
-## 4. Diseño del soporte de carga en Onshape
+## 4. Montaje y conexiones
 
-Como parte de la preparación de la calibración, se modeló en Onshape una pieza denominada **«Soporte cónico de base cerrada»**. Su geometría presenta una superficie circular superior de poca profundidad y un saliente inferior de menor diámetro. El diseño busca posicionar la masa de referencia y definir una zona de contacto con el FSR.
+La siguiente imagen permite visualizar la configuración propuesta. **Es una representación digital**, no una fotografía de una calibración ejecutada.
 
-<img src="./imagenes/soporte_3d_vista_isometrica.png" alt="Vista isométrica del soporte cónico de base cerrada modelado en Onshape" width="400">
+<p align="center"><img src="./imagenes/montaje_conceptual_fsr.png" alt="Representación conceptual del montaje con pesa, soporte y FSR" width="420"></p>
 
-*Figura 2. Vista isométrica del modelo 3D del soporte de carga desarrollado en Onshape.*
+*Figura 4. Representación del montaje con pesa de 100 g, soporte 3D y sensor FSR.*
 
-<img src="./imagenes/soporte_3d_plano_acotado.png" alt="Plano acotado del soporte cónico de base cerrada con vistas y cotas en milímetros" width="400">
-
-*Figura 3. Plano técnico del soporte de carga. Las cotas se expresan en milímetros; entre ellas se muestran el diámetro exterior de Ø18.66 mm y otras dimensiones del detalle de la pieza.*
-
-El plano proporciona referencias geométricas para reproducir el soporte. **Su diseño por sí solo no demuestra que el peso se transmita íntegramente al sensor:** antes de una calibración física se debe comprobar la alineación, la superficie de contacto y si existe apoyo externo que desvíe parte de la carga. También es necesario considerar la masa propia del soporte.
-
-## 5. Montaje propuesto
-
-<img src="./imagenes/montaje_conceptual_fsr.png" alt="Montaje conceptual de calibración del FSR con pesa y soporte 3D" width="450">
-
-*Figura 4. Imagen ilustrativa del montaje para la calibración.*
-
-El soporte se plantea para posicionar la carga de referencia sobre la superficie activa del FSR. Antes de una prueba real debe verificarse que el montaje no desvíe parte del peso a la mesa u otras superficies y que la carga no exceda el rango especificado para la variante del RFP-602 utilizada.
-
-### Conexión eléctrica prevista
+La lectura del sensor utiliza un divisor de voltaje:
 
 ```text
-ESP32 3V3 --- FSR ---+--- GPIO 34 (ADC)
-                     |
-                    10 kΩ
-                     |
-ESP32 GND -----------+
+3V3 del ESP32 ── FSR ──┬── GPIO 34 (ADC)
+                        │
+                      10 kΩ
+                        │
+GND del ESP32 ──────────┘
 ```
 
-Esta configuración produce un voltaje que normalmente aumenta cuando disminuye la resistencia del FSR. La resistencia fija debe verificarse o ajustarse según el rango de fuerza previsto y la respuesta real del sensor.
+Con esta conexión, una reducción de resistencia del FSR suele aumentar el voltaje leído por el ADC. El resistor de 10 kΩ es la configuración inicial; su elección final depende del intervalo de fuerzas y de la respuesta real del sensor.
 
-## 6. Programa de adquisición en Arduino IDE
+## 5. Cálculo de las fuerzas de referencia
 
-Se preparó un programa para el ESP32 que toma 30 muestras analógicas desde GPIO 34 y reporta el promedio, el valor mínimo y el máximo en el Monitor Serie a 115200 baudios.
+La fuerza nominal debida a una masa se calcula con:
+
+$$
+F = m \cdot g
+$$
+
+Donde **m** está en kilogramos y **g = 9.81 m/s²**.
+
+| Masa nominal (g) | Fuerza nominal (N) |
+|---:|---:|
+| 0 | 0.0000 |
+| 10 | 0.0981 |
+| 20 | 0.1962 |
+| 50 | 0.4905 |
+| 100 | 0.9810 |
+
+**Condición de aplicación:** si el soporte también descansa sobre el FSR, debe sumarse su masa a la de la pesa; si existe otro punto de apoyo, parte de la fuerza puede no llegar al área sensible.
+
+## 6. Programa de lectura en Arduino IDE
+
+El programa lee **30 muestras del GPIO 34**, registra la media, el mínimo y el máximo, y envía los resultados a **115200 baudios**. **No identifica automáticamente la masa colocada ni convierte los valores ADC a newtons.**
 
 ```cpp
 const int pinFSR = 34;
@@ -99,7 +95,6 @@ void loop() {
   long suma = 0;
   int minimo = 4095;
   int maximo = 0;
-
   for (int i = 0; i < muestras; i++) {
     int lectura = analogRead(pinFSR);
     suma += lectura;
@@ -107,7 +102,6 @@ void loop() {
     if (lectura > maximo) maximo = lectura;
     delay(50);
   }
-
   float promedio = suma / (float)muestras;
   Serial.println("-------------------------");
   Serial.print("ADC promedio: "); Serial.println(promedio, 2);
@@ -117,47 +111,87 @@ void loop() {
 }
 ```
 
-El archivo fuente también se incluye como [`calibracion_fsr_esp32.ino`](./calibracion_fsr_esp32.ino).
+**Archivo fuente:** [calibracion_fsr_esp32.ino](./calibracion_fsr_esp32.ino)
 
-<img src="./imagenes/monitor_serie_ilustrativo.png" alt="Interfaz ilustrativa de Arduino IDE para adquisición de datos" width="450">
+<p align="center"><img src="./imagenes/monitor_serie_ilustrativo.png" alt="Ejemplo digital de pantalla Arduino IDE con Monitor Serie" width="450"></p>
 
-*Figura 5. Composición digital ilustrativa del código en Arduino IDE y de una posible salida del Monitor Serie. **Los valores ADC y las etiquetas de masa que aparecen en la imagen son ficticios**; no se obtuvieron del sensor físico. El código adjunto solo imprime promedio, mínimo y máximo: la masa y fuerza deben anotarse por separado.*
+*Figura 5. Ejemplo ilustrativo de visualización del código y salida serial. Los valores mostrados fueron generados para ilustrar un registro y no corresponden a mediciones reales.*
 
-## 7. Procedimiento experimental previsto
+## 7. Procedimiento de calibración definido
 
-1. Verificar las conexiones del FSR al ESP32 con el equipo desconectado del USB.
-2. Montar el sensor sobre una base estable y comprobar que toda la carga nominal llegue a su superficie sensible.
-3. Cargar el programa y configurar el Monitor Serie a 115200 baudios.
-4. Tomar una lectura de referencia sin carga adicional, incluyendo cualquier precarga del soporte.
-5. Aplicar por separado 10, 20, 50 y 100 g. Esperar estabilidad antes de registrar cada bloque de 30 muestras.
-6. Retirar cada carga y repetir cada condición al menos tres veces, manteniendo constante la posición de contacto.
-7. Registrar los valores ADC y calcular la curva fuerza–ADC; evaluar dispersión, posible histéresis y saturación.
+1. Revisar las conexiones con el ESP32 desconectado del USB.
+2. Fijar el FSR sobre una superficie estable y centrar el soporte de carga sobre el área sensible.
+3. Cargar el programa y abrir el Monitor Serie a 115200 baudios.
+4. Registrar la condición sin carga adicional y anotar cualquier precarga generada por el soporte.
+5. Aplicar las masas de **10, 20, 50 y 100 g** en ese orden, registrando la masa correspondiente a cada bloque del Monitor Serie.
+6. Mantener la carga inmóvil durante cada lectura y repetir cada condición **al menos tres veces**, retirando la carga entre repeticiones.
+7. Obtener una tabla de valores medios y representar la fuerza nominal frente al ADC, considerando variación, histéresis y posible saturación.
 
-## 8. Tabla de resultados para completar
+## 8. Registro de resultados
 
-| Masa nominal (g) | Fuerza nominal (N) | ADC promedio (rep. 1) | ADC promedio (rep. 2) | ADC promedio (rep. 3) | ADC medio final |
-|---:|---:|---:|---:|---:|---:|
-| 0 | 0.0000 | Pendiente | Pendiente | Pendiente | Pendiente |
-| 10 | 0.0981 | Pendiente | Pendiente | Pendiente | Pendiente |
-| 20 | 0.1962 | Pendiente | Pendiente | Pendiente | Pendiente |
-| 50 | 0.4905 | Pendiente | Pendiente | Pendiente | Pendiente |
-| 100 | 0.9810 | Pendiente | Pendiente | Pendiente | Pendiente |
+### 8.1. Valores de ejemplo de la captura ilustrativa
 
-**No se completa esta tabla con valores inventados.** Los resultados sintéticos de otras actividades y los datos de Tinkercad corresponden a pruebas diferentes y no sustituyen esta calibración física.
+La siguiente tabla **transcribe valores ficticios presentes en la imagen de ejemplo**. Solo sirve para demostrar cómo se organizarían los registros; no corresponde a un ensayo experimental.
 
-## 9. Criterios de análisis cuando se obtengan datos
+| Masa (g) | Fuerza nominal (N) | ADC promedio ilustrativo | Mínimo ilustrativo | Máximo ilustrativo |
+|---:|---:|---:|---:|---:|
+| 0 | 0.0000 | 2.13 | 0 | 6 |
+| 10 | 0.0981 | 35.67 | 33 | 39 |
+| 20 | 0.1962 | 67.30 | 64 | 71 |
+| 50 | 0.4905 | 148.47 | 146 | 152 |
+| 100 | 0.9810 | 276.20 | 272 | 280 |
 
-- Verificar la tendencia de la lectura ADC al aumentar la fuerza y graficar los puntos registrados.
-- Evaluar variación entre tres repeticiones por carga (media y desviación estándar).
-- Analizar la diferencia entre carga y descarga, así como el retorno a la referencia.
-- Identificar posibles regiones de respuesta poco sensible o saturada.
-- Ajustar una relación fuerza–ADC apropiada al rango de medición y verificar su error con datos adicionales.
-- No utilizar un umbral de cierre del gripper basado únicamente en esta propuesta, sin validarlo físicamente para evitar dañar la fruta.
+**Estos valores no permiten afirmar que se ha calibrado el FSR físico ni calcular un error experimental real.**
 
-## 10. Limitaciones
+### 8.2. Ejemplo de registro con tres repeticiones (datos sintéticos)
 
-La calibración física con masas conocidas permanece pendiente. La imagen del montaje y la captura del Monitor Serie son **representaciones digitales**, no registros del experimento. Además, las masas del soporte y las condiciones efectivas de contacto no han sido verificadas. Por tanto, aún no se dispone de una curva de calibración experimental ni de un error de medición cuantificado.
+Para ilustrar el tratamiento de las mediciones, se presenta un conjunto de **datos sintéticos, no obtenidos del sensor físico**. Los valores de la repetición 1 se tomaron de la captura ilustrativa de Arduino IDE; las repeticiones 2 y 3 se construyeron como ejemplos de variación entre ensayos.
 
-## 11. Conclusión
+| Masa (g) | Fuerza nominal (N) | Media ADC, repetición 1 | Repetición 2 | Repetición 3 |
+|---:|---:|---:|---:|---:|
+| 0 | 0.0000 | 2.13 | 1.87 | 2.40 |
+| 10 | 0.0981 | 35.67 | 36.20 | 34.93 |
+| 20 | 0.1962 | 67.30 | 68.17 | 66.53 |
+| 50 | 0.4905 | 148.47 | 147.60 | 149.23 |
+| 100 | 0.9810 | 276.20 | 274.87 | 277.13 |
 
-Se definió el procedimiento, la configuración electrónica y el programa de adquisición para una futura calibración del FSR RFP-602 mediante masas nominales de 10 a 100 g. Los cálculos de fuerza y el montaje propuesto constituyen preparación técnica para el TRL 3; la respuesta funcional real del sensor ya se exploró por separado en la Actividad 3, pero la calibración cuantitativa con masas conocidas sigue pendiente.
+**Advertencia de procedencia:** estos datos sirven para ejemplificar cómo calcular promedios, dispersión y una curva fuerza–ADC. No demuestran una calibración física completada ni permiten afirmar repetibilidad experimental.
+
+### 8.3. Resumen estadístico del ejemplo sintético
+
+Para cada masa se calcula la media de las tres repeticiones y la desviación estándar muestral:
+
+$$
+\overline{ADC}=\frac{ADC_1+ADC_2+ADC_3}{3}
+$$
+
+$$
+s=\sqrt{\frac{\sum_{i=1}^{3}(ADC_i-\overline{ADC})^2}{3-1}}
+$$
+
+| Masa (g) | Fuerza nominal (N) | Media ADC de 3 repeticiones | Desv. estándar ADC |
+|---:|---:|---:|---:|
+| 0 | 0.0000 | 2.13 | 0.27 |
+| 10 | 0.0981 | 35.60 | 0.64 |
+| 20 | 0.1962 | 67.33 | 0.82 |
+| 50 | 0.4905 | 148.43 | 0.82 |
+| 100 | 0.9810 | 276.07 | 1.14 |
+
+La tendencia creciente de la media ADC con la fuerza y la baja dispersión se observan **solo en el ejemplo sintético**. Para caracterizar el FSR real, estos cálculos deberán repetirse con registros medidos en el montaje físico.
+
+
+## 9. Análisis técnico y limitaciones
+
+La respuesta de los FSR suele ser no lineal y depende de la geometría del contacto, la distribución de carga y la resistencia fija del divisor. Se deberá determinar en el montaje real:
+
+- **Sensibilidad:** cambio de lectura ADC ante un incremento de fuerza en el intervalo de interés.
+- **Repetibilidad:** dispersión de las lecturas para una misma masa aplicada varias veces.
+- **Histéresis:** diferencia entre lecturas durante la carga y la descarga.
+- **Intervalo útil:** región donde la lectura cambia suficientemente para distinguir fuerzas.
+
+Además, el uso de pesas nominales sin balanza para verificarlas, la masa desconocida del soporte y las tolerancias del ADC limitan la exactitud posible de una calibración cuantitativa.
+
+## 10. Conclusión
+
+Se cuenta con el **diseño del soporte 3D**, la selección de masas de referencia, el **montaje ilustrativo** y un **programa de adquisición de 30 muestras por registro**. Estos elementos definen una metodología reproducible para la calibración del sensor FSR RFP-602. La Actividad 3 aportó previamente evidencia física de detección de presión con ESP32. Para establecer una curva fuerza–ADC validada y un umbral seguro de sujeción del gripper, todavía se requieren las mediciones con las masas conocidas y la evaluación de su repetibilidad.
+
