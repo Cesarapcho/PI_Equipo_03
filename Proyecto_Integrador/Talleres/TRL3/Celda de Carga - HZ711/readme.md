@@ -203,7 +203,7 @@ Las siguientes figuras se generaron a partir de los cinco pares de datos reales 
 
 **Figura 3. Errores firmados en los cinco puntos de ajuste.**
 
-![Errores de calibración](graficas/02_errores_calibracion.png)
+![Errores de calibración](graficas/02_errores_de_calibracion.png)
 
 **Figura 4. Masa real frente a masa estimada para las referencias de calibración.**
 
